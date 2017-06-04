@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CaptureVideoWidget</class>
+ <widget class="QWidget" name="CaptureVideoWidget">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1080</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>CaptureVideoWidget</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/icon-capture.png</normaloff>:/icon-capture.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QCheckBox,QRadioButton{
+color:white;
+	font: 11pt &quot;黑体&quot;;
+}
+#frameBase{
+	border-image: url(:/Resources/resource/bkgNull.png) 0 0 0 0 stretch stretch;
+
+    position: relative;
+
+}
+QPushButton{
+    color: white;
+	background-color: rgb(53, 63, 75);
+}
+#label_Picture{
+   	background: black;
+    border: 2px solid gray;
+position:relative;
+    top: 100px;
+}
+</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="frameBase">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="pushButton_OpenVideo">
+      <property name="geometry">
+       <rect>
+        <x>760</x>
+        <y>330</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>打开视频</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_Exit">
+      <property name="geometry">
+       <rect>
+        <x>810</x>
+        <y>470</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>退出程序</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_Capture">
+      <property name="geometry">
+       <rect>
+        <x>760</x>
+        <y>370</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>截取图片</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_Process">
+      <property name="geometry">
+       <rect>
+        <x>810</x>
+        <y>420</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>处理图像</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Picture">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>80</y>
+        <width>600</width>
+        <height>600</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_OpenImage">
+      <property name="geometry">
+       <rect>
+        <x>870</x>
+        <y>350</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>打开图片</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioButton_refined">
+      <property name="geometry">
+       <rect>
+        <x>810</x>
+        <y>255</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>校正图像</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioButton_source">
+      <property name="geometry">
+       <rect>
+        <x>810</x>
+        <y>230</y>
+        <width>89</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>原图像</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox_removeCircle">
+      <property name="geometry">
+       <rect>
+        <x>810</x>
+        <y>280</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>消隐</string>
+      </property>
+     </widget>
+     <widget class="LassoWidget" name="widget_lasso" native="true">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>80</y>
+        <width>600</width>
+        <height>600</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>LassoWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">./captureVideo/lassowidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

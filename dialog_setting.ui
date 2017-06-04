@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog_Setting</class>
+ <widget class="QDialog" name="Dialog_Setting">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>703</width>
+    <height>455</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#Dialog_Setting{border-image: url(:/images/bkg41.png);}
+QPushButton{
+    color: white;
+	background-color: rgb(53, 63, 75);
+}
+</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox_Data">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>130</y>
+     <width>301</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>读取规划数据</string>
+   </property>
+   <widget class="QPushButton" name="pushButton_Femur_AP">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>89</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>股骨正位</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Femur_Lat">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>40</y>
+      <width>89</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>股骨侧位</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Tibia_AP">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>89</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>胫骨正位</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Tibia_Lat">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>80</y>
+      <width>89</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>胫骨侧位</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>40</y>
+     <width>301</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>UDP连接</string>
+   </property>
+   <widget class="QPushButton" name="pushButtonUDP">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>40</y>
+      <width>61</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>确定</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdi_UDP">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>40</y>
+      <width>113</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>5555</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_port">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>72</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>端口号：</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>40</y>
+     <width>311</width>
+     <height>221</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>初始化Marker名称</string>
+   </property>
+   <widget class="QLabel" name="label_port_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>72</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>股骨：</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdi_NameFemur">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>30</y>
+      <width>181</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Marker_TreatedFar</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdi_NameTibia">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>60</y>
+      <width>181</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Marker_UR_new</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_port_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>72</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>胫骨：</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdi_NameXspot">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>90</y>
+      <width>181</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Marker_XSpot</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_port_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>72</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Xspot：</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdi_NameTipTool">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>120</y>
+      <width>181</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Marker_Tip</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_port_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>120</y>
+      <width>72</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>探针：</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_InitMarker">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>190</y>
+      <width>89</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>设置</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_port_6">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>150</y>
+      <width>72</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>机器人：</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdi_NameRobot">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>150</y>
+      <width>181</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Marker_Robot</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>269</y>
+     <width>641</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>NDI</string>
+   </property>
+   <widget class="QLabel" name="label_Tip">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>40</y>
+      <width>100</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/Resources/tip_disable.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Xspot">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>40</y>
+      <width>100</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/Resources/XSpot_disable.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Robot">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>40</y>
+      <width>100</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/Resources/ur_robot_disable.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Femur">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>40</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/Resources/resource/Femur_disable.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Tibia">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>40</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/Resources/resource/Tibia_disable.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

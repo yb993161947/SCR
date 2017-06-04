@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>bkgNull.png</file>
+        <file>icon-capture.png</file>
+    </qresource>
+</RCC>
