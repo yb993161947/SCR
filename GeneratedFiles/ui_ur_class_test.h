@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ur_class_test.ui'
 **
-** Created by: Qt User Interface Compiler version 5.4.2
+** Created by: Qt User Interface Compiler version 5.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -115,23 +115,19 @@ public:
     QLineEdit *Ry_Or_Wrist2;
     QLabel *label_20;
     QLineEdit *Rz_Or_Wrist3;
-    QWidget *layoutWidget9;
-    QHBoxLayout *horizontalLayout_2;
+    QWidget *widget;
+    QGridLayout *gridLayout_2;
     QPushButton *Debug_TCP;
     QPushButton *Debug_Joint;
-    QPushButton *Debug_Tool;
-    QPushButton *Debug_Direct;
-    QPushButton *Debug_Test;
     QGroupBox *groupBox_5;
     QSlider *Speed_Slider;
     QLabel *label_19;
     QLineEdit *Speed_value;
     QPushButton *pushButton_zero;
     QPushButton *pushButton_setTCP;
-    QLabel *label_UrState;
     QPushButton *pushButton_addPoint;
     QPushButton *pushButton_SaveAllPoint;
-    QWidget *layoutWidget10;
+    QWidget *layoutWidget9;
     QFormLayout *formLayout;
     QPushButton *pushButton_savePoint_1;
     QPushButton *pushButton_move1;
@@ -203,7 +199,7 @@ public:
 
         groupBox_2 = new QGroupBox(UR_class_testClass);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-        groupBox_2->setGeometry(QRect(20, 110, 261, 191));
+        groupBox_2->setGeometry(QRect(20, 110, 301, 201));
         layoutWidget1 = new QWidget(groupBox_2);
         layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
         layoutWidget1->setGeometry(QRect(10, 20, 21, 151));
@@ -328,7 +324,7 @@ public:
 
         groupBox_3 = new QGroupBox(UR_class_testClass);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
-        groupBox_3->setGeometry(QRect(350, 110, 321, 191));
+        groupBox_3->setGeometry(QRect(350, 110, 331, 211));
         layoutWidget5 = new QWidget(groupBox_3);
         layoutWidget5->setObjectName(QStringLiteral("layoutWidget5"));
         layoutWidget5->setGeometry(QRect(10, 20, 66, 151));
@@ -552,38 +548,23 @@ public:
 
         gridLayout->addWidget(Rz_Or_Wrist3, 1, 5, 1, 1);
 
-        layoutWidget9 = new QWidget(groupBox_4);
-        layoutWidget9->setObjectName(QStringLiteral("layoutWidget9"));
-        layoutWidget9->setGeometry(QRect(10, 110, 591, 26));
-        horizontalLayout_2 = new QHBoxLayout(layoutWidget9);
-        horizontalLayout_2->setSpacing(6);
-        horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        Debug_TCP = new QPushButton(layoutWidget9);
+        widget = new QWidget(groupBox_4);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(11, 111, 277, 26));
+        gridLayout_2 = new QGridLayout(widget);
+        gridLayout_2->setSpacing(6);
+        gridLayout_2->setContentsMargins(11, 11, 11, 11);
+        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        gridLayout_2->setContentsMargins(0, 0, 0, 0);
+        Debug_TCP = new QPushButton(widget);
         Debug_TCP->setObjectName(QStringLiteral("Debug_TCP"));
 
-        horizontalLayout_2->addWidget(Debug_TCP);
+        gridLayout_2->addWidget(Debug_TCP, 0, 0, 1, 1);
 
-        Debug_Joint = new QPushButton(layoutWidget9);
+        Debug_Joint = new QPushButton(widget);
         Debug_Joint->setObjectName(QStringLiteral("Debug_Joint"));
 
-        horizontalLayout_2->addWidget(Debug_Joint);
-
-        Debug_Tool = new QPushButton(layoutWidget9);
-        Debug_Tool->setObjectName(QStringLiteral("Debug_Tool"));
-
-        horizontalLayout_2->addWidget(Debug_Tool);
-
-        Debug_Direct = new QPushButton(layoutWidget9);
-        Debug_Direct->setObjectName(QStringLiteral("Debug_Direct"));
-
-        horizontalLayout_2->addWidget(Debug_Direct);
-
-        Debug_Test = new QPushButton(layoutWidget9);
-        Debug_Test->setObjectName(QStringLiteral("Debug_Test"));
-
-        horizontalLayout_2->addWidget(Debug_Test);
+        gridLayout_2->addWidget(Debug_Joint, 0, 1, 1, 1);
 
         groupBox_5 = new QGroupBox(UR_class_testClass);
         groupBox_5->setObjectName(QStringLiteral("groupBox_5"));
@@ -607,99 +588,96 @@ public:
         pushButton_setTCP = new QPushButton(UR_class_testClass);
         pushButton_setTCP->setObjectName(QStringLiteral("pushButton_setTCP"));
         pushButton_setTCP->setGeometry(QRect(650, 450, 61, 31));
-        label_UrState = new QLabel(UR_class_testClass);
-        label_UrState->setObjectName(QStringLiteral("label_UrState"));
-        label_UrState->setGeometry(QRect(640, 60, 131, 16));
         pushButton_addPoint = new QPushButton(UR_class_testClass);
         pushButton_addPoint->setObjectName(QStringLiteral("pushButton_addPoint"));
         pushButton_addPoint->setGeometry(QRect(730, 320, 89, 24));
         pushButton_SaveAllPoint = new QPushButton(UR_class_testClass);
         pushButton_SaveAllPoint->setObjectName(QStringLiteral("pushButton_SaveAllPoint"));
         pushButton_SaveAllPoint->setGeometry(QRect(840, 320, 89, 24));
-        layoutWidget10 = new QWidget(UR_class_testClass);
-        layoutWidget10->setObjectName(QStringLiteral("layoutWidget10"));
-        layoutWidget10->setGeometry(QRect(741, 41, 221, 243));
-        formLayout = new QFormLayout(layoutWidget10);
+        layoutWidget9 = new QWidget(UR_class_testClass);
+        layoutWidget9->setObjectName(QStringLiteral("layoutWidget9"));
+        layoutWidget9->setGeometry(QRect(741, 41, 221, 243));
+        formLayout = new QFormLayout(layoutWidget9);
         formLayout->setSpacing(6);
         formLayout->setContentsMargins(11, 11, 11, 11);
         formLayout->setObjectName(QStringLiteral("formLayout"));
         formLayout->setContentsMargins(0, 0, 0, 0);
-        pushButton_savePoint_1 = new QPushButton(layoutWidget10);
+        pushButton_savePoint_1 = new QPushButton(layoutWidget9);
         pushButton_savePoint_1->setObjectName(QStringLiteral("pushButton_savePoint_1"));
 
         formLayout->setWidget(0, QFormLayout::LabelRole, pushButton_savePoint_1);
 
-        pushButton_move1 = new QPushButton(layoutWidget10);
+        pushButton_move1 = new QPushButton(layoutWidget9);
         pushButton_move1->setObjectName(QStringLiteral("pushButton_move1"));
 
         formLayout->setWidget(0, QFormLayout::FieldRole, pushButton_move1);
 
-        pushButton_savePoint_2 = new QPushButton(layoutWidget10);
+        pushButton_savePoint_2 = new QPushButton(layoutWidget9);
         pushButton_savePoint_2->setObjectName(QStringLiteral("pushButton_savePoint_2"));
 
         formLayout->setWidget(1, QFormLayout::LabelRole, pushButton_savePoint_2);
 
-        pushButton_move2 = new QPushButton(layoutWidget10);
+        pushButton_move2 = new QPushButton(layoutWidget9);
         pushButton_move2->setObjectName(QStringLiteral("pushButton_move2"));
 
         formLayout->setWidget(1, QFormLayout::FieldRole, pushButton_move2);
 
-        pushButton_savePoint_3 = new QPushButton(layoutWidget10);
+        pushButton_savePoint_3 = new QPushButton(layoutWidget9);
         pushButton_savePoint_3->setObjectName(QStringLiteral("pushButton_savePoint_3"));
 
         formLayout->setWidget(2, QFormLayout::LabelRole, pushButton_savePoint_3);
 
-        pushButton_move3 = new QPushButton(layoutWidget10);
+        pushButton_move3 = new QPushButton(layoutWidget9);
         pushButton_move3->setObjectName(QStringLiteral("pushButton_move3"));
 
         formLayout->setWidget(2, QFormLayout::FieldRole, pushButton_move3);
 
-        pushButton_savePoint_4 = new QPushButton(layoutWidget10);
+        pushButton_savePoint_4 = new QPushButton(layoutWidget9);
         pushButton_savePoint_4->setObjectName(QStringLiteral("pushButton_savePoint_4"));
 
         formLayout->setWidget(3, QFormLayout::LabelRole, pushButton_savePoint_4);
 
-        pushButton_move4 = new QPushButton(layoutWidget10);
+        pushButton_move4 = new QPushButton(layoutWidget9);
         pushButton_move4->setObjectName(QStringLiteral("pushButton_move4"));
 
         formLayout->setWidget(3, QFormLayout::FieldRole, pushButton_move4);
 
-        pushButton_savePoint_5 = new QPushButton(layoutWidget10);
+        pushButton_savePoint_5 = new QPushButton(layoutWidget9);
         pushButton_savePoint_5->setObjectName(QStringLiteral("pushButton_savePoint_5"));
 
         formLayout->setWidget(4, QFormLayout::LabelRole, pushButton_savePoint_5);
 
-        pushButton_move5 = new QPushButton(layoutWidget10);
+        pushButton_move5 = new QPushButton(layoutWidget9);
         pushButton_move5->setObjectName(QStringLiteral("pushButton_move5"));
 
         formLayout->setWidget(4, QFormLayout::FieldRole, pushButton_move5);
 
-        pushButton_savePoint_6 = new QPushButton(layoutWidget10);
+        pushButton_savePoint_6 = new QPushButton(layoutWidget9);
         pushButton_savePoint_6->setObjectName(QStringLiteral("pushButton_savePoint_6"));
 
         formLayout->setWidget(5, QFormLayout::LabelRole, pushButton_savePoint_6);
 
-        pushButton_move6 = new QPushButton(layoutWidget10);
+        pushButton_move6 = new QPushButton(layoutWidget9);
         pushButton_move6->setObjectName(QStringLiteral("pushButton_move6"));
 
         formLayout->setWidget(5, QFormLayout::FieldRole, pushButton_move6);
 
-        pushButton_savePoint_7 = new QPushButton(layoutWidget10);
+        pushButton_savePoint_7 = new QPushButton(layoutWidget9);
         pushButton_savePoint_7->setObjectName(QStringLiteral("pushButton_savePoint_7"));
 
         formLayout->setWidget(6, QFormLayout::LabelRole, pushButton_savePoint_7);
 
-        pushButton_move7 = new QPushButton(layoutWidget10);
+        pushButton_move7 = new QPushButton(layoutWidget9);
         pushButton_move7->setObjectName(QStringLiteral("pushButton_move7"));
 
         formLayout->setWidget(6, QFormLayout::FieldRole, pushButton_move7);
 
-        pushButton_savePoint_8 = new QPushButton(layoutWidget10);
+        pushButton_savePoint_8 = new QPushButton(layoutWidget9);
         pushButton_savePoint_8->setObjectName(QStringLiteral("pushButton_savePoint_8"));
 
         formLayout->setWidget(7, QFormLayout::LabelRole, pushButton_savePoint_8);
 
-        pushButton_move8 = new QPushButton(layoutWidget10);
+        pushButton_move8 = new QPushButton(layoutWidget9);
         pushButton_move8->setObjectName(QStringLiteral("pushButton_move8"));
 
         formLayout->setWidget(7, QFormLayout::FieldRole, pushButton_move8);
@@ -760,16 +738,12 @@ public:
         label_15->setText(QApplication::translate("UR_class_testClass", "Rx/Wrist1", 0));
         label_17->setText(QApplication::translate("UR_class_testClass", "Ry/Wrist2", 0));
         label_20->setText(QApplication::translate("UR_class_testClass", "Rz/Wrist3", 0));
-        Debug_TCP->setText(QApplication::translate("UR_class_testClass", "Debug TCP\357\274\210\350\277\220\345\212\250\351\224\231\350\257\257\357\274\211", 0));
+        Debug_TCP->setText(QApplication::translate("UR_class_testClass", "Debug TCP", 0));
         Debug_Joint->setText(QApplication::translate("UR_class_testClass", "Debug Joint", 0));
-        Debug_Tool->setText(QApplication::translate("UR_class_testClass", "Debug Tool", 0));
-        Debug_Direct->setText(QApplication::translate("UR_class_testClass", "Debug Direct", 0));
-        Debug_Test->setText(QApplication::translate("UR_class_testClass", "Debug Test", 0));
         groupBox_5->setTitle(QApplication::translate("UR_class_testClass", "set speed", 0));
         label_19->setText(QApplication::translate("UR_class_testClass", "speed", 0));
         pushButton_zero->setText(QApplication::translate("UR_class_testClass", "zeroTCP", 0));
         pushButton_setTCP->setText(QApplication::translate("UR_class_testClass", "setTCP", 0));
-        label_UrState->setText(QApplication::translate("UR_class_testClass", "TextLabel", 0));
         pushButton_addPoint->setText(QApplication::translate("UR_class_testClass", "\345\212\240\350\275\275\347\202\271", 0));
         pushButton_SaveAllPoint->setText(QApplication::translate("UR_class_testClass", "\345\255\230\345\202\250\347\202\271", 0));
         pushButton_savePoint_1->setText(QApplication::translate("UR_class_testClass", "\345\255\230L1\345\267\246", 0));

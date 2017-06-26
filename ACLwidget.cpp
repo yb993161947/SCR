@@ -120,7 +120,7 @@ Widget::Widget(QWidget *parent) :
        IsopenGuide_Lat_Tibia = 0;
 
        //需要标定呀
-       RobotTCP.setZero(4,4);
+       RobotTCP = TofMarkeronRobot2robot.inverse() * TofTCP2MarkeronRobot;
 
 
 }
@@ -170,6 +170,8 @@ void Widget::InitializationParameter()
     ui->graphicsView_AP->setScene(imageScene_AP_Femur);
     ui->graphicsView_Lat->setScene(imageScene_Lat_Femur);
 
+    ui->radioButton_Femur->setEnabled(false);
+    ui->radioButton_Tibia->setEnabled(false);
 
     connect(imageScene_Lat_Femur,SIGNAL(dotsHasSelected1(float)),
             imageScene_AP_Femur,SLOT(showsubline1(float)));
@@ -273,9 +275,7 @@ void Widget::on_pushButton_Exit_clicked()//退出
 
 void Widget::on_tabWidget_manipulate_currentChanged(int index)//标签修改操作函数
 {
-
-
-    switch (index)
+      switch (index)
     {
         case INDEX_FEMUR:
 
@@ -594,7 +594,27 @@ void Widget::mouseReleaseEvent(QMouseEvent *event)
 
 //        default:
 //            break;
-//    }
+    //    }
+}
+
+Matrix4d Widget::caculateMovetoRoute(Vector3d End3DPt, Vector3d Start3DPt, Matrix4d Bone_Matrix, double dis)
+{
+    Vector3d N_dir = -End3DPt + Start3DPt;
+    Vector3d N1 = (Bone_Matrix.inverse() * Robot_matrix4d * TofMarkeronRobot2robot).col(3).head(3);
+    Vector3d N2 = (Bone_Matrix.inverse() * Robot_matrix4d * TofTCP2MarkeronRobot.inverse()).col(3).head(3);
+    Vector3d Axis_Z = N2-N1;
+    double theta = acosf(N_dir.dot(Axis_Z) / N_dir.norm());
+    Vector3d AxisCross = Axis_Z.cross(N_dir);
+    if (theta < 0)
+        theta =  theta + PI;
+
+    Matrix3d Rotate = rotateWithAxis(AxisCross , theta);
+    Vector3d PosEnd=  ((End3DPt - N_dir/N_dir.norm() * dis) - N2.col(3).head(3))/1000 ;//延长距离200mm
+    Matrix4d T;
+    T.block(0,0,3,3) = Rotate;
+    T.col(3).head(3) = PosEnd;
+    T.row(3)<<0,0,0,1;
+    return T;
 }
 
 void Widget::guide()
@@ -1243,7 +1263,7 @@ void Widget::rev_NDI(QList<Info_NDI> ListInfo_NDI)
             Tibia_matrix4d = (*i).Pos;
             DialogSetting->ui->label_Tibia->setStyleSheet("border-image: url(:/Resources/resource/Tibia_enable.png);");
         }
-        if((*i).name == MarkerName_Robot)
+        else if((*i).name == MarkerName_Robot)
         {
             Robot_matrix4d = (*i).Pos;
             DialogSetting->ui->label_Robot->setStyleSheet("border-image: url(:/Resources/ur_robot_enable.png);");
@@ -1478,23 +1498,21 @@ void Widget::on_checkBox_AP_Femur_clicked(bool checked)
 {
     if(checked)
     {
-        for(int i = 0 ;i <5;i++)
+        for(int i = 0 ;i < 5;i++)
         {
             if(imageScene_AP_Femur->Piximage_point[i] != QPointF(-1,-1))
-
                 imageScene_AP_Femur->Piximage_button[i].show();
         }
         imageScene_AP_Femur->Line1_2->show();
         imageScene_AP_Femur->subline1->show();
         imageScene_AP_Femur->subline2->show();
-
     }
     else
     {
-        for(int i = 0 ;i <5;i++)
+        for(int i = 0 ;i < 5;i++)
         {
-
            imageScene_AP_Femur->Piximage_button[i].hide();
+           imageScene_AP_Femur->Piximage_button_selected[i].hide();
         }
         imageScene_AP_Femur->Line1_2->hide();
         imageScene_AP_Femur->subline1->hide();
@@ -1507,9 +1525,9 @@ void Widget::on_checkBox_Lat_Femur_clicked(bool checked)
 {
     if(checked)
     {
-        for(int i = 0 ;i <5;i++)
+        for(int i = 0 ;i < 5;i++)
         {
-           imageScene_Lat_Femur->Piximage_button[i].hide();
+           imageScene_Lat_Femur->Piximage_button[i].show();
         }
         imageScene_Lat_Femur->Line1_2->show();
         imageScene_Lat_Femur->tablesketch->show();
@@ -1517,9 +1535,10 @@ void Widget::on_checkBox_Lat_Femur_clicked(bool checked)
     }
     else
     {
-        for(int i = 0 ;i <5;i++)
+        for(int i = 0 ;i < 5;i++)
         {
            imageScene_Lat_Femur->Piximage_button[i].hide();
+           imageScene_Lat_Femur->Piximage_button_selected[i].hide();
         }
         imageScene_Lat_Femur->Line1_2->hide();
         imageScene_Lat_Femur->tablesketch->hide();
@@ -1530,16 +1549,17 @@ void Widget::on_checkBox_AP_Tibia_clicked(bool checked)
 {
     if(checked)
     {
-        for(int i = 0 ;i <4;i++)
+        for(int i = 0 ;i < 4;i++)
         {
            imageScene_AP_Tibia->Piximage_button[i].show();
+
         }
        imageScene_AP_Tibia->Line1_2->show();
        imageScene_AP_Tibia->subline1->show();//等比例辅助线直线
     }
     else
     {
-        for(int i = 0 ;i <4;i++)
+        for(int i = 0 ;i < 4;i++)
         {
            imageScene_AP_Tibia->Piximage_button[i].hide();
            imageScene_Lat_Tibia->Piximage_button_selected[i].hide();
@@ -1553,10 +1573,9 @@ void Widget::on_checkBox_Lat_Tibia_clicked(bool checked)
 {
     if(checked)
     {
-        for(int i = 0 ;i <6;i++)
+        for(int i = 0 ;i < 6;i++)
         {
            imageScene_Lat_Tibia->Piximage_button[i].show();
-   //         imageScene_Lat_Tibia->Piximage_button_selected[i].show();
         }
        imageScene_Lat_Tibia->Line1_2->show();
        imageScene_Lat_Tibia->Line1_2cross->show();
@@ -1565,7 +1584,7 @@ void Widget::on_checkBox_Lat_Tibia_clicked(bool checked)
     }
     else
     {
-        for(int i = 0 ;i <6;i++)
+        for(int i = 0 ;i < 6;i++)
         {
            imageScene_Lat_Tibia->Piximage_button[i].hide();
                  imageScene_Lat_Tibia->Piximage_button_selected[i].hide();
@@ -1685,6 +1704,10 @@ void Widget::on_pushButton_Femur_finished_clicked()
         QMessageBox::warning(this,u8"操作失败",u8"无法识别股骨侧位Xpot点");
         return;
     }
+
+    ui->radioButton_Femur->setEnabled(true);
+    on_radioButton_Femur_clicked();
+
     StartPt_Femur_AP(0) = double(imageScene_AP_Femur->Piximage_point[4].x());
     StartPt_Femur_AP(1) = double(imageScene_AP_Femur->Piximage_point[4].y());
     EndPt_Femur_AP(0) = double(imageScene_AP_Femur->Piximage_point[3].x());
@@ -1760,6 +1783,10 @@ void Widget::on_pushButton_Tibia_finished_clicked()
         QMessageBox::warning(this,u8"操作失败",u8"无法识别胫骨侧位Xpot点");
         return;
     }
+    ui->radioButton_Tibia->setEnabled(true);
+    on_radioButton_Tibia_clicked();
+
+
     StartPt_Tibia_AP(0) = double(imageScene_AP_Tibia->Piximage_point[3].x());
     StartPt_Tibia_AP(1) = double(imageScene_AP_Tibia->Piximage_point[3].y());
     EndPt_Tibia_AP(0) = double(imageScene_AP_Tibia->Piximage_point[2].x());
@@ -2176,6 +2203,7 @@ void Widget::on_pushButton_Read_Lat_clicked()
                 }
 				imageScene_Lat_Tibia->selected_hide();
 				imageScene_Lat_Tibia->selected_show();
+
 				imageScene_Lat_Tibia->Marker_Tip->show();
 				for (int i = 0; i < 6; i++)
 				{
@@ -2253,6 +2281,7 @@ void Widget::on_pushButton_Read_AP_clicked()
 			}
 			imageScene_AP_Femur->selected_hide();
 			imageScene_AP_Femur->selected_show();
+            qDebug()<<1;
 			imageScene_AP_Femur->Marker_Tip->show();
 			for (int i = 0; i < 5; i++)
 			{
@@ -2401,7 +2430,7 @@ void Widget::loadData_Femur_AP()
         }
         imageScene_AP_Femur->selected_hide();
         imageScene_AP_Femur->selected_show();
-
+        qDebug()<<1;
 
         Vector4d Tiptop;
         Tiptop = tiptopatXspot_AP_Femur * tanzhen2tip;
@@ -3026,47 +3055,45 @@ void Widget::on_pushButton_mirror_Lat_clicked()
 
 
 void Widget::on_pushButton_moveRobot_clicked()
-{//开始点和止点反了，所以N_DIr = start - end
-    Matrix4d RoBotinFemur = Femur_matrix4d.inverse() * Robot_matrix4d * RobotTCP;
-    Vector3d N_dir = -End3DPt_Femur + Start3DPt_Femur;
-    Vector3d Axis_Z= RoBotinFemur.col(2).head(3);
-    double theta = acosf(N_dir.dot(Axis_Z) / N_dir.norm());
-    Vector3d AxisCross = Axis_Z.cross(N_dir);
-    if (theta < 0)
-        theta =  theta + PI;
-
-    Matrix3d Rotate = rotateWithAxis(AxisCross , theta);
-    Vector3d PosEnd=  (End3DPt_Femur - N_dir/N_dir.norm() * 0.2) - RoBotinFemur.col(3).head(3) ;//延长距离200mm
-    Matrix4d T_End;
-    T_End.block(0,0,3,3) = Rotate;
-    T_End.col(3).head(3) = PosEnd;
-    T_End.row(3)<<0,0,0,1;
-    double pos[6];
-    Ur->pUR5->matrix_2_UR6params(T_End,pos);
-    Ur->pUR5->yb_movep_TCP(pos);
-
+{
+    //开始点和止点反了，所以N_DIr = start - end
+    if(ui->radioButton_Femur->isChecked())
+    {
+        T_End = caculateMovetoRoute(End3DPt_Femur,Start3DPt_Femur,Femur_matrix4d,100);
+        double pos[6];
+        Ur->pUR5->matrix_2_UR6params(T_End,pos);
+        Ur->pUR5->yb_movep_TCP(pos);
+        return;
+    }
+    if(ui->radioButton_Tibia->isChecked())
+    {
+        T_End = caculateMovetoRoute(End3DPt_Tibia,Start3DPt_Tibia,Tibia_matrix4d,100);
+        double pos[6];
+        Ur->pUR5->matrix_2_UR6params(T_End,pos);
+        Ur->pUR5->yb_movep_TCP(pos);
+        return;
+    }
 }
 
 void Widget::on_pushButton_moveRobotin_pressed()
 {
-    Matrix4d RoBotinFemur = Femur_matrix4d.inverse() * Robot_matrix4d * RobotTCP;
-    Vector3d N_dir = -End3DPt_Femur + Start3DPt_Femur;
-    Vector3d Axis_Z= RoBotinFemur.col(2).head(3);
-    double theta = acosf(N_dir.dot(Axis_Z) / N_dir.norm());
-    Vector3d AxisCross = Axis_Z.cross(N_dir);
-    if (theta < 0)
-        theta =  theta + PI;
-
-    Matrix3d Rotate = rotateWithAxis(AxisCross , theta);
-    Vector3d PosEnd=  (End3DPt_Femur - N_dir/N_dir.norm() * 0.01) - RoBotinFemur.col(3).head(3) ;//延长距离10mm
-    Matrix4d T_End1;
-    T_End1.block(0,0,3,3) = Rotate;
-    T_End1.col(3).head(3) = PosEnd;
-    T_End1.row(3)<<0,0,0,1;
-    double pos[6];
-    Ur->pUR5->set_speed(0.1);
-    Ur->pUR5->matrix_2_UR6params(T_End1,pos);
-    Ur->pUR5->yb_movep_TCP(pos);
+   //开始点和止点反了，所以N_DIr = start - end
+    if(ui->radioButton_Femur->isChecked())
+    {
+        T_End = caculateMovetoRoute(End3DPt_Femur,Start3DPt_Femur,Femur_matrix4d,10);
+        double pos[6];
+        Ur->pUR5->matrix_2_UR6params(T_End,pos);
+        Ur->pUR5->yb_movep_TCP(pos);
+        return;
+    }
+    if(ui->radioButton_Tibia->isChecked())
+    {
+        T_End = caculateMovetoRoute(End3DPt_Tibia,Start3DPt_Tibia,Tibia_matrix4d,10);
+        double pos[6];
+        Ur->pUR5->matrix_2_UR6params(T_End,pos);
+        Ur->pUR5->yb_movep_TCP(pos);
+        return;
+    }
 }
 
 void Widget::on_pushButton_moveRobotin_released()
@@ -3076,41 +3103,20 @@ void Widget::on_pushButton_moveRobotin_released()
 
 void Widget::on_pushButton_moveRobotin_2_pressed()
 {
-    Matrix4d RoBotinFemur = Femur_matrix4d.inverse() * Robot_matrix4d * RobotTCP;
-    Vector3d N_dir = -End3DPt_Femur + Start3DPt_Femur;
-    Vector3d Axis_Z= RoBotinFemur.col(2).head(3);
-    double theta = acosf(N_dir.dot(Axis_Z) / N_dir.norm());
-    Vector3d AxisCross = Axis_Z.cross(N_dir);
-    if (theta < 0)
-        theta =  theta + PI;
 
-    Matrix3d Rotate = rotateWithAxis(AxisCross , theta);
-    Vector3d PosEnd=  Start3DPt_Femur - RoBotinFemur.col(3).head(3) ;//延长距离10mm
-    Matrix4d T_End2;
-    T_End2.block(0,0,3,3) = Rotate;
-    T_End2.col(3).head(3) = PosEnd;
-    T_End2.row(3)<<0,0,0,1;
-    double pos[6];
-    Ur->pUR5->set_speed(0.05);
-    Ur->pUR5->matrix_2_UR6params(T_End2,pos);
-    Ur->pUR5->yb_movep_TCP(pos);
 }
 
 void Widget::on_pushButton_moveRobotin_2_released()
 {
-    Ur->pUR5->stopl();
+        Ur->pUR5->stopl();
 }
 
 void Widget::on_pushButton_moveRobotin_3_pressed()
 {
-    double pos[6] ={0,0,-0.10,0,0,0};
-    Ur->pUR5->set_speed(0.05);
-    Ur->pUR5->yb_movep_TCP(pos);
+
 }
 
 void Widget::on_pushButton_moveRobotin_3_released()
 {
     Ur->pUR5->stopl();
 }
-
-

@@ -1,0 +1,271 @@
+﻿  Moc'ing ACLwidget.h...
+  Moc'ing ImageScene.h...
+  Moc'ing capturevideowidget.h...
+  Moc'ing dialog_setting.h...
+  Moc'ing imagescene_Tibia_ap.h...
+  Moc'ing imagescene_Tibia_lat.h...
+  Moc'ing imagescene_femur_ap.h...
+  Moc'ing imagescene_femur_lat.h...
+  Moc'ing lassowidget.h...
+  Moc'ing mythread.h...
+  Moc'ing thread_get_ndi_marker.h...
+  Moc'ing ur_class_test.h...
+  Uic'ing ACLwidget.ui...
+  Uic'ing captureVideo\capturevideowidget.ui...
+  Uic'ing UrAPI\ur_class_test.ui...
+C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget1'.
+C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget2'.
+C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget3'.
+C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget4'.
+C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget5'.
+C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget6'.
+C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget7'.
+C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget8'.
+C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget9'.
+  Rcc'ing resources.qrc...
+  ACLwidget.cpp
+c:\users\user\desktop\aclrecontructqt_cmake\scr\UrAPI/ur_class_test.h(4): warning C4005: “PI”: 宏重定义
+  c:\users\user\desktop\aclrecontructqt_cmake\scr\ImageScene.h(16): note: 参见“PI”的前一个定义
+C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\include\dcmtk/config/osconfig.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+ACLwidget.cpp(299): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(300): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(301): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(302): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(363): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(364): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(365): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(366): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(432): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(433): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(434): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(435): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(580): warning C4100: “event”: 未引用的形参
+ACLwidget.cpp(817): warning C4101: “alpha”: 未引用的局部变量
+ACLwidget.cpp(816): warning C4101: “k0”: 未引用的局部变量
+ACLwidget.cpp(864): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+ACLwidget.cpp(873): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+ACLwidget.cpp(1082): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+ACLwidget.cpp(1084): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  DxMath.cpp
+  DxPoint.cpp
+  DxSpatialMatching.cpp
+carm\DxSpatialMatching.cpp(74): warning C4189: “n”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(124): warning C4189: “nTOTAl”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(112): warning C4189: “bSuccess”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(110): warning C4189: “nMissGroup”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(157): warning C4189: “bNear”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(505): warning C4189: “dCrossPoint_x”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(511): warning C4189: “bIsParaller”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(506): warning C4189: “dCrossPoint_y”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(1041): warning C4189: “fMinDistance”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(1456): warning C4189: “d1”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(1473): warning C4189: “a2”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(1472): warning C4189: “a1”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(1363): warning C4189: “bBlackPt”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(1455): warning C4189: “dd”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(1471): warning C4189: “aa”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(1457): warning C4189: “d2”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(1517): warning C4189: “i”: 局部变量已初始化但不引用
+  ImageRectify.cpp
+carm\ImageRectify.cpp(141): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+carm\ImageRectify.cpp(142): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+carm\ImageRectify.cpp(237): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+carm\ImageRectify.cpp(351): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+carm\ImageRectify.cpp(510): warning C4189: “nMinR”: 局部变量已初始化但不引用
+carm\ImageRectify.cpp(723): warning C4101: “t”: 未引用的局部变量
+carm\ImageRectify.cpp(892): warning C4189: “nMinDisPtIndex”: 局部变量已初始化但不引用
+carm\ImageRectify.cpp(946): warning C4189: “nIndex”: 局部变量已初始化但不引用
+carm\ImageRectify.cpp(967): warning C4189: “fMinDis”: 局部变量已初始化但不引用
+carm\ImageRectify.cpp(996): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+carm\ImageRectify.cpp(1031): warning C4100: “nHeight”: 未引用的形参
+  moc_ACLwidget.cpp
+c:\users\user\desktop\aclrecontructqt_cmake\scr\UrAPI/ur_class_test.h(4): warning C4005: “PI”: 宏重定义
+  c:\users\user\desktop\aclrecontructqt_cmake\scr\ImageScene.h(16): note: 参见“PI”的前一个定义
+  moc_capturevideowidget.cpp
+  moc_dialog_setting.cpp
+  moc_ImageScene.cpp
+  moc_imagescene_femur_ap.cpp
+  moc_imagescene_femur_lat.cpp
+  moc_imagescene_Tibia_ap.cpp
+  moc_imagescene_Tibia_lat.cpp
+  moc_lassowidget.cpp
+  moc_mythread.cpp
+  moc_thread_get_ndi_marker.cpp
+  moc_ur_class_test.cpp
+  ImageScene.cpp
+C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\include\dcmtk/config/osconfig.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  UR_interface.cpp
+UrAPI\UR_interface.cpp(161): warning C4189: “temp2”: 局部变量已初始化但不引用
+UrAPI\UR_interface.cpp(162): warning C4189: “temp3”: 局部变量已初始化但不引用
+UrAPI\UR_interface.cpp(504): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+  capturevideowidget.cpp
+C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\include\dcmtk/config/osconfig.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+captureVideo\capturevideowidget.cpp(155): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+captureVideo\capturevideowidget.cpp(164): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  正在生成代码...
+c:\users\user\desktop\aclrecontructqt_cmake\scr\carm\dxspatialmatching.cpp(763): warning C4715: “DxSpatialMatching::RankedPointInfo”: 不是所有的控件路径都返回值
+  正在编译...
+  dialog_setting.cpp
+  imagescene_Tibia_ap.cpp
+  imagescene_Tibia_lat.cpp
+  imagescene_femur_ap.cpp
+  imagescene_femur_lat.cpp
+  lassowidget.cpp
+captureVideo\lassowidget.cpp(32): warning C4100: “event”: 未引用的形参
+captureVideo\lassowidget.cpp(42): warning C4100: “event”: 未引用的形参
+  main.cpp
+c:\users\user\desktop\aclrecontructqt_cmake\scr\UrAPI/ur_class_test.h(4): warning C4005: “PI”: 宏重定义
+  c:\users\user\desktop\aclrecontructqt_cmake\scr\ImageScene.h(16): note: 参见“PI”的前一个定义
+  mythread.cpp
+  needle.cpp
+needle.cpp(40): warning C4100: “widget”: 未引用的形参
+needle.cpp(40): warning C4100: “option”: 未引用的形参
+  socket.cpp
+UrAPI\socket.cpp(157): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+UrAPI\socket.cpp(163): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+UrAPI\socket.cpp(168): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  tablesketch_item.cpp
+tablesketch_item.cpp(37): warning C4100: “widget”: 未引用的形参
+tablesketch_item.cpp(37): warning C4100: “option”: 未引用的形参
+  thread_get_ndi_marker.cpp
+  ur_class_test.cpp
+  正在生成代码...
+  qrc_resources.cpp
+dcmdata.lib(dcbytstr.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcbytstr.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcchrstr.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcchrstr.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dccodec.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dccodec.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcdatset.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcdatset.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcdicent.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcdicent.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcdict.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcdict.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcdictzz.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcdictzz.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcdirrec.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcdirrec.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcelem.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcelem.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcerror.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcerror.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcfilefo.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcfilefo.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dchashdi.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dchashdi.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcistrma.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcistrma.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcistrmf.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcistrmf.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcitem.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcitem.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dclist.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dclist.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcmetinf.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcmetinf.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcobject.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcobject.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcostrma.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcostrma.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcostrmf.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcostrmf.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcpcache.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcpcache.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcpixel.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcpixel.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcpixseq.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcpixseq.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcpxitem.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcpxitem.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcsequen.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcsequen.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcstack.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcstack.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcswap.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcswap.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dctag.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dctag.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dctagkey.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dctagkey.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dctypes.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dctypes.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcuid.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcuid.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcwcache.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcwcache.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvm.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvm.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvr.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvr.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrae.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrae.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvras.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvras.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrat.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrat.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrcs.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrcs.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrda.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrda.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrds.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrds.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrdt.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrdt.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrfd.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrfd.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrfl.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrfl.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvris.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvris.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrlo.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrlo.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrlt.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrlt.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrobow.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrobow.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrof.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrof.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrpn.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrpn.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrpobw.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrpobw.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrsh.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrsh.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrsl.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrsl.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrss.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrss.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrst.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrst.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrtm.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrtm.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrui.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrui.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrul.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrul.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrulup.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrulup.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrus.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrus.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcvrut.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcvrut.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(dcxfer.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(dcxfer.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(vrscan.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(vrscan.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmdata.lib(vrscanl.obj) : warning LNK4099: 未找到 PDB“dcmdata.pdb”(使用“dcmdata.lib(vrscanl.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmdata.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(dcmimage.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(dcmimage.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(dibaslut.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(dibaslut.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(didislut.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(didislut.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(didispfn.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(didispfn.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(didocu.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(didocu.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(digsdfn.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(digsdfn.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(digsdlut.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(digsdlut.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(diimage.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(diimage.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(diinpx.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(diinpx.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(diluptab.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(diluptab.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(dimo1img.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(dimo1img.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(dimo2img.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(dimo2img.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(dimoimg.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(dimoimg.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(dimoimg3.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(dimoimg3.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(dimoimg4.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(dimoimg4.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(dimoimg5.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(dimoimg5.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(dimomod.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(dimomod.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(dimoopx.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(dimoopx.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(dimopx.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(dimopx.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(diovdat.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(diovdat.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(diovlay.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(diovlay.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(diovlimg.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(diovlimg.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(diovpln.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(diovpln.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+dcmimgle.lib(diutils.obj) : warning LNK4099: 未找到 PDB“dcmimgle.pdb”(使用“dcmimgle.lib(diutils.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\dcmimgle.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(oflog.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(oflog.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(apndimpl.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(apndimpl.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(appender.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(appender.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(config.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(config.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(consap.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(consap.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(factory.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(factory.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(fileap.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(fileap.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(filter.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(filter.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(globinit.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(globinit.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(hierarchy.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(hierarchy.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(hierlock.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(hierlock.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(layout.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(layout.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(logger.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(logger.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(logimpl.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(logimpl.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(logevent.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(logevent.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(loglevel.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(loglevel.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(loglog.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(loglog.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(lloguser.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(lloguser.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(ndc.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(ndc.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(ntelogap.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(ntelogap.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(nullap.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(nullap.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(objreg.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(objreg.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(patlay.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(patlay.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(pointer.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(pointer.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(property.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(property.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(rootlog.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(rootlog.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(sleep.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(sleep.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(socketap.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(socketap.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(sockbuff.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(sockbuff.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(socket.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(socket.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(strhelp.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(strhelp.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(syncprims.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(syncprims.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(threads.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(threads.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(timehelp.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(timehelp.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(winsock.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(winsock.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(windebap.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(windebap.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+oflog.lib(winconap.obj) : warning LNK4099: 未找到 PDB“oflog.pdb”(使用“oflog.lib(winconap.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\oflog.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+ofstd.lib(ofcmdln.obj) : warning LNK4099: 未找到 PDB“ofstd.pdb”(使用“ofstd.lib(ofcmdln.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\ofstd.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+ofstd.lib(ofconapp.obj) : warning LNK4099: 未找到 PDB“ofstd.pdb”(使用“ofstd.lib(ofconapp.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\ofstd.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+ofstd.lib(ofcond.obj) : warning LNK4099: 未找到 PDB“ofstd.pdb”(使用“ofstd.lib(ofcond.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\ofstd.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+ofstd.lib(ofconsol.obj) : warning LNK4099: 未找到 PDB“ofstd.pdb”(使用“ofstd.lib(ofconsol.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\ofstd.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+ofstd.lib(ofcrc32.obj) : warning LNK4099: 未找到 PDB“ofstd.pdb”(使用“ofstd.lib(ofcrc32.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\ofstd.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+ofstd.lib(ofdate.obj) : warning LNK4099: 未找到 PDB“ofstd.pdb”(使用“ofstd.lib(ofdate.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\ofstd.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+ofstd.lib(ofdatime.obj) : warning LNK4099: 未找到 PDB“ofstd.pdb”(使用“ofstd.lib(ofdatime.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\ofstd.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+ofstd.lib(oflist.obj) : warning LNK4099: 未找到 PDB“ofstd.pdb”(使用“ofstd.lib(oflist.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\ofstd.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+ofstd.lib(ofstd.obj) : warning LNK4099: 未找到 PDB“ofstd.pdb”(使用“ofstd.lib(ofstd.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\ofstd.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+ofstd.lib(ofstring.obj) : warning LNK4099: 未找到 PDB“ofstd.pdb”(使用“ofstd.lib(ofstring.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\ofstd.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+ofstd.lib(ofthread.obj) : warning LNK4099: 未找到 PDB“ofstd.pdb”(使用“ofstd.lib(ofthread.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\ofstd.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+ofstd.lib(oftime.obj) : warning LNK4099: 未找到 PDB“ofstd.pdb”(使用“ofstd.lib(oftime.obj)”或在“C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\ofstd.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+  ACL.vcxproj -> C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\ACLReconstruction.exe
+  ACL.vcxproj -> debug\ACLReconstruction.pdb (Full PDB)

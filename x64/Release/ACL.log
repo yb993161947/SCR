@@ -1,0 +1,134 @@
+﻿  Moc'ing ACLwidget.h...
+  Moc'ing ImageScene.h...
+  Moc'ing capturevideowidget.h...
+  Moc'ing dialog_setting.h...
+  Moc'ing imagescene_Tibia_ap.h...
+  Moc'ing imagescene_Tibia_lat.h...
+  Moc'ing imagescene_femur_ap.h...
+  Moc'ing imagescene_femur_lat.h...
+  Moc'ing lassowidget.h...
+  Moc'ing mythread.h...
+  Moc'ing thread_get_ndi_marker.h...
+  Moc'ing ur_class_test.h...
+  Uic'ing ACLwidget.ui...
+  Uic'ing captureVideo\capturevideowidget.ui...
+  Uic'ing UrAPI\ur_class_test.ui...
+C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget1'.
+C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget2'.
+C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget3'.
+C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget4'.
+C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget5'.
+C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget6'.
+C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget7'.
+C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget8'.
+C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget9'.
+  Rcc'ing resources.qrc...
+  ACLwidget.cpp
+c:\users\user\desktop\aclrecontructqt_cmake\scr\UrAPI/ur_class_test.h(4): warning C4005: “PI”: 宏重定义
+  c:\users\user\desktop\aclrecontructqt_cmake\scr\ImageScene.h(16): note: 参见“PI”的前一个定义
+ThirdLib\DCMTK3.6.0x64\include\dcmtk/config/osconfig.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+ACLwidget.cpp(299): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(300): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(301): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(302): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(363): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(364): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(365): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(366): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(432): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(433): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(434): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(435): warning C4305: “参数”: 从“double”到“float”截断
+ACLwidget.cpp(580): warning C4100: “event”: 未引用的形参
+ACLwidget.cpp(817): warning C4101: “alpha”: 未引用的局部变量
+ACLwidget.cpp(816): warning C4101: “k0”: 未引用的局部变量
+ACLwidget.cpp(864): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+ACLwidget.cpp(873): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+ACLwidget.cpp(1082): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+ACLwidget.cpp(1084): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  DxMath.cpp
+  DxPoint.cpp
+  DxSpatialMatching.cpp
+carm\DxSpatialMatching.cpp(74): warning C4189: “n”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(124): warning C4189: “nTOTAl”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(112): warning C4189: “bSuccess”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(110): warning C4189: “nMissGroup”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(157): warning C4189: “bNear”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(505): warning C4189: “dCrossPoint_x”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(511): warning C4189: “bIsParaller”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(506): warning C4189: “dCrossPoint_y”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(1041): warning C4189: “fMinDistance”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(1456): warning C4189: “d1”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(1473): warning C4189: “a2”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(1472): warning C4189: “a1”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(1363): warning C4189: “bBlackPt”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(1455): warning C4189: “dd”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(1471): warning C4189: “aa”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(1457): warning C4189: “d2”: 局部变量已初始化但不引用
+carm\DxSpatialMatching.cpp(1517): warning C4189: “i”: 局部变量已初始化但不引用
+  ImageRectify.cpp
+carm\ImageRectify.cpp(141): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+carm\ImageRectify.cpp(142): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+carm\ImageRectify.cpp(237): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+carm\ImageRectify.cpp(351): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+carm\ImageRectify.cpp(510): warning C4189: “nMinR”: 局部变量已初始化但不引用
+carm\ImageRectify.cpp(723): warning C4101: “t”: 未引用的局部变量
+carm\ImageRectify.cpp(892): warning C4189: “nMinDisPtIndex”: 局部变量已初始化但不引用
+carm\ImageRectify.cpp(946): warning C4189: “nIndex”: 局部变量已初始化但不引用
+carm\ImageRectify.cpp(967): warning C4189: “fMinDis”: 局部变量已初始化但不引用
+carm\ImageRectify.cpp(996): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+carm\ImageRectify.cpp(1031): warning C4100: “nHeight”: 未引用的形参
+  ImageScene.cpp
+ThirdLib\DCMTK3.6.0x64\include\dcmtk/config/osconfig.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  moc_ACLwidget.cpp
+c:\users\user\desktop\aclrecontructqt_cmake\scr\UrAPI/ur_class_test.h(4): warning C4005: “PI”: 宏重定义
+  c:\users\user\desktop\aclrecontructqt_cmake\scr\ImageScene.h(16): note: 参见“PI”的前一个定义
+  moc_capturevideowidget.cpp
+  moc_dialog_setting.cpp
+  moc_ImageScene.cpp
+  moc_imagescene_femur_ap.cpp
+  moc_imagescene_femur_lat.cpp
+  moc_imagescene_Tibia_ap.cpp
+  moc_imagescene_Tibia_lat.cpp
+  moc_lassowidget.cpp
+  moc_mythread.cpp
+  moc_thread_get_ndi_marker.cpp
+  moc_ur_class_test.cpp
+  UR_interface.cpp
+UrAPI\UR_interface.cpp(161): warning C4189: “temp2”: 局部变量已初始化但不引用
+UrAPI\UR_interface.cpp(162): warning C4189: “temp3”: 局部变量已初始化但不引用
+UrAPI\UR_interface.cpp(504): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+  capturevideowidget.cpp
+ThirdLib\DCMTK3.6.0x64\include\dcmtk/config/osconfig.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+captureVideo\capturevideowidget.cpp(155): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+captureVideo\capturevideowidget.cpp(164): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  正在生成代码...
+c:\users\user\desktop\aclrecontructqt_cmake\scr\carm\dxspatialmatching.cpp(763): warning C4715: “DxSpatialMatching::RankedPointInfo”: 不是所有的控件路径都返回值
+  正在编译...
+  dialog_setting.cpp
+  imagescene_Tibia_ap.cpp
+  imagescene_Tibia_lat.cpp
+  imagescene_femur_ap.cpp
+  imagescene_femur_lat.cpp
+  lassowidget.cpp
+captureVideo\lassowidget.cpp(32): warning C4100: “event”: 未引用的形参
+captureVideo\lassowidget.cpp(42): warning C4100: “event”: 未引用的形参
+  main.cpp
+c:\users\user\desktop\aclrecontructqt_cmake\scr\UrAPI/ur_class_test.h(4): warning C4005: “PI”: 宏重定义
+  c:\users\user\desktop\aclrecontructqt_cmake\scr\ImageScene.h(16): note: 参见“PI”的前一个定义
+  mythread.cpp
+  needle.cpp
+needle.cpp(40): warning C4100: “widget”: 未引用的形参
+needle.cpp(40): warning C4100: “option”: 未引用的形参
+  socket.cpp
+UrAPI\socket.cpp(157): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+UrAPI\socket.cpp(163): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+UrAPI\socket.cpp(168): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  tablesketch_item.cpp
+tablesketch_item.cpp(37): warning C4100: “widget”: 未引用的形参
+tablesketch_item.cpp(37): warning C4100: “option”: 未引用的形参
+  thread_get_ndi_marker.cpp
+  ur_class_test.cpp
+  正在生成代码...
+  qrc_resources.cpp
+  ACL.vcxproj -> C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\release\ACLReconstruction.exe

@@ -101,6 +101,12 @@ public:
     Matrix4d tiptopatXspot_AP_Tibia;
     Matrix4d tiptopatXspot_Lat_Tibia;
 
+    //标定数据
+    Matrix4d TofTCP2MarkeronRobot;
+    Matrix4d TofMarkeronRobot2robot;
+    Matrix4d caculateMovetoRoute(Vector3d End3DPt,Vector3d Start3DPt,Matrix4d Bone_Matrix,double dis);//单位mm
+
+
     QString MarkerName_Femur;
     QString MarkerName_Tibia;
     QString MarkerName_XSpot;
@@ -203,6 +209,7 @@ public:
     Matrix4d T_End; //第一步，运动到路径上
     Matrix4d T_End1; //第一步，运动到路径上
     Matrix4d T_End2; //第一步，运动到路径上
+
 
 private slots:
 
@@ -361,6 +368,7 @@ private slots:
     void on_pushButton_moveRobotin_3_released();
 
     void on_pushButton_moveRobotin_3_pressed();
+
 
 private:
     Ui::Widget *ui;

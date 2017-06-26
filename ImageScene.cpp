@@ -42,29 +42,29 @@ ImageScene::ImageScene(QObject *parent) : QGraphicsScene(parent)
 ****************/
 
 	//绿色图标
-	Piximage_button[0].setPixmap(QPixmap("./Resources/btn1.png"));
+    Piximage_button[0].setPixmap(QPixmap(":/Resources/btn1.png"));
 
-	Piximage_button[1].setPixmap(QPixmap("./Resources/btn2.png"));
+    Piximage_button[1].setPixmap(QPixmap(":/Resources/btn2.png"));
 
-	Piximage_button[2].setPixmap(QPixmap("./Resources/btn3.png"));
+    Piximage_button[2].setPixmap(QPixmap(":/Resources/btn3.png"));
 
-	Piximage_button[3].setPixmap(QPixmap("./Resources/btn4.png"));
+    Piximage_button[3].setPixmap(QPixmap(":/Resources/btn4.png"));
 
-	Piximage_button[4].setPixmap(QPixmap("./Resources/btn5.png"));
+    Piximage_button[4].setPixmap(QPixmap(":/Resources/btn5.png"));
 
-	Piximage_button[5].setPixmap(QPixmap("./Resources/btn6.png"));
+    Piximage_button[5].setPixmap(QPixmap(":/Resources/btn6.png"));
 	//红色图标
-	Piximage_button_selected[0].setPixmap(QPixmap("./Resources/btn11.png"));
+    Piximage_button_selected[0].setPixmap(QPixmap(":/Resources/btn11.png"));
 
-	Piximage_button_selected[1].setPixmap(QPixmap("./Resources/btn22.png"));
+    Piximage_button_selected[1].setPixmap(QPixmap(":/Resources/btn22.png"));
 
-	Piximage_button_selected[2].setPixmap(QPixmap("./Resources/btn33.png"));
+    Piximage_button_selected[2].setPixmap(QPixmap(":/Resources/btn33.png"));
 
-	Piximage_button_selected[3].setPixmap(QPixmap("./Resources/btn44.png"));
+    Piximage_button_selected[3].setPixmap(QPixmap(":/Resources/btn44.png"));
 
-	Piximage_button_selected[4].setPixmap(QPixmap("./Resources/btn55.png"));
+    Piximage_button_selected[4].setPixmap(QPixmap(":/Resources/btn55.png"));
 
-	Piximage_button_selected[5].setPixmap(QPixmap("./Resources/btn66.png"));
+    Piximage_button_selected[5].setPixmap(QPixmap(":/Resources/btn66.png"));
 	
 	index_selected = -1;
     addItem(&pixImage);
@@ -419,6 +419,7 @@ void  ImageScene::selected_show()
 			{
 				Piximage_button_selected[index_selected].show();
 				Piximage_button[index_selected].hide();
+                qDebug()<<"selected_1";
 			}
 			else
 			{

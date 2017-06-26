@@ -1,0 +1,1137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Generated Files\Debug">
+      <UniqueIdentifier>{f10c64aa-14ba-4e47-8c5c-3c6d8a40e78e}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Release">
+      <UniqueIdentifier>{00d5045f-ed44-4d4f-907a-9b188edf3773}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ACLwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="carm\DxMath.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="carm\DxPoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="carm\DxSpatialMatching.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="carm\ImageRectify.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UrAPI\UR_interface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="captureVideo\capturevideowidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_setting.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="imagescene_Tibia_ap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="imagescene_Tibia_lat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="imagescene_femur_ap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="imagescene_femur_lat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="captureVideo\lassowidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UrAPI\mythread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="needle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UrAPI\socket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tablesketch_item.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="thread_get_ndi_marker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UrAPI\ur_class_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_ACLwidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_ACLwidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_ImageScene.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_ImageScene.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_capturevideowidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_capturevideowidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_dialog_setting.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_dialog_setting.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_imagescene_Tibia_ap.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_imagescene_Tibia_ap.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_imagescene_Tibia_lat.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_imagescene_Tibia_lat.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_imagescene_femur_ap.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_imagescene_femur_ap.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_imagescene_femur_lat.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_imagescene_femur_lat.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_lassowidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_lassowidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_mythread.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_mythread.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_thread_get_ndi_marker.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_thread_get_ndi_marker.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_ur_class_test.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_ur_class_test.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\qrc_resources.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="ACLwidget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="carm\DxArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="carm\DxMath.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="carm\DxPoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="carm\DxSpatialMatching.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="carm\ImageRectify.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="ImageScene.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="UrAPI\UR_interface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="captureVideo\capturevideowidget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="dialog_setting.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="imagescene_Tibia_ap.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="imagescene_Tibia_lat.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="imagescene_femur_ap.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="imagescene_femur_lat.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="captureVideo\lassowidget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UrAPI\mythread.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="needle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UrAPI\socket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tablesketch_item.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="thread_get_ndi_marker.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UrAPI\ur_class_test.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="ACLwidget.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="captureVideo\capturevideowidget.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UrAPI\ur_class_test.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="-">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\1.1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\4.1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\??.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\Acquire.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\Acquire_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\Action.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\CapturePicture.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Copy.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\Femia_disable.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\resource\Femur_disable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\resource\Femur_enable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\Information.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\InvalidImage.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\InvalidImage_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\MainBK.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\OPenPicture.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\OpenImage.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\OpenImage_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\Question.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\RobotDaHua.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\SettingBK.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\TandYBones.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\resource\Tibia_disable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\resource\Tibia_enable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\Warning.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\XSpot_disable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\XSpot_enable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\add_page_horizontal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\add_page_horizontal_vertical.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\add_path-down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\add_path.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\back.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\bkg.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\bkg.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\bkg2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\bkg3.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\bkg4.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\bkg41.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\bkg5.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\bkg6.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\resource\bkgNull.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\bkg_text.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\bkg_text1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\bkg_text2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\bkg_text3.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\btn1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\btn11.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\btn2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\btn22.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\btn3.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\btn33.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\btn4.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\btn44.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\btn5.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\btn55.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\btn6.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\btn66.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\button-add.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\button-add_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\button-reduce.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\button-reduce_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\button_next-disabled.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\button_next-down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\button_next.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\button_pre-disabled.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\button_pre-down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\button_pre.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\buttonbg_03.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\buttonbg_clickdown.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\calCArm.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\calPlanFunc.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\calPlane.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\center.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\cewei.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\cewei.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\ceweiB.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\checkbox-checked.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\checkbox.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\collect_NDI.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\connect.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\delete_path-down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\delete_path.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\downdwn.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\dragbar-button.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\enter.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\entry_point_disable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\entry_point_enable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\exit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\exitbig.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\exit">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\fk.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\gugucewei.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\guguzhengwei.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\resource\icon-capture.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\resource\icon-capture.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_auto-down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_auto.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_browse.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_browse_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_cut-down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_cut.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_cutpointcloud.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_cutpointcloud_disable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_cutpointcloud_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_deletedot.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_deletedot_disable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_deletedot_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_delpath-down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_delpath.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_dot1-disable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_dot1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_dot1_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_dot2-disable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_dot2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_dot2_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_dot3-disable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_dot3.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_dot3_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_dot4-disable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_dot4.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_dot4_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_dot5-disable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_dot5.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_dot5_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_draw-down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_draw.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_light.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_light_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_loadstl.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_loadstl_disable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_location-disable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_location.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_location_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_move.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_move_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_movepath-down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_movepath.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_output-down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_output.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_pscreen.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_pscreen_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_reset.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_reset_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_rotate.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_rotate_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_rotatepath-down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_rotatepath.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_rotationl.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_rotationl_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_rotationr.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_rotationr_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_save-down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_save.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_savepath-down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_savepath.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_select.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_select_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_setting.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_setting_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_undo-down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_undo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_zoom.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_zoom_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_zoomin.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_zoomin_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_zoomout.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_zoomout_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\input_bg.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\left.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\left.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\leftdwn.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\leftfemur-focus_01.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\leftfemur-focus_02.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\leftfemur-focus_03.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\leftfemur_01.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\leftfemur_02.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\leftfemur_03.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\leftfemur_bg.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\line1P1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\line1P2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\line2P1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\line2P2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\line3P1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\line3P2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\loadMatrix.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\loadPoints.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\load_matrix.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\load_matrix_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\lock.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\lockdwn.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\logo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\manual_avoid_collision-down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\manual_avoid_collision.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\marker1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\marker2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\marker3.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\moveToLine1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\moveToLine2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\moveToLine3.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\moveToPoint.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\nail_disable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\nail_enable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\needleAttention.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\openImage.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\operation.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\operationZone.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\p1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\p2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\p3.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\p4.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\p5.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\p6.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\p7.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\p8.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\panelicon-1+3-focus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\panelicon-1+3.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\panelicon-1x1-focus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\panelicon-1x1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\panelicon-2x2-focus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\panelicon-2x2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\paneltabbg.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\paneltabbg_down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\pannelbg.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\payattention.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\radiobox-selected.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\radiobox.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\reduction_robot_disable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\reduction_robot_enable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <CustomBuild Include="resources.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <None Include="Resources\right.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\right.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\rightdwn.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\rightfemur_bg.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\savePoints.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\showTip.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\shutdown.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\skeleton.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\skeletonbg_03.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\stepbg_next.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\stepbg_now.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\sub_page_horizontal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\sub_page_horizontal_vertical.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\t_disable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\tab-focus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\tab.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\targetPoint.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\tip_disable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\tip_enable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\uline1P1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\uline1P2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\uline2P1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\uline2P2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\uline3P1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\uline3P2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\umarker1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\umarker2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\umarker3.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\up.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\up.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\up1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\up2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\up3.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\up4.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\up5.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\up6.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\up7.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\up8.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\updwn.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\ur_robot_disable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\ur_robot_enable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\urcontrol.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\utargetPoint.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\whitecircle.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\y_disable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\y_enable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\zhengwei.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\zhengwei.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\zhengweiA.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\zhengweiA.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\exit - Copy.png">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeneratedFiles\ui_ACLwidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_capturevideowidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_ur_class_test.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
