@@ -35,6 +35,7 @@
 #include "Eigen/SVD"
 #include "Eigen/LU"
 #include "QImage"
+#include <string>
 using namespace cv;
 using namespace std;
 using namespace Eigen;
@@ -121,6 +122,42 @@ Widget::Widget(QWidget *parent) :
 
        //需要标定呀
        RobotTCP = TofMarkeronRobot2robot.inverse() * TofTCP2MarkeronRobot;
+
+
+       //UI注册修改
+       ui->pushButton_AP_CapturePicture->hide();
+       ui->pushButton_getXspottransform_AP->hide();
+       ui->pushButton_ShowTiptool_AP->hide();
+       ui->pushButton_Save_AP->hide();
+       ui->pushButton_matching_AP->hide();
+       ui->pushButton_mirror_AP->hide();
+       ui->checkBox_showAP->hide();
+       ui->horizontalSlider_Femur_AP->hide();
+       ui->horizontalSlider_Tibia_AP->hide();
+       ui->label->hide();
+
+       ui->pushButton_Lat_CapturePicture->hide();
+       ui->pushButton_getXspottransform_Lat->hide();
+       ui->pushButton_ShowTiptool_Lat->hide();
+       ui->pushButton_Save_Lat->hide();
+       ui->pushButton_matching_Lat->hide();
+       ui->pushButton_mirror_Lat->hide();
+       ui->checkBox_showLat->hide();
+       ui->horizontalSlider_Femur_Lat->hide();
+       ui->horizontalSlider_Tibia_Lat->hide();
+       ui->label_2->hide();
+
+       ui->tabWidget_manipulate->removeTab(3);
+       ui->tabWidget_manipulate->removeTab(2);
+
+       ui->pushButton_guide_Tibia->hide();
+       ui->pushButton_Tibia_finished->hide();
+
+       ui->pushButton_guide_Femur->hide();
+       ui->pushButton_Femur_finished->hide();
+       ui->pushButtonSetting->hide();
+
+       carmwidget.hide();
 
 
 }
@@ -285,10 +322,10 @@ void Widget::on_tabWidget_manipulate_currentChanged(int index)//标签修改操�
             ui->label_APdata->show();
             ui->groupBox->show();
             ui->groupBox_2->show();
-            ui->label_arthroscopy->hide();
-            ui->horizontalSlider_Femur_AP->show();
-            ui->horizontalSlider_Tibia_AP->hide();
-            ui->horizontalSlider_Femur_Lat->show();
+    //        ui->label_arthroscopy->hide();
+   //         ui->horizontalSlider_Femur_AP->show();
+   //         ui->horizontalSlider_Tibia_AP->hide();
+  //          ui->horizontalSlider_Femur_Lat->show();
             ui->horizontalSlider_Tibia_Lat->hide();
 
 
@@ -351,10 +388,10 @@ void Widget::on_tabWidget_manipulate_currentChanged(int index)//标签修改操�
             ui->groupBox->show();
             ui->groupBox_2->show();
             ui->label_arthroscopy->hide();
-            ui->horizontalSlider_Femur_AP->hide();
-            ui->horizontalSlider_Tibia_AP->show();
-            ui->horizontalSlider_Femur_Lat->hide();
-            ui->horizontalSlider_Tibia_Lat->show();
+//            ui->horizontalSlider_Femur_AP->hide();
+//            ui->horizontalSlider_Tibia_AP->show();
+//            ui->horizontalSlider_Femur_Lat->hide();
+//            ui->horizontalSlider_Tibia_Lat->show();
 
             if(lastIndex == INDEX_SIMULATE)
             {
@@ -472,8 +509,7 @@ void Widget::on_pushButton_AP_OpenPicture_clicked()
 {
 
     qStr_AP_ImageFilePath = QFileDialog::getOpenFileName(nullptr, "加载图像",
-        QApplication::applicationDirPath(),
-        "Images (*.dcm, *.IMA)");
+        QApplication::applicationDirPath());
 
     //对图像进行处理并显示
     if(INDEX_FEMUR == ui->tabWidget_manipulate->currentIndex())
@@ -509,8 +545,7 @@ void Widget::on_pushButton_Lat_OpenPicture_clicked()
 {
 
     qStr_Lat_ImageFilePath = QFileDialog::getOpenFileName(nullptr, "加载图像",
-        QApplication::applicationDirPath(),
-        "Images (*.dcm, *.IMA)");
+        QApplication::applicationDirPath());
 
     //对图像进行处理并显示
     if (INDEX_FEMUR == ui->tabWidget_manipulate->currentIndex())
@@ -3119,4 +3154,9 @@ void Widget::on_pushButton_moveRobotin_3_pressed()
 void Widget::on_pushButton_moveRobotin_3_released()
 {
     Ur->pUR5->stopl();
+}
+
+void Widget::on_pushButton_2_clicked()
+{
+    carmwidget.show();
 }

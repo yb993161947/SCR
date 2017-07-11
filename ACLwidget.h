@@ -32,6 +32,7 @@
 #include "./core.hpp"
 #include "highgui.h"
 #include "UrAPI/ur_class_test.h"
+#include "CArmAngleCalCuLate/widget.h"
 
 using namespace cv;
 const Vector4d tanzhen2tip(159, -0.24, -18.22, 1.0000);
@@ -210,6 +211,9 @@ public:
     Matrix4d T_End1; //第一步，运动到路径上
     Matrix4d T_End2; //第一步，运动到路径上
 
+    //CArm角度调整模块
+    CArmWidget carmwidget;
+
 
 private slots:
 
@@ -369,6 +373,8 @@ private slots:
 
     void on_pushButton_moveRobotin_3_pressed();
 
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::Widget *ui;

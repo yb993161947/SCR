@@ -228,6 +228,7 @@ Makefile: ACL.pro D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\win32-msvc2015\qmake.con
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\lex.prf \
 		ACL.pro \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\qtmain.prl \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\Qt5OpenGL.prl \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\Qt5Widgets.prl \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\Qt5Gui.prl \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\Qt5Network.prl \
@@ -388,6 +389,7 @@ D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\yacc.prf:
 D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\lex.prf:
 ACL.pro:
 D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\qtmain.prl:
+D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\Qt5OpenGL.prl:
 D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\Qt5Widgets.prl:
 D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\Qt5Gui.prl:
 D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\Qt5Network.prl:

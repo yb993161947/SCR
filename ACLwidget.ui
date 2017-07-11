@@ -2346,6 +2346,19 @@ color: rgb(255, 255, 255);</string>
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>1740</x>
+      <y>990</y>
+      <width>101</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>正侧位采集</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QLabel" name="label_APdata">
    <property name="geometry">

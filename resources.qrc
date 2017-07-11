@@ -279,5 +279,7 @@
         <file>Resources/resource/Femur_enable.png</file>
         <file>Resources/resource/Tibia_enable.png</file>
         <file>Resources/Femia_disable.bmp</file>
+        <file>images/btn.png</file>
+        <file>images/sketch.png</file>
     </qresource>
 </RCC>

@@ -145,15 +145,43 @@ void ImageScene::setMoveObj(int Obj)
 
 void ImageScene::loadDCMImage(QString FilePath)
 {
-    DicomImage img(FilePath.toLocal8Bit().data());
-    cv::Mat imageDCM;
-    cv::Mat(int(img.getWidth()), int(img.getHeight()), CV_16U,
-        (uint16_t *) img.getOutputData(16)).copyTo(imageDCM);
-    double maxVal;
-    cv::minMaxLoc(imageDCM, nullptr, &maxVal);
-    imageDCM.convertTo(originalImage, CV_8UC1, 256.0 / maxVal);
+    QImage qimg;
+    QByteArray ba = FilePath.toLatin1(); // QString转为char*
+    char* filename = ba.data();
 
-    QImage qimg = cvMat2QImage(originalImage);
+    char* prefix;
+    size_t filename_length = strlen(filename); // length ()
+    // int filename_length=filename.length();//
+    prefix = filename + filename_length - 3; //获得后三位字符
+    cv::Mat original_image;
+    if(strcmp(prefix, "IMA") == 0 || strcmp(prefix, "dcm") == 0) //判断是什么文件
+    {
+        DicomImage img(FilePath.toLocal8Bit().data());
+
+        cv::Mat(int(img.getWidth()), int(img.getHeight()), CV_16U, (uint16_t*)img.getOutputData(16)).copyTo(original_image);
+        double maxVal;
+        cv::minMaxLoc(original_image, nullptr, &maxVal);
+        original_image.convertTo(original_image, CV_8UC1, 256.0 / maxVal);
+        qimg = cvMat2QImage(original_image);
+    }
+    else if(strcmp(prefix, "BMP") == 0 || strcmp(prefix, "bmp") == 0 ||
+            strcmp(prefix, "JPG") == 0 || strcmp(prefix, "jpg") == 0)
+    {
+        original_image = cv::imread(std::string(FilePath.toLocal8Bit()), CV_LOAD_IMAGE_GRAYSCALE);
+        if(original_image.type() != CV_8UC1)
+        {
+            double maxVal;
+            cv::minMaxLoc(original_image, nullptr, &maxVal);
+            original_image.convertTo(original_image, CV_8UC1, 256.0 / maxVal);
+        }
+        qimg.load(FilePath);
+
+    }
+    else
+    {
+
+        return;
+    }
     Pixmap_scr = QPixmap::fromImage(qimg);
     pixImage.setPixmap(Pixmap_scr);
     pixImage.setPos(-375, -375);
