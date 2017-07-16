@@ -11,6 +11,10 @@
 #include <dcmtk/dcmimgle/dcmimage.h>
 #include <fstream>
 #include <sstream>
+#include<algorithm>  
+
+
+
 
 
 CaptureVideoWidget::CaptureVideoWidget(QWidget* parent)
@@ -21,6 +25,56 @@ CaptureVideoWidget::CaptureVideoWidget(QWidget* parent)
     camTimer = new QTimer();
     connect(camTimer, SIGNAL(timeout()), this, SLOT(timerSlot()));
     connect(ui->widget_lasso, SIGNAL(finished()), this, SLOT(lassoHandler()));
+    selectedIndex = 0;
+    for(int i = 0 ; i < 9 ;i ++)
+    {
+        _2DPt[i] = QPointF(0,0);
+    }
+	ui->label_Picture->raise();
+
+    Marker1ToXspot<<
+            0.9999,0.0008,-0.0003,14.81733179,
+            -0.0146,-0.9998,-0.0182,-26.91508238,
+            0,	0.0182,	-0.9997,-0.77761967,
+            0,	0,	0,	1;
+
+    Marker2ToXspot <<
+            -1	,0.0056	,-0.0003,-15.31207789,
+            0.0011,	-0.9999,-0.0087,-27.07246304,
+            -0.0003,-0.0087,0.9999,-0.63725643,
+            0,	0,	0,	1;
+
+    Marker1ToMarker2<<
+        0.766044443,0,-0.64278761,35.75,
+        0,1,0,0,
+        0.64278761,0,0.766044443,98.25,
+        0,0,0,1;
+	XSpotPts3DonMarker1.resize(8,3);
+
+	//时间7_15Marker1标定?orMarker2(有错误)
+    //XSpotPts3DonMarker1<<
+		 //46.12,-25.61,9.06,
+   //      46.12,29.39,9.06,
+   //      64.24,4.39,58.86,
+   //      64.24,15.61,58.86,
+   //      -3.01,-40.00,5.65,
+   //      22.37,-40,31.53,
+   //      53.14, 40,57.58,
+   //      14.45, 40,112.10;
+
+		//时间7_16Marker1标定
+	XSpotPts3DonMarker1 <<
+		65.27, -25.61,  -61.67,
+		65.27, 29.39, -61.67,
+		47.15, 4.39, -11.86,
+		47.15, -15.61, -11.86,
+		29.83, -40.00, -95.85,
+		32.64, -40.00, -59.71,
+		39.46, 40.00, -19.98,
+		-25.22, 40.00, -3.09;
+
+
+
 }
 
 CaptureVideoWidget::~CaptureVideoWidget()
@@ -55,6 +109,7 @@ void CaptureVideoWidget::on_pushButton_Exit_released() //退出
 
 void CaptureVideoWidget::on_pushButton_OpenVideo_released() //打开设备打开
 {
+	ui->widget_lasso->raise();
     if(!openCamera()) //打开视频
     {
         QMessageBox::warning(this, u8"打开设备失败", u8"未找到视频设备", QMessageBox::Ok);
@@ -63,6 +118,7 @@ void CaptureVideoWidget::on_pushButton_OpenVideo_released() //打开设备打开
 
 void CaptureVideoWidget::on_pushButton_Capture_released() //采集图片
 {
+	ui->label_Picture ->raise();
     closeCamera();
     camImage.copyTo(original_image);
     displaySrcImage();
@@ -196,13 +252,155 @@ QImage CaptureVideoWidget::getRifinedImage(bool removeCircles)
     }
 }
 
+void CaptureVideoWidget::caculateParam(vector<QPointF> ver_2DPt, MatrixXd XSpotPts3DonMarker1, QList<double> &transparams)
+{
+    transparams.clear();
+    int nCount = ver_2DPt.size();
+    nCount *=2;
+    MatrixXd XTemp = MatrixXd(nCount, 12);
+    MatrixXd X= MatrixXd(nCount, 11);
+
+    VectorXd imgx = VectorXd(nCount);
+    VectorXd wx = VectorXd(11);
+	MatrixXd XSpotPts3D_temp;
+	XSpotPts3D_temp.resize(XSpotPts3DonMarker1.rows(), XSpotPts3DonMarker1.cols());
+	for (int i = 0; i < XSpotPts3DonMarker1.rows(); i++)
+	{
+		Vector4d vec4d; 
+		vec4d << XSpotPts3DonMarker1(i,0), XSpotPts3DonMarker1(i, 1), XSpotPts3DonMarker1(i, 2),1;
+		XSpotPts3D_temp.row(i) = (Marker1ToXspot * vec4d).head(3);
+	}
+    nCount = 0;
+    for ( int i = 0; i < ver_2DPt.size(); i++) {
+        if(ver_2DPt[i] == QPointF(0,0) )
+        {
+            XTemp.row(nCount) = MatrixXd::Zero(1,12);
+            nCount++;
+            XTemp.row(nCount) = MatrixXd::Zero(1,12);
+            nCount++;
+            continue;
+        }
+        XTemp.row(nCount) << XSpotPts3D_temp(i,0), XSpotPts3D_temp(i,1), XSpotPts3D_temp(i,2),1,-XSpotPts3D_temp(i,0)*ver_2DPt[i].x(),
+            -XSpotPts3D_temp(i,1)*ver_2DPt[i].x(),-XSpotPts3D_temp(i,2)*ver_2DPt[i].x(),0,0,0,0,ver_2DPt[i].x();
+        nCount++;
+        XTemp.row(nCount) << 0,0,0,0,-XSpotPts3D_temp(i,0)*ver_2DPt[i].y(),-XSpotPts3D_temp(i,1)*ver_2DPt[i].y(),-XSpotPts3D_temp(i,2)*ver_2DPt[i].y(),
+			XSpotPts3D_temp(i,0), XSpotPts3D_temp(i,1), XSpotPts3D_temp(i,2),1,ver_2DPt[i].y();
+        nCount++;
+    }
+    X <<XTemp.col(0),
+        XTemp.col(1),
+        XTemp.col(2),
+        XTemp.col(3),
+        XTemp.col(4),
+        XTemp.col(5),
+        XTemp.col(6),
+        XTemp.col(7),
+        XTemp.col(8),
+        XTemp.col(9),
+        XTemp.col(10);
+
+    imgx = XTemp.col(11);
+
+    wx = X.colPivHouseholderQr().solve(imgx);
+
+    for (unsigned int i = 0;i<11;i++)
+    {
+        transparams.push_back(wx[i]);
+    }
+}
+
+void CaptureVideoWidget::paintPt()
+{
+    cv::Mat mat_image;
+    if(ui->radioButton_source->isChecked())
+        mat_image = original_image;
+    else if(ui->radioButton_refined->isChecked())
+    {
+        if(ui->checkBox_removeCircle->isChecked())
+        {
+           mat_image = refined_image_nopoints;
+        }
+        else
+        {
+           mat_image = refined_image;
+        }
+    }
+
+    if (mat_image.size[0] != 0)
+    {
+        QPixmap pix = QPixmap::fromImage(cvMat2QImage(mat_image));
+        QPainter p(&pix);
+        p.setPen(QPen(Qt::red, 3, Qt::SolidLine));
+        QFont font("Arial", 20, QFont::Bold, true);
+        p.setFont(font);
+        for (int i = 0; i < 9; i++)
+        {
+            if (_2DPt[i].x() == 0)
+                continue;
+            p.drawLine(_2DPt[i] + QPoint(-10, 0), _2DPt[i] + QPoint(10, 0));
+            p.drawLine(_2DPt[i] + QPoint(0, -10), _2DPt[i] + QPoint(0, 10));
+            p.drawEllipse(_2DPt[i], 10, 10);
+            p.drawText(QRect(_2DPt[i].x() + 10 , _2DPt[i].y() - 10 , 40,40), QString("%1").arg(i+1));
+        }
+        p.end();
+        ui->label_Picture->setPixmap(pix.scaled(ui->label_Picture->width(), ui->label_Picture->height()));
+        update();
+    }
+}
+
 void CaptureVideoWidget::paintEvent(QPaintEvent* event)
 {
-    QStyleOption opt;
-    opt.init(this);
-    QPainter p(this);
-    style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
-    QWidget::paintEvent(event);
+    //QStyleOption opt;
+    //opt.init(this);
+
+ //   style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
+	//QWidget::paintEvent(event);
+
+}
+
+void CaptureVideoWidget::mouseReleaseEvent(QMouseEvent *event)
+{
+    QPoint pos = event->pos();
+    if(pos.x() > ui->label_Picture->pos().x() &&
+            pos.y() > ui->label_Picture->pos().y() &&
+            pos.x() < ui->label_Picture->pos().x() +ui->label_Picture->width() &&
+            pos.y() < ui->label_Picture->pos().y() +ui->label_Picture->height())
+    {	
+		
+        if(selectedIndex != 0)
+        {
+			float radio_w = float(ui->label_Picture->width()) / original_image.cols;
+			float radio_h = float(ui->label_Picture->height()) / original_image.rows;
+
+            if(ui->radioButton_findPt->isChecked())
+            {
+                if (XSpotPts2D.size() != 0 && original_image.size[0] != 0)
+                {
+                    int *dis;
+                    dis = (int *)malloc(XSpotPts2D.size() * sizeof(int));
+                    for (auto i = 0; i < XSpotPts2D.size(); i++)
+                    {
+                        dis[i] = abs(XSpotPts2D[i][0]*radio_w - pos.x() + ui->label_Picture->pos().x())
+                                + abs(XSpotPts2D[i][1]*radio_h - pos.y() + ui->label_Picture->pos().y());
+                    }
+                    int min = *std::min_element(dis, dis + XSpotPts2D.size());
+                    if (min < 80)
+                    {
+                        int itr = std::find(dis, dis + XSpotPts2D.size(), min) - dis;
+                        pos.setX(XSpotPts2D[itr][0] * radio_w + ui->label_Picture->pos().x());
+                        pos.setY(XSpotPts2D[itr][1] * radio_h + ui->label_Picture->pos().y());
+                    }
+                }
+            }
+
+            _2DPt[selectedIndex - 1].setX( float(pos.x()- ui->label_Picture->pos().x()) / radio_w);//原始图像坐标
+            _2DPt[selectedIndex - 1].setY( float(pos.y()- ui->label_Picture->pos().y()) / radio_h);
+
+            paintPt();
+        }
+    }
+
+
 }
 
 void CaptureVideoWidget::on_pushButton_OpenImage_clicked()
@@ -257,66 +455,83 @@ void CaptureVideoWidget::on_pushButton_OpenImage_clicked()
 void CaptureVideoWidget::on_pushButton_Process_clicked()
 {
     //纠正图像变形
-    DxSpatialMatching matcher; // 2D-3D配准
+
     DxImageRectify rectifier;  //图像矫正
 
-    rectifier.AdjustImage(original_image, refined_image, refined_image_nopoints); //图像纠正
+	rectifier.AdjustImage_(original_image, refined_image, refined_image_nopoints); //图像纠正
+	XSpotPts2D.clear();
+	rectifier.GetxSPotPt(XSpotPts2D);
 
-
-    vector<cv::Vec3f> XSpotPts2D; //图像上识别出的Xspot点
-    rectifier.GetxSPotPt(XSpotPts2D);
-
-    //把点信息输入SpatialMatcher
-    QVector<DxPoint> pts2d, pts3d;
-    for(int i = 0; i < qMin(12, xSpotPoints3D.length()); i++)
-    {
-        DxPoint pt;
-        pt.SetX(xSpotPoints3D[i](0));
-        pt.SetY(xSpotPoints3D[i](1));
-        pt.SetZ(xSpotPoints3D[i](2));
-        pts3d.push_back(pt);
-    }
-    for(int i = 0; i < XSpotPts2D.size(); i++)
-    {
-        DxPoint pt;
-        pt.SetX(XSpotPts2D[i][0]);
-        pt.SetY(XSpotPts2D[i][1]);
-        pts2d.push_back(pt);
-    }
-    if(!matcher.PushAllPointInfo(pts3d, pts2d))
-    {
-        QMessageBox::warning(this, u8"识别失败", u8"XSpot投影参数计算失败,无法得到有效的针孔模型。");
-         emit processFinished(false);
-    }
-
-    //取出11个参数
-    transparams = matcher.GetxSpotMatrix().toList();
-
-    QString path = QApplication::applicationDirPath();
-    path += "/DataDocument";
-    QDir dir;
-    dir.mkpath(path);
-    path += "/param11.txt";
-    QFile file(path);
-    file.open(QFile::WriteOnly);
-    for(int i = 0; i < transparams.size(); i++)
-    {
-        if(i == transparams.size() - 1)
-        {
-            file.write(QString("%1").arg(transparams[i]).toLocal8Bit());
-        }
-        else
-        {
-            file.write(QString("%1,").arg(transparams[i]).toLocal8Bit());
-        }
-    }
-    file.close();
     ui->radioButton_refined->setChecked(true);
     ui->checkBox_removeCircle->setChecked(true);
     ui->label_Picture->setPixmap(QPixmap::fromImage(cvMat2QImage(refined_image_nopoints)));
 
 
-    emit processFinished(true);
+}
+
+void CaptureVideoWidget::on_pushButtonCalculate_clicked()
+{
+	if (XSpotPts2D.size() < 6)
+	{
+		QMessageBox::warning(this, u8"识别失败", u8"特征点过少");
+		emit processFinished(false);
+	}
+	//xspot计算
+	////把点信息输入SpatialMatcher
+	//DxSpatialMatching matcher; // 2D-3D配准
+	//QVector<DxPoint> pts2d, pts3d;
+	//for(int i = 0; i < qMin(12, xSpotPoints3D.length()); i++)
+	//{
+	//    DxPoint pt;
+	//    pt.SetX(xSpotPoints3D[i](0));
+	//    pt.SetY(xSpotPoints3D[i](1));
+	//    pt.SetZ(xSpotPoints3D[i](2));
+	//    pts3d.push_back(pt);
+	//}
+	//for(int i = 0; i < XSpotPts2D.size(); i++)
+	//{
+	//    DxPoint pt;
+	//    pt.SetX(XSpotPts2D[i][0]);
+	//    pt.SetY(XSpotPts2D[i][1]);
+	//    pts2d.push_back(pt);
+	//}
+	//if(!matcher.PushAllPointInfo(pts3d, pts2d))
+	//{
+	//    QMessageBox::warning(this, u8"识别失败", u8"XSpot投影参数计算失败,无法得到有效的针孔模型。");
+	//     emit processFinished(false);
+	//}
+	////取出11个参数
+	//transparams = matcher.GetxSpotMatrix().toList();
+
+	//自己做的Xspot
+	vector<QPointF> ver_2DPt;
+	ver_2DPt.resize(8);
+	for (int i = 0; i < 8; i++)
+	{
+		ver_2DPt[i] = _2DPt[i];
+	}
+	caculateParam(ver_2DPt, XSpotPts3DonMarker1, transparams);
+
+	QString path = QApplication::applicationDirPath();
+	path += "/DataDocument";
+	QDir dir;
+	dir.mkpath(path);
+	path += "/param11.txt";
+	QFile file(path);
+	file.open(QFile::WriteOnly);
+	for (int i = 0; i < transparams.size(); i++)
+	{
+		if (i == transparams.size() - 1)
+		{
+			file.write(QString("%1").arg(transparams[i]).toLocal8Bit());
+		}
+		else
+		{
+			file.write(QString("%1,").arg(transparams[i]).toLocal8Bit());
+		}
+	}
+	file.close();
+	emit processFinished(true);
 }
 
 void CaptureVideoWidget::on_checkBox_removeCircle_toggled(bool checked)
@@ -350,4 +565,65 @@ void CaptureVideoWidget::on_radioButton_refined_toggled(bool checked)
             ui->label_Picture->setPixmap(QPixmap::fromImage(cvMat2QImage(refined_image)));
         }
     }
+}
+
+void CaptureVideoWidget::on_radioButton_1_clicked()
+{
+    selectedIndex = 1;
+}
+
+void CaptureVideoWidget::on_radioButton_2_clicked()
+{
+    selectedIndex = 2;
+}
+
+void CaptureVideoWidget::on_radioButton_3_clicked()
+{
+    selectedIndex = 3;
+}
+
+void CaptureVideoWidget::on_radioButton_4_clicked()
+{
+    selectedIndex = 4;
+}
+
+void CaptureVideoWidget::on_radioButton_5_clicked()
+{
+    selectedIndex = 5;
+}
+
+void CaptureVideoWidget::on_radioButton_6_clicked()
+{
+    selectedIndex = 6;
+}
+
+
+void CaptureVideoWidget::on_radioButton_7_clicked()
+{
+    selectedIndex = 7;
+}
+
+void CaptureVideoWidget::on_radioButton_8_clicked()
+{
+    selectedIndex = 8;
+}
+
+void CaptureVideoWidget::on_radioButton_9_clicked()
+{
+    selectedIndex = 9;
+}
+
+void CaptureVideoWidget::on_radioButton_source_clicked()
+{
+    paintPt();
+}
+
+void CaptureVideoWidget::on_radioButton_refined_clicked()
+{
+    paintPt();
+}
+
+void CaptureVideoWidget::on_checkBox_removeCircle_clicked()
+{
+    paintPt();
 }

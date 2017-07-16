@@ -106,6 +106,16 @@ ImageScene::ImageScene(QObject *parent) : QGraphicsScene(parent)
     needle1->setParentItem(&(pixImage));
     needle1->setTransformOriginPoint(needle1->width/2,0);
     needle1->hide();
+	
+	QPen pen;
+	pen.setColor(Qt::green);
+	pen.setWidth(2);
+
+	Marker_Tip = new QGraphicsLineItem;//45直线
+	addItem(Marker_Tip);
+	Marker_Tip->setParentItem(&(pixImage));
+	Marker_Tip->setPen(pen);
+	Marker_Tip->hide();
 }	
 
 void ImageScene::zoomIn(float ratio)

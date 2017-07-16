@@ -19,13 +19,15 @@ QPushButton{
     color: white;
 	background-color: rgb(53, 63, 75);
 }
-</string>
+QRadioButton{
+    color: white;
+}</string>
   </property>
   <widget class="QGroupBox" name="groupBox_Data">
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>130</y>
+     <y>160</y>
      <width>301</width>
      <height>131</height>
     </rect>
@@ -92,7 +94,7 @@ QPushButton{
      <x>30</x>
      <y>40</y>
      <width>301</width>
-     <height>81</height>
+     <height>111</height>
     </rect>
    </property>
    <property name="title">
@@ -137,6 +139,35 @@ QPushButton{
      <string>端口号：</string>
     </property>
    </widget>
+   <widget class="QRadioButton" name="radioButton_TypeofNDI">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>80</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>NDI</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_TypeofTracker">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>80</y>
+      <width>117</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Tracker</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
@@ -144,7 +175,7 @@ QPushButton{
      <x>360</x>
      <y>40</y>
      <width>311</width>
-     <height>221</height>
+     <height>251</height>
     </rect>
    </property>
    <property name="title">
@@ -173,7 +204,7 @@ QPushButton{
      </rect>
     </property>
     <property name="text">
-     <string>Marker_TreatedFar</string>
+     <string>TTBLOCK0714</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdi_NameTibia">
@@ -212,7 +243,7 @@ QPushButton{
      </rect>
     </property>
     <property name="text">
-     <string>Marker_XSpot</string>
+     <string>XSPOT1</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_port_4">
@@ -238,7 +269,7 @@ QPushButton{
      </rect>
     </property>
     <property name="text">
-     <string>Marker_Tip</string>
+     <string>MARKERTIP_LONG</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_port_5">
@@ -257,8 +288,8 @@ QPushButton{
    <widget class="QPushButton" name="pushButton_InitMarker">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>190</y>
+      <x>190</x>
+      <y>210</y>
       <width>89</width>
       <height>24</height>
      </rect>
@@ -298,7 +329,7 @@ QPushButton{
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>269</y>
+     <y>300</y>
      <width>641</width>
      <height>121</height>
     </rect>
@@ -306,85 +337,67 @@ QPushButton{
    <property name="title">
     <string>NDI</string>
    </property>
-   <widget class="QLabel" name="label_Tip">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>40</y>
-      <width>100</width>
-      <height>70</height>
+      <x>20</x>
+      <y>30</y>
+      <width>601</width>
+      <height>91</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">border-image: url(:/Resources/tip_disable.png);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_Xspot">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>40</y>
-      <width>100</width>
-      <height>70</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-image: url(:/Resources/XSpot_disable.png);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_Robot">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>40</y>
-      <width>100</width>
-      <height>70</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-image: url(:/Resources/ur_robot_disable.png);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_Femur">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>40</y>
-      <width>101</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-image: url(:/Resources/resource/Femur_disable.png);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_Tibia">
-    <property name="geometry">
-     <rect>
-      <x>510</x>
-      <y>40</y>
-      <width>101</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-image: url(:/Resources/resource/Tibia_disable.png);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_Femur">
+       <property name="styleSheet">
+        <string notr="true">border-image: url(:/Resources/resource/Femur_disable.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label_Tibia">
+       <property name="styleSheet">
+        <string notr="true">border-image: url(:/Resources/resource/Tibia_disable.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="label_Xspot">
+       <property name="styleSheet">
+        <string notr="true">border-image: url(:/Resources/XSpot_disable.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLabel" name="label_Tip">
+       <property name="styleSheet">
+        <string notr="true">border-image: url(:/Resources/tip_disable.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="4">
+      <widget class="QLabel" name="label_Robot">
+       <property name="styleSheet">
+        <string notr="true">border-image: url(:/Resources/ur_robot_disable.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
  </widget>

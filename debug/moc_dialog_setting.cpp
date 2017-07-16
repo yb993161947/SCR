@@ -20,8 +20,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Dialog_Setting_t {
-    QByteArrayData data[16];
-    char stringdata0[317];
+    QByteArrayData data[21];
+    char stringdata0[421];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -40,23 +40,31 @@ QT_MOC_LITERAL(6, 79, 18), // "loadData_Tibia_Lat"
 QT_MOC_LITERAL(7, 98, 14), // "InitMarkerName"
 QT_MOC_LITERAL(8, 113, 14), // "QList<QString>"
 QT_MOC_LITERAL(9, 128, 4), // "Name"
-QT_MOC_LITERAL(10, 133, 24), // "on_pushButtonUDP_clicked"
-QT_MOC_LITERAL(11, 158, 30), // "on_pushButton_Femur_AP_clicked"
-QT_MOC_LITERAL(12, 189, 31), // "on_pushButton_Femur_Lat_clicked"
-QT_MOC_LITERAL(13, 221, 30), // "on_pushButton_Tibia_AP_clicked"
-QT_MOC_LITERAL(14, 252, 31), // "on_pushButton_Tibia_Lat_clicked"
-QT_MOC_LITERAL(15, 284, 32) // "on_pushButton_InitMarker_clicked"
+QT_MOC_LITERAL(10, 133, 15), // "setTypeofDevice"
+QT_MOC_LITERAL(11, 149, 12), // "TypeofDevice"
+QT_MOC_LITERAL(12, 162, 4), // "type"
+QT_MOC_LITERAL(13, 167, 24), // "on_pushButtonUDP_clicked"
+QT_MOC_LITERAL(14, 192, 30), // "on_pushButton_Femur_AP_clicked"
+QT_MOC_LITERAL(15, 223, 31), // "on_pushButton_Femur_Lat_clicked"
+QT_MOC_LITERAL(16, 255, 30), // "on_pushButton_Tibia_AP_clicked"
+QT_MOC_LITERAL(17, 286, 31), // "on_pushButton_Tibia_Lat_clicked"
+QT_MOC_LITERAL(18, 318, 32), // "on_pushButton_InitMarker_clicked"
+QT_MOC_LITERAL(19, 351, 32), // "on_radioButton_TypeofNDI_clicked"
+QT_MOC_LITERAL(20, 384, 36) // "on_radioButton_TypeofTracker_..."
 
     },
     "Dialog_Setting\0setPort\0\0loadData_Femur_AP\0"
     "loadData_Femur_Lat\0loadData_Tibia_AP\0"
     "loadData_Tibia_Lat\0InitMarkerName\0"
-    "QList<QString>\0Name\0on_pushButtonUDP_clicked\0"
+    "QList<QString>\0Name\0setTypeofDevice\0"
+    "TypeofDevice\0type\0on_pushButtonUDP_clicked\0"
     "on_pushButton_Femur_AP_clicked\0"
     "on_pushButton_Femur_Lat_clicked\0"
     "on_pushButton_Tibia_AP_clicked\0"
     "on_pushButton_Tibia_Lat_clicked\0"
-    "on_pushButton_InitMarker_clicked"
+    "on_pushButton_InitMarker_clicked\0"
+    "on_radioButton_TypeofNDI_clicked\0"
+    "on_radioButton_TypeofTracker_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -66,28 +74,31 @@ static const uint qt_meta_data_Dialog_Setting[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      12,   14, // methods
+      15,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       6,       // signalCount
+       7,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   74,    2, 0x06 /* Public */,
-       3,    0,   77,    2, 0x06 /* Public */,
-       4,    0,   78,    2, 0x06 /* Public */,
-       5,    0,   79,    2, 0x06 /* Public */,
-       6,    0,   80,    2, 0x06 /* Public */,
-       7,    1,   81,    2, 0x06 /* Public */,
+       1,    1,   89,    2, 0x06 /* Public */,
+       3,    0,   92,    2, 0x06 /* Public */,
+       4,    0,   93,    2, 0x06 /* Public */,
+       5,    0,   94,    2, 0x06 /* Public */,
+       6,    0,   95,    2, 0x06 /* Public */,
+       7,    1,   96,    2, 0x06 /* Public */,
+      10,    1,   99,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      10,    0,   84,    2, 0x08 /* Private */,
-      11,    0,   85,    2, 0x08 /* Private */,
-      12,    0,   86,    2, 0x08 /* Private */,
-      13,    0,   87,    2, 0x08 /* Private */,
-      14,    0,   88,    2, 0x08 /* Private */,
-      15,    0,   89,    2, 0x08 /* Private */,
+      13,    0,  102,    2, 0x08 /* Private */,
+      14,    0,  103,    2, 0x08 /* Private */,
+      15,    0,  104,    2, 0x08 /* Private */,
+      16,    0,  105,    2, 0x08 /* Private */,
+      17,    0,  106,    2, 0x08 /* Private */,
+      18,    0,  107,    2, 0x08 /* Private */,
+      19,    0,  108,    2, 0x08 /* Private */,
+      20,    0,  109,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int,    2,
@@ -96,8 +107,11 @@ static const uint qt_meta_data_Dialog_Setting[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 8,    9,
+    QMetaType::Void, 0x80000000 | 11,   12,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -120,12 +134,15 @@ void Dialog_Setting::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 3: _t->loadData_Tibia_AP(); break;
         case 4: _t->loadData_Tibia_Lat(); break;
         case 5: _t->InitMarkerName((*reinterpret_cast< QList<QString>(*)>(_a[1]))); break;
-        case 6: _t->on_pushButtonUDP_clicked(); break;
-        case 7: _t->on_pushButton_Femur_AP_clicked(); break;
-        case 8: _t->on_pushButton_Femur_Lat_clicked(); break;
-        case 9: _t->on_pushButton_Tibia_AP_clicked(); break;
-        case 10: _t->on_pushButton_Tibia_Lat_clicked(); break;
-        case 11: _t->on_pushButton_InitMarker_clicked(); break;
+        case 6: _t->setTypeofDevice((*reinterpret_cast< TypeofDevice(*)>(_a[1]))); break;
+        case 7: _t->on_pushButtonUDP_clicked(); break;
+        case 8: _t->on_pushButton_Femur_AP_clicked(); break;
+        case 9: _t->on_pushButton_Femur_Lat_clicked(); break;
+        case 10: _t->on_pushButton_Tibia_AP_clicked(); break;
+        case 11: _t->on_pushButton_Tibia_Lat_clicked(); break;
+        case 12: _t->on_pushButton_InitMarker_clicked(); break;
+        case 13: _t->on_radioButton_TypeofNDI_clicked(); break;
+        case 14: _t->on_radioButton_TypeofTracker_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -184,6 +201,13 @@ void Dialog_Setting::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
                 return;
             }
         }
+        {
+            typedef void (Dialog_Setting::*_t)(TypeofDevice );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Dialog_Setting::setTypeofDevice)) {
+                *result = 6;
+                return;
+            }
+        }
     }
 }
 
@@ -212,13 +236,13 @@ int Dialog_Setting::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 12)
+        if (_id < 15)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 12;
+        _id -= 15;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 12)
+        if (_id < 15)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 12;
+        _id -= 15;
     }
     return _id;
 }
@@ -259,5 +283,12 @@ void Dialog_Setting::InitMarkerName(QList<QString> _t1)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 5, _a);
+}
+
+// SIGNAL 6
+void Dialog_Setting::setTypeofDevice(TypeofDevice _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 6, _a);
 }
 QT_END_MOC_NAMESPACE

@@ -31,7 +31,7 @@ thread_get_NDI_marker::thread_get_NDI_marker(int port)
 
 thread_get_NDI_marker::~thread_get_NDI_marker()
 {
-   // file.close();
+    file.close();
     delete UdpSocket;
     delete this;
 }
@@ -39,7 +39,8 @@ thread_get_NDI_marker::~thread_get_NDI_marker()
 void thread_get_NDI_marker::init_udp(int port)
 {
     UdpSocket = new QUdpSocket(this);
-    UdpSocket->bind(port,QUdpSocket::ShareAddress);
+	qDebug() << "bind " << port;
+	qDebug()<< UdpSocket->bind(port,QUdpSocket::ShareAddress);
     connect(UdpSocket,SIGNAL(readyRead()),this,SLOT(revData()));
     connect(UdpSocket,SIGNAL(error(QAbstractSocket::SocketError)),
             this,SLOT(displayError(QAbstractSocket::SocketError)));
@@ -47,34 +48,76 @@ void thread_get_NDI_marker::init_udp(int port)
 
 QList<Info_NDI> thread_get_NDI_marker::ProcessReceiveData(QString datas)
 {
-    QStringList datalist = datas.split(' ');
-    QList<Info_NDI> ListInfoNDI;
-    if (datalist.length() % 13 != 3)    // 4 lines for every marker , blank line at last.
-    {
-        return ListInfoNDI;
-    }
-    datalist.pop_front();
-    datalist.pop_front();
-    for(int i = 0;i<datalist.length()/13;i++)
-    {
-        Info_NDI Marker;
-        if(i == 0)
-            Marker.name = datalist[i*13];
-        else
-        {
-         Marker.name = (datalist[i*13]).remove(0,1);
-        }
+QList<Info_NDI> ListInfoNDI;
+ListInfoNDI.clear();
+if(typeofdevice == Type_NDI)
+{
+	QStringList datalist = datas.split(' ');
+	if (datalist.length() % 13 != 3)    // 4 lines for every marker , blank line at last.
+	{
+		return ListInfoNDI;
+	}
+	datalist.pop_front();
+	datalist.pop_front();
+	for (int i = 0; i < datalist.length() / 13; i++)
+	{
+		Info_NDI Marker;
+		if (i == 0)
+			Marker.name = datalist[i * 13];
+		else
+		{
+			Marker.name = (datalist[i * 13]).remove(0, 1);
+		}
 
-        for(int j = 1;j < 13 ;j++)
-        {
+		for (int j = 1; j < 13; j++)
+		{
 
-            Marker.Pos((j-1)/4,(j-1)%4) = datalist[i*13+j].toDouble();
+			Marker.Pos((j - 1) / 4, (j - 1) % 4) = datalist[i * 13 + j].toDouble();
 
-        }
-        Marker.Pos.row(3) << 0,0,0,1;
-        ListInfoNDI.push_back(Marker);
-    }
-    return ListInfoNDI;
+		}
+		Marker.Pos.row(3) << 0, 0, 0, 1;
+		ListInfoNDI.push_back(Marker);
+	}
+	
+}
+else if (typeofdevice == Type_Tracker)
+{
+	QStringList datalist = datas.split('\n');
+
+	if (datalist.length() % 4 != 1)    // 4 lines for every marker , blank line at last.
+	{
+		return ListInfoNDI;
+	}
+	for (int i = 0; i < datalist.length() / 4; i++)
+	{
+		Info_NDI marker;//NDI返回mark的齐次矩阵
+		marker.Pos.row(3) << 0, 0, 0, 0;
+		marker.name = datalist[i * 4];
+		{
+			for (int j = 0; j < 3; j++)
+			{
+				QStringList row = datalist[i * 4 + j + 1].split(",");
+				if (row.length() != 4)
+				{
+					break;
+				}
+				else
+				{
+					for (int k = 0; k < 4; k++)
+						marker.Pos(j, k) = row[k].toDouble();
+				}
+			}
+			marker.Pos(3, 3) = 1;
+			ListInfoNDI.push_back(marker);
+		}
+	}	
+}
+return ListInfoNDI;
+}
+
+void thread_get_NDI_marker::setTypeofDevice(TypeofDevice Type)
+{
+	typeofdevice = Type;
 }
 
 void thread_get_NDI_marker::run()

@@ -291,6 +291,74 @@ DxImageRectify::Result DxImageRectify::AdjustImage(const cv::Mat& src_image, cv:
     return Success;
 }
 
+DxImageRectify::Result DxImageRectify::AdjustImage_(const cv::Mat & src_image, cv::Mat & refined_image, cv::Mat & refined_circle_removed_image)
+{
+	if (src_image.type() != CV_8UC1)
+	{
+		return InputImageIllegal;
+	}
+	vector<Vec3f> vtCirclept;
+	vtCirclept.clear();
+	FindCirclePt(src_image, nAdjustCircleRadius, nMinAdjustHoghtParam, vtCirclept);
+	m_vtAdjustPt = vtCirclept;
+
+	unsigned nCircleNum = m_vtAdjustPt.size();
+	if (nCircleNum < nMinAdjustPtNum)
+	{
+		return NotEnoughAjustPoints;
+	}
+
+	MatrixXd idealpts, imgpts, allboardpts;
+	int nImgpts_count = 0;
+	imgpts.resize(m_vtAdjustPt.size(), 2);
+	for (size_t i = 0; i < m_vtAdjustPt.size(); i++)
+	{
+		imgpts.row(nImgpts_count) << m_vtAdjustPt[i][0], m_vtAdjustPt[i][1];
+		nImgpts_count++;
+	}
+
+	imgpts.conservativeResize(nImgpts_count, 2);
+	bool bFind = FindIdealPts(src_image.cols, src_image.rows, imgpts, allboardpts, idealpts);
+	if (!bFind)
+	{
+		return CannotFindCenterPoints;
+	}
+
+	Mat refined = Refine(src_image, imgpts, idealpts);
+
+	vtCirclept.clear();
+	FindCirclePt(refined, nAdjustCircleRadius, nMinAdjustHoghtParam, vtCirclept);
+	m_vtAdjustPt = vtCirclept;
+
+	vtCirclept.clear();
+	FindCirclePt(refined, nXpotCircleRadius, nMinXpotHoghtParam, vtCirclept);
+	m_vtXPotPt = vtCirclept;
+
+	MatrixXd matXPotPt;
+	matXPotPt.resize(m_vtXPotPt.size(), 2);
+	for (size_t i = 0; i < m_vtXPotPt.size(); i++)
+	{
+		matXPotPt.row(i) << m_vtXPotPt[i][0], m_vtXPotPt[i][1];
+	}
+
+	refined.copyTo(refined_image);
+
+	cv::Mat mask = cv::Mat::zeros(refined.rows, refined.cols, CV_8UC1);
+	for (int i = 0; i < m_vtAdjustPt.size(); i++)
+	{
+		cv::circle(mask, cv::Point(m_vtAdjustPt[i][0], m_vtAdjustPt[i][1]),
+			nRemoveAdCircleRadius, cv::Scalar(1), CV_FILLED);
+	}
+	//for (int i = 0; i < m_vtxpotpt.size(); i++)
+	//{
+	//	cv::circle(mask, cv::point(m_vtxpotpt[i][0], m_vtxpotpt[i][1]),
+	//		nremovexpcircleradius, cv::scalar(1), cv_filled);
+	//}
+
+	cv::inpaint(refined, mask, refined_circle_removed_image, 2, INPAINT_TELEA);
+	return Success;
+}
+
 void DxImageRectify::GetAdjustPt(vector<Vec3f>& vtAdjustPt)
 {
     vtAdjustPt.clear();
@@ -307,7 +375,7 @@ void DxImageRectify::FindCirclePt(const cv::Mat& src_image_8bit, int nRadius, in
 {
     Mat resultImg;
     Mat src_image_blur_8bit;
-    medianBlur(src_image_8bit, src_image_blur_8bit, 3);
+    medianBlur(src_image_8bit, src_image_blur_8bit, 3);//中值滤波
 
     Canny(src_image_blur_8bit, resultImg, nMinCannyParam, nMaxCannyParam, 3);
 

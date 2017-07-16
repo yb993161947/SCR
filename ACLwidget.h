@@ -34,8 +34,15 @@
 #include "UrAPI/ur_class_test.h"
 #include "CArmAngleCalCuLate/widget.h"
 
+//Xspot上有两个Marker标记，Marker1相对于模型中心点1的坐标，Marker2相对于模型中心点2的坐标
+
+
 using namespace cv;
-const Vector4d tanzhen2tip(159, -0.24, -18.22, 1.0000);
+//NDI
+//const Vector4d tanzhen2tip(159, -0.24, -18.22, 1.0000);
+//tracker,MARKERTIP_LONG
+const Vector4d tanzhen2tip(-196.4532 ,- 1.7583, - 0.1103,	1);
+
 //const Vector4d tanzhen2tip(148.0390, 4.9085, -11.9415, 1.0000);
 namespace Ui {
 class Widget;
@@ -373,8 +380,9 @@ private slots:
 
     void on_pushButton_moveRobotin_3_pressed();
 
-
     void on_pushButton_2_clicked();
+
+    void setTypeofDevice(TypeofDevice type);
 
 private:
     Ui::Widget *ui;

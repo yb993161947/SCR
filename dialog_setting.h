@@ -2,7 +2,8 @@
 #define DIALOG_SETTING_H
 
 #include <QDialog>
-
+#include "ui_dialog_setting.h"
+#include "thread_get_ndi_marker.h"
 namespace Ui {
 class Dialog_Setting;
 }
@@ -28,6 +29,11 @@ private slots:
 
     void on_pushButton_InitMarker_clicked();
 
+    void on_radioButton_TypeofNDI_clicked();
+
+
+    void on_radioButton_TypeofTracker_clicked();
+
 public:
     Ui::Dialog_Setting *ui;
 signals:
@@ -37,6 +43,7 @@ signals:
     void loadData_Tibia_AP();
     void loadData_Tibia_Lat();
     void InitMarkerName(QList<QString> Name);
+    void setTypeofDevice(TypeofDevice type);
 };
 
 #endif // DIALOG_SETTING_H

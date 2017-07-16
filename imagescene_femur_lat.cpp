@@ -29,11 +29,11 @@ imageScene_Femur_Lat::imageScene_Femur_Lat(QObject * parent) : ImageScene(parent
     Line1_2->setPen(pen);
     Line1_2->hide();
 
-    Marker_Tip = new QGraphicsLineItem;//探针
-    addItem(Marker_Tip);
-    Marker_Tip->setParentItem(&(pixImage));
-    Marker_Tip->setPen(pen);
-    Marker_Tip->hide();
+    //Marker_Tip = new QGraphicsLineItem;//探针
+    //addItem(Marker_Tip);
+    //Marker_Tip->setParentItem(&(pixImage));
+    //Marker_Tip->setPen(pen);
+    //Marker_Tip->hide();
 
 
 }

@@ -108,6 +108,8 @@ public:
         InputImageIllegal,
     };
     Result AdjustImage(const cv::Mat& inputImg, cv::Mat& refined_image, cv::Mat& refined_circle_removed_image);
+	
+	Result AdjustImage_(const cv::Mat& inputImg, cv::Mat& refined_image, cv::Mat& refined_circle_removed_image);
 
     void GetAdjustPt(vector<cv::Vec3f>& vtAdjustPt);
     void GetxSPotPt(vector<cv::Vec3f>& vtXPotPt);

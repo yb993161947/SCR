@@ -64,16 +64,17 @@ Widget::Widget(QWidget *parent) :
     InitializationParameter();//初始化参数
 
     //NDI初始化
-
+	thread_NDI = new thread_get_NDI_marker();
     thread_NDI->start();
     connect(thread_NDI, SIGNAL(threadSignal(QList<Info_NDI>))
         , this, SLOT(rev_NDI(QList<Info_NDI>)), Qt::DirectConnection);
-
+//    connect(thread_NDI, SIGNAL(threadSignal(QList<Info_NDI>))
+//        , this, SLOT(rev_NDI(QList<Info_NDI>))) ;
 
     // xspot上点相对于marker的坐标，如果用其它参考系作为基准，需要乘变换矩阵
-    Eigen::MatrixXd XSpotPts3DMatrix;
-       XSpotPts3DMatrix.resize(12, 3);
-       XSpotPts3DMatrix << 353.5917295, -28.94508077, -58.35207327,
+        Eigen::MatrixXd XSpotPts3DMatrix;
+        XSpotPts3DMatrix.resize(12, 3);
+        XSpotPts3DMatrix << 353.5917295, -28.94508077, -58.35207327,
            350.457801, -33.334644, -88.32555342,
            347.1837796, -37.57368775, -118.639914,
            295.8181762, -34.59162595, -31.80863198,
@@ -124,40 +125,40 @@ Widget::Widget(QWidget *parent) :
        RobotTCP = TofMarkeronRobot2robot.inverse() * TofTCP2MarkeronRobot;
 
 
-       //UI注册修改
-       ui->pushButton_AP_CapturePicture->hide();
-       ui->pushButton_getXspottransform_AP->hide();
-       ui->pushButton_ShowTiptool_AP->hide();
-       ui->pushButton_Save_AP->hide();
-       ui->pushButton_matching_AP->hide();
-       ui->pushButton_mirror_AP->hide();
-       ui->checkBox_showAP->hide();
-       ui->horizontalSlider_Femur_AP->hide();
-       ui->horizontalSlider_Tibia_AP->hide();
-       ui->label->hide();
+//       //UI注册修改
+//       ui->pushButton_AP_CapturePicture->hide();
+//       ui->pushButton_getXspottransform_AP->hide();
+//       ui->pushButton_ShowTiptool_AP->hide();
+//       ui->pushButton_Save_AP->hide();
+//       ui->pushButton_matching_AP->hide();
+//       ui->pushButton_mirror_AP->hide();
+//       ui->checkBox_showAP->hide();
+//       ui->horizontalSlider_Femur_AP->hide();
+//       ui->horizontalSlider_Tibia_AP->hide();
+//       ui->label->hide();
 
-       ui->pushButton_Lat_CapturePicture->hide();
-       ui->pushButton_getXspottransform_Lat->hide();
-       ui->pushButton_ShowTiptool_Lat->hide();
-       ui->pushButton_Save_Lat->hide();
-       ui->pushButton_matching_Lat->hide();
-       ui->pushButton_mirror_Lat->hide();
-       ui->checkBox_showLat->hide();
-       ui->horizontalSlider_Femur_Lat->hide();
-       ui->horizontalSlider_Tibia_Lat->hide();
-       ui->label_2->hide();
+//       ui->pushButton_Lat_CapturePicture->hide();
+//       ui->pushButton_getXspottransform_Lat->hide();
+//       ui->pushButton_ShowTiptool_Lat->hide();
+//       ui->pushButton_Save_Lat->hide();
+//       ui->pushButton_matching_Lat->hide();
+//       ui->pushButton_mirror_Lat->hide();
+//       ui->checkBox_showLat->hide();
+//       ui->horizontalSlider_Femur_Lat->hide();
+//       ui->horizontalSlider_Tibia_Lat->hide();
+//       ui->label_2->hide();
 
-       ui->tabWidget_manipulate->removeTab(3);
-       ui->tabWidget_manipulate->removeTab(2);
+//       ui->tabWidget_manipulate->removeTab(3);
+//       ui->tabWidget_manipulate->removeTab(2);
 
-       ui->pushButton_guide_Tibia->hide();
-       ui->pushButton_Tibia_finished->hide();
+//       ui->pushButton_guide_Tibia->hide();
+//       ui->pushButton_Tibia_finished->hide();
 
-       ui->pushButton_guide_Femur->hide();
-       ui->pushButton_Femur_finished->hide();
-       ui->pushButtonSetting->hide();
+//       ui->pushButton_guide_Femur->hide();
+//       ui->pushButton_Femur_finished->hide();
+//       ui->pushButtonSetting->hide();
 
-       carmwidget.hide();
+//       carmwidget.hide();
 
 
 }
@@ -174,7 +175,7 @@ void Widget::InitializationParameter()
     imageScene_AP_Tibia = new imageScene_Tibia_ap(this);
     imageScene_Lat_Tibia = new imageScene_Tibia_lat(this);
 
-    thread_NDI = new thread_get_NDI_marker(PORT);
+
 
     //Ur
     Ur = new UR_class_test(this);
@@ -194,6 +195,8 @@ void Widget::InitializationParameter()
     connect(DialogSetting,SIGNAL(loadData_Tibia_Lat()),this,SLOT(loadData_Tibia_Lat()));
 
     connect(DialogSetting,SIGNAL(InitMarkerName(QList<QString>)),this,SLOT(InitMarkerName(QList<QString>)));
+
+    connect(DialogSetting,SIGNAL(setTypeofDevice(TypeofDevice)),this,SLOT(setTypeofDevice(TypeofDevice)));
 
     current_operation = AP_FEMUR;//初始化当前操作类型
     //read3D_Planning();//读取3D规划路径
@@ -322,10 +325,10 @@ void Widget::on_tabWidget_manipulate_currentChanged(int index)//标签修改操�
             ui->label_APdata->show();
             ui->groupBox->show();
             ui->groupBox_2->show();
-    //        ui->label_arthroscopy->hide();
-   //         ui->horizontalSlider_Femur_AP->show();
-   //         ui->horizontalSlider_Tibia_AP->hide();
-  //          ui->horizontalSlider_Femur_Lat->show();
+            ui->label_arthroscopy->hide();
+            ui->horizontalSlider_Femur_AP->show();
+            ui->horizontalSlider_Tibia_AP->hide();
+            ui->horizontalSlider_Femur_Lat->show();
             ui->horizontalSlider_Tibia_Lat->hide();
 
 
@@ -388,10 +391,10 @@ void Widget::on_tabWidget_manipulate_currentChanged(int index)//标签修改操�
             ui->groupBox->show();
             ui->groupBox_2->show();
             ui->label_arthroscopy->hide();
-//            ui->horizontalSlider_Femur_AP->hide();
-//            ui->horizontalSlider_Tibia_AP->show();
-//            ui->horizontalSlider_Femur_Lat->hide();
-//            ui->horizontalSlider_Tibia_Lat->show();
+            ui->horizontalSlider_Femur_AP->hide();
+            ui->horizontalSlider_Tibia_AP->show();
+            ui->horizontalSlider_Femur_Lat->hide();
+            ui->horizontalSlider_Tibia_Lat->show();
 
             if(lastIndex == INDEX_SIMULATE)
             {
@@ -656,7 +659,7 @@ void Widget::guide()
 {
 
     guide_d(IsopenGuide_AP_Femur, imageScene_AP_Femur,
-            Xspot_matrix4d_AP_Femur, Femur_matrix4d, transparams_Femur_Lat);
+            Xspot_matrix4d_AP_Femur, Femur_matrix4d, transparams_Femur_AP);
 
     guide_d(IsopenGuide_Lat_Femur, imageScene_Lat_Femur,
             Xspot_matrix4d_Lat_Femur, Femur_matrix4d, transparams_Femur_Lat);
@@ -3159,4 +3162,9 @@ void Widget::on_pushButton_moveRobotin_3_released()
 void Widget::on_pushButton_2_clicked()
 {
     carmwidget.show();
+}
+
+void Widget::setTypeofDevice(TypeofDevice type)
+{
+    thread_NDI->setTypeofDevice(type);
 }

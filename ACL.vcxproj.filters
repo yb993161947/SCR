@@ -46,12 +46,12 @@
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="Generated Files\Debug">
-      <UniqueIdentifier>{f10c64aa-14ba-4e47-8c5c-3c6d8a40e78e}</UniqueIdentifier>
+      <UniqueIdentifier>{e635b095-2a23-4d07-ab1e-780de2870a42}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Release">
-      <UniqueIdentifier>{00d5045f-ed44-4d4f-907a-9b188edf3773}</UniqueIdentifier>
+      <UniqueIdentifier>{d6c62d44-14b2-4f69-b633-7848f9398b2c}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
@@ -118,6 +118,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="UrAPI\ur_class_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CArmAngleCalCuLate\widget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Debug\moc_ACLwidget.cpp">
@@ -192,6 +195,12 @@
     <ClCompile Include="Release\moc_ur_class_test.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="Debug\moc_widget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_widget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
     <ClCompile Include="GeneratedFiles\qrc_resources.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
@@ -260,12 +269,21 @@
     <CustomBuild Include="UrAPI\ur_class_test.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="CArmAngleCalCuLate\widget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="ACLwidget.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="CArmAngleCalCuLate\CArmwidget.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
     <CustomBuild Include="captureVideo\capturevideowidget.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="dialog_setting.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
     <CustomBuild Include="UrAPI\ur_class_test.ui">
@@ -357,6 +375,9 @@
     <None Include="Resources\XSpot_enable.png">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="Resources\resource\Xspot.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <None Include="Resources\add_page_horizontal.png">
       <Filter>Resource Files</Filter>
     </None>
@@ -409,6 +430,9 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="images\bkg_text3.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\btn.png">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="Resources\btn1.png">
@@ -996,6 +1020,9 @@
     <None Include="Resources\skeletonbg_03.png">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="images\sketch.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <None Include="Resources\stepbg_next.png">
       <Filter>Resource Files</Filter>
     </None>
@@ -1127,7 +1154,13 @@
     <ClInclude Include="GeneratedFiles\ui_ACLwidget.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_CArmwidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_capturevideowidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_dialog_setting.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_ur_class_test.h">

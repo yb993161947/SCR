@@ -52,6 +52,6 @@ void TableSketch_Item::paint(QPainter * painter, const QStyleOptionGraphicsItem 
 
     painter->setRenderHint(QPainter::Antialiasing, true);
     painter->setPen(QPen(Qt::red, 2, Qt::DashDotLine, Qt::RoundCap));
-    painter->drawEllipse(width * (0.75 - 0.07), height * 0.25- width * 0.07, width * 0.14 , width * 0.14);
+    painter->drawEllipse(width * (0.25 - 0.07), height * 0.25- width * 0.07, width * 0.14 , width * 0.14);
 
 }

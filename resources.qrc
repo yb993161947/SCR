@@ -281,5 +281,6 @@
         <file>Resources/Femia_disable.bmp</file>
         <file>images/btn.png</file>
         <file>images/sketch.png</file>
+        <file>Resources/resource/Xspot.png</file>
     </qresource>
 </RCC>

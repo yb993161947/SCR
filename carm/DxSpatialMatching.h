@@ -21,7 +21,7 @@ typedef struct LineInfo
     DxPoint PointEnd;
 }LineInfo_t;
 
-class DxSpatialMatching 
+class DxSpatialMatching
 {
 
 private:
@@ -32,17 +32,17 @@ public:
     ~DxSpatialMatching(void);
 
 //    bool PushAllPointInfo( QVector<DxPoint>&vecPoint3DInfo,QVector<DxPoint>&vecPoint2DInfo,DxMatrix4x4 transformMatrix, int *nPixel);
-	  bool PushAllPointInfo( QVector<DxPoint>&vecPoint3DInfo,QVector<DxPoint>&vecPoint2DInfo);
+      bool PushAllPointInfo( QVector<DxPoint>&vecPoint3DInfo,QVector<DxPoint>&vecPoint2DInfo);
 
-    QVector<double>& GetxSpotMatrix(); 
-	QVector<double>& GetxSpotMatrixByHand();//2
-    QMap<int,DxPoint>& DxSpatialMatching::GetxSpotPointMap();  
-	bool CalculateTheMatrix(const QVector<DxPoint>&vecPoint3DInfo,
-		const QVector<DxPoint>& vecPoint2DInfo,
-		const QVector<int>& vec3DComparedNum);//1,3D÷ÿ–¬≈≈–Ú
+    QVector<double>& GetxSpotMatrix();
+    QVector<double>& GetxSpotMatrixByHand();//2
+    QMap<int,DxPoint>& DxSpatialMatching::GetxSpotPointMap();
+    bool CalculateTheMatrix(const QVector<DxPoint>&vecPoint3DInfo,
+        const QVector<DxPoint>& vecPoint2DInfo,
+        const QVector<int>& vec3DComparedNum);//1,3D????????
     void  GetxSpotPointGroupInfo(QVector<QVector<DxPoint>>& vecGroupPoint);
     void SetDicomSize(int nWight , int nHeight);
-	bool Get2DCoordinatesBy3DPoint(const QVector<double>& vecMartix, const DxPoint & stPoint3DInfo, DxPoint & stPoint2DInfo);
+    bool Get2DCoordinatesBy3DPoint(const QVector<double>& vecMartix, const DxPoint & stPoint3DInfo, DxPoint & stPoint2DInfo);
 private:
     bool FindPyramidProjectionPoint3D(  QVector<DxPoint>& vec3DPointInfo,
         QVector<DxPoint>& vecPyramidPoint3D);
@@ -67,14 +67,14 @@ private:
      void GetProjectionPtOfPointToLine( DxPoint Point, DxPoint LinePt1, DxPoint LinePt2, DxPoint& ProjectionPt);
      bool CheckThreePointInOneLine(QVector<DxPoint>& vecThreePointInfo);
      void CheckCrossPtIsS2(
-         DxPoint crosspt, 
-         QVector<DxPoint> vecLeftPoint, 
-         QVector<DxPoint>& vecGroup, 
-         int& nLineNum, 
+         DxPoint crosspt,
+         QVector<DxPoint> vecLeftPoint,
+         QVector<DxPoint>& vecGroup,
+         int& nLineNum,
          double &dDisVariance);
      void DivideGroupByS2(DxPoint ptS2, QVector<DxPoint> vecLeftPoint, QVector<DxPoint>& vecGroupPoint);
      void TryAllSituationOfRank(
-         int nCollearTime, 
+         int nCollearTime,
          int nTotalGroupNum,
          QVector<int> vecLeftGroupIndex,
          QVector<int> vecCurrentCompareNum,

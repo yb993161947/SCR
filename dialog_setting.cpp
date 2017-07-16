@@ -50,3 +50,15 @@ void Dialog_Setting::on_pushButton_InitMarker_clicked()
     Name.push_back( ui->lineEdi_NameRobot->text());
     emit InitMarkerName(Name);
 }
+
+void Dialog_Setting::on_radioButton_TypeofNDI_clicked()
+{
+    ui->lineEdi_UDP->setText("5555");
+    emit setTypeofDevice(Type_NDI);
+}
+
+void Dialog_Setting::on_radioButton_TypeofTracker_clicked()
+{
+    ui->lineEdi_UDP->setText("5302");
+    emit setTypeofDevice(Type_Tracker);
+}

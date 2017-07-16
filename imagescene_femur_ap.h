@@ -14,7 +14,7 @@ public:
     QGraphicsLineItem *Line1_2;//一二直线
     QGraphicsLineItem *subline1;//等比例辅助线直线
     QGraphicsLineItem *subline2;//等比例辅助线直线
-    QGraphicsLineItem *Marker_Tip;//探针直线
+    //QGraphicsLineItem *Marker_Tip;//探针直线
 
 	float distance_DotToLine(QPointF linePoint1, QPointF linePoint2, QPointF dot);
 protected:

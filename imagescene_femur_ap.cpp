@@ -23,11 +23,11 @@ imageScene_Femur_AP::imageScene_Femur_AP(QObject * parent) : ImageScene(parent) 
     Line1_2->setPen(pen);
     Line1_2->hide();
 
-    Marker_Tip = new QGraphicsLineItem;//探针
-    addItem(Marker_Tip);
-    Marker_Tip->setParentItem(&(pixImage));
-    Marker_Tip->setPen(pen);
-    Marker_Tip->hide();
+    //Marker_Tip = new QGraphicsLineItem;//探针
+    //addItem(Marker_Tip);
+    //Marker_Tip->setParentItem(&(pixImage));
+    //Marker_Tip->setPen(pen);
+    //Marker_Tip->hide();
 
     pen.setColor(Qt::red);
     pen.setWidth(1);

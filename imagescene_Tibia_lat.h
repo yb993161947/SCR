@@ -13,7 +13,7 @@ public:
     QGraphicsLineItem *Line1_2cross;//12直线垂线
     QGraphicsLineItem *Line5_6;//56直线
     QGraphicsLineItem *Line2_3;//23直线   
-    QGraphicsLineItem *Marker_Tip;//一二直线
+    //QGraphicsLineItem *Marker_Tip;//一二直线
 
 
 protected:

@@ -113,6 +113,7 @@ public:
     QGraphicsView *graphicsView_AP;
     QGraphicsView *graphicsView_Lat;
     QFrame *frame;
+    QPushButton *pushButton_2;
     QLabel *label_APdata;
     QLabel *label_Latdata;
     QPushButton *pushButtonSetting;
@@ -719,6 +720,9 @@ public:
 "}"));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
+        pushButton_2 = new QPushButton(frame);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(1740, 990, 101, 51));
         label_APdata = new QLabel(Widget);
         label_APdata->setObjectName(QStringLiteral("label_APdata"));
         label_APdata->setGeometry(QRect(470, 760, 300, 100));
@@ -753,7 +757,7 @@ public:
 
         retranslateUi(Widget);
 
-        tabWidget_manipulate->setCurrentIndex(0);
+        tabWidget_manipulate->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(Widget);
@@ -838,6 +842,7 @@ public:
         checkBox_showLat->setText(QApplication::translate("Widget", "\346\230\276\347\244\272", 0));
         label_2->setText(QApplication::translate("Widget", "\351\200\217\346\230\216\345\272\246", 0));
         pushButton_mirror_Lat->setText(QApplication::translate("Widget", "\347\277\273\350\275\254", 0));
+        pushButton_2->setText(QApplication::translate("Widget", "\346\255\243\344\276\247\344\275\215\351\207\207\351\233\206", 0));
         label_APdata->setText(QApplication::translate("Widget", "\346\225\260\346\215\256\357\274\232", 0));
         label_Latdata->setText(QApplication::translate("Widget", "\346\225\260\346\215\256\357\274\232", 0));
         pushButtonSetting->setText(QApplication::translate("Widget", "\350\256\276\347\275\256", 0));

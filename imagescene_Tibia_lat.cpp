@@ -42,11 +42,11 @@ imageScene_Tibia_lat::imageScene_Tibia_lat(QObject * parent) : ImageScene(parent
     Line2_3->setPen(pen);
     Line2_3->hide();
 
-    Marker_Tip = new QGraphicsLineItem;//探针
-    addItem(Marker_Tip);
-    Marker_Tip->setParentItem(&(pixImage));
-    Marker_Tip->setPen(pen);
-    Marker_Tip->hide();
+    //Marker_Tip = new QGraphicsLineItem;//探针
+    //addItem(Marker_Tip);
+    //Marker_Tip->setParentItem(&(pixImage));
+    //Marker_Tip->setPen(pen);
+    //Marker_Tip->hide();
 
 }
 

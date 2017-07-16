@@ -33,7 +33,7 @@ SOURCES += main.cpp\
     UrAPI/ur_class_test.cpp \
     UrAPI/UR_interface.cpp \
     needle.cpp \
-    CArmAngleCalCuLate/widget.cpp
+    CArmAngleCalCuLate/widget.cpp \
 
 
 
@@ -58,12 +58,13 @@ HEADERS  += ACLwidget.h \
     UrAPI/ur_class_test.h \
     UrAPI/UR_interface.h \
     needle.h \
-    CArmAngleCalCuLate/widget.h
+    CArmAngleCalCuLate/widget.h \
 
 FORMS    += ACLwidget.ui \
     captureVideo/capturevideowidget.ui \
     UrAPI/ur_class_test.ui \
-    CArmAngleCalCuLate/CArmwidget.ui
+    CArmAngleCalCuLate/CArmwidget.ui \
+    dialog_setting.ui
 #DCMTK
 
 QMAKE_CFLAGS_DEBUG += -MDd
@@ -72,7 +73,7 @@ QMAKE_CXXFLAGS_DEBUG += -MDd
 #Ur
 INCLUDEPATH +=  $$PWD\UrAPI\
                 $$PWD/ThirdLib/libmodbus/windows64/includes
-LIBS +=  .\ThirdLib\libmodbus\windows64\lib\libmodbus.lib
+LIBS +=  $$PWD\ThirdLib\libmodbus\windows64\lib\libmodbus.lib
 
 #openCV2.4.13x64
 INCLUDEPATH += 	$$PWD\ThirdLib\OpenCVMSVC2015_x64\include\

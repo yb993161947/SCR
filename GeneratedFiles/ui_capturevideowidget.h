@@ -16,6 +16,7 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QFrame>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -40,13 +41,24 @@ public:
     QRadioButton *radioButton_source;
     QCheckBox *checkBox_removeCircle;
     LassoWidget *widget_lasso;
+    QGroupBox *groupBox_Xspot;
+    QRadioButton *radioButton_1;
+    QRadioButton *radioButton_2;
+    QRadioButton *radioButton_3;
+    QRadioButton *radioButton_4;
+    QRadioButton *radioButton_5;
+    QRadioButton *radioButton_6;
+    QRadioButton *radioButton_7;
+    QRadioButton *radioButton_8;
+    QRadioButton *radioButton_9;
+    QPushButton *pushButtonCalculate;
 
     void setupUi(QWidget *CaptureVideoWidget)
     {
         if (CaptureVideoWidget->objectName().isEmpty())
             CaptureVideoWidget->setObjectName(QStringLiteral("CaptureVideoWidget"));
         CaptureVideoWidget->setEnabled(true);
-        CaptureVideoWidget->resize(1080, 720);
+        CaptureVideoWidget->resize(1080, 722);
         QIcon icon;
         icon.addFile(QStringLiteral(":/icon-capture.png"), QSize(), QIcon::Normal, QIcon::Off);
         CaptureVideoWidget->setWindowIcon(icon);
@@ -82,36 +94,70 @@ public:
         frameBase->setFrameShadow(QFrame::Raised);
         pushButton_OpenVideo = new QPushButton(frameBase);
         pushButton_OpenVideo->setObjectName(QStringLiteral("pushButton_OpenVideo"));
-        pushButton_OpenVideo->setGeometry(QRect(760, 330, 80, 30));
+        pushButton_OpenVideo->setGeometry(QRect(840, 190, 80, 30));
         pushButton_Exit = new QPushButton(frameBase);
         pushButton_Exit->setObjectName(QStringLiteral("pushButton_Exit"));
-        pushButton_Exit->setGeometry(QRect(810, 470, 80, 30));
+        pushButton_Exit->setGeometry(QRect(890, 330, 80, 30));
         pushButton_Capture = new QPushButton(frameBase);
         pushButton_Capture->setObjectName(QStringLiteral("pushButton_Capture"));
-        pushButton_Capture->setGeometry(QRect(760, 370, 80, 30));
+        pushButton_Capture->setGeometry(QRect(840, 230, 80, 30));
         pushButton_Process = new QPushButton(frameBase);
         pushButton_Process->setObjectName(QStringLiteral("pushButton_Process"));
-        pushButton_Process->setGeometry(QRect(810, 420, 80, 30));
+        pushButton_Process->setGeometry(QRect(840, 280, 80, 30));
         label_Picture = new QLabel(frameBase);
         label_Picture->setObjectName(QStringLiteral("label_Picture"));
         label_Picture->setGeometry(QRect(140, 80, 600, 600));
         label_Picture->setScaledContents(true);
         pushButton_OpenImage = new QPushButton(frameBase);
         pushButton_OpenImage->setObjectName(QStringLiteral("pushButton_OpenImage"));
-        pushButton_OpenImage->setGeometry(QRect(870, 350, 80, 30));
+        pushButton_OpenImage->setGeometry(QRect(950, 210, 80, 30));
         pushButton_OpenImage->setStyleSheet(QStringLiteral(""));
         radioButton_refined = new QRadioButton(frameBase);
         radioButton_refined->setObjectName(QStringLiteral("radioButton_refined"));
-        radioButton_refined->setGeometry(QRect(810, 255, 101, 21));
+        radioButton_refined->setGeometry(QRect(890, 115, 101, 21));
         radioButton_source = new QRadioButton(frameBase);
         radioButton_source->setObjectName(QStringLiteral("radioButton_source"));
-        radioButton_source->setGeometry(QRect(810, 230, 89, 21));
+        radioButton_source->setGeometry(QRect(890, 90, 89, 21));
         checkBox_removeCircle = new QCheckBox(frameBase);
         checkBox_removeCircle->setObjectName(QStringLiteral("checkBox_removeCircle"));
-        checkBox_removeCircle->setGeometry(QRect(810, 280, 71, 16));
+        checkBox_removeCircle->setGeometry(QRect(890, 140, 71, 16));
         widget_lasso = new LassoWidget(frameBase);
         widget_lasso->setObjectName(QStringLiteral("widget_lasso"));
         widget_lasso->setGeometry(QRect(140, 80, 600, 600));
+        groupBox_Xspot = new QGroupBox(frameBase);
+        groupBox_Xspot->setObjectName(QStringLiteral("groupBox_Xspot"));
+        groupBox_Xspot->setGeometry(QRect(760, 380, 301, 301));
+        groupBox_Xspot->setStyleSheet(QStringLiteral("QGroupBox{border-image: url(:/Resources/resource/Xspot.png);}"));
+        radioButton_1 = new QRadioButton(groupBox_Xspot);
+        radioButton_1->setObjectName(QStringLiteral("radioButton_1"));
+        radioButton_1->setGeometry(QRect(110, 180, 41, 19));
+        radioButton_2 = new QRadioButton(groupBox_Xspot);
+        radioButton_2->setObjectName(QStringLiteral("radioButton_2"));
+        radioButton_2->setGeometry(QRect(110, 100, 41, 19));
+        radioButton_3 = new QRadioButton(groupBox_Xspot);
+        radioButton_3->setObjectName(QStringLiteral("radioButton_3"));
+        radioButton_3->setGeometry(QRect(190, 140, 41, 19));
+        radioButton_4 = new QRadioButton(groupBox_Xspot);
+        radioButton_4->setObjectName(QStringLiteral("radioButton_4"));
+        radioButton_4->setGeometry(QRect(190, 170, 41, 19));
+        radioButton_5 = new QRadioButton(groupBox_Xspot);
+        radioButton_5->setObjectName(QStringLiteral("radioButton_5"));
+        radioButton_5->setGeometry(QRect(80, 200, 41, 19));
+        radioButton_6 = new QRadioButton(groupBox_Xspot);
+        radioButton_6->setObjectName(QStringLiteral("radioButton_6"));
+        radioButton_6->setGeometry(QRect(130, 200, 41, 19));
+        radioButton_7 = new QRadioButton(groupBox_Xspot);
+        radioButton_7->setObjectName(QStringLiteral("radioButton_7"));
+        radioButton_7->setGeometry(QRect(180, 80, 41, 19));
+        radioButton_8 = new QRadioButton(groupBox_Xspot);
+        radioButton_8->setObjectName(QStringLiteral("radioButton_8"));
+        radioButton_8->setGeometry(QRect(233, 83, 41, 19));
+        radioButton_9 = new QRadioButton(groupBox_Xspot);
+        radioButton_9->setObjectName(QStringLiteral("radioButton_9"));
+        radioButton_9->setGeometry(QRect(170, 260, 41, 19));
+        pushButtonCalculate = new QPushButton(frameBase);
+        pushButtonCalculate->setObjectName(QStringLiteral("pushButtonCalculate"));
+        pushButtonCalculate->setGeometry(QRect(950, 280, 81, 31));
 
         horizontalLayout->addWidget(frameBase);
 
@@ -133,6 +179,17 @@ public:
         radioButton_refined->setText(QApplication::translate("CaptureVideoWidget", "\346\240\241\346\255\243\345\233\276\345\203\217", 0));
         radioButton_source->setText(QApplication::translate("CaptureVideoWidget", "\345\216\237\345\233\276\345\203\217", 0));
         checkBox_removeCircle->setText(QApplication::translate("CaptureVideoWidget", "\346\266\210\351\232\220", 0));
+        groupBox_Xspot->setTitle(QString());
+        radioButton_1->setText(QApplication::translate("CaptureVideoWidget", "1", 0));
+        radioButton_2->setText(QApplication::translate("CaptureVideoWidget", "2", 0));
+        radioButton_3->setText(QApplication::translate("CaptureVideoWidget", "3", 0));
+        radioButton_4->setText(QApplication::translate("CaptureVideoWidget", "4", 0));
+        radioButton_5->setText(QApplication::translate("CaptureVideoWidget", "5", 0));
+        radioButton_6->setText(QApplication::translate("CaptureVideoWidget", "6", 0));
+        radioButton_7->setText(QApplication::translate("CaptureVideoWidget", "7", 0));
+        radioButton_8->setText(QApplication::translate("CaptureVideoWidget", "8", 0));
+        radioButton_9->setText(QApplication::translate("CaptureVideoWidget", "9", 0));
+        pushButtonCalculate->setText(QApplication::translate("CaptureVideoWidget", "\350\256\241\347\256\227\345\217\202\346\225\260", 0));
     } // retranslateUi
 
 };
