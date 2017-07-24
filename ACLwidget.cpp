@@ -279,6 +279,7 @@ void Widget::InitializationParameter()
 
 Widget::~Widget()
 {
+    carmwidget.deleteLater();
     delete ui;
 }
 
@@ -1968,8 +1969,8 @@ void Widget::on_pushButton_Save_AP_clicked()
 
 	if (ui->tabWidget_manipulate->currentIndex() == INDEX_FEMUR)
 	{
-		path += "/Data_Femur_AP.txt";
-		file.setFileName(path);
+        QString path_txt =path + "/Data_Femur_AP.txt";
+        file.setFileName(path_txt);
 		if (file.open(QIODevice::WriteOnly | QIODevice::Text)) //以文本文式写入
 		{
 			out_file.setDevice(&file);
@@ -1997,11 +1998,12 @@ void Widget::on_pushButton_Save_AP_clicked()
 			}
 			file.close();
 		}
+        imageScene_AP_Femur->pixImage.pixmap().save(path + "/Femur_AP.bmp");
 	}
        if(ui->tabWidget_manipulate->currentIndex() == INDEX_TIBIA)
        {
-          path += "/Data_Tibia_AP.txt";
-          file.setFileName(path);
+          QString path_txt =path + "/Data_Tibia_AP.txt";
+          file.setFileName(path_txt);
           if(file.open(QIODevice::WriteOnly | QIODevice::Text)) //以文本文式写入
           {
               out_file.setDevice(&file);
@@ -2030,7 +2032,7 @@ void Widget::on_pushButton_Save_AP_clicked()
                file.close();
           }
        }
-
+        imageScene_AP_Tibia->pixImage.pixmap().save(path + "/Tibia_AP.bmp");
    
 }
 
@@ -2043,8 +2045,8 @@ void Widget::on_pushButton_Save_Lat_clicked()
 
 	if (ui->tabWidget_manipulate->currentIndex() == INDEX_FEMUR)
 	{
-		path += "/Data_Femur_Lat.txt";
-		file.setFileName(path);
+        QString path_txt =path + "/Data_Femur_Lat.txt";
+        file.setFileName(path_txt);
 		if (file.open(QIODevice::WriteOnly | QIODevice::Text)) //以文本文式写入
 		{
 			out_file.setDevice(&file);
@@ -2072,11 +2074,12 @@ void Widget::on_pushButton_Save_Lat_clicked()
 			}
 			file.close();
 		}
+        imageScene_Lat_Femur->pixImage.pixmap().save(path + "/Femur_Lat.bmp");
 	}
         if(ui->tabWidget_manipulate->currentIndex() == INDEX_TIBIA)
         {
-            path += "/Data_Tibia_Lat.txt";
-            file.setFileName(path);
+            QString path_txt =path + "/Data_Tibia_Lat.txt";
+            file.setFileName(path_txt);
             if(file.open(QIODevice::WriteOnly | QIODevice::Text)) //以文本文式写入
             {
                 out_file.setDevice(&file);
@@ -2107,7 +2110,7 @@ void Widget::on_pushButton_Save_Lat_clicked()
 
                 file.close();
             }
-        
+            imageScene_Lat_Tibia->pixImage.pixmap().save(path + "/Tibia_Lat.bmp");
     }
 }
 

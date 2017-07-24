@@ -37,11 +37,24 @@ CArmWidget::CArmWidget(QWidget *parent) :
     btnGroupFruits.addButton(ui->radioButton_4,3);
     btnGroupFruits.addButton(ui->radioButton_5,4);
     btnGroupFruits.addButton(ui->radioButton_6,5);
-    for(int i = 0; i < 6; i++)
+    //
+    btnGroupFruits_2.addButton(ui->radioButton_8,0);
+    btnGroupFruits_2.addButton(ui->radioButton_9,1);
+    btnGroupFruits_2.addButton(ui->radioButton_10,2);
+    btnGroupFruits_2.addButton(ui->radioButton_11,3);
+    btnGroupFruits_2.addButton(ui->radioButton_12,4);
+    btnGroupFruits_2.addButton(ui->radioButton_13,5);
+    btnGroupFruits_2.addButton(ui->radioButton_14,6);
+    btnGroupFruits_2.addButton(ui->radioButton_15,7);
+    for(int i = 0; i < 8; i++)
     {
         qPoint_originalImagePoint[i] = QPoint(0,0);
     }
     connect(this,SIGNAL(sendsingnal()),this,SLOT(slot_text()));
+        ui->frame_Femur->setGeometry(QRect(720,400,280,280));
+        ui->frame_Tibia->setGeometry(QRect(720,400,280,280));
+        ui->radioButton_femur->setChecked(true);
+        ui->frame_Tibia->hide();
 }
 
 CArmWidget::~CArmWidget()
@@ -84,7 +97,7 @@ void CArmWidget::paintEvent(QPaintEvent * )
             painter1.setPen(QPen(Qt::red, 1, Qt::SolidLine));
 
             painter1.drawPixmap(QPoint(0,0),OpenPiture_temp);
-            for(int  i = 0 ;i < 6 ; i++)
+            for(int  i = 0 ;i < 8 ; i++)
 //            int i=btnGroupFruits.checkedId();//画原图十字
             {
                 if(qPoint_originalImagePoint[i].x() ==0)
@@ -112,21 +125,88 @@ void CArmWidget::paintEvent(QPaintEvent * )
                 painter1.drawLine(qPoint_originalImagePoint[0],qPoint_originalImagePoint[1]);
             }
 
-             painter1.setPen(QPen(Qt::yellow, 3, Qt::SolidLine));
+
+            if(ui->radioButton_femur->isChecked())
+             {
+                painter1.setPen(QPen(Qt::green, 2, Qt::DotLine));
+                 if(qPoint_originalImagePoint[2].x()>0
+                         &&qPoint_originalImagePoint[2].y()>0)
+                 {
+                     painter1.drawLine(QPoint(qPoint_originalImagePoint[2].x()+40,qPoint_originalImagePoint[2].y()),
+                             QPoint(qPoint_originalImagePoint[2].x()-40,qPoint_originalImagePoint[2].y()));
+                 }
+                 if(qPoint_originalImagePoint[3].x()>0
+                         &&qPoint_originalImagePoint[3].y()>0)
+                 {
+                     painter1.drawLine(QPoint(qPoint_originalImagePoint[3].x()+40,qPoint_originalImagePoint[3].y()),
+                             QPoint(qPoint_originalImagePoint[3].x()-40,qPoint_originalImagePoint[3].y()));
+                 }
+                 if(qPoint_originalImagePoint[3].x()>0
+                         &&qPoint_originalImagePoint[3].y()>0
+                         &&qPoint_originalImagePoint[2].x()>0
+                         &&qPoint_originalImagePoint[2].y()>0)
+                 {
+                     if( qPoint_originalImagePoint[4].x()>0
+                          &&qPoint_originalImagePoint[4].y()>0)
+                     {
+                         float dis_y =  qPoint_originalImagePoint[3].y() -  qPoint_originalImagePoint[2].y();
+                         painter1.drawLine(QPoint(qPoint_originalImagePoint[4].x()+40,qPoint_originalImagePoint[4].y()+dis_y),
+                                 QPoint(qPoint_originalImagePoint[4].x()-40,qPoint_originalImagePoint[4].y()+dis_y));
+                         painter1.drawLine(QPoint(qPoint_originalImagePoint[4].x()+40,qPoint_originalImagePoint[4].y()-dis_y),
+                                 QPoint(qPoint_originalImagePoint[4].x()-40,qPoint_originalImagePoint[4].y()-dis_y));
+                     }
+
+                 }
+             }
+
+            if(ui->radioButton_femur->isChecked())
+               painter1.setPen(QPen(Qt::yellow, 3, Qt::SolidLine));
+            else
+               painter1.setPen(QPen(Qt::blue, 3, Qt::SolidLine));
+
              if(qPoint_originalImagePoint[2].x()>0
                      &&qPoint_originalImagePoint[2].y()>0
                      &&qPoint_originalImagePoint[3].x()>0
                      &&qPoint_originalImagePoint[3].y()>0)
             {
+
                 painter1.drawLine(qPoint_originalImagePoint[2],qPoint_originalImagePoint[3]);
             }
-             painter1.setPen(QPen(Qt::yellow, 3, Qt::SolidLine));
+            painter1.setPen(QPen(Qt::yellow, 3, Qt::SolidLine));
+
+//            if(ui->radioButton_femur->isChecked())
+//             {
+//                 if(qPoint_originalImagePoint[4].x()>0
+//                         &&qPoint_originalImagePoint[4].y()>0)
+//                 {
+//                     painter1.drawLine(QPoint(qPoint_originalImagePoint[4].x(),qPoint_originalImagePoint[4].y()+40),
+//                             QPoint(qPoint_originalImagePoint[4].x(),qPoint_originalImagePoint[4].y()-40));
+//                 }
+//                 if(qPoint_originalImagePoint[5].x()>0
+//                         &&qPoint_originalImagePoint[5].y()>0)
+//                 {
+//                     painter1.drawLine(QPoint(qPoint_originalImagePoint[5].x(),qPoint_originalImagePoint[5].y()+40),
+//                             QPoint(qPoint_originalImagePoint[5].x(),qPoint_originalImagePoint[5].y()-40));
+//                 }
+
+
+//             }
+
              if(qPoint_originalImagePoint[4].x()>0
                      &&qPoint_originalImagePoint[4].y()>0
                      &&qPoint_originalImagePoint[5].x()>0
                      &&qPoint_originalImagePoint[5].y()>0)
             {
                 painter1.drawLine(qPoint_originalImagePoint[4],qPoint_originalImagePoint[5]);
+            }
+
+             painter1.setPen(QPen(Qt::yellow, 3, Qt::SolidLine));
+             if(qPoint_originalImagePoint[6].x()>0
+                     &&qPoint_originalImagePoint[6].y()>0
+                     &&qPoint_originalImagePoint[7].x()>0
+                     &&qPoint_originalImagePoint[7].y()>0)
+            {
+                painter1.drawLine(qPoint_originalImagePoint[6],qPoint_originalImagePoint[7]);
             }
 
 
@@ -220,11 +300,22 @@ void CArmWidget::mouseReleaseEvent(QMouseEvent *event)
 //        qDebug()<<qPoint_MousePoint.x()<<";"<<qPoint_MousePoint.y()<<"qPoint_MousePoint"<<endl;
 //       qDebug()<<originalImagePos.x()<<";"<<originalImagePos.y()<<"originalImagePos"<<endl;
 
+		if (ui->radioButton_femur->isChecked())
+		{
+			qPoint_originalImagePoint[btnGroupFruits.checkedId()] = originalImagePos;
+			qDebug() << qPoint_originalImagePoint[btnGroupFruits.checkedId()].x()
+				<< ";" << qPoint_originalImagePoint[btnGroupFruits.checkedId()].y()
+				<< "qPoint_originalImagePoint[" << btnGroupFruits.checkedId() << "]" << endl;
+		}
+		else
+		{
+			qPoint_originalImagePoint[btnGroupFruits_2.checkedId()] = originalImagePos;
+			qDebug() << qPoint_originalImagePoint[btnGroupFruits.checkedId()].x()
+				<< ";" << qPoint_originalImagePoint[btnGroupFruits.checkedId()].y()
+				<< "qPoint_originalImagePoint[" << btnGroupFruits.checkedId() << "]" << endl;
+		}
 
-        qPoint_originalImagePoint[btnGroupFruits.checkedId()]=originalImagePos;
-        qDebug()<<qPoint_originalImagePoint[btnGroupFruits.checkedId()].x()
-                <<";"<<qPoint_originalImagePoint[btnGroupFruits.checkedId()].y()
-                 <<"qPoint_originalImagePoint["<<btnGroupFruits.checkedId()<<"]"<<endl;
+      
 
         update();
     }
@@ -248,18 +339,25 @@ void CArmWidget::mouseReleaseEvent(QMouseEvent *event)
          enlargedImagePoint.setX(qPoint_MousePoint.x()-x1-w1/2);
          enlargedImagePoint.setY(qPoint_MousePoint.y()-y1-h1/2);//放大点的中心距离
 
+         qDebug()<<"enlargePt[]"
+                 << enlargedImagePoint.x()/w1*SQUARE_LENGTH
+                 << enlargedImagePoint.y()/w1*SQUARE_LENGTH;
+
          dx=originalImagePos.x()+enlargedImagePoint.x()/w1*SQUARE_LENGTH;
          dy=originalImagePos.y()+enlargedImagePoint.y()/w1*SQUARE_LENGTH;
-
-
-         qPoint_originalImagePoint[btnGroupFruits.checkedId()].setX(dx);
-         qPoint_originalImagePoint[btnGroupFruits.checkedId()].setY(dy);
-         qDebug()<<qPoint_originalImagePoint[btnGroupFruits.checkedId()].x()
-                 <<";"<<qPoint_originalImagePoint[btnGroupFruits.checkedId()].y()
-                  <<"qPoint_originalImagePoint["<<btnGroupFruits.checkedId()<<"]"<<endl;
-           update();
+        if(ui->radioButton_femur->isChecked())
+        {
+            qPoint_originalImagePoint[btnGroupFruits.checkedId()].setX(dx);
+            qPoint_originalImagePoint[btnGroupFruits.checkedId()].setY(dy);
+        }
+        else
+        {
+            qPoint_originalImagePoint[btnGroupFruits_2.checkedId()].setX(dx);
+            qPoint_originalImagePoint[btnGroupFruits_2.checkedId()].setY(dy);
+            qDebug() <<btnGroupFruits.checkedId() << qPoint_originalImagePoint[btnGroupFruits.checkedId()];
+        }
+        update();
     }
-
 
 
 
@@ -370,43 +468,110 @@ double CArmWidget::Angle_Point(QPointF Line1,QPointF Line2)
 
 void CArmWidget::calculateAngle()
 {
-    if(qPoint_originalImagePoint[0].x() == 0 )
-        return;
-    if(qPoint_originalImagePoint[1].x() == 0 )
-        return;
-    double x = qPoint_originalImagePoint[1].x() - qPoint_originalImagePoint[0].x();
-    double y = qPoint_originalImagePoint[1].y() - qPoint_originalImagePoint[0].y();
-    double theta = atanl(x/y);
-    ui->label_Rz->setText(QString("%1").arg(theta  * 180 /PI));
-
-    double referenceLength_B,referenceLength_Ankle;
-    referenceLength_Ankle = ui->lineEdit_ankle->text().toDouble();
-    referenceLength_B = ui->lineEdit_B->text().toDouble();
-    if(referenceLength_Ankle == 0 || referenceLength_B == 0)
-        return;
-
-    double dis_ReferencePix = Distance_Point(qPoint_originalImagePoint[0] , qPoint_originalImagePoint[1]);
-    if(qPoint_originalImagePoint[2].x() != 0 && qPoint_originalImagePoint[3].x() != 0)
+    if(ui->radioButton_femur->isChecked())
     {
-       QPoint line1 = (qPoint_originalImagePoint[0] - qPoint_originalImagePoint[1]);
-       QPoint line2 = (qPoint_originalImagePoint[2] - qPoint_originalImagePoint[3]);
-        double dis_Pix1 = (line2.x() * line1.x() + line1.y() * line2.y())
-                /Distance_Point(qPoint_originalImagePoint[0],qPoint_originalImagePoint[1]);
-        double dis_length1 = dis_Pix1 / dis_ReferencePix * referenceLength_B;
-        double theta1 = atanl(dis_length1 / referenceLength_Ankle);
-        ui->label_Ry->setText(QString("%1").arg(theta1  * 180 /PI));
-    }
-    if(qPoint_originalImagePoint[4].x() != 0 && qPoint_originalImagePoint[5].x() != 0)
-    {
+        if(qPoint_originalImagePoint[0].x() == 0 )
+            return;
+        if(qPoint_originalImagePoint[1].x() == 0 )
+            return;
+        double x = qPoint_originalImagePoint[1].x() - qPoint_originalImagePoint[0].x();
+        double y = qPoint_originalImagePoint[1].y() - qPoint_originalImagePoint[0].y();
+        double theta = atanl(x/y);
+        ui->label_Rz->setText(QString("%1").arg(theta  * 180 /PI));
 
-        QPoint line1 = (qPoint_originalImagePoint[0] - qPoint_originalImagePoint[1]);
-        QPoint line2 = (qPoint_originalImagePoint[4] - qPoint_originalImagePoint[5]);
-         double dis_Pix2 = (line2.x() * line1.x() + line1.y() * line2.y())
-                 /Distance_Point(qPoint_originalImagePoint[0],qPoint_originalImagePoint[1]);
-        double dis_length2 = dis_Pix2 / dis_ReferencePix * referenceLength_B;
-        double theta2 = atanl(dis_length2 / referenceLength_Ankle);
-        ui->label_Rx->setText(QString("%1").arg(theta2 * 180 /PI));
+        double referenceLength_B,referenceLength_Ankle;
+        referenceLength_Ankle = ui->lineEdit_ankle->text().toDouble();
+        referenceLength_B = ui->lineEdit_B->text().toDouble();
+        if(referenceLength_Ankle == 0 || referenceLength_B == 0)
+            return;
+
+        double dis_ReferencePix = Distance_Point(qPoint_originalImagePoint[0] , qPoint_originalImagePoint[1]);
+        if(qPoint_originalImagePoint[2].x() != 0 && qPoint_originalImagePoint[3].x() != 0)
+        {
+//            QPoint line1 = (qPoint_originalImagePoint[0] - qPoint_originalImagePoint[1]);
+//            QPoint line2 = (qPoint_originalImagePoint[2] - qPoint_originalImagePoint[3]);
+//            double dis_Pix1 = (line2.x() * line1.x() + line1.y() * line2.y())
+//                    /Distance_Point(qPoint_originalImagePoint[0],qPoint_originalImagePoint[1]);
+//            double dis_length1 = dis_Pix1 / dis_ReferencePix * referenceLength_B;
+            double dis_Pix1 = qPoint_originalImagePoint[2].y() - qPoint_originalImagePoint[3].y();
+            double dis_length1 = dis_Pix1 / dis_ReferencePix * referenceLength_B;
+            double theta1 = asinl(dis_length1 / referenceLength_Ankle);
+            ui->label_Ry->setText(QString("%1").arg(theta1  * 180 /PI));
+
+
+         }
+            if(qPoint_originalImagePoint[4].x() != 0 && qPoint_originalImagePoint[5].x() != 0)
+            {
+
+//                QPoint line1 = (qPoint_originalImagePoint[0] - qPoint_originalImagePoint[1]);
+//                QPoint line2 = (qPoint_originalImagePoint[4] - qPoint_originalImagePoint[5]);
+//                double dis_Pix2 = (line2.x() * (-line1.y()) + line1.x() * line2.y())
+//                        /Distance_Point(qPoint_originalImagePoint[0],qPoint_originalImagePoint[1]);
+                double dis_Pix2 = qPoint_originalImagePoint[4].x() - qPoint_originalImagePoint[5].x();
+                double dis_length2 = dis_Pix2 / dis_ReferencePix * referenceLength_B;
+                double theta2 = asinl(dis_length2 / referenceLength_Ankle);
+                ui->label_Rx->setText(QString("%1").arg(theta2 * 180 /PI));
+
+
+            }
+
     }
+        else
+        {
+            if(qPoint_originalImagePoint[0].x() != 0 && qPoint_originalImagePoint[1].x() != 0)
+            {
+                double x = qPoint_originalImagePoint[1].x() - qPoint_originalImagePoint[0].x();
+                double y = qPoint_originalImagePoint[1].y() - qPoint_originalImagePoint[0].y();
+                double theta = atanl(x/y);
+                ui->label_Rx->setText(QString("%1").arg(theta  * 180 /PI));
+            }
+
+            double reference_width,reference_height;
+            reference_width = ui->lineEdit_ankle->text().toDouble();
+            reference_height = ui->lineEdit_B->text().toDouble();
+
+            if(reference_width == 0 || reference_height == 0)
+                return;
+
+            if(qPoint_originalImagePoint[0].x() != 0 && qPoint_originalImagePoint[1].x() != 0)
+                if(qPoint_originalImagePoint[4].x() != 0 && qPoint_originalImagePoint[5].x() != 0)
+                {
+
+
+//                    QPoint line1 = (qPoint_originalImagePoint[0] - qPoint_originalImagePoint[1]);
+//                    QPoint line2 = (qPoint_originalImagePoint[4] - qPoint_originalImagePoint[5]);
+
+//                    double dis_ReferencePix = Distance_Point(qPoint_originalImagePoint[0],qPoint_originalImagePoint[1]);
+//                    double dis_Pix2 = (line2.x() * (-line1.y()) + line1.x() * line2.y())/dis_ReferencePix;
+
+                    double dis_ReferencePix = Distance_Point(qPoint_originalImagePoint[0],qPoint_originalImagePoint[1]);
+                    double dis_Pix2 = Distance_Point(qPoint_originalImagePoint[4],qPoint_originalImagePoint[5]);
+                    double dis_heightPix = reference_height / reference_width * dis_ReferencePix;
+
+                    double theta1 = asinl(dis_Pix2 / dis_heightPix);
+                    ui->label_Rz->setText(QString("%1").arg(theta1  * 180 /PI));
+
+                }
+            if(qPoint_originalImagePoint[2].x() != 0 && qPoint_originalImagePoint[3].x() != 0)
+                if(qPoint_originalImagePoint[6].x() != 0 && qPoint_originalImagePoint[7].x() != 0)
+                {
+
+//                    QPoint line1 = (qPoint_originalImagePoint[2] - qPoint_originalImagePoint[3]);
+//                    QPoint line2 = (qPoint_originalImagePoint[6] - qPoint_originalImagePoint[7]);
+
+//                    double dis_ReferencePix = Distance_Point(qPoint_originalImagePoint[2],qPoint_originalImagePoint[3]);
+//                    double dis_Pix2 = (line2.x() * (-line1.y()) + line1.x() * line2.y())/dis_ReferencePix;
+
+                    double dis_ReferencePix = Distance_Point(qPoint_originalImagePoint[2],qPoint_originalImagePoint[3]);
+                    double dis_Pix2 = Distance_Point(qPoint_originalImagePoint[6],qPoint_originalImagePoint[7]);
+                    double dis_widthPix = reference_width / reference_height * dis_ReferencePix;
+
+                    double theta2 = asinl(dis_Pix2 / dis_widthPix);
+                    ui->label_Rx->setText(QString("%1").arg(theta2 * 180 /PI));
+
+                }
+        }
+
 }
 
 
@@ -417,15 +582,7 @@ void CArmWidget::on_textEditReferenceValue_textChanged()
 
 
 
-void CArmWidget::on_pushButton_calculate2_clicked()
-{
-    double x,y,theta;
-    x = ui->lineEdit_line1->text().toDouble();
-    y = ui->lineEdit_line2->text().toDouble();
-    theta = atanl(x/y) * 180 / PI;
-    ui->label_result2_2->setText(QString("%1").arg(theta));
 
-}
 
 void CArmWidget::matrix_2_axisangle(const Matrix3d &m, double AxisAngle[3])
 {
@@ -603,3 +760,39 @@ void CArmWidget::on_lineEdit_ankle_textChanged(const QString &arg1)
     calculateAngle();
 }
 
+
+void CArmWidget::on_radioButton_femur_clicked()
+{
+    ui->label_7->setText(QString::fromLocal8Bit("布拉门赛特线:"));
+    ui->label_8->setText(QString::fromLocal8Bit("踝间距:     "));
+    for(int i = 0; i < 8; i++)
+    {
+        qPoint_originalImagePoint[i] = QPoint(0,0);
+    }
+    ui->frame_Femur->show();
+    ui->frame_Tibia->hide();
+
+    ui->label_Rx->clear();
+    ui->label_Ry->clear();
+    ui->label_Rz->clear();
+    update();
+}
+
+void CArmWidget::on_radioButton_tibia_clicked()
+{
+    ui->label_7->setText(QString::fromLocal8Bit("胫骨宽度:  "));
+    ui->label_8->setText(QString::fromLocal8Bit("胫骨高度:  "));
+    for(int i = 0; i < 8; i++)
+    {
+        qPoint_originalImagePoint[i] = QPoint(0,0);
+    }
+
+    ui->frame_Femur->hide();
+    ui->frame_Tibia->show();
+
+
+    ui->label_Rx->clear();
+    ui->label_Ry->clear();
+    ui->label_Rz->clear();
+    update();
+}

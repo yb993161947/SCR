@@ -114,7 +114,7 @@ QWidget#tab{
     <enum>QTabWidget::Triangular</enum>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="tab_Femur">
     <attribute name="title">
@@ -2337,7 +2337,8 @@ color: rgb(255, 255, 255);</string>
    </property>
    <property name="styleSheet">
     <string notr="true">QFrame#frame{
-	border-image: url(:/images/bkg.png);
+	
+	border-image: url(:/images/bkg - 副本.png);
 }</string>
    </property>
    <property name="frameShape">

@@ -43,8 +43,8 @@ private:
      int iRadioButtonIndex;
      double dx,dy;//相对于图像原点的标定点的实际位置
 
-     QPoint originalImagePos,qPoint_MousePoint,enlargedImagePoint,qPoint_originalImagePoint[6];
-     QButtonGroup btnGroupFruits;
+     QPoint originalImagePos,qPoint_MousePoint,enlargedImagePoint,qPoint_originalImagePoint[8];
+     QButtonGroup btnGroupFruits,btnGroupFruits_2;
      QString qStr_ImageFilePath;
      QPixmap OpenPiture, EnlargedPicture, OpenPiture_temp,Bkg;
      QPointF qPoint_MousePoint1;
@@ -58,11 +58,14 @@ private slots:
 
     void on_textEditReferenceValue_textChanged();
 
-    void on_pushButton_calculate2_clicked();
-
     void on_lineEdit_B_textChanged(const QString &arg1);
 
     void on_lineEdit_ankle_textChanged(const QString &arg1);
+
+    void on_radioButton_femur_clicked();
+    
+    void on_radioButton_tibia_clicked();
+    
 
 private:
     Ui::CArmWidget *ui;

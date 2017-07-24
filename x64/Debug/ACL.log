@@ -1,24 +1,7 @@
-﻿  ACLwidget.cpp
-c:\users\user\desktop\aclrecontructqt_cmake\scr\UrAPI/ur_class_test.h(4): warning C4005: “PI”: 宏重定义
-  c:\users\user\desktop\aclrecontructqt_cmake\scr\ImageScene.h(16): note: 参见“PI”的前一个定义
-ACLwidget.cpp(337): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(338): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(339): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(340): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(401): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(402): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(403): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(404): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(470): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(471): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(472): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(473): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(616): warning C4100: “event”: 未引用的形参
-ACLwidget.cpp(853): warning C4101: “alpha”: 未引用的局部变量
-ACLwidget.cpp(852): warning C4101: “k0”: 未引用的局部变量
-ACLwidget.cpp(900): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-ACLwidget.cpp(909): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-ACLwidget.cpp(1118): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-ACLwidget.cpp(1120): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+﻿  widget.cpp
+CArmAngleCalCuLate\widget.cpp(536): warning C4189: “temp2”: 局部变量已初始化但不引用
+CArmAngleCalCuLate\widget.cpp(537): warning C4189: “temp3”: 局部变量已初始化但不引用
+CArmAngleCalCuLate\widget.cpp(698): warning C4100: “arg1”: 未引用的形参
+CArmAngleCalCuLate\widget.cpp(703): warning C4100: “arg1”: 未引用的形参
   ACL.vcxproj -> C:\Users\user\Desktop\ACLRecontructQt_Cmake\SCR\debug\ACLReconstruction.exe
   ACL.vcxproj -> debug\ACLReconstruction.pdb (Full PDB)

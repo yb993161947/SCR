@@ -715,8 +715,9 @@ public:
         frame = new QFrame(Widget);
         frame->setObjectName(QStringLiteral("frame"));
         frame->setGeometry(QRect(0, 0, 1920, 1080));
-        frame->setStyleSheet(QLatin1String("QFrame#frame{\n"
-"	border-image: url(:/images/bkg.png);\n"
+        frame->setStyleSheet(QString::fromUtf8("QFrame#frame{\n"
+"	\n"
+"	border-image: url(:/images/bkg - \345\211\257\346\234\254.png);\n"
 "}"));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
@@ -757,7 +758,7 @@ public:
 
         retranslateUi(Widget);
 
-        tabWidget_manipulate->setCurrentIndex(1);
+        tabWidget_manipulate->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(Widget);

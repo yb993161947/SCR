@@ -313,11 +313,17 @@ void CaptureVideoWidget::paintPt()
 {
     cv::Mat mat_image;
     if(ui->radioButton_source->isChecked())
+    {
+        ui->radioButton_source->setChecked(true);
         mat_image = original_image;
+    }
+
     else if(ui->radioButton_refined->isChecked())
     {
+        ui->radioButton_refined->setChecked(true);
         if(ui->checkBox_removeCircle->isChecked())
         {
+           ui->checkBox_removeCircle->setChecked(true);
            mat_image = refined_image_nopoints;
         }
         else
@@ -462,9 +468,12 @@ void CaptureVideoWidget::on_pushButton_Process_clicked()
 	XSpotPts2D.clear();
 	rectifier.GetxSPotPt(XSpotPts2D);
 
-    ui->radioButton_refined->setChecked(true);
     ui->checkBox_removeCircle->setChecked(true);
-    ui->label_Picture->setPixmap(QPixmap::fromImage(cvMat2QImage(refined_image_nopoints)));
+    ui->radioButton_findPt->setChecked(true);
+    paintPt();
+    update();
+//    ui->label_Picture->setPixmEap(QPixmap::fromImage(cvMat2QImage(refined_image_nopoints)));
+
 
 
 }
@@ -626,4 +635,10 @@ void CaptureVideoWidget::on_radioButton_refined_clicked()
 void CaptureVideoWidget::on_checkBox_removeCircle_clicked()
 {
     paintPt();
+}
+
+void CaptureVideoWidget::on_pushButton_clicked()
+{
+    if(selectedIndex >= 0 && selectedIndex < 9)
+    _2DPt[selectedIndex] =QPointF(0,0);
 }

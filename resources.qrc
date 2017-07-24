@@ -282,5 +282,7 @@
         <file>images/btn.png</file>
         <file>images/sketch.png</file>
         <file>Resources/resource/Xspot.png</file>
+        <file>images/sketch_2.png</file>
+        <file>images/bkg - 副本.png</file>
     </qresource>
 </RCC>
