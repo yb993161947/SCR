@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCheckBox>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QGroupBox>
@@ -85,6 +86,7 @@ public:
     QLabel *label_4;
     QPushButton *pushButton_moveRobotin_3;
     QLabel *label_5;
+    QComboBox *comboBox_CameraIndex;
     QWidget *tab_robot;
     QGroupBox *groupBox;
     QPushButton *pushButton_AP_OpenPicture;
@@ -414,12 +416,13 @@ public:
         label_AP_picture->setStyleSheet(QStringLiteral("border-image: url(:/images/zhengweiA.png);"));
         radioButton_B1 = new QRadioButton(groupBox_AP_Tibia);
         radioButton_B1->setObjectName(QStringLiteral("radioButton_B1"));
-        radioButton_B1->setGeometry(QRect(60, 120, 82, 17));
+        radioButton_B1->setGeometry(QRect(10, 110, 82, 17));
         QPalette palette20;
         palette20.setBrush(QPalette::Active, QPalette::WindowText, brush2);
         palette20.setBrush(QPalette::Inactive, QPalette::WindowText, brush2);
         palette20.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
         radioButton_B1->setPalette(palette20);
+        radioButton_B1->setLayoutDirection(Qt::RightToLeft);
         radioButton_B1->setStyleSheet(QStringLiteral("font: 14pt \"Adobe Arabic\";"));
         radioButton_B3 = new QRadioButton(groupBox_AP_Tibia);
         radioButton_B3->setObjectName(QStringLiteral("radioButton_B3"));
@@ -512,6 +515,10 @@ public:
         label_5 = new QLabel(groupBox_3);
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setGeometry(QRect(120, 160, 111, 61));
+        comboBox_CameraIndex = new QComboBox(tab_simulate);
+        comboBox_CameraIndex->setObjectName(QStringLiteral("comboBox_CameraIndex"));
+        comboBox_CameraIndex->setGeometry(QRect(190, 20, 81, 31));
+        comboBox_CameraIndex->setStyleSheet(QStringLiteral("border-image: url(:/images/bkg_text.png);"));
         tabWidget_manipulate->addTab(tab_simulate, QString());
         tab_robot = new QWidget();
         tab_robot->setObjectName(QStringLiteral("tab_robot"));

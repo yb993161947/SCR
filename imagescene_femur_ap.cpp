@@ -67,17 +67,17 @@ void imageScene_Femur_AP::show_otherItem()
        Line4_5->setLine(Piximage_point[4].x(),Piximage_point[4].y(),Piximage_point[3].x(),Piximage_point[3].y());
        Line4_5->show();
     }
-    if (Piximage_point[0] != QPointF(-1, -1)
-        && Piximage_point[1] != QPointF(-1, -1)
-        && Piximage_point[2] != QPointF(-1, -1))
-    {
-        float disA3toLine12 = distance_DotToLine(Piximage_point[0], Piximage_point[1], Piximage_point[2]);
-        float disA4toLine12 =disA3toLine12 - disA3toLine12 * radioA4toA3;
-        subline1->setLine(offsetLine(Piximage_point[0],Piximage_point[1],disA4toLine12));
+//    if (Piximage_point[0] != QPointF(-1, -1)
+//        && Piximage_point[1] != QPointF(-1, -1)
+//        && Piximage_point[2] != QPointF(-1, -1))
+//    {
+//        float disA3toLine12 = distance_DotToLine(Piximage_point[0], Piximage_point[1], Piximage_point[2]);
+//        float disA4toLine12 =disA3toLine12 - disA3toLine12 * radioA4toA3;
+//        subline1->setLine(offsetLine(Piximage_point[0],Piximage_point[1],disA4toLine12));
 
-        float disA5toLine12 = disA3toLine12 * radioA5toA3;
-        subline2->setLine(offsetLine(Piximage_point[0], Piximage_point[1], -disA5toLine12 + disA3toLine12));
-	}
+//        float disA5toLine12 = disA3toLine12 * radioA5toA3;
+//        subline2->setLine(offsetLine(Piximage_point[0], Piximage_point[1], -disA5toLine12 + disA3toLine12));
+//	}
 	
 }
 

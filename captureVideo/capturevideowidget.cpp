@@ -12,7 +12,7 @@
 #include <fstream>
 #include <sstream>
 #include<algorithm>  
-
+#include "QSettings"
 
 
 
@@ -25,13 +25,15 @@ CaptureVideoWidget::CaptureVideoWidget(QWidget* parent)
     camTimer = new QTimer();
     connect(camTimer, SIGNAL(timeout()), this, SLOT(timerSlot()));
     connect(ui->widget_lasso, SIGNAL(finished()), this, SLOT(lassoHandler()));
-    selectedIndex = 0;
+    selectedIndex = -1;
     for(int i = 0 ; i < 9 ;i ++)
     {
         _2DPt[i] = QPointF(0,0);
     }
 	ui->label_Picture->raise();
 
+
+     //readSettingFile();
     Marker1ToXspot<<
             0.9999,0.0008,-0.0003,14.81733179,
             -0.0146,-0.9998,-0.0182,-26.91508238,
@@ -49,29 +51,18 @@ CaptureVideoWidget::CaptureVideoWidget(QWidget* parent)
         0,1,0,0,
         0.64278761,0,0.766044443,98.25,
         0,0,0,1;
-	XSpotPts3DonMarker1.resize(8,3);
+    XSpotPts3DonMarker1.resize(8,3);
 
-	//时间7_15Marker1标定?orMarker2(有错误)
-    //XSpotPts3DonMarker1<<
-		 //46.12,-25.61,9.06,
-   //      46.12,29.39,9.06,
-   //      64.24,4.39,58.86,
-   //      64.24,15.61,58.86,
-   //      -3.01,-40.00,5.65,
-   //      22.37,-40,31.53,
-   //      53.14, 40,57.58,
-   //      14.45, 40,112.10;
-
-		//时间7_16Marker1标定
-	XSpotPts3DonMarker1 <<
-		65.27, -25.61,  -61.67,
-		65.27, 29.39, -61.67,
-		47.15, 4.39, -11.86,
-		47.15, -15.61, -11.86,
-		29.83, -40.00, -95.85,
-		32.64, -40.00, -59.71,
-		39.46, 40.00, -19.98,
-		-25.22, 40.00, -3.09;
+        //时间7_16Marker1标定
+    XSpotPts3DonMarker1 <<
+        65.27, -25.61,  -61.67,
+        65.27, 29.39, -61.67,
+        47.15, 4.39, -11.86,
+        47.15, -15.61, -11.86,
+        29.83, -40.00, -95.85,
+        32.64, -40.00, -59.71,
+        39.46, 40.00, -19.98,
+        -25.22, 40.00, -3.09;
 
 
 
@@ -252,6 +243,42 @@ QImage CaptureVideoWidget::getRifinedImage(bool removeCircles)
     }
 }
 
+void CaptureVideoWidget::readSettingFile()
+{
+    QSettings *configIniRead = new QSettings("configure.ini", QSettings::IniFormat);
+    QString Value;
+    QStringList ValueList;
+
+    XSpotPts3DonMarker1.resize(8,3);
+    ValueList.clear();
+    Value = configIniRead->value("/Tracker/XSpotPts3DonMarker1").toString();
+    ValueList = Value.split(',');
+    if(ValueList.size() >= 24)
+    for(int i = 0; i < 24; i++)
+    XSpotPts3DonMarker1(i / 3 ,i % 3) = ValueList[i].toDouble();
+
+    ValueList.clear();
+    Value = configIniRead->value("/Tracker/Marker1ToXspot").toString();
+    ValueList = Value.split(',');
+    if(ValueList.size() >= 16)
+    for(int i = 0; i < 16; i++)
+       Marker1ToXspot(i / 4 ,i % 4) = ValueList[i].toDouble();
+
+    ValueList.clear();
+    Value = configIniRead->value("/Tracker/Marker2ToXspot").toString();
+    ValueList = Value.split(',');
+    if(ValueList.size() >= 16)
+    for(int i = 0; i < 16; i++)
+       Marker2ToXspot(i / 4 ,i % 4) = ValueList[i].toDouble();
+
+    ValueList.clear();
+    Value = configIniRead->value("/Tracker/Marker1ToMarker2").toString();
+    ValueList = Value.split(',');
+    if(ValueList.size() >= 16)
+    for(int i = 0; i < 16; i++)
+       Marker1ToMarker2(i / 4 ,i % 4) = ValueList[i].toDouble();
+}
+
 void CaptureVideoWidget::caculateParam(vector<QPointF> ver_2DPt, MatrixXd XSpotPts3DonMarker1, QList<double> &transparams)
 {
     transparams.clear();
@@ -373,7 +400,7 @@ void CaptureVideoWidget::mouseReleaseEvent(QMouseEvent *event)
             pos.y() < ui->label_Picture->pos().y() +ui->label_Picture->height())
     {	
 		
-        if(selectedIndex != 0)
+        if(selectedIndex != -1)
         {
 			float radio_w = float(ui->label_Picture->width()) / original_image.cols;
 			float radio_h = float(ui->label_Picture->height()) / original_image.rows;
@@ -399,8 +426,8 @@ void CaptureVideoWidget::mouseReleaseEvent(QMouseEvent *event)
                 }
             }
 
-            _2DPt[selectedIndex - 1].setX( float(pos.x()- ui->label_Picture->pos().x()) / radio_w);//原始图像坐标
-            _2DPt[selectedIndex - 1].setY( float(pos.y()- ui->label_Picture->pos().y()) / radio_h);
+            _2DPt[selectedIndex].setX( float(pos.x()- ui->label_Picture->pos().x()) / radio_w);//原始图像坐标
+            _2DPt[selectedIndex].setY( float(pos.y()- ui->label_Picture->pos().y()) / radio_h);
 
             paintPt();
         }
@@ -469,6 +496,7 @@ void CaptureVideoWidget::on_pushButton_Process_clicked()
 	rectifier.GetxSPotPt(XSpotPts2D);
 
     ui->checkBox_removeCircle->setChecked(true);
+	ui->radioButton_refined->setChecked(true);
     ui->radioButton_findPt->setChecked(true);
     paintPt();
     update();
@@ -578,48 +606,48 @@ void CaptureVideoWidget::on_radioButton_refined_toggled(bool checked)
 
 void CaptureVideoWidget::on_radioButton_1_clicked()
 {
-    selectedIndex = 1;
+    selectedIndex = 0;
 }
 
 void CaptureVideoWidget::on_radioButton_2_clicked()
 {
-    selectedIndex = 2;
+    selectedIndex = 1;
 }
 
 void CaptureVideoWidget::on_radioButton_3_clicked()
 {
-    selectedIndex = 3;
+    selectedIndex = 2;
 }
 
 void CaptureVideoWidget::on_radioButton_4_clicked()
 {
-    selectedIndex = 4;
+    selectedIndex = 3;
 }
 
 void CaptureVideoWidget::on_radioButton_5_clicked()
 {
-    selectedIndex = 5;
+    selectedIndex = 4;
 }
 
 void CaptureVideoWidget::on_radioButton_6_clicked()
 {
-    selectedIndex = 6;
+    selectedIndex = 5;
 }
 
 
 void CaptureVideoWidget::on_radioButton_7_clicked()
 {
-    selectedIndex = 7;
+    selectedIndex = 6;
 }
 
 void CaptureVideoWidget::on_radioButton_8_clicked()
 {
-    selectedIndex = 8;
+    selectedIndex = 7;
 }
 
 void CaptureVideoWidget::on_radioButton_9_clicked()
 {
-    selectedIndex = 9;
+    selectedIndex = 8;
 }
 
 void CaptureVideoWidget::on_radioButton_source_clicked()
@@ -641,4 +669,5 @@ void CaptureVideoWidget::on_pushButton_clicked()
 {
     if(selectedIndex >= 0 && selectedIndex < 9)
     _2DPt[selectedIndex] =QPointF(0,0);
+    paintPt();
 }

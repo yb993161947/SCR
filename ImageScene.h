@@ -1,4 +1,4 @@
-﻿#ifndef IMAGESCENE_H
+﻿  #ifndef IMAGESCENE_H
 #define IMAGESCENE_H
 
 #include <QGraphicsLineItem>
@@ -42,12 +42,16 @@ public:
     void zoomInMatching(float ratio);
     void zoomOutMatching(float ratio);
     //void zoom(float ratio);
+    void setPixImage(QPixmap Pix_Scr);
     void loadDCMImage(QString FilePath);
     void loadBMPImage(QString FilePath);
     void loadImage(cv::Mat Image);
     void loadMatchingImage(cv::Mat Image);
     void loadMatchingImage(QPixmap Pixmap);
     void saveImage(QString FilePath);
+
+    void setmouseConnect(bool a);
+
 public:
     int index_selected;//判断选中的是哪个点
     QPointF Piximage_point[6];
@@ -57,8 +61,10 @@ public:
     void setMoveObj(int Obj);
     QGraphicsPixmapItem Piximage_button[6];
     QGraphicsPixmapItem Piximage_button_selected[6];
-    needle *needle1;//针模型
-    QGraphicsLineItem *Marker_Tip;//探针直线
+    //needle *needle1;//针模型
+	QGraphicsLineItem *needle1;
+	//needle *Marker_Tip;//探针直线
+    QGraphicsLineItem *Marker_Tip;
 //    cv::Mat ImageRemoveCircle;//消隐图像
 //    cv::Mat ImageRefined;//矫正图像
 
@@ -83,8 +89,10 @@ private:
     bool  movingMatchiingImage;
     QPointF getRotatePoint(QPointF Point , float rotate_Rad);
 
+    bool isOpenMouse;
+
 signals:
-    void pointChanged();
+    void pointChanged(int index);
 
 
 

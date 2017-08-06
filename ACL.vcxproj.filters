@@ -46,12 +46,12 @@
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="Generated Files\Debug">
-      <UniqueIdentifier>{e635b095-2a23-4d07-ab1e-780de2870a42}</UniqueIdentifier>
+      <UniqueIdentifier>{7d82fdb4-572a-4f90-adec-d4770ab03e69}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Release">
-      <UniqueIdentifier>{d6c62d44-14b2-4f69-b633-7848f9398b2c}</UniqueIdentifier>
+      <UniqueIdentifier>{b925429e-4300-4baa-af26-820ebbdd92bc}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
@@ -303,6 +303,9 @@
     <None Include="images\??.jpg">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="??.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <None Include="Resources\Acquire.png">
       <Filter>Resource Files</Filter>
     </None>
@@ -430,6 +433,9 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="images\bkg_text3.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\bkg">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="images\btn.png">
@@ -585,6 +591,12 @@
     <None Include="images\guguzhengwei.png">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="images\iamge_Xray_Lat.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\iamge_xRay.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <None Include="Resources\resource\icon-capture.ico">
       <Filter>Resource Files</Filter>
     </None>
@@ -669,7 +681,7 @@
     <None Include="Resources\imagetool_dot4_down.png">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="Resources\imagetool_dot5-disable.png">
+    <None Include="Resources\lock.pngResources\imagetool_dot5-disable.png">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="Resources\imagetool_dot5.png">
@@ -870,9 +882,6 @@
     <None Include="Resources\load_matrix_down.png">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="Resources\lock.png">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="Resources\lockdwn.png">
       <Filter>Resource Files</Filter>
     </None>
@@ -1023,6 +1032,9 @@
     <None Include="images\sketch.png">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="images\sketch_2.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <None Include="Resources\stepbg_next.png">
       <Filter>Resource Files</Filter>
     </None>
@@ -1147,6 +1159,15 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="images\exit - Copy.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\imagetool_dot5-disable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\lock.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\bkg - 副本.png">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

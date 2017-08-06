@@ -15,27 +15,28 @@
 #include <stdio.h>
 #include <qgraphicseffect.h>
 #include <qdebug.h>
-const QString XSpotMarkerName = "Marker_XSpot";
-const QString FemoralMarkerName = "Marker_TreatedFar";
-const QString TooltipMarkerName = QStringLiteral("Marker_Tip");
-const Eigen::Vector4d Tooltip_Position1(0.0, 0.0, -17.64, 1);
-const Eigen::Vector4d Tooltip_Position2(158.53, 0.87, -16.81, 1);
-//x-bot 3D点
-const Eigen::Vector4d kXspot3DPt[12] = {
-    Eigen::Vector4d(353.5917295,-28.94508077,-58.35207327,1),
-    Eigen::Vector4d(350.457801,-33.334644,-88.32555342,1),
-    Eigen::Vector4d(347.1837796,-37.57368775,-118.639914,1),
-    Eigen::Vector4d(295.8181762,-34.59162595,-31.80863198,1),
-    Eigen::Vector4d(282.4332982,-40.8479307,-63.78963793,1),
-    Eigen::Vector4d(267.7006404,-47.70638125,-98.62438413,1),
-    Eigen::Vector4d(296.9313793,37.83713989,-48.21922192,1),
-    Eigen::Vector4d(286.5644333,42.54051603,-74.75168674,1),
-    Eigen::Vector4d(276.5781768,47.58420394,-101.5227552,1),
-    Eigen::Vector4d(343.6148427,33.11330516,-67.86624091,1),
-    Eigen::Vector4d(339.9296347,36.50701665,-92.54845644,1),
-    Eigen::Vector4d(336.1567828,39.58543792,-116.878661,1) };
+//const QString XSpotMarkerName = "Marker_XSpot";
+//const QString FemoralMarkerName = "Marker_TreatedFar";
+//const QString TooltipMarkerName = QStringLiteral("Marker_Tip");
+//const Eigen::Vector4d Tooltip_Position1(0.0, 0.0, -17.64, 1);
+//const Eigen::Vector4d Tooltip_Position2(158.53, 0.87, -16.81, 1);
+////x-bot 3D点
+//const Eigen::Vector4d kXspot3DPt[12] = {
+//    Eigen::Vector4d(353.5917295,-28.94508077,-58.35207327,1),
+//    Eigen::Vector4d(350.457801,-33.334644,-88.32555342,1),
+//    Eigen::Vector4d(347.1837796,-37.57368775,-118.639914,1),
+//    Eigen::Vector4d(295.8181762,-34.59162595,-31.80863198,1),
+//    Eigen::Vector4d(282.4332982,-40.8479307,-63.78963793,1),
+//    Eigen::Vector4d(267.7006404,-47.70638125,-98.62438413,1),
+//    Eigen::Vector4d(296.9313793,37.83713989,-48.21922192,1),
+//    Eigen::Vector4d(286.5644333,42.54051603,-74.75168674,1),
+//    Eigen::Vector4d(276.5781768,47.58420394,-101.5227552,1),
+//    Eigen::Vector4d(343.6148427,33.11330516,-67.86624091,1),
+//    Eigen::Vector4d(339.9296347,36.50701665,-92.54845644,1),
+//    Eigen::Vector4d(336.1567828,39.58543792,-116.878661,1) };
 
-ImageScene::ImageScene(QObject *parent) : QGraphicsScene(parent)
+ImageScene::ImageScene(QObject *parent) :
+    QGraphicsScene(parent),isOpenMouse(true)
 {
 /************************************
 *yb添加
@@ -101,29 +102,40 @@ ImageScene::ImageScene(QObject *parent) : QGraphicsScene(parent)
     movingImage = false;
     movingMatchiingImage =false;
 
-    needle1 = new needle();
-    addItem(needle1);
-    needle1->setParentItem(&(pixImage));
-    needle1->setTransformOriginPoint(needle1->width/2,0);
-    needle1->hide();
-	
+
 	QPen pen;
 	pen.setColor(Qt::green);
 	pen.setWidth(2);
 
-	Marker_Tip = new QGraphicsLineItem;//45直线
+    Marker_Tip = new QGraphicsLineItem();
 	addItem(Marker_Tip);
 	Marker_Tip->setParentItem(&(pixImage));
-	Marker_Tip->setPen(pen);
+    Marker_Tip->setPen(pen);
 	Marker_Tip->hide();
+
+	//needle1 = new needle();
+	//addItem(needle1);
+	//needle1->setParentItem(&(pixImage));
+	//needle1->setTransformOriginPoint(needle1->width/2,0);
+	//needle1->hide();
+
+	needle1 = new QGraphicsLineItem();
+	addItem(needle1);
+	needle1->setParentItem(&(pixImage));
+	needle1->setPen(pen);
+	needle1->hide();
 }	
 
 void ImageScene::zoomIn(float ratio)
 {
-	/***************************************/
+
+
+    /***************************************/
     pixImage.setScale(pixImage.scale() * ratio);
     pixImage.setPos(pixImage.pos()* ratio);
     update();
+
+
 }
 
 void ImageScene::zoomOut(float ratio)
@@ -146,6 +158,14 @@ void ImageScene::zoomOutMatching(float ratio)
     pixImage_matching.setScale(pixImage_matching.scale() / ratio);
   //  pixImage_matching.setPos(pixImage_matching.pos()/ ratio );
     update();
+}
+
+void ImageScene::setPixImage(QPixmap Pix_Scr)
+{
+    Pixmap_scr = Pix_Scr;
+    pixImage.setPixmap(Pixmap_scr);
+    pixImage.setPos(-375, -375);
+    pixImage.setScale(width() / Pix_Scr.width());
 }
 
 void ImageScene::setMoveObj(int Obj)
@@ -252,8 +272,15 @@ void ImageScene::saveImage(QString FilePath)
     pixImage.pixmap().save(&file, "PNG");
 }
 
+void ImageScene::setmouseConnect(bool a)
+{
+    isOpenMouse = a;
+}
+
 void ImageScene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
 {
+    if(isOpenMouse == false)
+        return;
     QGraphicsScene::mousePressEvent(mouseEvent);
     pressPoint = mouseEvent->scenePos();
 
@@ -276,6 +303,8 @@ void ImageScene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
 
 void ImageScene::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
 {
+    if(isOpenMouse == false)
+        return;
       QGraphicsScene::mouseMoveEvent(mouseEvent);
       if(chooseMoveObj == 0)
       {
@@ -348,6 +377,8 @@ void ImageScene::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
 
 void ImageScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
 {
+    if(isOpenMouse == false)
+        return;
       QGraphicsScene::mouseReleaseEvent(mouseEvent);
 //    bool bsuccess = false;
     QPointF moved = mouseEvent->scenePos() - pressPoint;
@@ -363,6 +394,8 @@ void ImageScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
 
 void ImageScene::wheelEvent(QGraphicsSceneWheelEvent *wheelEvent)
 {
+    if(isOpenMouse == false)
+        return;
     QGraphicsScene::wheelEvent(wheelEvent);
     int delta = wheelEvent->delta();
     if (delta > 0)
@@ -382,6 +415,8 @@ void ImageScene::wheelEvent(QGraphicsSceneWheelEvent *wheelEvent)
 
 void ImageScene::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *mouseEvent)
 {
+    if(isOpenMouse == false)
+        return;
     QGraphicsScene::mouseDoubleClickEvent(mouseEvent);
     pixImage.resetTransform();
 }
@@ -457,7 +492,7 @@ void  ImageScene::selected_show()
 			{
 				Piximage_button_selected[index_selected].show();
 				Piximage_button[index_selected].hide();
-                qDebug()<<"selected_1";
+
 			}
 			else
 			{
@@ -468,7 +503,7 @@ void  ImageScene::selected_show()
 				}
 			}
 		}
-        emit pointChanged();
+        emit pointChanged(index_selected);
 	}
 	show_otherItem();
     update();

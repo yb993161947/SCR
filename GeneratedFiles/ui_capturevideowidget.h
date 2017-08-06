@@ -54,6 +54,7 @@ public:
     QPushButton *pushButton_OpenImage;
     QPushButton *pushButton_OpenVideo;
     QPushButton *pushButton_Capture;
+    QPushButton *pushButton;
 
     void setupUi(QWidget *CaptureVideoWidget)
     {
@@ -96,10 +97,10 @@ public:
         frameBase->setFrameShadow(QFrame::Raised);
         pushButton_Exit = new QPushButton(frameBase);
         pushButton_Exit->setObjectName(QStringLiteral("pushButton_Exit"));
-        pushButton_Exit->setGeometry(QRect(890, 330, 80, 30));
+        pushButton_Exit->setGeometry(QRect(30, 560, 80, 30));
         pushButton_Process = new QPushButton(frameBase);
         pushButton_Process->setObjectName(QStringLiteral("pushButton_Process"));
-        pushButton_Process->setGeometry(QRect(840, 280, 80, 30));
+        pushButton_Process->setGeometry(QRect(840, 270, 80, 30));
         label_Picture = new QLabel(frameBase);
         label_Picture->setObjectName(QStringLiteral("label_Picture"));
         label_Picture->setGeometry(QRect(140, 80, 600, 600));
@@ -140,14 +141,14 @@ public:
         radioButton_9->setGeometry(QRect(130, 250, 41, 19));
         pushButtonCalculate = new QPushButton(frameBase);
         pushButtonCalculate->setObjectName(QStringLiteral("pushButtonCalculate"));
-        pushButtonCalculate->setGeometry(QRect(950, 280, 81, 31));
+        pushButtonCalculate->setGeometry(QRect(950, 270, 81, 31));
         radioButton_findPt = new QRadioButton(frameBase);
         radioButton_findPt->setObjectName(QStringLiteral("radioButton_findPt"));
         radioButton_findPt->setGeometry(QRect(960, 680, 91, 20));
         radioButton_findPt->setChecked(true);
         frame = new QFrame(frameBase);
         frame->setObjectName(QStringLiteral("frame"));
-        frame->setGeometry(QRect(840, 90, 191, 181));
+        frame->setGeometry(QRect(840, 80, 191, 181));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
         checkBox_removeCircle = new QCheckBox(frame);
@@ -169,6 +170,9 @@ public:
         pushButton_Capture = new QPushButton(frame);
         pushButton_Capture->setObjectName(QStringLiteral("pushButton_Capture"));
         pushButton_Capture->setGeometry(QRect(10, 140, 80, 30));
+        pushButton = new QPushButton(frameBase);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(950, 323, 81, 31));
 
         horizontalLayout->addWidget(frameBase);
 
@@ -202,6 +206,7 @@ public:
         pushButton_OpenImage->setText(QApplication::translate("CaptureVideoWidget", "\346\211\223\345\274\200\345\233\276\347\211\207", 0));
         pushButton_OpenVideo->setText(QApplication::translate("CaptureVideoWidget", "\346\211\223\345\274\200\350\247\206\351\242\221", 0));
         pushButton_Capture->setText(QApplication::translate("CaptureVideoWidget", "\346\210\252\345\217\226\345\233\276\347\211\207", 0));
+        pushButton->setText(QApplication::translate("CaptureVideoWidget", "\346\222\244\351\224\200\347\202\271", 0));
     } // retranslateUi
 
 };

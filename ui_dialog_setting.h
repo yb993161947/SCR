@@ -51,6 +51,7 @@ public:
     QPushButton *pushButton_InitMarker;
     QLabel *label_port_6;
     QLineEdit *lineEdi_NameRobot;
+    QLineEdit *lineEdi_NameXspot_2;
     QGroupBox *groupBox_3;
     QWidget *layoutWidget;
     QGridLayout *gridLayout;
@@ -124,7 +125,7 @@ public:
         label_port_3->setGeometry(QRect(10, 60, 72, 25));
         lineEdi_NameXspot = new QLineEdit(groupBox);
         lineEdi_NameXspot->setObjectName(QStringLiteral("lineEdi_NameXspot"));
-        lineEdi_NameXspot->setGeometry(QRect(80, 90, 181, 25));
+        lineEdi_NameXspot->setGeometry(QRect(80, 90, 85, 25));
         label_port_4 = new QLabel(groupBox);
         label_port_4->setObjectName(QStringLiteral("label_port_4"));
         label_port_4->setGeometry(QRect(10, 90, 72, 25));
@@ -143,6 +144,9 @@ public:
         lineEdi_NameRobot = new QLineEdit(groupBox);
         lineEdi_NameRobot->setObjectName(QStringLiteral("lineEdi_NameRobot"));
         lineEdi_NameRobot->setGeometry(QRect(80, 150, 181, 25));
+        lineEdi_NameXspot_2 = new QLineEdit(groupBox);
+        lineEdi_NameXspot_2->setObjectName(QStringLiteral("lineEdi_NameXspot_2"));
+        lineEdi_NameXspot_2->setGeometry(QRect(175, 90, 85, 25));
         groupBox_3 = new QGroupBox(Dialog_Setting);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
         groupBox_3->setGeometry(QRect(30, 300, 641, 121));
@@ -214,6 +218,7 @@ public:
         pushButton_InitMarker->setText(QApplication::translate("Dialog_Setting", "\350\256\276\347\275\256", 0));
         label_port_6->setText(QApplication::translate("Dialog_Setting", "\346\234\272\345\231\250\344\272\272\357\274\232", 0));
         lineEdi_NameRobot->setText(QApplication::translate("Dialog_Setting", "Marker_Robot", 0));
+        lineEdi_NameXspot_2->setText(QApplication::translate("Dialog_Setting", "XSPOT1", 0));
         groupBox_3->setTitle(QApplication::translate("Dialog_Setting", "NDI", 0));
         label_Femur->setText(QString());
         label_Tibia->setText(QString());

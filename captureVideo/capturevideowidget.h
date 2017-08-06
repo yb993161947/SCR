@@ -63,6 +63,7 @@ public:
     Eigen::Matrix4d Marker1ToMarker2;
     Eigen::MatrixXd XSpotPts3DonMarker1;
 
+    void readSettingFile();
     void caculateParam(vector<QPointF> ver_2DPt, MatrixXd XSpotPts3DonMarker1 , QList<double> &transparams);
     void paintPt();
 protected:

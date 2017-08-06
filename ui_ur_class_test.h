@@ -42,6 +42,7 @@ public:
     QPushButton *Shut_Down_Robot;
     QGroupBox *groupBox_2;
     QWidget *layoutWidget1;
+    QHBoxLayout *horizontalLayout_2;
     QVBoxLayout *verticalLayout;
     QLabel *label_2;
     QLabel *label_3;
@@ -49,7 +50,6 @@ public:
     QLabel *label_5;
     QLabel *label_8;
     QLabel *label_7;
-    QWidget *layoutWidget2;
     QVBoxLayout *verticalLayout_2;
     QLineEdit *Base_Pose_X;
     QLineEdit *Base_Pose_Y;
@@ -57,18 +57,17 @@ public:
     QLineEdit *Base_Pose_RX;
     QLineEdit *Base_Pose_RY;
     QLineEdit *Base_Pose_RZ;
-    QWidget *layoutWidget3;
     QVBoxLayout *verticalLayout_3;
     QPushButton *Base_Pose_X_Increase;
     QPushButton *Base_Pose_Y_Increase;
     QPushButton *Base_Pose_Z_Increase;
-    QWidget *layoutWidget4;
     QVBoxLayout *verticalLayout_4;
     QPushButton *Base_Pose_X_Decrease;
     QPushButton *Base_Pose_Y_Decrease;
     QPushButton *Base_Pose_Z_Decrease;
     QGroupBox *groupBox_3;
-    QWidget *layoutWidget5;
+    QWidget *layoutWidget2;
+    QHBoxLayout *horizontalLayout_3;
     QVBoxLayout *verticalLayout_5;
     QLabel *label_6;
     QLabel *label_9;
@@ -76,7 +75,6 @@ public:
     QLabel *label_11;
     QLabel *label_12;
     QLabel *label_13;
-    QWidget *layoutWidget_2;
     QVBoxLayout *verticalLayout_6;
     QLineEdit *Joint_Pose_Base;
     QLineEdit *Joint_Pose_Shoulder;
@@ -84,7 +82,6 @@ public:
     QLineEdit *Joint_Pose_Wrist_1;
     QLineEdit *Joint_Pose_Wrist_2;
     QLineEdit *Joint_Pose_Wrist_3;
-    QWidget *layoutWidget6;
     QVBoxLayout *verticalLayout_7;
     QPushButton *Base_Increase;
     QPushButton *Shoulder_Increase;
@@ -92,7 +89,6 @@ public:
     QPushButton *Wrist1_Increase;
     QPushButton *Wrist2_Increase;
     QPushButton *Wrist3_Increase;
-    QWidget *layoutWidget7;
     QVBoxLayout *verticalLayout_8;
     QPushButton *Base_Decrease;
     QPushButton *Shoulder_Decrease;
@@ -101,7 +97,7 @@ public:
     QPushButton *Wrist2_Decrease;
     QPushButton *Wrist3_Decrease;
     QGroupBox *groupBox_4;
-    QWidget *layoutWidget8;
+    QWidget *layoutWidget3;
     QGridLayout *gridLayout;
     QLabel *label_14;
     QLineEdit *X_Or_Base;
@@ -115,19 +111,21 @@ public:
     QLineEdit *Ry_Or_Wrist2;
     QLabel *label_20;
     QLineEdit *Rz_Or_Wrist3;
-    QWidget *widget;
+    QWidget *layoutWidget4;
     QGridLayout *gridLayout_2;
     QPushButton *Debug_TCP;
     QPushButton *Debug_Joint;
     QGroupBox *groupBox_5;
-    QSlider *Speed_Slider;
+    QWidget *layoutWidget5;
+    QHBoxLayout *horizontalLayout_4;
     QLabel *label_19;
+    QSlider *Speed_Slider;
     QLineEdit *Speed_value;
     QPushButton *pushButton_zero;
     QPushButton *pushButton_setTCP;
     QPushButton *pushButton_addPoint;
     QPushButton *pushButton_SaveAllPoint;
-    QWidget *layoutWidget9;
+    QWidget *layoutWidget6;
     QFormLayout *formLayout;
     QPushButton *pushButton_savePoint_1;
     QPushButton *pushButton_move1;
@@ -150,13 +148,13 @@ public:
     {
         if (UR_class_testClass->objectName().isEmpty())
             UR_class_testClass->setObjectName(QStringLiteral("UR_class_testClass"));
-        UR_class_testClass->resize(979, 573);
+        UR_class_testClass->resize(1042, 665);
         groupBox = new QGroupBox(UR_class_testClass);
         groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setGeometry(QRect(20, 10, 611, 81));
+        groupBox->setGeometry(QRect(20, 10, 991, 81));
         layoutWidget = new QWidget(groupBox);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(11, 30, 576, 26));
+        layoutWidget->setGeometry(QRect(10, 40, 831, 26));
         horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -199,15 +197,18 @@ public:
 
         groupBox_2 = new QGroupBox(UR_class_testClass);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-        groupBox_2->setGeometry(QRect(20, 110, 301, 201));
+        groupBox_2->setGeometry(QRect(20, 110, 481, 241));
         layoutWidget1 = new QWidget(groupBox_2);
         layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(10, 20, 21, 151));
-        verticalLayout = new QVBoxLayout(layoutWidget1);
+        layoutWidget1->setGeometry(QRect(20, 40, 361, 177));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget1);
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(6);
-        verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
         label_2 = new QLabel(layoutWidget1);
         label_2->setObjectName(QStringLiteral("label_2"));
 
@@ -238,446 +239,457 @@ public:
 
         verticalLayout->addWidget(label_7);
 
-        layoutWidget2 = new QWidget(groupBox_2);
-        layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
-        layoutWidget2->setGeometry(QRect(32, 20, 71, 175));
-        verticalLayout_2 = new QVBoxLayout(layoutWidget2);
+
+        horizontalLayout_2->addLayout(verticalLayout);
+
+        verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setSpacing(6);
-        verticalLayout_2->setContentsMargins(11, 11, 11, 11);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        Base_Pose_X = new QLineEdit(layoutWidget2);
+        Base_Pose_X = new QLineEdit(layoutWidget1);
         Base_Pose_X->setObjectName(QStringLiteral("Base_Pose_X"));
 
         verticalLayout_2->addWidget(Base_Pose_X);
 
-        Base_Pose_Y = new QLineEdit(layoutWidget2);
+        Base_Pose_Y = new QLineEdit(layoutWidget1);
         Base_Pose_Y->setObjectName(QStringLiteral("Base_Pose_Y"));
 
         verticalLayout_2->addWidget(Base_Pose_Y);
 
-        Base_Pose_Z = new QLineEdit(layoutWidget2);
+        Base_Pose_Z = new QLineEdit(layoutWidget1);
         Base_Pose_Z->setObjectName(QStringLiteral("Base_Pose_Z"));
 
         verticalLayout_2->addWidget(Base_Pose_Z);
 
-        Base_Pose_RX = new QLineEdit(layoutWidget2);
+        Base_Pose_RX = new QLineEdit(layoutWidget1);
         Base_Pose_RX->setObjectName(QStringLiteral("Base_Pose_RX"));
 
         verticalLayout_2->addWidget(Base_Pose_RX);
 
-        Base_Pose_RY = new QLineEdit(layoutWidget2);
+        Base_Pose_RY = new QLineEdit(layoutWidget1);
         Base_Pose_RY->setObjectName(QStringLiteral("Base_Pose_RY"));
 
         verticalLayout_2->addWidget(Base_Pose_RY);
 
-        Base_Pose_RZ = new QLineEdit(layoutWidget2);
+        Base_Pose_RZ = new QLineEdit(layoutWidget1);
         Base_Pose_RZ->setObjectName(QStringLiteral("Base_Pose_RZ"));
 
         verticalLayout_2->addWidget(Base_Pose_RZ);
 
-        layoutWidget3 = new QWidget(groupBox_2);
-        layoutWidget3->setObjectName(QStringLiteral("layoutWidget3"));
-        layoutWidget3->setGeometry(QRect(100, 21, 82, 151));
-        verticalLayout_3 = new QVBoxLayout(layoutWidget3);
+
+        horizontalLayout_2->addLayout(verticalLayout_2);
+
+        verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setSpacing(6);
-        verticalLayout_3->setContentsMargins(11, 11, 11, 11);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        Base_Pose_X_Increase = new QPushButton(layoutWidget3);
+        Base_Pose_X_Increase = new QPushButton(layoutWidget1);
         Base_Pose_X_Increase->setObjectName(QStringLiteral("Base_Pose_X_Increase"));
 
         verticalLayout_3->addWidget(Base_Pose_X_Increase);
 
-        Base_Pose_Y_Increase = new QPushButton(layoutWidget3);
+        Base_Pose_Y_Increase = new QPushButton(layoutWidget1);
         Base_Pose_Y_Increase->setObjectName(QStringLiteral("Base_Pose_Y_Increase"));
 
         verticalLayout_3->addWidget(Base_Pose_Y_Increase);
 
-        Base_Pose_Z_Increase = new QPushButton(layoutWidget3);
+        Base_Pose_Z_Increase = new QPushButton(layoutWidget1);
         Base_Pose_Z_Increase->setObjectName(QStringLiteral("Base_Pose_Z_Increase"));
 
         verticalLayout_3->addWidget(Base_Pose_Z_Increase);
 
-        layoutWidget4 = new QWidget(groupBox_2);
-        layoutWidget4->setObjectName(QStringLiteral("layoutWidget4"));
-        layoutWidget4->setGeometry(QRect(180, 20, 82, 151));
-        verticalLayout_4 = new QVBoxLayout(layoutWidget4);
+
+        horizontalLayout_2->addLayout(verticalLayout_3);
+
+        verticalLayout_4 = new QVBoxLayout();
         verticalLayout_4->setSpacing(6);
-        verticalLayout_4->setContentsMargins(11, 11, 11, 11);
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
-        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
-        Base_Pose_X_Decrease = new QPushButton(layoutWidget4);
+        Base_Pose_X_Decrease = new QPushButton(layoutWidget1);
         Base_Pose_X_Decrease->setObjectName(QStringLiteral("Base_Pose_X_Decrease"));
 
         verticalLayout_4->addWidget(Base_Pose_X_Decrease);
 
-        Base_Pose_Y_Decrease = new QPushButton(layoutWidget4);
+        Base_Pose_Y_Decrease = new QPushButton(layoutWidget1);
         Base_Pose_Y_Decrease->setObjectName(QStringLiteral("Base_Pose_Y_Decrease"));
 
         verticalLayout_4->addWidget(Base_Pose_Y_Decrease);
 
-        Base_Pose_Z_Decrease = new QPushButton(layoutWidget4);
+        Base_Pose_Z_Decrease = new QPushButton(layoutWidget1);
         Base_Pose_Z_Decrease->setObjectName(QStringLiteral("Base_Pose_Z_Decrease"));
 
         verticalLayout_4->addWidget(Base_Pose_Z_Decrease);
 
+
+        horizontalLayout_2->addLayout(verticalLayout_4);
+
         groupBox_3 = new QGroupBox(UR_class_testClass);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
-        groupBox_3->setGeometry(QRect(350, 110, 331, 211));
-        layoutWidget5 = new QWidget(groupBox_3);
-        layoutWidget5->setObjectName(QStringLiteral("layoutWidget5"));
-        layoutWidget5->setGeometry(QRect(10, 20, 66, 151));
-        verticalLayout_5 = new QVBoxLayout(layoutWidget5);
+        groupBox_3->setGeometry(QRect(530, 110, 481, 241));
+        layoutWidget2 = new QWidget(groupBox_3);
+        layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
+        layoutWidget2->setGeometry(QRect(20, 40, 397, 183));
+        horizontalLayout_3 = new QHBoxLayout(layoutWidget2);
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_5 = new QVBoxLayout();
         verticalLayout_5->setSpacing(6);
-        verticalLayout_5->setContentsMargins(11, 11, 11, 11);
         verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
-        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
-        label_6 = new QLabel(layoutWidget5);
+        label_6 = new QLabel(layoutWidget2);
         label_6->setObjectName(QStringLiteral("label_6"));
 
         verticalLayout_5->addWidget(label_6);
 
-        label_9 = new QLabel(layoutWidget5);
+        label_9 = new QLabel(layoutWidget2);
         label_9->setObjectName(QStringLiteral("label_9"));
 
         verticalLayout_5->addWidget(label_9);
 
-        label_10 = new QLabel(layoutWidget5);
+        label_10 = new QLabel(layoutWidget2);
         label_10->setObjectName(QStringLiteral("label_10"));
 
         verticalLayout_5->addWidget(label_10);
 
-        label_11 = new QLabel(layoutWidget5);
+        label_11 = new QLabel(layoutWidget2);
         label_11->setObjectName(QStringLiteral("label_11"));
 
         verticalLayout_5->addWidget(label_11);
 
-        label_12 = new QLabel(layoutWidget5);
+        label_12 = new QLabel(layoutWidget2);
         label_12->setObjectName(QStringLiteral("label_12"));
 
         verticalLayout_5->addWidget(label_12);
 
-        label_13 = new QLabel(layoutWidget5);
+        label_13 = new QLabel(layoutWidget2);
         label_13->setObjectName(QStringLiteral("label_13"));
 
         verticalLayout_5->addWidget(label_13);
 
-        layoutWidget_2 = new QWidget(groupBox_3);
-        layoutWidget_2->setObjectName(QStringLiteral("layoutWidget_2"));
-        layoutWidget_2->setGeometry(QRect(80, 20, 71, 175));
-        verticalLayout_6 = new QVBoxLayout(layoutWidget_2);
+
+        horizontalLayout_3->addLayout(verticalLayout_5);
+
+        verticalLayout_6 = new QVBoxLayout();
         verticalLayout_6->setSpacing(6);
-        verticalLayout_6->setContentsMargins(11, 11, 11, 11);
         verticalLayout_6->setObjectName(QStringLiteral("verticalLayout_6"));
-        verticalLayout_6->setContentsMargins(0, 0, 0, 0);
-        Joint_Pose_Base = new QLineEdit(layoutWidget_2);
+        Joint_Pose_Base = new QLineEdit(layoutWidget2);
         Joint_Pose_Base->setObjectName(QStringLiteral("Joint_Pose_Base"));
 
         verticalLayout_6->addWidget(Joint_Pose_Base);
 
-        Joint_Pose_Shoulder = new QLineEdit(layoutWidget_2);
+        Joint_Pose_Shoulder = new QLineEdit(layoutWidget2);
         Joint_Pose_Shoulder->setObjectName(QStringLiteral("Joint_Pose_Shoulder"));
 
         verticalLayout_6->addWidget(Joint_Pose_Shoulder);
 
-        Joint_Pose_Elbow = new QLineEdit(layoutWidget_2);
+        Joint_Pose_Elbow = new QLineEdit(layoutWidget2);
         Joint_Pose_Elbow->setObjectName(QStringLiteral("Joint_Pose_Elbow"));
 
         verticalLayout_6->addWidget(Joint_Pose_Elbow);
 
-        Joint_Pose_Wrist_1 = new QLineEdit(layoutWidget_2);
+        Joint_Pose_Wrist_1 = new QLineEdit(layoutWidget2);
         Joint_Pose_Wrist_1->setObjectName(QStringLiteral("Joint_Pose_Wrist_1"));
 
         verticalLayout_6->addWidget(Joint_Pose_Wrist_1);
 
-        Joint_Pose_Wrist_2 = new QLineEdit(layoutWidget_2);
+        Joint_Pose_Wrist_2 = new QLineEdit(layoutWidget2);
         Joint_Pose_Wrist_2->setObjectName(QStringLiteral("Joint_Pose_Wrist_2"));
 
         verticalLayout_6->addWidget(Joint_Pose_Wrist_2);
 
-        Joint_Pose_Wrist_3 = new QLineEdit(layoutWidget_2);
+        Joint_Pose_Wrist_3 = new QLineEdit(layoutWidget2);
         Joint_Pose_Wrist_3->setObjectName(QStringLiteral("Joint_Pose_Wrist_3"));
 
         verticalLayout_6->addWidget(Joint_Pose_Wrist_3);
 
-        layoutWidget6 = new QWidget(groupBox_3);
-        layoutWidget6->setObjectName(QStringLiteral("layoutWidget6"));
-        layoutWidget6->setGeometry(QRect(160, 20, 82, 181));
-        verticalLayout_7 = new QVBoxLayout(layoutWidget6);
+
+        horizontalLayout_3->addLayout(verticalLayout_6);
+
+        verticalLayout_7 = new QVBoxLayout();
         verticalLayout_7->setSpacing(6);
-        verticalLayout_7->setContentsMargins(11, 11, 11, 11);
         verticalLayout_7->setObjectName(QStringLiteral("verticalLayout_7"));
-        verticalLayout_7->setContentsMargins(0, 0, 0, 0);
-        Base_Increase = new QPushButton(layoutWidget6);
+        Base_Increase = new QPushButton(layoutWidget2);
         Base_Increase->setObjectName(QStringLiteral("Base_Increase"));
 
         verticalLayout_7->addWidget(Base_Increase);
 
-        Shoulder_Increase = new QPushButton(layoutWidget6);
+        Shoulder_Increase = new QPushButton(layoutWidget2);
         Shoulder_Increase->setObjectName(QStringLiteral("Shoulder_Increase"));
 
         verticalLayout_7->addWidget(Shoulder_Increase);
 
-        Elbow_Increase = new QPushButton(layoutWidget6);
+        Elbow_Increase = new QPushButton(layoutWidget2);
         Elbow_Increase->setObjectName(QStringLiteral("Elbow_Increase"));
 
         verticalLayout_7->addWidget(Elbow_Increase);
 
-        Wrist1_Increase = new QPushButton(layoutWidget6);
+        Wrist1_Increase = new QPushButton(layoutWidget2);
         Wrist1_Increase->setObjectName(QStringLiteral("Wrist1_Increase"));
 
         verticalLayout_7->addWidget(Wrist1_Increase);
 
-        Wrist2_Increase = new QPushButton(layoutWidget6);
+        Wrist2_Increase = new QPushButton(layoutWidget2);
         Wrist2_Increase->setObjectName(QStringLiteral("Wrist2_Increase"));
 
         verticalLayout_7->addWidget(Wrist2_Increase);
 
-        Wrist3_Increase = new QPushButton(layoutWidget6);
+        Wrist3_Increase = new QPushButton(layoutWidget2);
         Wrist3_Increase->setObjectName(QStringLiteral("Wrist3_Increase"));
 
         verticalLayout_7->addWidget(Wrist3_Increase);
 
-        layoutWidget7 = new QWidget(groupBox_3);
-        layoutWidget7->setObjectName(QStringLiteral("layoutWidget7"));
-        layoutWidget7->setGeometry(QRect(240, 20, 82, 181));
-        verticalLayout_8 = new QVBoxLayout(layoutWidget7);
+
+        horizontalLayout_3->addLayout(verticalLayout_7);
+
+        verticalLayout_8 = new QVBoxLayout();
         verticalLayout_8->setSpacing(6);
-        verticalLayout_8->setContentsMargins(11, 11, 11, 11);
         verticalLayout_8->setObjectName(QStringLiteral("verticalLayout_8"));
-        verticalLayout_8->setContentsMargins(0, 0, 0, 0);
-        Base_Decrease = new QPushButton(layoutWidget7);
+        Base_Decrease = new QPushButton(layoutWidget2);
         Base_Decrease->setObjectName(QStringLiteral("Base_Decrease"));
 
         verticalLayout_8->addWidget(Base_Decrease);
 
-        Shoulder_Decrease = new QPushButton(layoutWidget7);
+        Shoulder_Decrease = new QPushButton(layoutWidget2);
         Shoulder_Decrease->setObjectName(QStringLiteral("Shoulder_Decrease"));
 
         verticalLayout_8->addWidget(Shoulder_Decrease);
 
-        Elbow_Decrese = new QPushButton(layoutWidget7);
+        Elbow_Decrese = new QPushButton(layoutWidget2);
         Elbow_Decrese->setObjectName(QStringLiteral("Elbow_Decrese"));
 
         verticalLayout_8->addWidget(Elbow_Decrese);
 
-        Wrist1_Decrease = new QPushButton(layoutWidget7);
+        Wrist1_Decrease = new QPushButton(layoutWidget2);
         Wrist1_Decrease->setObjectName(QStringLiteral("Wrist1_Decrease"));
 
         verticalLayout_8->addWidget(Wrist1_Decrease);
 
-        Wrist2_Decrease = new QPushButton(layoutWidget7);
+        Wrist2_Decrease = new QPushButton(layoutWidget2);
         Wrist2_Decrease->setObjectName(QStringLiteral("Wrist2_Decrease"));
 
         verticalLayout_8->addWidget(Wrist2_Decrease);
 
-        Wrist3_Decrease = new QPushButton(layoutWidget7);
+        Wrist3_Decrease = new QPushButton(layoutWidget2);
         Wrist3_Decrease->setObjectName(QStringLiteral("Wrist3_Decrease"));
 
         verticalLayout_8->addWidget(Wrist3_Decrease);
 
+
+        horizontalLayout_3->addLayout(verticalLayout_8);
+
         groupBox_4 = new QGroupBox(UR_class_testClass);
         groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
-        groupBox_4->setGeometry(QRect(20, 370, 621, 151));
-        layoutWidget8 = new QWidget(groupBox_4);
-        layoutWidget8->setObjectName(QStringLiteral("layoutWidget8"));
-        layoutWidget8->setGeometry(QRect(10, 20, 593, 71));
-        gridLayout = new QGridLayout(layoutWidget8);
+        groupBox_4->setGeometry(QRect(20, 460, 611, 161));
+        layoutWidget3 = new QWidget(groupBox_4);
+        layoutWidget3->setObjectName(QStringLiteral("layoutWidget3"));
+        layoutWidget3->setGeometry(QRect(10, 40, 593, 71));
+        gridLayout = new QGridLayout(layoutWidget3);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        label_14 = new QLabel(layoutWidget8);
+        label_14 = new QLabel(layoutWidget3);
         label_14->setObjectName(QStringLiteral("label_14"));
 
         gridLayout->addWidget(label_14, 0, 0, 1, 1);
 
-        X_Or_Base = new QLineEdit(layoutWidget8);
+        X_Or_Base = new QLineEdit(layoutWidget3);
         X_Or_Base->setObjectName(QStringLiteral("X_Or_Base"));
 
         gridLayout->addWidget(X_Or_Base, 0, 1, 1, 1);
 
-        label_16 = new QLabel(layoutWidget8);
+        label_16 = new QLabel(layoutWidget3);
         label_16->setObjectName(QStringLiteral("label_16"));
 
         gridLayout->addWidget(label_16, 0, 2, 1, 1);
 
-        Y_Or_Shoulder = new QLineEdit(layoutWidget8);
+        Y_Or_Shoulder = new QLineEdit(layoutWidget3);
         Y_Or_Shoulder->setObjectName(QStringLiteral("Y_Or_Shoulder"));
 
         gridLayout->addWidget(Y_Or_Shoulder, 0, 3, 1, 1);
 
-        label_18 = new QLabel(layoutWidget8);
+        label_18 = new QLabel(layoutWidget3);
         label_18->setObjectName(QStringLiteral("label_18"));
 
         gridLayout->addWidget(label_18, 0, 4, 1, 1);
 
-        Z_Or_Elbow = new QLineEdit(layoutWidget8);
+        Z_Or_Elbow = new QLineEdit(layoutWidget3);
         Z_Or_Elbow->setObjectName(QStringLiteral("Z_Or_Elbow"));
 
         gridLayout->addWidget(Z_Or_Elbow, 0, 5, 1, 1);
 
-        label_15 = new QLabel(layoutWidget8);
+        label_15 = new QLabel(layoutWidget3);
         label_15->setObjectName(QStringLiteral("label_15"));
 
         gridLayout->addWidget(label_15, 1, 0, 1, 1);
 
-        Rx_Or_Wrist1 = new QLineEdit(layoutWidget8);
+        Rx_Or_Wrist1 = new QLineEdit(layoutWidget3);
         Rx_Or_Wrist1->setObjectName(QStringLiteral("Rx_Or_Wrist1"));
 
         gridLayout->addWidget(Rx_Or_Wrist1, 1, 1, 1, 1);
 
-        label_17 = new QLabel(layoutWidget8);
+        label_17 = new QLabel(layoutWidget3);
         label_17->setObjectName(QStringLiteral("label_17"));
 
         gridLayout->addWidget(label_17, 1, 2, 1, 1);
 
-        Ry_Or_Wrist2 = new QLineEdit(layoutWidget8);
+        Ry_Or_Wrist2 = new QLineEdit(layoutWidget3);
         Ry_Or_Wrist2->setObjectName(QStringLiteral("Ry_Or_Wrist2"));
 
         gridLayout->addWidget(Ry_Or_Wrist2, 1, 3, 1, 1);
 
-        label_20 = new QLabel(layoutWidget8);
+        label_20 = new QLabel(layoutWidget3);
         label_20->setObjectName(QStringLiteral("label_20"));
 
         gridLayout->addWidget(label_20, 1, 4, 1, 1);
 
-        Rz_Or_Wrist3 = new QLineEdit(layoutWidget8);
+        Rz_Or_Wrist3 = new QLineEdit(layoutWidget3);
         Rz_Or_Wrist3->setObjectName(QStringLiteral("Rz_Or_Wrist3"));
 
         gridLayout->addWidget(Rz_Or_Wrist3, 1, 5, 1, 1);
 
-        widget = new QWidget(groupBox_4);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(11, 111, 277, 26));
-        gridLayout_2 = new QGridLayout(widget);
+        layoutWidget4 = new QWidget(groupBox_4);
+        layoutWidget4->setObjectName(QStringLiteral("layoutWidget4"));
+        layoutWidget4->setGeometry(QRect(10, 120, 277, 26));
+        gridLayout_2 = new QGridLayout(layoutWidget4);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        Debug_TCP = new QPushButton(widget);
+        Debug_TCP = new QPushButton(layoutWidget4);
         Debug_TCP->setObjectName(QStringLiteral("Debug_TCP"));
 
         gridLayout_2->addWidget(Debug_TCP, 0, 0, 1, 1);
 
-        Debug_Joint = new QPushButton(widget);
+        Debug_Joint = new QPushButton(layoutWidget4);
         Debug_Joint->setObjectName(QStringLiteral("Debug_Joint"));
 
         gridLayout_2->addWidget(Debug_Joint, 0, 1, 1, 1);
 
         groupBox_5 = new QGroupBox(UR_class_testClass);
         groupBox_5->setObjectName(QStringLiteral("groupBox_5"));
-        groupBox_5->setGeometry(QRect(20, 310, 411, 51));
-        Speed_Slider = new QSlider(groupBox_5);
+        groupBox_5->setGeometry(QRect(20, 360, 461, 81));
+        layoutWidget5 = new QWidget(groupBox_5);
+        layoutWidget5->setObjectName(QStringLiteral("layoutWidget5"));
+        layoutWidget5->setGeometry(QRect(30, 40, 381, 25));
+        horizontalLayout_4 = new QHBoxLayout(layoutWidget5);
+        horizontalLayout_4->setSpacing(6);
+        horizontalLayout_4->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
+        horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
+        label_19 = new QLabel(layoutWidget5);
+        label_19->setObjectName(QStringLiteral("label_19"));
+
+        horizontalLayout_4->addWidget(label_19);
+
+        Speed_Slider = new QSlider(layoutWidget5);
         Speed_Slider->setObjectName(QStringLiteral("Speed_Slider"));
-        Speed_Slider->setGeometry(QRect(110, 20, 161, 19));
         Speed_Slider->setMinimum(1);
         Speed_Slider->setMaximum(100);
         Speed_Slider->setValue(100);
         Speed_Slider->setOrientation(Qt::Horizontal);
-        label_19 = new QLabel(groupBox_5);
-        label_19->setObjectName(QStringLiteral("label_19"));
-        label_19->setGeometry(QRect(40, 20, 30, 16));
-        Speed_value = new QLineEdit(groupBox_5);
+
+        horizontalLayout_4->addWidget(Speed_Slider);
+
+        Speed_value = new QLineEdit(layoutWidget5);
         Speed_value->setObjectName(QStringLiteral("Speed_value"));
-        Speed_value->setGeometry(QRect(304, 21, 61, 20));
+
+        horizontalLayout_4->addWidget(Speed_value);
+
         pushButton_zero = new QPushButton(UR_class_testClass);
         pushButton_zero->setObjectName(QStringLiteral("pushButton_zero"));
-        pushButton_zero->setGeometry(QRect(650, 400, 61, 31));
+        pushButton_zero->setGeometry(QRect(510, 380, 61, 31));
         pushButton_setTCP = new QPushButton(UR_class_testClass);
         pushButton_setTCP->setObjectName(QStringLiteral("pushButton_setTCP"));
-        pushButton_setTCP->setGeometry(QRect(650, 450, 61, 31));
+        pushButton_setTCP->setGeometry(QRect(510, 420, 61, 31));
         pushButton_addPoint = new QPushButton(UR_class_testClass);
         pushButton_addPoint->setObjectName(QStringLiteral("pushButton_addPoint"));
-        pushButton_addPoint->setGeometry(QRect(730, 320, 89, 24));
+        pushButton_addPoint->setGeometry(QRect(910, 380, 89, 24));
         pushButton_SaveAllPoint = new QPushButton(UR_class_testClass);
         pushButton_SaveAllPoint->setObjectName(QStringLiteral("pushButton_SaveAllPoint"));
-        pushButton_SaveAllPoint->setGeometry(QRect(840, 320, 89, 24));
-        layoutWidget9 = new QWidget(UR_class_testClass);
-        layoutWidget9->setObjectName(QStringLiteral("layoutWidget9"));
-        layoutWidget9->setGeometry(QRect(741, 41, 221, 243));
-        formLayout = new QFormLayout(layoutWidget9);
+        pushButton_SaveAllPoint->setGeometry(QRect(910, 410, 89, 24));
+        layoutWidget6 = new QWidget(UR_class_testClass);
+        layoutWidget6->setObjectName(QStringLiteral("layoutWidget6"));
+        layoutWidget6->setGeometry(QRect(660, 380, 221, 243));
+        formLayout = new QFormLayout(layoutWidget6);
         formLayout->setSpacing(6);
         formLayout->setContentsMargins(11, 11, 11, 11);
         formLayout->setObjectName(QStringLiteral("formLayout"));
         formLayout->setContentsMargins(0, 0, 0, 0);
-        pushButton_savePoint_1 = new QPushButton(layoutWidget9);
+        pushButton_savePoint_1 = new QPushButton(layoutWidget6);
         pushButton_savePoint_1->setObjectName(QStringLiteral("pushButton_savePoint_1"));
 
         formLayout->setWidget(0, QFormLayout::LabelRole, pushButton_savePoint_1);
 
-        pushButton_move1 = new QPushButton(layoutWidget9);
+        pushButton_move1 = new QPushButton(layoutWidget6);
         pushButton_move1->setObjectName(QStringLiteral("pushButton_move1"));
 
         formLayout->setWidget(0, QFormLayout::FieldRole, pushButton_move1);
 
-        pushButton_savePoint_2 = new QPushButton(layoutWidget9);
+        pushButton_savePoint_2 = new QPushButton(layoutWidget6);
         pushButton_savePoint_2->setObjectName(QStringLiteral("pushButton_savePoint_2"));
 
         formLayout->setWidget(1, QFormLayout::LabelRole, pushButton_savePoint_2);
 
-        pushButton_move2 = new QPushButton(layoutWidget9);
+        pushButton_move2 = new QPushButton(layoutWidget6);
         pushButton_move2->setObjectName(QStringLiteral("pushButton_move2"));
 
         formLayout->setWidget(1, QFormLayout::FieldRole, pushButton_move2);
 
-        pushButton_savePoint_3 = new QPushButton(layoutWidget9);
+        pushButton_savePoint_3 = new QPushButton(layoutWidget6);
         pushButton_savePoint_3->setObjectName(QStringLiteral("pushButton_savePoint_3"));
 
         formLayout->setWidget(2, QFormLayout::LabelRole, pushButton_savePoint_3);
 
-        pushButton_move3 = new QPushButton(layoutWidget9);
+        pushButton_move3 = new QPushButton(layoutWidget6);
         pushButton_move3->setObjectName(QStringLiteral("pushButton_move3"));
 
         formLayout->setWidget(2, QFormLayout::FieldRole, pushButton_move3);
 
-        pushButton_savePoint_4 = new QPushButton(layoutWidget9);
+        pushButton_savePoint_4 = new QPushButton(layoutWidget6);
         pushButton_savePoint_4->setObjectName(QStringLiteral("pushButton_savePoint_4"));
 
         formLayout->setWidget(3, QFormLayout::LabelRole, pushButton_savePoint_4);
 
-        pushButton_move4 = new QPushButton(layoutWidget9);
+        pushButton_move4 = new QPushButton(layoutWidget6);
         pushButton_move4->setObjectName(QStringLiteral("pushButton_move4"));
 
         formLayout->setWidget(3, QFormLayout::FieldRole, pushButton_move4);
 
-        pushButton_savePoint_5 = new QPushButton(layoutWidget9);
+        pushButton_savePoint_5 = new QPushButton(layoutWidget6);
         pushButton_savePoint_5->setObjectName(QStringLiteral("pushButton_savePoint_5"));
 
         formLayout->setWidget(4, QFormLayout::LabelRole, pushButton_savePoint_5);
 
-        pushButton_move5 = new QPushButton(layoutWidget9);
+        pushButton_move5 = new QPushButton(layoutWidget6);
         pushButton_move5->setObjectName(QStringLiteral("pushButton_move5"));
 
         formLayout->setWidget(4, QFormLayout::FieldRole, pushButton_move5);
 
-        pushButton_savePoint_6 = new QPushButton(layoutWidget9);
+        pushButton_savePoint_6 = new QPushButton(layoutWidget6);
         pushButton_savePoint_6->setObjectName(QStringLiteral("pushButton_savePoint_6"));
 
         formLayout->setWidget(5, QFormLayout::LabelRole, pushButton_savePoint_6);
 
-        pushButton_move6 = new QPushButton(layoutWidget9);
+        pushButton_move6 = new QPushButton(layoutWidget6);
         pushButton_move6->setObjectName(QStringLiteral("pushButton_move6"));
 
         formLayout->setWidget(5, QFormLayout::FieldRole, pushButton_move6);
 
-        pushButton_savePoint_7 = new QPushButton(layoutWidget9);
+        pushButton_savePoint_7 = new QPushButton(layoutWidget6);
         pushButton_savePoint_7->setObjectName(QStringLiteral("pushButton_savePoint_7"));
 
         formLayout->setWidget(6, QFormLayout::LabelRole, pushButton_savePoint_7);
 
-        pushButton_move7 = new QPushButton(layoutWidget9);
+        pushButton_move7 = new QPushButton(layoutWidget6);
         pushButton_move7->setObjectName(QStringLiteral("pushButton_move7"));
 
         formLayout->setWidget(6, QFormLayout::FieldRole, pushButton_move7);
 
-        pushButton_savePoint_8 = new QPushButton(layoutWidget9);
+        pushButton_savePoint_8 = new QPushButton(layoutWidget6);
         pushButton_savePoint_8->setObjectName(QStringLiteral("pushButton_savePoint_8"));
 
         formLayout->setWidget(7, QFormLayout::LabelRole, pushButton_savePoint_8);
 
-        pushButton_move8 = new QPushButton(layoutWidget9);
+        pushButton_move8 = new QPushButton(layoutWidget6);
         pushButton_move8->setObjectName(QStringLiteral("pushButton_move8"));
 
         formLayout->setWidget(7, QFormLayout::FieldRole, pushButton_move8);
@@ -693,7 +705,7 @@ public:
         UR_class_testClass->setWindowTitle(QApplication::translate("UR_class_testClass", "UR_class_test", 0));
         groupBox->setTitle(QApplication::translate("UR_class_testClass", "UR_initialize", 0));
         label->setText(QApplication::translate("UR_class_testClass", "UR_IP", 0));
-        lineEdit_UR_IP->setText(QApplication::translate("UR_class_testClass", "192.168.1.10", 0));
+        lineEdit_UR_IP->setText(QApplication::translate("UR_class_testClass", "192.168.1.9", 0));
         pushButton_Connect->setText(QApplication::translate("UR_class_testClass", "Connect", 0));
         pushButton_GoHome->setText(QApplication::translate("UR_class_testClass", "\345\233\236\351\233\266", 0));
         techmode->setText(QApplication::translate("UR_class_testClass", "\347\244\272\346\225\231", 0));

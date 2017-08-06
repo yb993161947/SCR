@@ -39,15 +39,28 @@ QRectF needle::boundingRect() const
 
 void needle::paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)
 {
+
     painter->setRenderHint(QPainter::Antialiasing, true);
     painter->setPen(QPen(Qt::cyan,1,Qt::DashLine));
-    //水平线
-    painter->drawLine(QPoint( width / 2, 0), QPoint( 0 , width));
-    //垂直线
-    painter->drawLine(QPoint(width / 2, 0), QPoint( width , width));
 
-    painter->drawLine(QPoint( 0 , width), QPoint( 0 , height));
+    painter->drawLine(QPoint( 0, 0), QPoint( 0 , -width/2));
 
-    painter->drawLine(QPoint( width , width), QPoint( width , height));
+    painter->drawLine(QPoint( 0, 0), QPoint( 0 , width/2));
+
+    painter->drawLine(QPoint( 0 , -width/2), QPoint( 0 , height));
+
+    painter->drawLine(QPoint( 0 , width/2), QPoint( width/2 , height));
+}
+
+void needle::setLine(QPointF pt1, QPointF pt2)
+{
+    setPos(pt1);
+    float norm = sqrtf((pt1 - pt2).x() * (pt1 - pt2).x() + (pt1 - pt2).y() * (pt1 - pt2).y());
+    setHeight(norm);
+    float angle =  acosf((pt1 - pt2).y()/ norm);
+    this->setTransform(QTransform().rotate(angle));
+
+
+
 
 }

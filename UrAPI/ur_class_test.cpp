@@ -331,7 +331,7 @@ void UR_class_test::on_pushButton_setTCP_clicked()
 {
 
         QSettings *configIniRead = new QSettings("configure.ini", QSettings::IniFormat);
-        QString TCP = configIniRead->value("/UR/TCP").toString();        //椎体宽度
+        QString TCP = configIniRead->value("/UR/TCP").toString();
         QStringList TCPList = TCP.split(',');
         delete configIniRead;
         double var[6];
@@ -344,9 +344,7 @@ void UR_class_test::on_pushButton_setTCP_clicked()
         {
             var[i] = var[i]/1000;
             var[i+3] =var[i+3]/180.0*PI;
-
         }
-
         pUR5->set_tcp_pos(var);
 }
 
@@ -355,7 +353,6 @@ void UR_class_test::on_pushButton_resetTCP_clicked()
     double var[6] ={0,0,0,0,0,0};
     pUR5->set_tcp_pos(var);
 }
-
 
 
 void UR_class_test::on_pushButton_Connect_clicked()
@@ -386,3 +383,4 @@ void UR_class_test::on_Debug_Joint_clicked()
 
       pUR5->movej_joint(var);
 }
+

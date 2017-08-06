@@ -41,7 +41,7 @@ using namespace cv;
 //NDI
 //const Vector4d tanzhen2tip(159, -0.24, -18.22, 1.0000);
 //tracker,MARKERTIP_LONG
-const Vector4d tanzhen2tip(-196.4532 ,- 1.7583, - 0.1103,	1);
+//const Vector4d tanzhen2tip(-196.4532 ,- 1.7583, - 0.1103,	1);
 
 //const Vector4d tanzhen2tip(148.0390, 4.9085, -11.9415, 1.0000);
 namespace Ui {
@@ -110,14 +110,18 @@ public:
     Matrix4d tiptopatXspot_Lat_Tibia;
 
     //标定数据
-    Matrix4d TofTCP2MarkeronRobot;
-    Matrix4d TofMarkeronRobot2robot;
+    Vector4d TofTCP_Up2MarkeronRobot;
+    Vector4d TofTCP_Down2MarkeronRobot;
+    Matrix4d TofMarkeronRobot2Robot;
+    Matrix4d XSpotMarker1toMarker2;
+    Vector4d tanzhen2tip;
     Matrix4d caculateMovetoRoute(Vector3d End3DPt,Vector3d Start3DPt,Matrix4d Bone_Matrix,double dis);//单位mm
 
 
     QString MarkerName_Femur;
     QString MarkerName_Tibia;
     QString MarkerName_XSpot;
+    QString MarkerName_XSpot2;
     QString MarkerName_Tiptool;
     QString MarkerName_Robot;
     //导航标志
@@ -139,6 +143,9 @@ public:
     QList<double> transparams_Tibia_Lat;
     bool get2DPtfrom3D(Vector3d Pt_3D, QList<double> transparams, Vector2d &Pt_2D);
     bool get3DLinefrom2D(Vector2d Pt_2D, QList<double> transparams,QList<Vector4d> &transparams_Line);
+
+    bool Shift2DPtfrom2D(Vector2d Pt_Scr, QList<double> transparams_Scr,QList<Vector2d> &Line_Dist,QList<double> transparams_Dist);
+
 
     bool get3DPtfrom2Ds(QList<Vector2d > Pt_2Ds, QList<QList<double> > ListOfTransparams,QList<Matrix4d> Xspot_matrix4d,Vector3d &Pt_3D);
 	//3D规划文件处理
@@ -206,6 +213,9 @@ public:
     cv::Mat camImage; //视频采集的图片
     bool OpenCamera();
     int cam_index;
+    int countCameras();
+    void initCamera();
+
 
     //图像叠加
     cv::Mat enhancePic(cv::Mat SRC);
@@ -221,6 +231,8 @@ public:
     //CArm角度调整模块
     CArmWidget carmwidget;
 
+    //配置文件
+    void readSettingFile();
 
 private slots:
 
@@ -286,13 +298,13 @@ private slots:
 
     void on_pushButton_Lat_CapturePicture_clicked();
 
-    void Process_AP_Femur();//处理数据
+    void Process_AP_Femur(int index);//处理数据
 
-    void Process_AP_Tibia();
+    void Process_AP_Tibia(int index);
 
-    void Process_Lat_Femur();
+    void Process_Lat_Femur(int index);
 
-    void Process_Lat_Tibia();
+    void Process_Lat_Tibia(int index);
 
     void on_checkBox_AP_Femur_clicked(bool checked);
 
@@ -383,6 +395,13 @@ private slots:
     void on_pushButton_2_clicked();
 
     void setTypeofDevice(TypeofDevice type);
+
+    void on_comboBox_CameraIndex_activated(int index);
+
+    void Point_Change_Femur_AP(int index);
+    void Point_Change_Tibia_AP(int index);
+    void Point_Change_Femur_Lat(int index);
+    void Point_Change_Tibia_Lat(int index);
 
 private:
     Ui::Widget *ui;

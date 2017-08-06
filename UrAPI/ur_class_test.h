@@ -129,6 +129,7 @@ private slots:
 
     void on_Debug_Joint_clicked();
 
+
 private:
 	Ui::UR_class_testClass ui;
 };

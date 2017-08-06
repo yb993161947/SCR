@@ -15,6 +15,8 @@ public:
     QGraphicsLineItem *Line2_3;//23直线   
     //QGraphicsLineItem *Marker_Tip;//一二直线
 
+    QGraphicsLineItem *subline1;//等比例辅助线直线
+    QGraphicsLineItem *subline2;//等比例辅助线直线
 
 protected:
 	void show_otherItem();

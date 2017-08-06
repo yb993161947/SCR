@@ -35,6 +35,12 @@ imageScene_Tibia_ap::imageScene_Tibia_ap(QObject * parent) : ImageScene(parent) 
     subline1->hide();
     radioB4toB3 = 0;
 
+    subline2 = new QGraphicsLineItem;//
+    addItem(subline2);
+    subline2->setParentItem(&(pixImage));
+    subline2->setPen(pen);
+    subline2->hide();
+
 
 
 }
@@ -57,15 +63,15 @@ void imageScene_Tibia_ap::show_otherItem()
        Line3_4->setLine(Piximage_point[2].x(),Piximage_point[2].y(),Piximage_point[3].x(),Piximage_point[3].y());
        Line3_4->show();
     }	
-          if (Piximage_point[0] != QPointF(-1, -1)
-            && Piximage_point[1] != QPointF(-1, -1)
-            && Piximage_point[2] != QPointF(-1, -1))
-        {
-			  float disB3toLine12 = distance_DotToLine(Piximage_point[1], Piximage_point[0], Piximage_point[2]);
-			  float disB4toLine12 = disB3toLine12 * radioB4toB3;
+//          if (Piximage_point[0] != QPointF(-1, -1)
+//            && Piximage_point[1] != QPointF(-1, -1)
+//            && Piximage_point[2] != QPointF(-1, -1))
+//        {
+//			  float disB3toLine12 = distance_DotToLine(Piximage_point[1], Piximage_point[0], Piximage_point[2]);
+//			  float disB4toLine12 = disB3toLine12 * radioB4toB3;
 
-			  subline1->setLine(offsetLine(Piximage_point[0], Piximage_point[1], disB4toLine12));
-        }
+//			  subline1->setLine(offsetLine(Piximage_point[0], Piximage_point[1], disB4toLine12));
+//        }
 }
 
 float imageScene_Tibia_ap::distance_DotToLine(QPointF linePoint1, QPointF linePoint2, QPointF dot)

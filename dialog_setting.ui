@@ -238,7 +238,7 @@ QRadioButton{
      <rect>
       <x>80</x>
       <y>90</y>
-      <width>181</width>
+      <width>85</width>
       <height>25</height>
      </rect>
     </property>
@@ -322,6 +322,19 @@ QRadioButton{
     </property>
     <property name="text">
      <string>Marker_Robot</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdi_NameXspot_2">
+    <property name="geometry">
+     <rect>
+      <x>175</x>
+      <y>90</y>
+      <width>85</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>XSPOT1</string>
     </property>
    </widget>
   </widget>

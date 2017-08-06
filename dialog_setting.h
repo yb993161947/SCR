@@ -16,6 +16,7 @@ public:
     explicit Dialog_Setting(QWidget *parent = 0);
     ~Dialog_Setting();
 
+    void ReadSettingFile();
 private slots:
     void on_pushButtonUDP_clicked();
 

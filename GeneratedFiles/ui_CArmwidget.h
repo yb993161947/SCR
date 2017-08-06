@@ -338,8 +338,8 @@ public:
         radioButton_12->setText(QApplication::translate("CArmWidget", "\346\265\213\351\207\2174", 0));
         labelReferencePicture_2->setText(QString());
         radioButton_8->setText(QApplication::translate("CArmWidget", "\345\217\202\350\200\2030", 0));
-        radioButton_14->setText(QApplication::translate("CArmWidget", "\346\265\213\351\207\2174", 0));
-        radioButton_15->setText(QApplication::translate("CArmWidget", "\346\265\213\351\207\2175", 0));
+        radioButton_14->setText(QApplication::translate("CArmWidget", "\346\265\213\351\207\2176", 0));
+        radioButton_15->setText(QApplication::translate("CArmWidget", "\346\265\213\351\207\2177", 0));
     } // retranslateUi
 
 };

@@ -12,6 +12,8 @@ public:
     void setHeight(float ItemHeight);
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+    void setLine(QPointF pt1,QPointF pt2);
+private:
     float width;
     float height;
 };

@@ -47,6 +47,20 @@ imageScene_Tibia_lat::imageScene_Tibia_lat(QObject * parent) : ImageScene(parent
     //Marker_Tip->setParentItem(&(pixImage));
     //Marker_Tip->setPen(pen);
     //Marker_Tip->hide();
+	pen.setStyle(Qt::DashLine);
+	pen.setColor(Qt::red);
+
+    subline1 = new QGraphicsLineItem;//
+    addItem(subline1);
+    subline1->setParentItem(&(pixImage));
+    subline1->setPen(pen);
+    subline1->hide();
+
+    subline2 = new QGraphicsLineItem;//
+    addItem(subline2);
+    subline2->setParentItem(&(pixImage));
+    subline2->setPen(pen);
+    subline2->hide();
 
 }
 

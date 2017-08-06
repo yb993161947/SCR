@@ -1,4 +1,4 @@
-﻿  /////////////////////////////////////////////////////
+﻿/////////////////////////////////////////////////////
 /*
 程序名称：前交叉韧带重建2D导航系统
 程序功能：
@@ -62,103 +62,126 @@ Widget::Widget(QWidget *parent) :
     //初始化函数，包括读入参数、设备初始化
 
     InitializationParameter();//初始化参数
-
+	readSettingFile();
     //NDI初始化
-	thread_NDI = new thread_get_NDI_marker();
+    thread_NDI = new thread_get_NDI_marker();
     thread_NDI->start();
     connect(thread_NDI, SIGNAL(threadSignal(QList<Info_NDI>))
-        , this, SLOT(rev_NDI(QList<Info_NDI>)), Qt::DirectConnection);
-//    connect(thread_NDI, SIGNAL(threadSignal(QList<Info_NDI>))
-//        , this, SLOT(rev_NDI(QList<Info_NDI>))) ;
+            , this, SLOT(rev_NDI(QList<Info_NDI>)), Qt::DirectConnection);
+    //    connect(thread_NDI, SIGNAL(threadSignal(QList<Info_NDI>))
+    //        , this, SLOT(rev_NDI(QList<Info_NDI>))) ;
 
     // xspot上点相对于marker的坐标，如果用其它参考系作为基准，需要乘变换矩阵
-        Eigen::MatrixXd XSpotPts3DMatrix;
-        XSpotPts3DMatrix.resize(12, 3);
-        XSpotPts3DMatrix << 353.5917295, -28.94508077, -58.35207327,
-           350.457801, -33.334644, -88.32555342,
-           347.1837796, -37.57368775, -118.639914,
-           295.8181762, -34.59162595, -31.80863198,
-           282.4332982, -40.8479307, -63.78963793,
-           267.7006404, -47.70638125, -98.62438413,
-           296.9313793, 37.83713989, -48.21922192,
-           286.5644333, 42.54051603, -74.75168674,
-           276.5781768, 47.58420394, -101.5227552,
-           343.6148427, 33.11330516, -67.86624091,
-           339.9296347, 36.50701665, -92.54845644,
-           336.1567828, 39.58543792, -116.878661;
+    Eigen::MatrixXd XSpotPts3DMatrix;
+    XSpotPts3DMatrix.resize(12, 3);
+    XSpotPts3DMatrix << 353.5917295, -28.94508077, -58.35207327,
+            350.457801, -33.334644, -88.32555342,
+            347.1837796, -37.57368775, -118.639914,
+            295.8181762, -34.59162595, -31.80863198,
+            282.4332982, -40.8479307, -63.78963793,
+            267.7006404, -47.70638125, -98.62438413,
+            296.9313793, 37.83713989, -48.21922192,
+            286.5644333, 42.54051603, -74.75168674,
+            276.5781768, 47.58420394, -101.5227552,
+            343.6148427, 33.11330516, -67.86624091,
+            339.9296347, 36.50701665, -92.54845644,
+            336.1567828, 39.58543792, -116.878661;
 
-       for(int i = 0; i < 12; i++)
-       {
-           XSpotPtsinput << XSpotPts3DMatrix.row(i).transpose();
-       }
+    for(int i = 0; i < 12; i++)
+    {
+        XSpotPtsinput << XSpotPts3DMatrix.row(i).transpose();
+    }
 
-      //NDI 矩阵初始化
-       Xspot_matrix4d_AP_Femur = MatrixXd::Zero(4,4);
-       Xspot_matrix4d_Lat_Femur = MatrixXd::Zero(4,4);
-       Xspot_matrix4d_AP_Tibia = MatrixXd::Zero(4,4);
-       Xspot_matrix4d_Lat_Tibia = MatrixXd::Zero(4,4);
+    //NDI 矩阵初始化
+    Xspot_matrix4d_AP_Femur = MatrixXd::Zero(4,4);
+    Xspot_matrix4d_Lat_Femur = MatrixXd::Zero(4,4);
+    Xspot_matrix4d_AP_Tibia = MatrixXd::Zero(4,4);
+    Xspot_matrix4d_Lat_Tibia = MatrixXd::Zero(4,4);
 
-       tiptopatXspot_AP_Femur =  MatrixXd::Zero(4,4);
-       tiptopatXspot_Lat_Femur =  MatrixXd::Zero(4,4);
-       tiptopatXspot_AP_Tibia =  MatrixXd::Zero(4,4);
-       tiptopatXspot_Lat_Tibia =  MatrixXd::Zero(4,4);
+    tiptopatXspot_AP_Femur =  MatrixXd::Zero(4,4);
+    tiptopatXspot_Lat_Femur =  MatrixXd::Zero(4,4);
+    tiptopatXspot_AP_Tibia =  MatrixXd::Zero(4,4);
+    tiptopatXspot_Lat_Tibia =  MatrixXd::Zero(4,4);
 
-       disofPixel_A4atA12 = 0;
-       disofPixel_A5atA12 = 0;
-       disofPixel_P4atP12 = 0;
-       disofPixel_P4atP23 = 0;
-       disofPixel_P5atP12 = 0;
-       disofPixel_P5atP23 = 0;
-       disofPixel_B3atB12 = 0;
-       disofPixel_B4atB12 = 0;
-       disofPixel_T5atT12 = 0;
-       disofPixel_T5atT14 = 0;
-       disofPixel_T6atT12 = 0;
-       disofPixel_T6atT14 = 0;
+    disofPixel_A4atA12 = 0;
+    disofPixel_A5atA12 = 0;
+    disofPixel_P4atP12 = 0;
+    disofPixel_P4atP23 = 0;
+    disofPixel_P5atP12 = 0;
+    disofPixel_P5atP23 = 0;
+    disofPixel_B3atB12 = 0;
+    disofPixel_B4atB12 = 0;
+    disofPixel_T5atT12 = 0;
+    disofPixel_T5atT14 = 0;
+    disofPixel_T6atT12 = 0;
+    disofPixel_T6atT14 = 0;
 
-       IsopenGuide_AP_Femur = 0;
-       IsopenGuide_Lat_Femur = 0;
-       IsopenGuide_AP_Tibia = 0;
-       IsopenGuide_Lat_Tibia = 0;
+    IsopenGuide_AP_Femur = 0;
+    IsopenGuide_Lat_Femur = 0;
+    IsopenGuide_AP_Tibia = 0;
+    IsopenGuide_Lat_Tibia = 0;
 
-       //需要标定呀
-       RobotTCP = TofMarkeronRobot2robot.inverse() * TofTCP2MarkeronRobot;
+    //需要标定呀
+    Vector4d z_robot = TofTCP_Up2MarkeronRobot - TofTCP_Down2MarkeronRobot;
+    double norm = z_robot.norm();
+    z_robot = z_robot / norm;
+    Vector4d y_robot;
+    Vector3d x_robot2Marker = TofMarkeronRobot2Robot.col(0).head(3);
+    Vector3d  z_3v = z_robot.head(3);
+    Vector3d dir_y =z_3v.cross(x_robot2Marker);
+    y_robot << dir_y(0) , dir_y(1) ,dir_y(2) , 0;
+    Vector3d x_dir = dir_y.cross(z_3v);
+    Vector4d x_robot;
+    x_robot << x_dir(0),x_dir(1),x_dir(2) ,0;
+    Vector4d P = (TofTCP_Up2MarkeronRobot + TofTCP_Down2MarkeronRobot) / 2;
+    RobotTCP << x_robot ,y_robot,z_robot,P ;
+    std::cout << RobotTCP;
+    RobotTCP = TofMarkeronRobot2Robot.inverse() * RobotTCP;
+    //图像采集窗口
+
+	carmwidget.setWindowModality(Qt::ApplicationModal);
+    //摄像机初始化
+    initCamera();
+
+    //载入配置文件
 
 
-//       //UI注册修改
-//       ui->pushButton_AP_CapturePicture->hide();
-//       ui->pushButton_getXspottransform_AP->hide();
-//       ui->pushButton_ShowTiptool_AP->hide();
-//       ui->pushButton_Save_AP->hide();
-//       ui->pushButton_matching_AP->hide();
-//       ui->pushButton_mirror_AP->hide();
-//       ui->checkBox_showAP->hide();
-//       ui->horizontalSlider_Femur_AP->hide();
-//       ui->horizontalSlider_Tibia_AP->hide();
-//       ui->label->hide();
+    //
 
-//       ui->pushButton_Lat_CapturePicture->hide();
-//       ui->pushButton_getXspottransform_Lat->hide();
-//       ui->pushButton_ShowTiptool_Lat->hide();
-//       ui->pushButton_Save_Lat->hide();
-//       ui->pushButton_matching_Lat->hide();
-//       ui->pushButton_mirror_Lat->hide();
-//       ui->checkBox_showLat->hide();
-//       ui->horizontalSlider_Femur_Lat->hide();
-//       ui->horizontalSlider_Tibia_Lat->hide();
-//       ui->label_2->hide();
+    //       //UI注册修改
+    //       ui->pushButton_AP_CapturePicture->hide();
+    //       ui->pushButton_getXspottransform_AP->hide();
+    //       ui->pushButton_ShowTiptool_AP->hide();
+    //       ui->pushButton_Save_AP->hide();
+    //       ui->pushButton_matching_AP->hide();
+    //       ui->pushButton_mirror_AP->hide();
+    //       ui->checkBox_showAP->hide();
+    //       ui->horizontalSlider_Femur_AP->hide();
+    //       ui->horizontalSlider_Tibia_AP->hide();
+    //       ui->label->hide();
 
-//       ui->tabWidget_manipulate->removeTab(3);
-//       ui->tabWidget_manipulate->removeTab(2);
+    //       ui->pushButton_Lat_CapturePicture->hide();
+    //       ui->pushButton_getXspottransform_Lat->hide();
+    //       ui->pushButton_ShowTiptool_Lat->hide();
+    //       ui->pushButton_Save_Lat->hide();
+    //       ui->pushButton_matching_Lat->hide();
+    //       ui->pushButton_mirror_Lat->hide();
+    //       ui->checkBox_showLat->hide();
+    //       ui->horizontalSlider_Femur_Lat->hide();
+    //       ui->horizontalSlider_Tibia_Lat->hide();
+    //       ui->label_2->hide();
 
-//       ui->pushButton_guide_Tibia->hide();
-//       ui->pushButton_Tibia_finished->hide();
+    //       ui->tabWidget_manipulate->removeTab(3);
+    //       ui->tabWidget_manipulate->removeTab(2);
 
-//       ui->pushButton_guide_Femur->hide();
-//       ui->pushButton_Femur_finished->hide();
-//       ui->pushButtonSetting->hide();
+    //       ui->pushButton_guide_Tibia->hide();
+    //       ui->pushButton_Tibia_finished->hide();
 
-//       carmwidget.hide();
+    //       ui->pushButton_guide_Femur->hide();
+    //       ui->pushButton_Femur_finished->hide();
+    //       ui->pushButtonSetting->hide();
+
+    //       carmwidget.hide();
 
 
 }
@@ -213,26 +236,42 @@ void Widget::InitializationParameter()
     ui->radioButton_Femur->setEnabled(false);
     ui->radioButton_Tibia->setEnabled(false);
 
-    connect(imageScene_Lat_Femur,SIGNAL(dotsHasSelected1(float)),
-            imageScene_AP_Femur,SLOT(showsubline1(float)));
+    //connect(imageScene_Lat_Femur,SIGNAL(dotsHasSelected1(float)),
+    //        imageScene_AP_Femur,SLOT(showsubline1(float)));
 
-    connect(imageScene_Lat_Femur,SIGNAL(dotsHasSelected2(float)),
-            imageScene_AP_Femur,SLOT(showsubline2(float)));
+    //connect(imageScene_Lat_Femur,SIGNAL(dotsHasSelected2(float)),
+    //        imageScene_AP_Femur,SLOT(showsubline2(float)));
 
-    connect(imageScene_Lat_Tibia,SIGNAL(dotsHasSelected1(float)),
-            imageScene_AP_Tibia,SLOT(showsubline1(float)));
+    //connect(imageScene_Lat_Tibia,SIGNAL(dotsHasSelected1(float)),
+    //        imageScene_AP_Tibia,SLOT(showsubline1(float)));
 
-    connect(imageScene_AP_Femur,SIGNAL(pointChanged()),
-            this,SLOT(Process_AP_Femur()));
+    connect(imageScene_AP_Femur, &(ImageScene::pointChanged),
+            this,&Widget::Process_AP_Femur);
 
-    connect(imageScene_AP_Tibia,SIGNAL(pointChanged()),
-            this,SLOT(Process_AP_Tibia()));
+    connect(imageScene_AP_Tibia, &(ImageScene::pointChanged),
+            this,&Widget::Process_AP_Tibia);
 
-    connect(imageScene_Lat_Femur,SIGNAL(pointChanged()),
-            this,SLOT(Process_Lat_Femur()));
+    connect(imageScene_Lat_Femur, &(ImageScene::pointChanged),
+            this,&Widget::Process_Lat_Femur);
 
-    connect(imageScene_Lat_Tibia,SIGNAL(pointChanged()),
-            this,SLOT(Process_Lat_Tibia()));
+    connect(imageScene_Lat_Tibia,&(ImageScene::pointChanged),
+            this,&Widget::Process_Lat_Tibia);
+	//connect(imageScene_AP_Femur, SIGNAL(pointChanged(int index)), this, SLOT(Point_Change_Femur_AP()));
+	//connect(imageScene_AP_Tibia, SIGNAL(pointChanged(int index)), this, SLOT(Point_Change_Tibia_AP()));
+	//connect(imageScene_Lat_Femur, SIGNAL(pointChanged(int index)), this, SLOT(Point_Change_Femur_Lat()));
+	//connect(imageScene_Lat_Tibia, SIGNAL(pointChanged(int index)), this, SLOT(Point_Change_Tibia_Lat()));
+
+    imageScene_AP_Femur->setPixImage(QPixmap(":/images/iamge_xRay.png"));
+    imageScene_AP_Tibia->setPixImage(QPixmap(":/images/iamge_xRay.png"));
+    imageScene_Lat_Femur->setPixImage(QPixmap(":/images/iamge_Xray_Lat.png"));
+    imageScene_Lat_Tibia->setPixImage(QPixmap(":/images/iamge_Xray_Lat.png"));
+
+    imageScene_AP_Femur->setmouseConnect(false);
+    imageScene_AP_Tibia->setmouseConnect(false);
+    imageScene_Lat_Femur->setmouseConnect(false);
+    imageScene_Lat_Tibia->setmouseConnect(false);
+
+
     //界面控制
     lastIndex = INDEX_FEMUR;
     on_tabWidget_manipulate_currentChanged(INDEX_FEMUR);
@@ -295,214 +334,214 @@ void Widget::on_pushButton_Exit_clicked()//退出
 {
 
     QMessageBox msgBox;
-      msgBox.setText(QString::fromLocal8Bit("询问: 确定关闭程序吗？"));
-      msgBox.setStandardButtons(QMessageBox::Yes |QMessageBox::No);
-      msgBox.setDefaultButton(QMessageBox::Yes);
-      int ret = msgBox.exec();
+    msgBox.setText(QString::fromLocal8Bit("询问: 确定关闭程序吗？"));
+    msgBox.setStandardButtons(QMessageBox::Yes |QMessageBox::No);
+    msgBox.setDefaultButton(QMessageBox::Yes);
+    int ret = msgBox.exec();
 
-      switch (ret) {
-        case QMessageBox::Yes:
-            // Yes was clicked
-            this->close();
-        case QMessageBox::No:
-            break;
-        default:
-            // should never be reached
-            break;
-      }
+    switch (ret) {
+    case QMessageBox::Yes:
+        // Yes was clicked
+        this->close();
+    case QMessageBox::No:
+        break;
+    default:
+        // should never be reached
+        break;
+    }
 
 }
 
 
 void Widget::on_tabWidget_manipulate_currentChanged(int index)//标签修改操作函数
 {
-      switch (index)
+    switch (index)
     {
-        case INDEX_FEMUR:
+    case INDEX_FEMUR:
 
-            ui->graphicsView_AP->show();
-            ui->graphicsView_Lat->show();
-            ui->label_Latdata->show();
-            ui->label_APdata->show();
-            ui->groupBox->show();
-            ui->groupBox_2->show();
-            ui->label_arthroscopy->hide();
-            ui->horizontalSlider_Femur_AP->show();
-            ui->horizontalSlider_Tibia_AP->hide();
-            ui->horizontalSlider_Femur_Lat->show();
-            ui->horizontalSlider_Tibia_Lat->hide();
-
-
-            if(lastIndex == INDEX_SIMULATE)
-            {
-                imageScene_AP_Femur->zoomIn(1.6667);
-                imageScene_AP_Tibia->zoomIn(1.6667);
-                imageScene_Lat_Femur->zoomIn(1.6667);
-                imageScene_Lat_Tibia->zoomIn(1.6667);
-            }
-            lastIndex = INDEX_FEMUR;
-
-            ui->graphicsView_AP->setGeometry(30,110,750,750);
-            ui->graphicsView_Lat->setGeometry(810,110,750,750);
-            ui->graphicsView_AP->setSceneRect(-250,-250,500,500);
-            ui->graphicsView_Lat->setSceneRect(-250,-250,500,500);
-            ui->graphicsView_AP->setScene(imageScene_AP_Femur);
-            ui->graphicsView_Lat->setScene(imageScene_Lat_Femur);
-
-//            ui->label_APdata->setText(QString::fromLocal8Bit
-//                        ("股骨数据：\n disofPixel_A4atA12 = %1\n disofPixel_A5atA12 = %2")
-//                               .arg(disofPixel_A4atA12).arg(disofPixel_A5atA12));
-//            ui->label_Latdata->setText(QString::fromLocal8Bit
-//                        ("股骨数据：\n disofPixel_P4atP12 = %1\n disofPixel_P4atP23 = %2\n disofPixel_P5atP12 = %3\n disofPixel_P5atP23 = %4")
-//                          .arg(disofPixel_P4atP12).arg(disofPixel_P4atP23).arg(disofPixel_P5atP12).arg(disofPixel_P5atP23));
-            ui->label_APdata->setText(QString::fromLocal8Bit
-                        ("股骨数据：\n radio_A4atA12 = %1\n radio_A5atA12 = %2")
-                               .arg(disofPixel_A4atA12 / disofA12).arg(disofPixel_A5atA12 / disofA12));
-            ui->label_Latdata->setText(QString::fromLocal8Bit
-                        ("股骨数据：\n radio_P4atP12 = %1\n radio_P4atP23 = %2\n radio_P5atP12 = %3\n radio_P5atP23 = %4")
-                          .arg(disofPixel_P4atP12 / disofP12).arg(disofPixel_P4atP23 / disofP12_ver).arg(disofPixel_P5atP12 / disofP12).arg(disofPixel_P5atP23 / disofP12_ver));
-
-            if(imageScene_AP_Femur->pixImage_matching.pixmap().isNull())
-                ui->checkBox_showAP->setEnabled(false);
-            else
-                ui->checkBox_showAP->setEnabled(true);
-
-            if(imageScene_AP_Femur->pixImage_matching.pixmap().isNull())
-                ui->checkBox_showLat->setEnabled(false);
-            else
-                ui->checkBox_showLat->setEnabled(true);
-
-            if(lastIsShow[0])
-              ui->checkBox_showAP->setChecked(true);
-            else
-              ui->checkBox_showAP->setChecked(false);
-
-            if(lastIsShow[1])
-              ui->checkBox_showLat->setChecked(true);
-            else
-              ui->checkBox_showLat->setChecked(false);
-
-            Ur->hide();
-            break;
-        case INDEX_TIBIA:
-            ui->graphicsView_AP->show();
-            ui->graphicsView_Lat->show();
-            ui->label_Latdata->show();
-            ui->label_APdata->show();
-            ui->groupBox->show();
-            ui->groupBox_2->show();
-            ui->label_arthroscopy->hide();
-            ui->horizontalSlider_Femur_AP->hide();
-            ui->horizontalSlider_Tibia_AP->show();
-            ui->horizontalSlider_Femur_Lat->hide();
-            ui->horizontalSlider_Tibia_Lat->show();
-
-            if(lastIndex == INDEX_SIMULATE)
-            {
-                imageScene_AP_Femur->zoomIn(1.6667);
-                imageScene_AP_Tibia->zoomIn(1.6667);
-                imageScene_Lat_Femur->zoomIn(1.6667);
-                imageScene_Lat_Tibia->zoomIn(1.6667);
-            }
-            lastIndex = INDEX_TIBIA;
-
-            ui->graphicsView_AP->setGeometry(30,110,750,750);
-            ui->graphicsView_Lat->setGeometry(810,110,750,750);
-            ui->graphicsView_AP->setSceneRect(-250,-250,500,500);
-            ui->graphicsView_Lat->setSceneRect(-250,-250,500,500);
+        ui->graphicsView_AP->show();
+        ui->graphicsView_Lat->show();
+        ui->label_Latdata->show();
+        ui->label_APdata->show();
+        ui->groupBox->show();
+        ui->groupBox_2->show();
+        ui->label_arthroscopy->hide();
+        ui->horizontalSlider_Femur_AP->show();
+        ui->horizontalSlider_Tibia_AP->hide();
+        ui->horizontalSlider_Femur_Lat->show();
+        ui->horizontalSlider_Tibia_Lat->hide();
 
 
-            ui->graphicsView_AP->setScene(imageScene_AP_Tibia);
-            ui->graphicsView_Lat->setScene(imageScene_Lat_Tibia);
+        if(lastIndex == INDEX_SIMULATE)
+        {
+            imageScene_AP_Femur->zoomIn(1.6667);
+            imageScene_AP_Tibia->zoomIn(1.6667);
+            imageScene_Lat_Femur->zoomIn(1.6667);
+            imageScene_Lat_Tibia->zoomIn(1.6667);
+        }
+        lastIndex = INDEX_FEMUR;
 
-//            ui->label_APdata->setText(QString::fromLocal8Bit
-//                        ("胫骨数据：\n disofPixel_B3atB12 = %1\n disofPixel_B4atB12 = %2\n")
-//                               .arg(disofPixel_B3atB12).arg(disofPixel_B4atB12));
-//            ui->label_Latdata->setText(QString::fromLocal8Bit
-//                        ("胫骨数据：\n disofPixel_T5atT12 = %1\n disofPixel_T5atT14 = %2\n disofPixel_T6atT12 = %3\n disofPixel_T6atT14 = %4")
-//                               .arg(disofPixel_T5atT12).arg(disofPixel_T5atT14).arg(disofPixel_T6atT12).arg(disofPixel_T6atT14));
+        ui->graphicsView_AP->setGeometry(30,110,750,750);
+        ui->graphicsView_Lat->setGeometry(810,110,750,750);
+        ui->graphicsView_AP->setSceneRect(-250,-250,500,500);
+        ui->graphicsView_Lat->setSceneRect(-250,-250,500,500);
+        ui->graphicsView_AP->setScene(imageScene_AP_Femur);
+        ui->graphicsView_Lat->setScene(imageScene_Lat_Femur);
 
-            ui->label_APdata->setText(QString::fromLocal8Bit
-                        ("胫骨数据：\n radio_B3atB12 = %1\n radio_B4atB12 = %2\n")
-                               .arg(disofPixel_B3atB12 / disofB12).arg(disofPixel_B4atB12 / disofB12));
-            ui->label_Latdata->setText(QString::fromLocal8Bit
-                        ("胫骨数据：\n radio_T5atT12 = %1\n radio_T5atT14 = %2\n radio_T6atT12 = %3\n radio_T6atT14 = %4")
-                               .arg(disofPixel_T5atT12 / disofT12).arg(disofPixel_T5atT14 / disofT14).arg(disofPixel_T6atT12 / disofT12).arg(disofPixel_T6atT14 / disofT14));
+        //            ui->label_APdata->setText(QString::fromLocal8Bit
+        //                        ("股骨数据：\n disofPixel_A4atA12 = %1\n disofPixel_A5atA12 = %2")
+        //                               .arg(disofPixel_A4atA12).arg(disofPixel_A5atA12));
+        //            ui->label_Latdata->setText(QString::fromLocal8Bit
+        //                        ("股骨数据：\n disofPixel_P4atP12 = %1\n disofPixel_P4atP23 = %2\n disofPixel_P5atP12 = %3\n disofPixel_P5atP23 = %4")
+        //                          .arg(disofPixel_P4atP12).arg(disofPixel_P4atP23).arg(disofPixel_P5atP12).arg(disofPixel_P5atP23));
+        ui->label_APdata->setText(QString::fromLocal8Bit
+                                  ("股骨数据：\n radio_A4atA12 = %1\n radio_A5atA12 = %2")
+                                  .arg(disofPixel_A4atA12 / disofA12).arg(disofPixel_A5atA12 / disofA12));
+        ui->label_Latdata->setText(QString::fromLocal8Bit
+                                   ("股骨数据：\n radio_P4atP12 = %1\n radio_P4atP23 = %2\n radio_P5atP12 = %3\n radio_P5atP23 = %4")
+                                   .arg(disofPixel_P4atP12 / disofP12).arg(disofPixel_P4atP23 / disofP12_ver).arg(disofPixel_P5atP12 / disofP12).arg(disofPixel_P5atP23 / disofP12_ver));
 
-            if(imageScene_AP_Tibia->pixImage_matching.pixmap().isNull())
-                ui->checkBox_showAP->setEnabled(false);
-            else
-                ui->checkBox_showAP->setEnabled(true);
+        if(imageScene_AP_Femur->pixImage_matching.pixmap().isNull())
+            ui->checkBox_showAP->setEnabled(false);
+        else
+            ui->checkBox_showAP->setEnabled(true);
 
-            if(imageScene_AP_Tibia->pixImage_matching.pixmap().isNull())
-                ui->checkBox_showLat->setEnabled(false);
-            else
-                ui->checkBox_showLat->setEnabled(true);
+        if(imageScene_AP_Femur->pixImage_matching.pixmap().isNull())
+            ui->checkBox_showLat->setEnabled(false);
+        else
+            ui->checkBox_showLat->setEnabled(true);
 
-            if(lastIsShow[2])
-              ui->checkBox_showAP->setChecked(true);
-            else
-              ui->checkBox_showAP->setChecked(false);
+        if(lastIsShow[0])
+            ui->checkBox_showAP->setChecked(true);
+        else
+            ui->checkBox_showAP->setChecked(false);
 
-            if(lastIsShow[3])
-              ui->checkBox_showLat->setChecked(true);
-            else
-              ui->checkBox_showLat->setChecked(false);
+        if(lastIsShow[1])
+            ui->checkBox_showLat->setChecked(true);
+        else
+            ui->checkBox_showLat->setChecked(false);
 
-            Ur->hide();
-            break;
+        Ur->hide();
+        break;
+    case INDEX_TIBIA:
+        ui->graphicsView_AP->show();
+        ui->graphicsView_Lat->show();
+        ui->label_Latdata->show();
+        ui->label_APdata->show();
+        ui->groupBox->show();
+        ui->groupBox_2->show();
+        ui->label_arthroscopy->hide();
+        ui->horizontalSlider_Femur_AP->hide();
+        ui->horizontalSlider_Tibia_AP->show();
+        ui->horizontalSlider_Femur_Lat->hide();
+        ui->horizontalSlider_Tibia_Lat->show();
 
-        case INDEX_SIMULATE:
-            ui->graphicsView_AP->show();
-            ui->graphicsView_Lat->show();
-            ui->label_Latdata->hide();
-            ui->label_APdata->hide();
-            ui->groupBox->hide();
-            ui->groupBox_2->hide();
-            ui->label_arthroscopy->show();
+        if(lastIndex == INDEX_SIMULATE)
+        {
+            imageScene_AP_Femur->zoomIn(1.6667);
+            imageScene_AP_Tibia->zoomIn(1.6667);
+            imageScene_Lat_Femur->zoomIn(1.6667);
+            imageScene_Lat_Tibia->zoomIn(1.6667);
+        }
+        lastIndex = INDEX_TIBIA;
 
-            ui->horizontalSlider_Femur_AP->hide();
-            ui->horizontalSlider_Tibia_AP->hide();
-            ui->horizontalSlider_Femur_Lat->hide();
-            ui->horizontalSlider_Tibia_Lat->hide();
-
-             if(lastIndex == INDEX_FEMUR || lastIndex == INDEX_TIBIA)
-             {
-                 imageScene_AP_Femur->zoomOut(1.6667);
-                 imageScene_AP_Tibia->zoomOut(1.6667);
-                 imageScene_Lat_Femur->zoomOut(1.6667);
-                 imageScene_Lat_Tibia->zoomOut(1.6667);
-             }
-             lastIndex = INDEX_SIMULATE;
+        ui->graphicsView_AP->setGeometry(30,110,750,750);
+        ui->graphicsView_Lat->setGeometry(810,110,750,750);
+        ui->graphicsView_AP->setSceneRect(-250,-250,500,500);
+        ui->graphicsView_Lat->setSceneRect(-250,-250,500,500);
 
 
-             ui->graphicsView_AP->setGeometry(1060,110,450,450);
-             ui->graphicsView_Lat->setGeometry(1060,560,450,450);
-             ui->graphicsView_AP->setSceneRect(-150,-150,300,300);
-             ui->graphicsView_Lat->setSceneRect(-150,-150,300,300);
+        ui->graphicsView_AP->setScene(imageScene_AP_Tibia);
+        ui->graphicsView_Lat->setScene(imageScene_Lat_Tibia);
 
-            //仿真操作补充
-            Ur->hide();
-            break;
-        case INDEX_ROBOT:
-            ui->label_arthroscopy->hide();
-            ui->graphicsView_AP->hide();
-            ui->graphicsView_Lat->hide();
-            ui->label_Latdata->hide();
-            ui->label_APdata->hide();
-            ui->groupBox->hide();
-            ui->groupBox_2->hide();
+        //            ui->label_APdata->setText(QString::fromLocal8Bit
+        //                        ("胫骨数据：\n disofPixel_B3atB12 = %1\n disofPixel_B4atB12 = %2\n")
+        //                               .arg(disofPixel_B3atB12).arg(disofPixel_B4atB12));
+        //            ui->label_Latdata->setText(QString::fromLocal8Bit
+        //                        ("胫骨数据：\n disofPixel_T5atT12 = %1\n disofPixel_T5atT14 = %2\n disofPixel_T6atT12 = %3\n disofPixel_T6atT14 = %4")
+        //                               .arg(disofPixel_T5atT12).arg(disofPixel_T5atT14).arg(disofPixel_T6atT12).arg(disofPixel_T6atT14));
 
-            ui->horizontalSlider_Femur_AP->hide();
-            ui->horizontalSlider_Tibia_AP->hide();
-            ui->horizontalSlider_Femur_Lat->hide();
-            ui->horizontalSlider_Tibia_Lat->hide();
-            //机器人操作补充
-            Ur->show();
-            break;
+        ui->label_APdata->setText(QString::fromLocal8Bit
+                                  ("胫骨数据：\n radio_B3atB12 = %1\n radio_B4atB12 = %2\n")
+                                  .arg(disofPixel_B3atB12 / disofB12).arg(disofPixel_B4atB12 / disofB12));
+        ui->label_Latdata->setText(QString::fromLocal8Bit
+                                   ("胫骨数据：\n radio_T5atT12 = %1\n radio_T5atT14 = %2\n radio_T6atT12 = %3\n radio_T6atT14 = %4")
+                                   .arg(disofPixel_T5atT12 / disofT12).arg(disofPixel_T5atT14 / disofT14).arg(disofPixel_T6atT12 / disofT12).arg(disofPixel_T6atT14 / disofT14));
 
-        default:
-            break;
+        if(imageScene_AP_Tibia->pixImage_matching.pixmap().isNull())
+            ui->checkBox_showAP->setEnabled(false);
+        else
+            ui->checkBox_showAP->setEnabled(true);
+
+        if(imageScene_AP_Tibia->pixImage_matching.pixmap().isNull())
+            ui->checkBox_showLat->setEnabled(false);
+        else
+            ui->checkBox_showLat->setEnabled(true);
+
+        if(lastIsShow[2])
+            ui->checkBox_showAP->setChecked(true);
+        else
+            ui->checkBox_showAP->setChecked(false);
+
+        if(lastIsShow[3])
+            ui->checkBox_showLat->setChecked(true);
+        else
+            ui->checkBox_showLat->setChecked(false);
+
+        Ur->hide();
+        break;
+
+    case INDEX_SIMULATE:
+        ui->graphicsView_AP->show();
+        ui->graphicsView_Lat->show();
+        ui->label_Latdata->hide();
+        ui->label_APdata->hide();
+        ui->groupBox->hide();
+        ui->groupBox_2->hide();
+        ui->label_arthroscopy->show();
+
+        ui->horizontalSlider_Femur_AP->hide();
+        ui->horizontalSlider_Tibia_AP->hide();
+        ui->horizontalSlider_Femur_Lat->hide();
+        ui->horizontalSlider_Tibia_Lat->hide();
+
+        if(lastIndex == INDEX_FEMUR || lastIndex == INDEX_TIBIA)
+        {
+            imageScene_AP_Femur->zoomOut(1.6667);
+            imageScene_AP_Tibia->zoomOut(1.6667);
+            imageScene_Lat_Femur->zoomOut(1.6667);
+            imageScene_Lat_Tibia->zoomOut(1.6667);
+        }
+        lastIndex = INDEX_SIMULATE;
+
+
+        ui->graphicsView_AP->setGeometry(1060,110,450,450);
+        ui->graphicsView_Lat->setGeometry(1060,560,450,450);
+        ui->graphicsView_AP->setSceneRect(-150,-150,300,300);
+        ui->graphicsView_Lat->setSceneRect(-150,-150,300,300);
+
+        //仿真操作补充
+        Ur->hide();
+        break;
+    case INDEX_ROBOT:
+        ui->label_arthroscopy->hide();
+        ui->graphicsView_AP->hide();
+        ui->graphicsView_Lat->hide();
+        ui->label_Latdata->hide();
+        ui->label_APdata->hide();
+        ui->groupBox->hide();
+        ui->groupBox_2->hide();
+
+        ui->horizontalSlider_Femur_AP->hide();
+        ui->horizontalSlider_Tibia_AP->hide();
+        ui->horizontalSlider_Femur_Lat->hide();
+        ui->horizontalSlider_Tibia_Lat->hide();
+        //机器人操作补充
+        Ur->show();
+        break;
+
+    default:
+        break;
     }
 
 
@@ -513,8 +552,9 @@ void Widget::on_pushButton_AP_OpenPicture_clicked()
 {
 
     qStr_AP_ImageFilePath = QFileDialog::getOpenFileName(nullptr, "加载图像",
-        QApplication::applicationDirPath());
-
+                                                         QApplication::applicationDirPath());
+    if(qStr_AP_ImageFilePath.isNull())
+        return;
     //对图像进行处理并显示
     if(INDEX_FEMUR == ui->tabWidget_manipulate->currentIndex())
     {
@@ -525,9 +565,11 @@ void Widget::on_pushButton_AP_OpenPicture_clicked()
 
         for(int i = 0; i < 6;i++)
         {
-            imageScene_AP_Tibia->Piximage_button[i].setScale(1);
-            imageScene_AP_Tibia->Piximage_button_selected[i].setScale(1);
+            imageScene_AP_Femur->Piximage_button[i].setScale(1);
+            imageScene_AP_Femur->Piximage_button_selected[i].setScale(1);
         }
+        imageScene_AP_Femur->setmouseConnect(true);
+
     }
     else if(INDEX_TIBIA == ui->tabWidget_manipulate->currentIndex())
     {
@@ -541,6 +583,7 @@ void Widget::on_pushButton_AP_OpenPicture_clicked()
             imageScene_AP_Tibia->Piximage_button[i].setScale(1);
             imageScene_AP_Tibia->Piximage_button_selected[i].setScale(1);
         }
+        imageScene_AP_Tibia->setmouseConnect(true);
     }
 }
 
@@ -549,8 +592,9 @@ void Widget::on_pushButton_Lat_OpenPicture_clicked()
 {
 
     qStr_Lat_ImageFilePath = QFileDialog::getOpenFileName(nullptr, "加载图像",
-        QApplication::applicationDirPath());
-
+                                                          QApplication::applicationDirPath());
+    if(qStr_AP_ImageFilePath.isNull())
+        return;
     //对图像进行处理并显示
     if (INDEX_FEMUR == ui->tabWidget_manipulate->currentIndex())
     {
@@ -558,6 +602,7 @@ void Widget::on_pushButton_Lat_OpenPicture_clicked()
 
         ui->graphicsView_Lat->setScene(imageScene_Lat_Femur);
         current_operation = LAT_FEMUR;
+        imageScene_Lat_Femur->setmouseConnect(true);
 
     }
     else if (INDEX_TIBIA == ui->tabWidget_manipulate->currentIndex())
@@ -566,7 +611,7 @@ void Widget::on_pushButton_Lat_OpenPicture_clicked()
 
         ui->graphicsView_Lat->setScene(imageScene_Lat_Tibia);
         current_operation = LAT_TIBIA;
-
+        imageScene_Lat_Tibia->setmouseConnect(true);
     }
 
 }
@@ -616,39 +661,42 @@ void Widget::on_radioButton_A5_clicked()
 //鼠标释放事件
 void Widget::mouseReleaseEvent(QMouseEvent *event)
 {
-//    switch (ui->tabWidget_manipulate->currentIndex)
-//    {
-//        case INDEX_FEMUR:
+    //    switch (ui->tabWidget_manipulate->currentIndex)
+    //    {
+    //        case INDEX_FEMUR:
 
-//            break;
-//        case INDEX_TIBIA:
+    //            break;
+    //        case INDEX_TIBIA:
 
-//            break;
-//        case INDEX_SIMULATE:
+    //            break;
+    //        case INDEX_SIMULATE:
 
-//            break;
-//        case INDEX_ROBOT:
+    //            break;
+    //        case INDEX_ROBOT:
 
-//            break;
+    //            break;
 
-//        default:
-//            break;
+    //        default:
+    //            break;
     //    }
 }
 
+
 Matrix4d Widget::caculateMovetoRoute(Vector3d End3DPt, Vector3d Start3DPt, Matrix4d Bone_Matrix, double dis)
 {
-    Vector3d N_dir = -End3DPt + Start3DPt;
-    Vector3d N1 = (Bone_Matrix.inverse() * Robot_matrix4d * TofMarkeronRobot2robot).col(3).head(3);
-    Vector3d N2 = (Bone_Matrix.inverse() * Robot_matrix4d * TofTCP2MarkeronRobot.inverse()).col(3).head(3);
-    Vector3d Axis_Z = N2-N1;
-    double theta = acosf(N_dir.dot(Axis_Z) / N_dir.norm());
+    //起点与止点方向反了
+
+    Vector3d N_dir = (-End3DPt + Start3DPt) / (-End3DPt + Start3DPt).norm();
+    Vector3d N1 = (Bone_Matrix.inverse() * Robot_matrix4d * TofTCP_Up2MarkeronRobot).head(3);
+    Vector3d N2 = (Bone_Matrix.inverse() * Robot_matrix4d * TofTCP_Down2MarkeronRobot).head(3);
+    Vector3d Axis_Z = (N2-N1) / (N2-N1).norm();
+    double theta = acosf(N_dir.dot(Axis_Z));
     Vector3d AxisCross = Axis_Z.cross(N_dir);
     if (theta < 0)
         theta =  theta + PI;
 
     Matrix3d Rotate = rotateWithAxis(AxisCross , theta);
-    Vector3d PosEnd=  ((End3DPt - N_dir/N_dir.norm() * dis) - N2.col(3).head(3))/1000 ;//延长距离200mm
+    Vector3d PosEnd=  ((Start3DPt - N_dir * dis) - N2.head(3))/1000 ;//延长距离200mm
     Matrix4d T;
     T.block(0,0,3,3) = Rotate;
     T.col(3).head(3) = PosEnd;
@@ -715,34 +763,32 @@ void Widget::guide_d(bool IsopenGuide, ImageScene *Imagescene, Matrix4d Xspot_ma
             if(Robot_matrix4d(3,3) == 0)
             {
                 Imagescene->needle1->hide();
+//                Imagescene->Marker_Tip->hide();
             }
             else
             {
                 Matrix4d Robot2Xspot = Xspot_matrix4d * tone.inverse() * Robot_matrix4d ;
-                Matrix4d needle2Xspot = Robot2Xspot * RobotTCP;
-                Vector4d Tiptop;
-                Tiptop =needle2Xspot.col(3);
+                Vector4d TCP_upOnRobot = Robot2Xspot * TofTCP_Up2MarkeronRobot;
+                Vector4d TCP_downOnRobot = Robot2Xspot * TofTCP_Down2MarkeronRobot;
+
 
                 Vector2d Pt2D_TipTop,Pt2D_TipEnd;
-                get2DPtfrom3D(Tiptop.head(3), transparams, Pt2D_TipTop);
-                Vector4d tanzhen2end = tanzhen2tip;
-                tanzhen2end(0) = 0;
-                Vector4d Tipend = Robot2Xspot.col(3);
-                get2DPtfrom3D(Tipend.head(3), transparams, Pt2D_TipEnd);
+                get2DPtfrom3D(TCP_upOnRobot.head(3), transparams, Pt2D_TipTop);
+                get2DPtfrom3D(TCP_downOnRobot.head(3), transparams, Pt2D_TipEnd);
 
                 Vector2d dir = Pt2D_TipTop - Pt2D_TipEnd;
                 double theta = atan2(dir(1),dir(0)) + PI / 2;
 
-
-                Imagescene->needle1->setRotation(0);
-                Imagescene->needle1->setPos(Pt2D_TipTop(0)-Imagescene->needle1->width / 2,Pt2D_TipTop(1));
-                Imagescene->needle1->setRotation(theta);
+                Imagescene->needle1->setLine(Pt2D_TipEnd(0),Pt2D_TipEnd(1),Pt2D_TipTop(0),Pt2D_TipTop(1));
                 Imagescene->needle1->show();
+                //Imagescene->needle1->setPos(Pt2D_TipTop(1)-Imagescene->needle1->width / 2,Pt2D_TipTop(0));
+                //Imagescene->needle1->setRotation(theta);
+                //Imagescene->needle1->show();
                 Imagescene->update();
             }
         }
 
-     }
+    }
 }
 
 bool Widget::get2DPtfrom3D(Vector3d Pt_3D, QList<double> transparams, Vector2d &Pt_2D)
@@ -776,6 +822,39 @@ bool Widget::get3DLinefrom2D(Vector2d Pt_2D, QList<double> transparams, QList<Ve
     return true;
 }
 
+bool Widget::Shift2DPtfrom2D(Vector2d Pt_Scr, QList<double> transparams_Scr, QList<Vector2d> &Line_Dist, QList<double> transparams_Dist)
+{
+    QList<Vector4d> transparams_Line;
+    Vector2d Pt_Temp;
+    Line_Dist.clear();
+    transparams_Line.clear();
+    if(!get3DLinefrom2D(Pt_Scr,transparams_Scr,transparams_Line))
+        return false;
+	Matrix2d A;
+	A << transparams_Line[0][0], transparams_Line[0][1],
+		transparams_Line[1][0], transparams_Line[1][1];
+	Vector2d B;
+	B << -transparams_Line[0][3], -transparams_Line[1][3];
+	Vector2d X = A.inverse() * B;
+	Vector3d Pt;
+	Pt << X(0) , X(1) , 0;
+
+    if(!get2DPtfrom3D(Pt,transparams_Dist,Pt_Temp))
+        return false;
+    Line_Dist.push_back(Pt_Temp);
+
+	A << transparams_Line[0][0], transparams_Line[0][2],
+		transparams_Line[1][0], transparams_Line[1][2];
+	X = A.inverse() * B;
+	Pt << X(0), 0, X(1);
+
+	if(!get2DPtfrom3D(Pt,transparams_Dist,Pt_Temp))
+        return false;
+    Line_Dist.push_back(Pt_Temp);
+     return true;
+
+}
+
 bool Widget::get3DPtfrom2Ds(QList<Vector2d> Pt_2Ds, QList<QList<double> > ListOfTransparams, QList<Matrix4d> Xspot_matrix4d, Vector3d &Pt_3D)
 {
     if(Pt_2Ds.size() != 2)
@@ -791,26 +870,26 @@ bool Widget::get3DPtfrom2Ds(QList<Vector2d> Pt_2Ds, QList<QList<double> > ListOf
     transparams_Line.clear();
     for(auto i = 0 ;i < Pt_2Ds.size();i++)
     {
-      get3DLinefrom2D(Pt_2Ds[i], ListOfTransparams[i],transparams_Line);
+        get3DLinefrom2D(Pt_2Ds[i], ListOfTransparams[i],transparams_Line);
     }
     //此处写法有bug，必须限制transparams_Line.size为4
     Matrix<double,4, 3> params;
     Vector4d B;
-	Matrix4d params_Xspot;
-	for (int i = 0; i < transparams_Line.size(); i++)
-	{
-		params_Xspot.row(i) = transparams_Line[i];
-	}
-	Matrix4d params_bone;
-	 params_bone.block(0,0,2,4) = params_Xspot.block(0, 0, 2, 4) * Xspot_matrix4d[0];
-	 params_bone.block(2, 0, 2, 4) = params_Xspot.block(2, 0 , 2, 4) * Xspot_matrix4d[1];
+    Matrix4d params_Xspot;
+    for (int i = 0; i < transparams_Line.size(); i++)
+    {
+        params_Xspot.row(i) = transparams_Line[i];
+    }
+    Matrix4d params_bone;
+    params_bone.block(0,0,2,4) = params_Xspot.block(0, 0, 2, 4) * Xspot_matrix4d[0];
+    params_bone.block(2, 0, 2, 4) = params_Xspot.block(2, 0 , 2, 4) * Xspot_matrix4d[1];
 
-		params = params_bone.block(0, 0, 4, 3);
-		B = -params_bone.col(3);
+    params = params_bone.block(0, 0, 4, 3);
+    B = -params_bone.col(3);
 
-	JacobiSVD<MatrixXd> svd(params, ComputeThinU | ComputeThinV);
-	svd.matrixU();
-	svd.matrixV();
+    JacobiSVD<MatrixXd> svd(params, ComputeThinU | ComputeThinV);
+    svd.matrixU();
+    svd.matrixV();
     Pt_3D = svd.solve(B);
     return true;
 }
@@ -846,27 +925,27 @@ QPointF  Widget::VerticalPoint(QPointF StartPoint,QPointF EndPoint,QPointF XPoin
     //        QPointF XPoint;
 
 
-           // QPointF Pedalpoint;
+    // QPointF Pedalpoint;
 
-            //侧位计算，计算第二条线中间线和第一条线之间的角度，该角度是侧位的规划角度
-            double k;//k为中垂线 的斜率
-            double k0;// 第一条直线的斜率
-            double alpha;//两直线夹角
-            if(EndPoint.x() - StartPoint.x() ==0 || EndPoint.y() - StartPoint.y() ==0)//计算中垂线的斜率
-            {
-                 k = (EndPoint.y() - StartPoint.y())/(EndPoint.x() - StartPoint.x()+0.00000000000000001);//中垂线的斜率
-            }
-            else
-            {
-                k = (EndPoint.y() - StartPoint.y())/(EndPoint.x() - StartPoint.x());//+0.00000000000000001);//中垂线的斜率
+    //侧位计算，计算第二条线中间线和第一条线之间的角度，该角度是侧位的规划角度
+    double k;//k为中垂线 的斜率
+    double k0;// 第一条直线的斜率
+    double alpha;//两直线夹角
+    if(EndPoint.x() - StartPoint.x() ==0 || EndPoint.y() - StartPoint.y() ==0)//计算中垂线的斜率
+    {
+        k = (EndPoint.y() - StartPoint.y())/(EndPoint.x() - StartPoint.x()+0.00000000000000001);//中垂线的斜率
+    }
+    else
+    {
+        k = (EndPoint.y() - StartPoint.y())/(EndPoint.x() - StartPoint.x());//+0.00000000000000001);//中垂线的斜率
 
-                //计算第三直线入端到中垂线垂足
-                VerticalPoint.setX(( k * k * StartPoint.x() + k *(XPoint.y() - StartPoint.y()) + XPoint.x()) / (k * k + 1));//垂足点坐标
-                VerticalPoint.setY(k * (VerticalPoint.x() - StartPoint.x()) + StartPoint.y());
-            }
+        //计算第三直线入端到中垂线垂足
+        VerticalPoint.setX(( k * k * StartPoint.x() + k *(XPoint.y() - StartPoint.y()) + XPoint.x()) / (k * k + 1));//垂足点坐标
+        VerticalPoint.setY(k * (VerticalPoint.x() - StartPoint.x()) + StartPoint.y());
+    }
 
 
-            return VerticalPoint;
+    return VerticalPoint;
 }
 
 QImage Widget::cvMat2QImage(const Mat &mat)
@@ -944,7 +1023,7 @@ void Widget::read3D_Planning() {
             iFPath_Planning_Param_init >> dParam[i];
         }
     }
-/**********************************
+    /**********************************
 *3D规划数据操作
 *之后补充具体内容，实为根据数据格式，修改ImageScence中的Piximage_point[]数据。
 *
@@ -981,18 +1060,18 @@ float Widget::distance_DotToDot(QPointF linePoint1, QPointF linePoint2)
 
 void Widget::caculate_Femur_AP()
 {
-   Matrix<float,2,1> A1;
-   A1<< imageScene_AP_Femur->Piximage_point[0].x() ,imageScene_AP_Femur->Piximage_point[0].y();
-   Matrix<float,2,1> A2;
-   A2<< imageScene_AP_Femur->Piximage_point[1].x() ,imageScene_AP_Femur->Piximage_point[1].y();
-   Matrix<float,2,1> A4;
-   A4<< imageScene_AP_Femur->Piximage_point[3].x() ,imageScene_AP_Femur->Piximage_point[3].y();
-   Matrix<float,2,1> A5;
-   A5<< imageScene_AP_Femur->Piximage_point[4].x() ,imageScene_AP_Femur->Piximage_point[4].y();
+    Matrix<float,2,1> A1;
+    A1<< imageScene_AP_Femur->Piximage_point[0].x() ,imageScene_AP_Femur->Piximage_point[0].y();
+    Matrix<float,2,1> A2;
+    A2<< imageScene_AP_Femur->Piximage_point[1].x() ,imageScene_AP_Femur->Piximage_point[1].y();
+    Matrix<float,2,1> A4;
+    A4<< imageScene_AP_Femur->Piximage_point[3].x() ,imageScene_AP_Femur->Piximage_point[3].y();
+    Matrix<float,2,1> A5;
+    A5<< imageScene_AP_Femur->Piximage_point[4].x() ,imageScene_AP_Femur->Piximage_point[4].y();
 
-   disofA12 = (A2-A1).norm();
-   disofPixel_A4atA12 = (A2-A1).dot((A4-A1)) / disofA12;
-   disofPixel_A5atA12 = (A2-A1).dot((A5-A1)) / disofA12;
+    disofA12 = (A2-A1).norm();
+    disofPixel_A4atA12 = (A2-A1).dot((A4-A1)) / disofA12;
+    disofPixel_A5atA12 = (A2-A1).dot((A5-A1)) / disofA12;
 
 }
 
@@ -1014,10 +1093,10 @@ void Widget::caculate_Femur_Lat()
     Matrix<float,2,1> P12 = P1 - P2;
 
     disofP12 = (P1-P2).norm();
-	float disP3toP12 =  imageScene_AP_Femur->distance_DotToLine(QPointF(P1(0), P1(1)), QPointF(P2(0), P2(1)), QPointF(P3(0), P3(1)));
-	P12_ver << P12(1), -P12(0);
-	P12_ver = P12_ver / disofP12 * qAbs(disP3toP12);
-	disofP12_ver = P12_ver.norm();
+    float disP3toP12 =  imageScene_AP_Femur->distance_DotToLine(QPointF(P1(0), P1(1)), QPointF(P2(0), P2(1)), QPointF(P3(0), P3(1)));
+    P12_ver << P12(1), -P12(0);
+    P12_ver = P12_ver / disofP12 * qAbs(disP3toP12);
+    disofP12_ver = P12_ver.norm();
     disofPixel_P4atP23 = P12_ver.dot(P4 - P2) / disofP12_ver;
     disofPixel_P5atP12 = (P1-P2).dot(P5 - P2) / disofP12;
     disofPixel_P5atP23 = P12_ver.dot(P5 - P2) / disofP12_ver;
@@ -1061,11 +1140,11 @@ void Widget::caculate_Tibia_Lat()
     disofT14 =  (T1-T4).norm();
     disofPixel_T5atT14 = (T4-T1).dot((T5-T1)) / disofT14;
     disofPixel_T6atT14 = (T4-T1).dot((T6-T1)) / disofT14;
-//    Matrix<float,2,1> T12_ver;
-//    T12_ver << (T2-T1)(1) , -(T2-T1)(0);
-//    disofPixel_T5atT14 = T12_ver.dot(T5 - T1) / T12_ver.norm();
-//    disofPixel_T6atT12 = (T1-T2).dot(T6 - T2) / disofT12;
-//    disofPixel_T6atT14 = T12_ver.dot(T6 - T2) / T12_ver.norm();
+    //    Matrix<float,2,1> T12_ver;
+    //    T12_ver << (T2-T1)(1) , -(T2-T1)(0);
+    //    disofPixel_T5atT14 = T12_ver.dot(T5 - T1) / T12_ver.norm();
+    //    disofPixel_T6atT12 = (T1-T2).dot(T6 - T2) / disofT12;
+    //    disofPixel_T6atT14 = T12_ver.dot(T6 - T2) / T12_ver.norm();
 
 }
 
@@ -1079,6 +1158,36 @@ bool Widget::OpenCamera()
     return ret;
 }
 
+int Widget::countCameras()
+{
+    int maxTested = 10;
+    for (int i = 0; i < maxTested; i++){
+        cv::VideoCapture temp_camera(i);
+        bool res = (!temp_camera.isOpened());
+        temp_camera.release();
+        if (res)
+        {
+            return i;
+        }
+    }
+    return maxTested;
+}
+
+void Widget::initCamera()
+{
+    camera = new cv::VideoCapture;
+
+    camTimer = new QTimer();
+
+    ui->comboBox_CameraIndex->clear();
+    int cameraCount = countCameras();
+    for(int i = 0 ; i < cameraCount ; i++)
+    {
+        ui->comboBox_CameraIndex->addItem(QString("Device.%1").arg(i));
+    }
+
+}
+
 Mat Widget::enhancePic(Mat SRC)
 {
     if(SRC.type() != CV_8UC3)
@@ -1088,56 +1197,56 @@ Mat Widget::enhancePic(Mat SRC)
     Mat SRC_gray;
     cvtColor(SRC,SRC_gray, CV_BGR2GRAY);
 
-	Mat SRC_mask = cv::Mat::zeros(cv::Size(SRC.rows,SRC.cols), CV_8UC1);
+    Mat SRC_mask = cv::Mat::zeros(cv::Size(SRC.rows,SRC.cols), CV_8UC1);
 
     vector< vector< Point> > contours;   //定义一个轮廓容器
     findContours(SRC_gray,
-        contours,                // 轮廓容器
-        CV_RETR_EXTERNAL,        // 只检测外轮廓
-        CV_CHAIN_APPROX_NONE);   // 存储所有的轮廓点
+                 contours,                // 轮廓容器
+                 CV_RETR_EXTERNAL,        // 只检测外轮廓
+                 CV_CHAIN_APPROX_NONE);   // 存储所有的轮廓点
     for(int i = 0; i <contours.size(); i++ )
     {
         if( cv::contourArea(contours[i])>20000)
             drawContours(SRC, contours, i, Scalar(0,0,255),1);
     }
-//	namedWindow("show1");
-//	imshow("show1", SRC);
-//	waitKey(0);
-	for (int i = 0; i <contours.size(); i++)
-	{
-		int area = cv::contourArea(contours[i]);
-		if (area > 20000)
-			drawContours(SRC_mask, contours, i, Scalar(255), CV_FILLED);
-	}
-//	namedWindow("show2");
-//	imshow("show2", SRC_mask);
-//	waitKey(0);
-	Mat png(SRC.size(), CV_8UC4);
-	int w = SRC.cols;
-	int h = SRC.rows;
-	int src_channel = SRC.channels();
-	int src_step = SRC.step;
-	int dst_channel = png.channels();
-	int dst_step = png.step;
+    //	namedWindow("show1");
+    //	imshow("show1", SRC);
+    //	waitKey(0);
+    for (int i = 0; i <contours.size(); i++)
+    {
+        int area = cv::contourArea(contours[i]);
+        if (area > 20000)
+            drawContours(SRC_mask, contours, i, Scalar(255), CV_FILLED);
+    }
+    //	namedWindow("show2");
+    //	imshow("show2", SRC_mask);
+    //	waitKey(0);
+    Mat png(SRC.size(), CV_8UC4);
+    int w = SRC.cols;
+    int h = SRC.rows;
+    int src_channel = SRC.channels();
+    int src_step = SRC.step;
+    int dst_channel = png.channels();
+    int dst_step = png.step;
 
-	for (int j = 0; j<h; j++)
-	{
-		for (int i = 0; i<w; i++)
-		{
-			uchar *src = SRC.data + j*src_step + src_channel*i;
-			uchar *dst = png.data + j*dst_step + dst_channel*i;
-			uchar *msk = SRC_mask.data + j*SRC_mask.step ;
+    for (int j = 0; j<h; j++)
+    {
+        for (int i = 0; i<w; i++)
+        {
+            uchar *src = SRC.data + j*src_step + src_channel*i;
+            uchar *dst = png.data + j*dst_step + dst_channel*i;
+            uchar *msk = SRC_mask.data + j*SRC_mask.step ;
             dst[0] = src[0];
-			dst[1] = src[1];
-			dst[2] = src[2];
+            dst[1] = src[1];
+            dst[2] = src[2];
 
-			dst[3] = msk[i];
-		} 
-	}
-//	namedWindow("show");
-//	imshow("show", png);
-//	waitKey(0);
-	return png;
+            dst[3] = msk[i];
+        }
+    }
+    //	namedWindow("show");
+    //	imshow("show", png);
+    //	waitKey(0);
+    return png;
 
 
 
@@ -1160,6 +1269,49 @@ Matrix3d Widget::rotateWithAxis(Vector3d Axis, double theta)
     R(2,2) = Axis(2) * Axis(2) * (1 - cosf(float(theta))) + cosf(float(theta));
 
     return R;
+}
+
+void Widget::readSettingFile()
+{
+    QSettings *configIniRead = new QSettings("configure.ini", QSettings::IniFormat);
+    QString Value;
+    QStringList ValueList ;
+
+    ValueList.clear();
+    Value = configIniRead->value("/Register/tanzhen2tip").toString();
+    ValueList = Value.split(',');
+    if(ValueList.size() >= 4)
+    for(int i = 0; i < 4; i++)
+        tanzhen2tip(i) = ValueList[i].toDouble();
+
+    ValueList.clear();
+    Value = configIniRead->value("/Register/TofTCP_Up2MarkeronRobot").toString();
+    ValueList = Value.split(',');
+    if(ValueList.size() >= 4)
+    for(int i = 0; i < 4; i++)
+        TofTCP_Up2MarkeronRobot(i) = ValueList[i].toDouble();
+
+    ValueList.clear();
+    Value = configIniRead->value("/Register/TofTCP_Down2MarkeronRobot").toString();
+    ValueList = Value.split(',');
+    if(ValueList.size() >= 4)
+    for(int i = 0; i < 4; i++)
+        TofTCP_Down2MarkeronRobot(i ) = ValueList[i].toDouble();
+
+    ValueList.clear();
+    Value = configIniRead->value("/Register/TofMarkeronRobot2Robot").toString();
+    ValueList = Value.split(',');
+    if(ValueList.size() >= 16)
+    for(int i = 0; i < 16; i++)
+        TofMarkeronRobot2Robot(i / 4 ,i % 4) = ValueList[i].toDouble();
+
+    ValueList.clear();
+    Value = configIniRead->value("/Tracker/Marker1ToMarker2").toString();
+    ValueList = Value.split(',');
+    if(ValueList.size() >= 16)
+    for(int i = 0; i < 16; i++)
+        XSpotMarker1toMarker2(i / 4 ,i % 4) = ValueList[i].toDouble();
+ 
 }
 
 void Widget::timerSlot()
@@ -1286,6 +1438,11 @@ void Widget::rev_NDI(QList<Info_NDI> ListInfo_NDI)
             Tiptool_matrix4d = (*i).Pos;
             DialogSetting->ui->label_Tip->setStyleSheet("border-image: url(:/Resources/tip_enable.png);");
         }
+        else if ((*i).name == MarkerName_XSpot2)
+        {
+            Xspot_matrix4d =  XSpotMarker1toMarker2 * (*i).Pos;
+            DialogSetting->ui->label_Xspot->setStyleSheet("border-image: url(:/Resources/XSpot_enable.png);");
+        }
         else if ((*i).name == MarkerName_XSpot)
         {
             Xspot_matrix4d = (*i).Pos;
@@ -1297,7 +1454,7 @@ void Widget::rev_NDI(QList<Info_NDI> ListInfo_NDI)
             DialogSetting->ui->label_Femur->setStyleSheet("border-image: url(:/Resources/resource/Femur_enable.png);");
         }
         else if ((*i).name == MarkerName_Tibia)
- //        else if ((*i).name == MarkerName_Tibia)
+            //        else if ((*i).name == MarkerName_Tibia)
         {
             Tibia_matrix4d = (*i).Pos;
             DialogSetting->ui->label_Tibia->setStyleSheet("border-image: url(:/Resources/resource/Tibia_enable.png);");
@@ -1308,7 +1465,7 @@ void Widget::rev_NDI(QList<Info_NDI> ListInfo_NDI)
             DialogSetting->ui->label_Robot->setStyleSheet("border-image: url(:/Resources/ur_robot_enable.png);");
         }
     }
-       guide();//导航
+    guide();//导航
 
 
 }
@@ -1317,26 +1474,26 @@ void Widget::on_pushButton_AP_CapturePicture_clicked()
 {
     if(ui->tabWidget_manipulate->currentIndex() == INDEX_FEMUR)
     {
-       current_operation = AP_FEMUR;
-       delete captureVideoWidget;
-       captureVideoWidget = new CaptureVideoWidget;
+        current_operation = AP_FEMUR;
+        delete captureVideoWidget;
+        captureVideoWidget = new CaptureVideoWidget;
 
-       captureVideoWidget->pushXSpot3DCoordinates(XSpotPtsinput);
-       captureVideoWidget->setWindowModality(Qt::ApplicationModal);
-       connect(captureVideoWidget,SIGNAL(processFinished(bool))
-               ,this,SLOT(imageHasLoad(bool)));
+        captureVideoWidget->pushXSpot3DCoordinates(XSpotPtsinput);
+        captureVideoWidget->setWindowModality(Qt::ApplicationModal);
+        connect(captureVideoWidget,SIGNAL(processFinished(bool))
+                ,this,SLOT(imageHasLoad(bool)));
     }
     else if(ui->tabWidget_manipulate->currentIndex() == INDEX_TIBIA)
     {
-       current_operation = AP_TIBIA;
-       delete captureVideoWidget;
+        current_operation = AP_TIBIA;
+        delete captureVideoWidget;
 
-       captureVideoWidget = new CaptureVideoWidget;
-       captureVideoWidget->pushXSpot3DCoordinates(XSpotPtsinput);
+        captureVideoWidget = new CaptureVideoWidget;
+        captureVideoWidget->pushXSpot3DCoordinates(XSpotPtsinput);
 
-       captureVideoWidget->setWindowModality(Qt::ApplicationModal);
-       connect(captureVideoWidget,SIGNAL(processFinished(bool))
-               ,this,SLOT(imageHasLoad(bool)));
+        captureVideoWidget->setWindowModality(Qt::ApplicationModal);
+        connect(captureVideoWidget,SIGNAL(processFinished(bool))
+                ,this,SLOT(imageHasLoad(bool)));
     }
     captureVideoWidget->show();
 }
@@ -1380,19 +1537,20 @@ void Widget::imageHasLoad(bool issuccessfully)
     {
     case AP_FEMUR:
         if(!captureVideoWidget->refined_image_nopoints.empty())
-           imageScene_AP_Femur->loadImage(captureVideoWidget->refined_image_nopoints);
+            imageScene_AP_Femur->loadImage(captureVideoWidget->refined_image_nopoints);
         else
-           imageScene_AP_Femur->loadImage(captureVideoWidget->original_image);
+            imageScene_AP_Femur->loadImage(captureVideoWidget->original_image);
         if(!captureVideoWidget->original_image.empty())//调整按键大小
-        for(int i = 0; i < 6;i++)
-        {
-            imageScene_AP_Femur->Piximage_button[i].setScale(size11/750);
-            imageScene_AP_Femur->Piximage_button_selected[i].setScale(size11/750);
-        }
+            for(int i = 0; i < 6;i++)
+            {
+                imageScene_AP_Femur->Piximage_button[i].setScale(size11/750);
+                imageScene_AP_Femur->Piximage_button_selected[i].setScale(size11/750);
+            }
 
         ui->graphicsView_AP->setScene(imageScene_AP_Femur);
+        imageScene_AP_Femur->setmouseConnect(true);
         if(issuccessfully)
-        transparams_Femur_AP = captureVideoWidget->getPinHoleParameters();
+            transparams_Femur_AP = captureVideoWidget->getPinHoleParameters();
 
         break;
 
@@ -1402,16 +1560,16 @@ void Widget::imageHasLoad(bool issuccessfully)
         else
             imageScene_Lat_Femur->loadImage(captureVideoWidget->original_image);
         if(!captureVideoWidget->original_image.empty())//调整按键大小
-        for(int i = 0; i < 6;i++)
-        {
-            imageScene_Lat_Femur->Piximage_button[i].setScale(size11/750);
-            imageScene_Lat_Femur->Piximage_button_selected[i].setScale(size11/750);
-        }
+            for(int i = 0; i < 6;i++)
+            {
+                imageScene_Lat_Femur->Piximage_button[i].setScale(size11/750);
+                imageScene_Lat_Femur->Piximage_button_selected[i].setScale(size11/750);
+            }
 
         ui->graphicsView_Lat->setScene(imageScene_Lat_Femur);
         if(issuccessfully)
-        transparams_Femur_Lat = captureVideoWidget->getPinHoleParameters();
-
+            transparams_Femur_Lat = captureVideoWidget->getPinHoleParameters();
+        imageScene_Lat_Femur->setmouseConnect(true);
 
         break;
 
@@ -1421,16 +1579,16 @@ void Widget::imageHasLoad(bool issuccessfully)
         else
             imageScene_AP_Tibia->loadImage(captureVideoWidget->original_image);
         if(!captureVideoWidget->original_image.empty())//调整按键大小
-        for(int i = 0; i < 6;i++)
-        {
-            imageScene_AP_Tibia->Piximage_button[i].setScale(size11/750);
-            imageScene_AP_Tibia->Piximage_button_selected[i].setScale(size11/750);
-        }
+            for(int i = 0; i < 6;i++)
+            {
+                imageScene_AP_Tibia->Piximage_button[i].setScale(size11/750);
+                imageScene_AP_Tibia->Piximage_button_selected[i].setScale(size11/750);
+            }
 
         ui->graphicsView_AP->setScene(imageScene_AP_Tibia);
         if(issuccessfully)
-        transparams_Tibia_AP = captureVideoWidget->getPinHoleParameters();
-
+            transparams_Tibia_AP = captureVideoWidget->getPinHoleParameters();
+        imageScene_AP_Tibia->setmouseConnect(true);
 
         break;
     case LAT_TIBIA:
@@ -1439,15 +1597,16 @@ void Widget::imageHasLoad(bool issuccessfully)
         else
             imageScene_Lat_Tibia->loadImage(captureVideoWidget->original_image);
         if(!captureVideoWidget->original_image.empty())//调整按键大小
-        for(int i = 0; i < 6;i++)
-        {
-            imageScene_Lat_Tibia->Piximage_button[i].setScale(size11/750);
-            imageScene_Lat_Tibia->Piximage_button_selected[i].setScale(size11/750);
-        }
+            for(int i = 0; i < 6;i++)
+            {
+                imageScene_Lat_Tibia->Piximage_button[i].setScale(size11/750);
+                imageScene_Lat_Tibia->Piximage_button_selected[i].setScale(size11/750);
+            }
 
+        imageScene_Lat_Tibia->setmouseConnect(true);
         ui->graphicsView_Lat->setScene(imageScene_Lat_Tibia);
         if(issuccessfully)
-        transparams_Tibia_Lat = captureVideoWidget->getPinHoleParameters();
+            transparams_Tibia_Lat = captureVideoWidget->getPinHoleParameters();
 
         break;
     }
@@ -1457,7 +1616,7 @@ void Widget::imageHasLoad(bool issuccessfully)
 }
 
 
-void Widget::Process_AP_Femur()
+void Widget::Process_AP_Femur(int index)
 {
     int  i ;
     for(i = 0; i<5 ; i++)
@@ -1467,16 +1626,16 @@ void Widget::Process_AP_Femur()
     }
     if(i == 5)
     {
-       caculate_Femur_AP();
-       ui->label_APdata->setText(QString::fromLocal8Bit
-                   ("股骨数据：\n disofPixel_A4atA12 = %1\n disofPixel_A5atA12 = %2")
-                          .arg(disofPixel_A4atA12 / disofA12).arg(disofPixel_A5atA12 / disofA12));
+        caculate_Femur_AP();
+        ui->label_APdata->setText(QString::fromLocal8Bit
+                                  ("股骨数据：\n disofPixel_A4atA12 = %1\n disofPixel_A5atA12 = %2")
+                                  .arg(disofPixel_A4atA12 / disofA12).arg(disofPixel_A5atA12 / disofA12));
 
     }
-    imageScene_AP_Femur->update();
+	Point_Change_Femur_AP(index);
 }
 
-void Widget::Process_AP_Tibia()
+void Widget::Process_AP_Tibia(int index)
 {
     int  i ;
     for(i = 0; i<4 ; i++)
@@ -1486,16 +1645,16 @@ void Widget::Process_AP_Tibia()
     }
     if(i == 4)
     {
-       caculate_Tibia_AP();
-       ui->label_APdata->setText(QString::fromLocal8Bit
-                   ("胫骨数据：\n raido_B3atB12 = %1\n radio_B4atB12 = %2\n")
-                          .arg(disofPixel_B3atB12 / disofB12).arg(disofPixel_B4atB12 / disofB12));
+        caculate_Tibia_AP();
+        ui->label_APdata->setText(QString::fromLocal8Bit
+                                  ("胫骨数据：\n raido_B3atB12 = %1\n radio_B4atB12 = %2\n")
+                                  .arg(disofPixel_B3atB12 / disofB12).arg(disofPixel_B4atB12 / disofB12));
 
     }
-    imageScene_AP_Tibia->update();
+	Point_Change_Tibia_AP(index);
 }
 
-void Widget::Process_Lat_Femur()
+void Widget::Process_Lat_Femur(int index)
 {
     int  i ;
     for(i = 0; i<5 ; i++)
@@ -1505,17 +1664,17 @@ void Widget::Process_Lat_Femur()
     }
     if(i == 5)
     {
-       caculate_Femur_Lat();
-       ui->label_Latdata->setText(QString::fromLocal8Bit
-                   ("股骨数据：\n radio_P4atP12 = %1\n radio_P4atP23 = %2\n radio_P5atP12 = %3\n radio_P5atP23 = %4")
-                          .arg(disofPixel_P4atP12 / disofP12).arg(disofPixel_P4atP23 / disofP12_ver).arg(disofPixel_P5atP12 / disofP12).arg(disofPixel_P5atP23 / disofP12_ver));
-    qDebug()<< "(" << disofPixel_P4atP12 / disofP12 <<","<< disofPixel_P4atP23 / disofP12_ver <<") , (";
+        caculate_Femur_Lat();
+        ui->label_Latdata->setText(QString::fromLocal8Bit
+                                   ("股骨数据：\n radio_P4atP12 = %1\n radio_P4atP23 = %2\n radio_P5atP12 = %3\n radio_P5atP23 = %4")
+                                   .arg(disofPixel_P4atP12 / disofP12).arg(disofPixel_P4atP23 / disofP12_ver).arg(disofPixel_P5atP12 / disofP12).arg(disofPixel_P5atP23 / disofP12_ver));
+     
 
     }
-    imageScene_Lat_Femur->update();
+	Point_Change_Femur_Lat(index);
 }
 
-void Widget::Process_Lat_Tibia()
+void Widget::Process_Lat_Tibia(int index)
 {
     int  i ;
     for(i = 0; i<6 ; i++)
@@ -1525,12 +1684,12 @@ void Widget::Process_Lat_Tibia()
     }
     if(i == 6)
     {
-       caculate_Tibia_Lat();
-       ui->label_Latdata->setText(QString::fromLocal8Bit
-                   ("胫骨数据：\n radio_T5atT12 = %1\n radio_T5atT14 = %2\n radio_T6atT12 = %3\n radio_T6atT14 = %4")
-                          .arg(disofPixel_T5atT12 / disofT12).arg(disofPixel_T5atT14 / disofT14).arg(disofPixel_T6atT12 / disofT12).arg(disofPixel_T6atT14 / disofT14));
+        caculate_Tibia_Lat();
+        ui->label_Latdata->setText(QString::fromLocal8Bit
+                                   ("胫骨数据：\n radio_T5atT12 = %1\n radio_T5atT14 = %2\n radio_T6atT12 = %3\n radio_T6atT14 = %4")
+                                   .arg(disofPixel_T5atT12 / disofT12).arg(disofPixel_T5atT14 / disofT14).arg(disofPixel_T6atT12 / disofT12).arg(disofPixel_T6atT14 / disofT14));
     }
-    imageScene_Lat_Tibia->update();
+	Point_Change_Tibia_Lat(index);
 }
 
 void Widget::on_checkBox_AP_Femur_clicked(bool checked)
@@ -1550,8 +1709,8 @@ void Widget::on_checkBox_AP_Femur_clicked(bool checked)
     {
         for(int i = 0 ;i < 5;i++)
         {
-           imageScene_AP_Femur->Piximage_button[i].hide();
-           imageScene_AP_Femur->Piximage_button_selected[i].hide();
+            imageScene_AP_Femur->Piximage_button[i].hide();
+            imageScene_AP_Femur->Piximage_button_selected[i].hide();
         }
         imageScene_AP_Femur->Line1_2->hide();
         imageScene_AP_Femur->subline1->hide();
@@ -1566,7 +1725,7 @@ void Widget::on_checkBox_Lat_Femur_clicked(bool checked)
     {
         for(int i = 0 ;i < 5;i++)
         {
-           imageScene_Lat_Femur->Piximage_button[i].show();
+            imageScene_Lat_Femur->Piximage_button[i].show();
         }
         imageScene_Lat_Femur->Line1_2->show();
         imageScene_Lat_Femur->tablesketch->show();
@@ -1576,8 +1735,8 @@ void Widget::on_checkBox_Lat_Femur_clicked(bool checked)
     {
         for(int i = 0 ;i < 5;i++)
         {
-           imageScene_Lat_Femur->Piximage_button[i].hide();
-           imageScene_Lat_Femur->Piximage_button_selected[i].hide();
+            imageScene_Lat_Femur->Piximage_button[i].hide();
+            imageScene_Lat_Femur->Piximage_button_selected[i].hide();
         }
         imageScene_Lat_Femur->Line1_2->hide();
         imageScene_Lat_Femur->tablesketch->hide();
@@ -1590,21 +1749,21 @@ void Widget::on_checkBox_AP_Tibia_clicked(bool checked)
     {
         for(int i = 0 ;i < 4;i++)
         {
-           imageScene_AP_Tibia->Piximage_button[i].show();
+            imageScene_AP_Tibia->Piximage_button[i].show();
 
         }
-       imageScene_AP_Tibia->Line1_2->show();
-       imageScene_AP_Tibia->subline1->show();//等比例辅助线直线
+        imageScene_AP_Tibia->Line1_2->show();
+        imageScene_AP_Tibia->subline1->show();//等比例辅助线直线
     }
     else
     {
         for(int i = 0 ;i < 4;i++)
         {
-           imageScene_AP_Tibia->Piximage_button[i].hide();
-           imageScene_Lat_Tibia->Piximage_button_selected[i].hide();
+            imageScene_AP_Tibia->Piximage_button[i].hide();
+            imageScene_Lat_Tibia->Piximage_button_selected[i].hide();
         }
-       imageScene_AP_Tibia->Line1_2->hide();
-       imageScene_AP_Tibia->subline1->hide();//等比例辅助线直线
+        imageScene_AP_Tibia->Line1_2->hide();
+        imageScene_AP_Tibia->subline1->hide();//等比例辅助线直线
     }
 }
 
@@ -1614,19 +1773,19 @@ void Widget::on_checkBox_Lat_Tibia_clicked(bool checked)
     {
         for(int i = 0 ;i < 6;i++)
         {
-           imageScene_Lat_Tibia->Piximage_button[i].show();
+            imageScene_Lat_Tibia->Piximage_button[i].show();
         }
-       imageScene_Lat_Tibia->Line1_2->show();
-       imageScene_Lat_Tibia->Line1_2cross->show();
-       imageScene_Lat_Tibia->Line1_4->show();
-       imageScene_Lat_Tibia->Line2_3->show();
+        imageScene_Lat_Tibia->Line1_2->show();
+        imageScene_Lat_Tibia->Line1_2cross->show();
+        imageScene_Lat_Tibia->Line1_4->show();
+        imageScene_Lat_Tibia->Line2_3->show();
     }
     else
     {
         for(int i = 0 ;i < 6;i++)
         {
-           imageScene_Lat_Tibia->Piximage_button[i].hide();
-                 imageScene_Lat_Tibia->Piximage_button_selected[i].hide();
+            imageScene_Lat_Tibia->Piximage_button[i].hide();
+            imageScene_Lat_Tibia->Piximage_button_selected[i].hide();
         }
         imageScene_Lat_Tibia->Line1_2->hide();
         imageScene_Lat_Tibia->Line1_2cross->hide();
@@ -1637,8 +1796,8 @@ void Widget::on_checkBox_Lat_Tibia_clicked(bool checked)
 
 void Widget::on_pushButton_getXspottransform_AP_clicked()
 {
-//    disconnect(thread_NDI, SIGNAL(threadSignal(QList<Info_NDI>))//线程冲突？？
-//                   , this, SLOT(rev_NDI(QList<Info_NDI>)));
+    //    disconnect(thread_NDI, SIGNAL(threadSignal(QList<Info_NDI>))//线程冲突？？
+    //                   , this, SLOT(rev_NDI(QList<Info_NDI>)));
     if(Xspot_matrix4d(3,3) == 0)
     {
         QMessageBox::warning(this,u8"操作失败",u8"未发现Xpot");
@@ -1668,14 +1827,14 @@ void Widget::on_pushButton_getXspottransform_AP_clicked()
         if(Tiptool_matrix4d(3,3) != 0)
             tiptopatXspot_AP_Tibia =Xspot_matrix4d.inverse() * Tiptool_matrix4d;
     }
-//    connect(thread_NDI, SIGNAL(threadSignal(QList<Info_NDI>))//线程冲突？？
-//       , this, SLOT(rev_NDI(QList<Info_NDI>)));
+    //    connect(thread_NDI, SIGNAL(threadSignal(QList<Info_NDI>))//线程冲突？？
+    //       , this, SLOT(rev_NDI(QList<Info_NDI>)));
 }
 
 void Widget::on_pushButton_getXspottransform_Lat_clicked()
 {
-//    disconnect(thread_NDI, SIGNAL(threadSignal(QList<Info_NDI>))//线程冲突？？
-//        , this, SLOT(rev_NDI(QList<Info_NDI>)));
+    //    disconnect(thread_NDI, SIGNAL(threadSignal(QList<Info_NDI>))//线程冲突？？
+    //        , this, SLOT(rev_NDI(QList<Info_NDI>)));
     if(Xspot_matrix4d(3,3) == 0)
     {
         QMessageBox::warning(this,u8"操作失败",u8"未发现Xpot");
@@ -1690,7 +1849,7 @@ void Widget::on_pushButton_getXspottransform_Lat_clicked()
         }
         Xspot_matrix4d_Lat_Femur =  Xspot_matrix4d.inverse() * Femur_matrix4d ;
         if(Tiptool_matrix4d(3,3) != 0)
-                 tiptopatXspot_Lat_Femur = Xspot_matrix4d.inverse() * Tiptool_matrix4d;
+            tiptopatXspot_Lat_Femur = Xspot_matrix4d.inverse() * Tiptool_matrix4d;
     }
     else if(ui->tabWidget_manipulate->currentIndex() == INDEX_TIBIA )
     {
@@ -1702,10 +1861,10 @@ void Widget::on_pushButton_getXspottransform_Lat_clicked()
 
         Xspot_matrix4d_Lat_Tibia = Xspot_matrix4d.inverse()* Tibia_matrix4d;
         if(Tiptool_matrix4d(3,3) != 0)
-                tiptopatXspot_Lat_Tibia = Xspot_matrix4d.inverse() * Tiptool_matrix4d;
+            tiptopatXspot_Lat_Tibia = Xspot_matrix4d.inverse() * Tiptool_matrix4d;
     }
-//    connect(thread_NDI, SIGNAL(threadSignal(QList<Info_NDI>))//线程冲突？？
-//       , this, SLOT(rev_NDI(QList<Info_NDI>)));
+    //    connect(thread_NDI, SIGNAL(threadSignal(QList<Info_NDI>))//线程冲突？？
+    //       , this, SLOT(rev_NDI(QList<Info_NDI>)));
 }
 
 void Widget::on_pushButton_Femur_finished_clicked()
@@ -1721,13 +1880,13 @@ void Widget::on_pushButton_Femur_finished_clicked()
         return;
     }
     if(imageScene_AP_Femur->Piximage_point[3] == QPointF(-1,-1) ||
-          imageScene_AP_Femur->Piximage_point[4] == QPointF(-1,-1))
+            imageScene_AP_Femur->Piximage_point[4] == QPointF(-1,-1))
     {
         QMessageBox::warning(this,u8"操作失败",u8"未规划股骨正位手术路径");
         return;
     }
     if( imageScene_Lat_Femur->Piximage_point[4] == QPointF(-1,-1) ||
-               imageScene_Lat_Femur->Piximage_point[3] == QPointF(-1,-1))
+            imageScene_Lat_Femur->Piximage_point[3] == QPointF(-1,-1))
     {
         QMessageBox::warning(this,u8"操作失败",u8"未规划股骨侧位手术路径");
         return;
@@ -1800,13 +1959,13 @@ void Widget::on_pushButton_Tibia_finished_clicked()
         return;
     }
     if(imageScene_AP_Tibia->Piximage_point[2] == QPointF(-1,-1) ||
-          imageScene_AP_Tibia->Piximage_point[3] == QPointF(-1,-1))
+            imageScene_AP_Tibia->Piximage_point[3] == QPointF(-1,-1))
     {
         QMessageBox::warning(this,u8"操作失败",u8"未规划胫骨正位手术路径");
         return;
     }
     if( imageScene_Lat_Tibia->Piximage_point[4] == QPointF(-1,-1) ||
-               imageScene_Lat_Tibia->Piximage_point[5] == QPointF(-1,-1))
+            imageScene_Lat_Tibia->Piximage_point[5] == QPointF(-1,-1))
     {
         QMessageBox::warning(this,u8"操作失败",u8"未规划胫骨侧位手术路径");
         return;
@@ -1880,9 +2039,9 @@ void Widget::on_pushButton_ShowTiptool_Lat_clicked()
         Vector2d Pt2D_TipTop,Pt2D_TipEnd;
         get2DPtfrom3D(Tiptop.head(3), transparams_Femur_Lat, Pt2D_TipTop);
 
-		Vector4d tanzhen2end = tanzhen2tip;
-		tanzhen2end(0) = 0;
-		Vector4d Tipend = tiptopatXspot_Lat_Femur * tanzhen2end;
+        Vector4d tanzhen2end = tanzhen2tip;
+        tanzhen2end(0) = 0;
+        Vector4d Tipend = tiptopatXspot_Lat_Femur * tanzhen2end;
         get2DPtfrom3D(Tipend.head(3), transparams_Femur_Lat, Pt2D_TipEnd);
 
         imageScene_Lat_Femur->Marker_Tip->setLine(Pt2D_TipEnd(0),Pt2D_TipEnd(1),Pt2D_TipTop(0),Pt2D_TipTop(1));
@@ -1901,8 +2060,8 @@ void Widget::on_pushButton_ShowTiptool_Lat_clicked()
 
         Vector2d Pt2D_TipTop,Pt2D_TipEnd;
         get2DPtfrom3D(Tiptop.head(3), transparams_Tibia_Lat, Pt2D_TipTop);
-		Vector4d tanzhen2end = tanzhen2tip;
-		tanzhen2end(0) = 0;
+        Vector4d tanzhen2end = tanzhen2tip;
+        tanzhen2end(0) = 0;
         Vector4d Tipend = tiptopatXspot_Lat_Tibia * tanzhen2end;
 
         get2DPtfrom3D(Tipend.head(3), transparams_Tibia_Lat, Pt2D_TipEnd);
@@ -1925,8 +2084,8 @@ void Widget::on_pushButton_ShowTiptool_AP_clicked()
         Vector2d Pt2D_TipTop,Pt2D_TipEnd;
         get2DPtfrom3D(Tiptop.head(3), transparams_Femur_AP, Pt2D_TipTop);
 
-		Vector4d tanzhen2end = tanzhen2tip;
-		tanzhen2end(0) = 0;
+        Vector4d tanzhen2end = tanzhen2tip;
+        tanzhen2end(0) = 0;
         Vector4d Tipend = tiptopatXspot_AP_Femur * tanzhen2end;
         get2DPtfrom3D(Tipend.head(3), transparams_Femur_AP, Pt2D_TipEnd);
 
@@ -1947,8 +2106,8 @@ void Widget::on_pushButton_ShowTiptool_AP_clicked()
         Vector2d Pt2D_TipTop,Pt2D_TipEnd;
         get2DPtfrom3D(Tiptop.head(3), transparams_Tibia_AP, Pt2D_TipTop);
 
-		Vector4d tanzhen2end = tanzhen2tip;
-		tanzhen2end(0) = 0;
+        Vector4d tanzhen2end = tanzhen2tip;
+        tanzhen2end(0) = 0;
         Vector4d Tipend = tiptopatXspot_Lat_Tibia* tanzhen2end;
         get2DPtfrom3D(Tipend.head(3), transparams_Tibia_Lat, Pt2D_TipEnd);
 
@@ -1967,73 +2126,73 @@ void Widget::on_pushButton_Save_AP_clicked()
     QDir dir;
     dir.mkpath(path);
 
-	if (ui->tabWidget_manipulate->currentIndex() == INDEX_FEMUR)
-	{
+    if (ui->tabWidget_manipulate->currentIndex() == INDEX_FEMUR)
+    {
         QString path_txt =path + "/Data_Femur_AP.txt";
         file.setFileName(path_txt);
-		if (file.open(QIODevice::WriteOnly | QIODevice::Text)) //以文本文式写入
-		{
-			out_file.setDevice(&file);
-			out_file << "Piximage_point" << endl;
-			for (int i = 0; i < 5; i++)
-				out_file << imageScene_AP_Femur->Piximage_point[i].x() << ' ' << imageScene_AP_Femur->Piximage_point[i].y() << endl;
-			out_file << "Xspot_matrix4d_AP_Femur" << endl;
-			for (int i = 0; i < 4; i++)
-			{
-				for (int j = 0; j < 4; j++)
-					out_file << Xspot_matrix4d_AP_Femur(i, j) << ' ';
-				out_file << endl;
-			}
-			out_file << "tiptopatXspot_AP_Femur" << endl;
-			for (int i = 0; i < 4; i++)
-			{
-				for (int j = 0; j < 4; j++)
-					out_file << tiptopatXspot_AP_Femur(i, j) << ' ';
-				out_file << endl;
-			}
-			out_file << "transparams_Femur_AP" << endl;
-			for (auto i = transparams_Femur_AP.begin(); i < transparams_Femur_AP.end(); i++)
-			{
-				out_file << *i << ' ';
-			}
-			file.close();
-		}
+        if (file.open(QIODevice::WriteOnly | QIODevice::Text)) //以文本文式写入
+        {
+            out_file.setDevice(&file);
+            out_file << "Piximage_point" << endl;
+            for (int i = 0; i < 5; i++)
+                out_file << imageScene_AP_Femur->Piximage_point[i].x() << ' ' << imageScene_AP_Femur->Piximage_point[i].y() << endl;
+            out_file << "Xspot_matrix4d_AP_Femur" << endl;
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                    out_file << Xspot_matrix4d_AP_Femur(i, j) << ' ';
+                out_file << endl;
+            }
+            out_file << "tiptopatXspot_AP_Femur" << endl;
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                    out_file << tiptopatXspot_AP_Femur(i, j) << ' ';
+                out_file << endl;
+            }
+            out_file << "transparams_Femur_AP" << endl;
+            for (auto i = transparams_Femur_AP.begin(); i < transparams_Femur_AP.end(); i++)
+            {
+                out_file << *i << ' ';
+            }
+            file.close();
+        }
         imageScene_AP_Femur->pixImage.pixmap().save(path + "/Femur_AP.bmp");
-	}
-       if(ui->tabWidget_manipulate->currentIndex() == INDEX_TIBIA)
-       {
-          QString path_txt =path + "/Data_Tibia_AP.txt";
-          file.setFileName(path_txt);
-          if(file.open(QIODevice::WriteOnly | QIODevice::Text)) //以文本文式写入
-          {
-              out_file.setDevice(&file);
-              out_file<< "Piximage_point" <<endl;
-              for(int i = 0; i < 4 ;i++)
-              out_file<<imageScene_AP_Tibia->Piximage_point[i].x() <<' '<< imageScene_AP_Tibia->Piximage_point[i].y() << endl;
-               out_file<< "Xspot_matrix4d_AP_Tibia" <<endl;
-              for(int i =0; i < 4;i++)
-              {
-                  for(int j =0; j < 4;j++)
-                   out_file<<Xspot_matrix4d_AP_Tibia(i,j)<<' ';
-                   out_file<< endl;
-              }
-               out_file<< "tiptopatXspot_AP_Tibia" <<endl;
-              for(int i =0; i < 4;i++)
-              {
-                  for(int j =0; j < 4;j++)
-                   out_file<<tiptopatXspot_AP_Tibia(i,j)<<' ';
-                   out_file<< endl;
-              }
-			  out_file << "transparams_Tibia_AP" << endl;
-              for(auto i = transparams_Tibia_AP.begin(); i < transparams_Tibia_AP.end(); i++)
-              {
-                   out_file<<*i << ' ';
-              }
-               file.close();
-          }
-       }
-        imageScene_AP_Tibia->pixImage.pixmap().save(path + "/Tibia_AP.bmp");
-   
+    }
+    if(ui->tabWidget_manipulate->currentIndex() == INDEX_TIBIA)
+    {
+        QString path_txt =path + "/Data_Tibia_AP.txt";
+        file.setFileName(path_txt);
+        if(file.open(QIODevice::WriteOnly | QIODevice::Text)) //以文本文式写入
+        {
+            out_file.setDevice(&file);
+            out_file<< "Piximage_point" <<endl;
+            for(int i = 0; i < 4 ;i++)
+                out_file<<imageScene_AP_Tibia->Piximage_point[i].x() <<' '<< imageScene_AP_Tibia->Piximage_point[i].y() << endl;
+            out_file<< "Xspot_matrix4d_AP_Tibia" <<endl;
+            for(int i =0; i < 4;i++)
+            {
+                for(int j =0; j < 4;j++)
+                    out_file<<Xspot_matrix4d_AP_Tibia(i,j)<<' ';
+                out_file<< endl;
+            }
+            out_file<< "tiptopatXspot_AP_Tibia" <<endl;
+            for(int i =0; i < 4;i++)
+            {
+                for(int j =0; j < 4;j++)
+                    out_file<<tiptopatXspot_AP_Tibia(i,j)<<' ';
+                out_file<< endl;
+            }
+            out_file << "transparams_Tibia_AP" << endl;
+            for(auto i = transparams_Tibia_AP.begin(); i < transparams_Tibia_AP.end(); i++)
+            {
+                out_file<<*i << ' ';
+            }
+            file.close();
+        }
+    }
+    imageScene_AP_Tibia->pixImage.pixmap().save(path + "/Tibia_AP.bmp");
+
 }
 
 void Widget::on_pushButton_Save_Lat_clicked()
@@ -2043,74 +2202,74 @@ void Widget::on_pushButton_Save_Lat_clicked()
     QDir dir;
     dir.mkpath(path);
 
-	if (ui->tabWidget_manipulate->currentIndex() == INDEX_FEMUR)
-	{
+    if (ui->tabWidget_manipulate->currentIndex() == INDEX_FEMUR)
+    {
         QString path_txt =path + "/Data_Femur_Lat.txt";
         file.setFileName(path_txt);
-		if (file.open(QIODevice::WriteOnly | QIODevice::Text)) //以文本文式写入
-		{
-			out_file.setDevice(&file);
-			out_file << "Piximage_point" << endl;
-			for (int i = 0; i < 5; i++)
-				out_file << imageScene_Lat_Femur->Piximage_point[i].x() << ' ' << imageScene_Lat_Femur->Piximage_point[i].y() << endl;
-			out_file << "Xspot_matrix4d_Lat_Femur" << endl;
-			for (int i = 0; i < 4; i++)
-			{
-				for (int j = 0; j < 4; j++)
-					out_file << Xspot_matrix4d_Lat_Femur(i, j) << ' ';
-				out_file << endl;
-			}
-			out_file << "tiptopatXspot_Lat_Femur" << endl;
-			for (int i = 0; i < 4; i++)
-			{
-				for (int j = 0; j < 4; j++)
-					out_file << tiptopatXspot_Lat_Femur(i, j) << ' ';
-				out_file << endl;
-			}
-			out_file << "transparams_Femur_Lat" << endl;
-			for (auto i = transparams_Femur_Lat.begin(); i < transparams_Femur_Lat.end(); i++)
-			{
-				out_file << *i << ' ';
-			}
-			file.close();
-		}
-        imageScene_Lat_Femur->pixImage.pixmap().save(path + "/Femur_Lat.bmp");
-	}
-        if(ui->tabWidget_manipulate->currentIndex() == INDEX_TIBIA)
+        if (file.open(QIODevice::WriteOnly | QIODevice::Text)) //以文本文式写入
         {
-            QString path_txt =path + "/Data_Tibia_Lat.txt";
-            file.setFileName(path_txt);
-            if(file.open(QIODevice::WriteOnly | QIODevice::Text)) //以文本文式写入
+            out_file.setDevice(&file);
+            out_file << "Piximage_point" << endl;
+            for (int i = 0; i < 5; i++)
+                out_file << imageScene_Lat_Femur->Piximage_point[i].x() << ' ' << imageScene_Lat_Femur->Piximage_point[i].y() << endl;
+            out_file << "Xspot_matrix4d_Lat_Femur" << endl;
+            for (int i = 0; i < 4; i++)
             {
-                out_file.setDevice(&file);
-                out_file<< "Piximage_point" <<endl;
-                for(int i = 0; i < 6 ;i++)
-                    out_file<<imageScene_Lat_Tibia->Piximage_point[i].x() <<' '<< imageScene_Lat_Tibia->Piximage_point[i].y() << endl;
-
-                out_file<< "Xspot_matrix4d_Lat_Tibia" <<endl;
-                for(int i =0; i < 4;i++)
-                {
-                    for(int j =0; j < 4;j++)
-                        out_file<<Xspot_matrix4d_Lat_Tibia(i,j)<<' ';
-                    out_file<< endl;
-                }
-
-                out_file<< "tiptopatXspot_Lat_Tibia" <<endl;
-                for(int i =0; i < 4;i++)
-                {
-                    for(int j =0; j < 4;j++)
-                        out_file<<tiptopatXspot_Lat_Tibia(i,j)<<' ';
-                    out_file<< endl;
-                }
-				out_file << "transparams_Tibia_Lat" << endl;
-                for(auto i = transparams_Tibia_Lat.begin(); i < transparams_Tibia_Lat.end(); i++)
-                {
-                     out_file<<*i << ' ';
-                }
-
-                file.close();
+                for (int j = 0; j < 4; j++)
+                    out_file << Xspot_matrix4d_Lat_Femur(i, j) << ' ';
+                out_file << endl;
             }
-            imageScene_Lat_Tibia->pixImage.pixmap().save(path + "/Tibia_Lat.bmp");
+            out_file << "tiptopatXspot_Lat_Femur" << endl;
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                    out_file << tiptopatXspot_Lat_Femur(i, j) << ' ';
+                out_file << endl;
+            }
+            out_file << "transparams_Femur_Lat" << endl;
+            for (auto i = transparams_Femur_Lat.begin(); i < transparams_Femur_Lat.end(); i++)
+            {
+                out_file << *i << ' ';
+            }
+            file.close();
+        }
+        imageScene_Lat_Femur->pixImage.pixmap().save(path + "/Femur_Lat.bmp");
+    }
+    if(ui->tabWidget_manipulate->currentIndex() == INDEX_TIBIA)
+    {
+        QString path_txt =path + "/Data_Tibia_Lat.txt";
+        file.setFileName(path_txt);
+        if(file.open(QIODevice::WriteOnly | QIODevice::Text)) //以文本文式写入
+        {
+            out_file.setDevice(&file);
+            out_file<< "Piximage_point" <<endl;
+            for(int i = 0; i < 6 ;i++)
+                out_file<<imageScene_Lat_Tibia->Piximage_point[i].x() <<' '<< imageScene_Lat_Tibia->Piximage_point[i].y() << endl;
+
+            out_file<< "Xspot_matrix4d_Lat_Tibia" <<endl;
+            for(int i =0; i < 4;i++)
+            {
+                for(int j =0; j < 4;j++)
+                    out_file<<Xspot_matrix4d_Lat_Tibia(i,j)<<' ';
+                out_file<< endl;
+            }
+
+            out_file<< "tiptopatXspot_Lat_Tibia" <<endl;
+            for(int i =0; i < 4;i++)
+            {
+                for(int j =0; j < 4;j++)
+                    out_file<<tiptopatXspot_Lat_Tibia(i,j)<<' ';
+                out_file<< endl;
+            }
+            out_file << "transparams_Tibia_Lat" << endl;
+            for(auto i = transparams_Tibia_Lat.begin(); i < transparams_Tibia_Lat.end(); i++)
+            {
+                out_file<<*i << ' ';
+            }
+
+            file.close();
+        }
+        imageScene_Lat_Tibia->pixImage.pixmap().save(path + "/Tibia_Lat.bmp");
     }
 }
 
@@ -2122,145 +2281,145 @@ void Widget::on_pushButton_Read_Lat_clicked()
     dir.mkpath(path);
 
 
-	if (ui->tabWidget_manipulate->currentIndex() == INDEX_FEMUR)
-	{
-		path += "/Data_Femur_Lat.txt";
-		file.setFileName(path);
-		QString str;
-		if (file.open(QIODevice::ReadOnly | QIODevice::Text)) //以文本文式写入
-		{
-			out_file.setDevice(&file);
-
-			out_file >> str;
-			if (str != "Piximage_point")
-				return;
-			for (int i = 0; i < 5; i++)
-			{
-				float ftemp;
-				out_file >> ftemp;
-				imageScene_Lat_Femur->Piximage_point[i].setX(ftemp);
-				out_file >> ftemp;
-				imageScene_Lat_Femur->Piximage_point[i].setY(ftemp);
-			}
-
-			out_file >> str;
-			if (str != "Xspot_matrix4d_Lat_Femur")
-				return;
-			for (int i = 0; i < 4; i++)
-			{
-				for (int j = 0; j < 4; j++)
-					out_file >> Xspot_matrix4d_Lat_Femur(i, j);
-			}
-
-			out_file >> str;
-			if (str != "tiptopatXspot_Lat_Femur")
-				return;
-			for (int i = 0; i < 4; i++)
-			{
-				for (int j = 0; j < 4; j++)
-					out_file >> tiptopatXspot_Lat_Femur(i, j);
-			}
-
-			out_file >> str;
-			if (str != "transparams_Femur_Lat")
-				return;
-			transparams_Femur_Lat.clear();
-
-			double dtemp;
-			while (1)
-			{
-				out_file >> dtemp;
-				if (out_file.atEnd()) break;
-				transparams_Femur_Lat.append(dtemp);
-			}
-			imageScene_Lat_Femur->selected_hide();
-			imageScene_Lat_Femur->selected_show();
-			imageScene_Lat_Femur->Marker_Tip->show();
-			for (int i = 0; i < 6; i++)
-			{
-				if (imageScene_Lat_Femur->Piximage_point[i] != QPointF(-1, -1))
-				{
-					imageScene_Lat_Femur->Piximage_button_selected[i].setPos(imageScene_Lat_Femur->Piximage_point[i] - QPoint(10, 10)*imageScene_Lat_Femur->Piximage_button->scale());//按钮图片像素/2*倍率
-					imageScene_Lat_Femur->Piximage_button[i].setPos(imageScene_Lat_Femur->Piximage_point[i] - QPoint(10, 10)*imageScene_Lat_Femur->Piximage_button->scale());
-					imageScene_Lat_Femur->Piximage_button[i].show();
-				}
-			}
-
-			file.close();
-		}
-
-	}
-	
-        if(ui->tabWidget_manipulate->currentIndex() == INDEX_TIBIA)
+    if (ui->tabWidget_manipulate->currentIndex() == INDEX_FEMUR)
+    {
+        path += "/Data_Femur_Lat.txt";
+        file.setFileName(path);
+        QString str;
+        if (file.open(QIODevice::ReadOnly | QIODevice::Text)) //以文本文式写入
         {
-            path += "/Data_TIBIA_Lat.txt";
-            file.setFileName(path);
-            QString str;
-            if(file.open(QIODevice::ReadOnly | QIODevice::Text)) //以文本文式写入
+            out_file.setDevice(&file);
+
+            out_file >> str;
+            if (str != "Piximage_point")
+                return;
+            for (int i = 0; i < 5; i++)
             {
-                out_file.setDevice(&file);
-
-                out_file >> str;
-                if(str != "Piximage_point")
-                    return;
-                for(int i = 0; i < 6 ;i++)
-                {
-                    float ftemp;
-                    out_file>>ftemp;
-                            imageScene_Lat_Tibia->Piximage_point[i].setX(ftemp);
-                    out_file>>ftemp;
-                            imageScene_Lat_Tibia->Piximage_point[i].setY(ftemp);
-
-                }
-
-                out_file >> str;
-                if(str != "Xspot_matrix4d_Lat_Tibia")
-                    return;
-                for(int i =0; i < 4;i++)
-                {
-                    for(int j =0; j < 4;j++)
-                        out_file >> Xspot_matrix4d_Lat_Tibia(i,j);
-                }
-
-                out_file >> str;
-                if(str != "tiptopatXspot_Lat_Tibia")
-                    return;
-                for(int i =0; i < 4;i++)
-                {
-                    for(int j =0; j < 4;j++)
-                        out_file >> tiptopatXspot_Lat_Tibia(i,j);
-                }
-
-				out_file >> str;
-				if (str != "transparams_Tibia_Lat")
-					return;
-				transparams_Tibia_Lat.clear();
-                double dtemp;
-				while (1)
-				{
-					out_file >> dtemp;
-					if (out_file.atEnd()) break;
-                    transparams_Tibia_Lat.append(dtemp);
-                }
-				imageScene_Lat_Tibia->selected_hide();
-				imageScene_Lat_Tibia->selected_show();
-
-				imageScene_Lat_Tibia->Marker_Tip->show();
-				for (int i = 0; i < 6; i++)
-				{
-					if (imageScene_Lat_Tibia->Piximage_point[i] != QPointF(-1, -1))
-					{
-						imageScene_Lat_Tibia->Piximage_button_selected[i].setPos(imageScene_Lat_Tibia->Piximage_point[i] - QPoint(10, 10)*imageScene_Lat_Tibia->Piximage_button->scale());//按钮图片像素/2*倍率
-						imageScene_Lat_Tibia->Piximage_button[i].setPos(imageScene_Lat_Tibia->Piximage_point[i] - QPoint(10, 10)*imageScene_Lat_Tibia->Piximage_button->scale());
-						imageScene_Lat_Tibia->Piximage_button[i].show();
-					}
-
-				}
-
-
-                file.close();
+                float ftemp;
+                out_file >> ftemp;
+                imageScene_Lat_Femur->Piximage_point[i].setX(ftemp);
+                out_file >> ftemp;
+                imageScene_Lat_Femur->Piximage_point[i].setY(ftemp);
             }
+
+            out_file >> str;
+            if (str != "Xspot_matrix4d_Lat_Femur")
+                return;
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                    out_file >> Xspot_matrix4d_Lat_Femur(i, j);
+            }
+
+            out_file >> str;
+            if (str != "tiptopatXspot_Lat_Femur")
+                return;
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                    out_file >> tiptopatXspot_Lat_Femur(i, j);
+            }
+
+            out_file >> str;
+            if (str != "transparams_Femur_Lat")
+                return;
+            transparams_Femur_Lat.clear();
+
+            double dtemp;
+            while (1)
+            {
+                out_file >> dtemp;
+                if (out_file.atEnd()) break;
+                transparams_Femur_Lat.append(dtemp);
+            }
+            imageScene_Lat_Femur->selected_hide();
+            imageScene_Lat_Femur->selected_show();
+            imageScene_Lat_Femur->Marker_Tip->show();
+            for (int i = 0; i < 6; i++)
+            {
+                if (imageScene_Lat_Femur->Piximage_point[i] != QPointF(-1, -1))
+                {
+                    imageScene_Lat_Femur->Piximage_button_selected[i].setPos(imageScene_Lat_Femur->Piximage_point[i] - QPoint(10, 10)*imageScene_Lat_Femur->Piximage_button->scale());//按钮图片像素/2*倍率
+                    imageScene_Lat_Femur->Piximage_button[i].setPos(imageScene_Lat_Femur->Piximage_point[i] - QPoint(10, 10)*imageScene_Lat_Femur->Piximage_button->scale());
+                    imageScene_Lat_Femur->Piximage_button[i].show();
+                }
+            }
+
+            file.close();
         }
+
+    }
+
+    if(ui->tabWidget_manipulate->currentIndex() == INDEX_TIBIA)
+    {
+        path += "/Data_TIBIA_Lat.txt";
+        file.setFileName(path);
+        QString str;
+        if(file.open(QIODevice::ReadOnly | QIODevice::Text)) //以文本文式写入
+        {
+            out_file.setDevice(&file);
+
+            out_file >> str;
+            if(str != "Piximage_point")
+                return;
+            for(int i = 0; i < 6 ;i++)
+            {
+                float ftemp;
+                out_file>>ftemp;
+                imageScene_Lat_Tibia->Piximage_point[i].setX(ftemp);
+                out_file>>ftemp;
+                imageScene_Lat_Tibia->Piximage_point[i].setY(ftemp);
+
+            }
+
+            out_file >> str;
+            if(str != "Xspot_matrix4d_Lat_Tibia")
+                return;
+            for(int i =0; i < 4;i++)
+            {
+                for(int j =0; j < 4;j++)
+                    out_file >> Xspot_matrix4d_Lat_Tibia(i,j);
+            }
+
+            out_file >> str;
+            if(str != "tiptopatXspot_Lat_Tibia")
+                return;
+            for(int i =0; i < 4;i++)
+            {
+                for(int j =0; j < 4;j++)
+                    out_file >> tiptopatXspot_Lat_Tibia(i,j);
+            }
+
+            out_file >> str;
+            if (str != "transparams_Tibia_Lat")
+                return;
+            transparams_Tibia_Lat.clear();
+            double dtemp;
+            while (1)
+            {
+                out_file >> dtemp;
+                if (out_file.atEnd()) break;
+                transparams_Tibia_Lat.append(dtemp);
+            }
+            imageScene_Lat_Tibia->selected_hide();
+            imageScene_Lat_Tibia->selected_show();
+
+            imageScene_Lat_Tibia->Marker_Tip->show();
+            for (int i = 0; i < 6; i++)
+            {
+                if (imageScene_Lat_Tibia->Piximage_point[i] != QPointF(-1, -1))
+                {
+                    imageScene_Lat_Tibia->Piximage_button_selected[i].setPos(imageScene_Lat_Tibia->Piximage_point[i] - QPoint(10, 10)*imageScene_Lat_Tibia->Piximage_button->scale());//按钮图片像素/2*倍率
+                    imageScene_Lat_Tibia->Piximage_button[i].setPos(imageScene_Lat_Tibia->Piximage_point[i] - QPoint(10, 10)*imageScene_Lat_Tibia->Piximage_button->scale());
+                    imageScene_Lat_Tibia->Piximage_button[i].show();
+                }
+
+            }
+
+
+            file.close();
+        }
+    }
 }
 
 void Widget::on_pushButton_Read_AP_clicked()
@@ -2270,143 +2429,143 @@ void Widget::on_pushButton_Read_AP_clicked()
     QDir dir;
     dir.mkpath(path);
 
-	if (ui->tabWidget_manipulate->currentIndex() == INDEX_FEMUR)
-	{
-		path += "/Data_Femur_AP.txt";
-		file.setFileName(path);
-		QString str;
-		if (file.open(QIODevice::ReadOnly | QIODevice::Text)) //以文本文式写入
-		{
-			out_file.setDevice(&file);
-
-			out_file >> str;
-			if (str != "Piximage_point")
-				return;
-			for (int i = 0; i < 5; i++)
-			{
-				float ftemp;
-				out_file >> ftemp;
-				imageScene_AP_Femur->Piximage_point[i].setX(ftemp);
-				out_file >> ftemp;
-				imageScene_AP_Femur->Piximage_point[i].setY(ftemp);
-			}
-
-
-			out_file >> str;
-			if (str != "Xspot_matrix4d_AP_Femur")
-				return;
-			for (int i = 0; i < 4; i++)
-			{
-				for (int j = 0; j < 4; j++)
-					out_file >> Xspot_matrix4d_AP_Femur(i, j);
-			}
-
-			out_file >> str;
-			if (str != "tiptopatXspot_AP_Femur")
-				return;
-			for (int i = 0; i < 4; i++)
-			{
-				for (int j = 0; j < 4; j++)
-					out_file >> tiptopatXspot_AP_Femur(i, j);
-			}
-			out_file >> str;
-			if (str != "transparams_Femur_AP")
-				return;
-			double dtemp;
-			transparams_Femur_AP.clear();
-			while (1)
-			{
-				out_file >> dtemp;
-				if (out_file.atEnd()) break;
-				transparams_Femur_AP.append(dtemp);
-			}
-			imageScene_AP_Femur->selected_hide();
-			imageScene_AP_Femur->selected_show();
-            qDebug()<<1;
-			imageScene_AP_Femur->Marker_Tip->show();
-			for (int i = 0; i < 5; i++)
-			{
-				if (imageScene_AP_Femur->Piximage_point[i] != QPointF(-1, -1))
-				{
-					imageScene_AP_Femur->Piximage_button_selected[i].setPos(imageScene_AP_Femur->Piximage_point[i] - QPoint(10, 10)*imageScene_AP_Femur->Piximage_button->scale());//按钮图片像素/2*倍率
-					imageScene_AP_Femur->Piximage_button[i].setPos(imageScene_AP_Femur->Piximage_point[i] - QPoint(10, 10)*imageScene_AP_Femur->Piximage_button->scale());
-					imageScene_AP_Femur->Piximage_button[i].show();
-				}
-					
-			}
-
-
-			file.close();
-		}
-	}
-
-        if(ui->tabWidget_manipulate->currentIndex() == INDEX_TIBIA)
+    if (ui->tabWidget_manipulate->currentIndex() == INDEX_FEMUR)
+    {
+        path += "/Data_Femur_AP.txt";
+        file.setFileName(path);
+        QString str;
+        if (file.open(QIODevice::ReadOnly | QIODevice::Text)) //以文本文式写入
         {
-            path += "/Data_Tibia_AP.txt";
-            file.setFileName(path);
-            QString str;
-            if(file.open(QIODevice::ReadOnly | QIODevice::Text)) //以文本文式写入
+            out_file.setDevice(&file);
+
+            out_file >> str;
+            if (str != "Piximage_point")
+                return;
+            for (int i = 0; i < 5; i++)
             {
-                out_file.setDevice(&file);
-
-                out_file >> str;
-                if(str != "Piximage_point")
-                    return;
-                for(int i = 0; i < 4 ;i++)
-                {
-                    float ftemp;
-                    out_file>>ftemp;
-                            imageScene_AP_Tibia->Piximage_point[i].setX(ftemp);
-                    out_file>>ftemp;
-                            imageScene_AP_Tibia->Piximage_point[i].setY(ftemp);
-                }
-
-
-                out_file >> str;
-                if(str != "Xspot_matrix4d_AP_Tibia")
-                    return;
-                for(int i =0; i < 4;i++)
-                {
-                    for(int j =0; j < 4;j++)
-                        out_file >> Xspot_matrix4d_AP_Tibia(i,j);
-                }
-
-                out_file >> str;
-                if(str != "tiptopatXspot_AP_Tibia")
-                    return;
-                for(int i =0; i < 4;i++)
-                {
-                    for(int j =0; j < 4;j++)
-                        out_file >> tiptopatXspot_AP_Tibia(i,j);
-                }
-				out_file >> str;
-				if (str != "transparams_Tibia_AP")
-					return;
-                double dtemp;
-				transparams_Tibia_AP.clear();
-                while(1)
-                {
-                    out_file >> dtemp;
-					if (out_file.atEnd()) break;
-					transparams_Tibia_AP.append(dtemp);
-                }
-				imageScene_AP_Tibia->selected_hide();
-				imageScene_AP_Tibia->selected_show();
-				imageScene_AP_Tibia->Marker_Tip->show();
-				for (int i = 0; i < 4; i++)
-				{
-					if (imageScene_AP_Tibia->Piximage_point[i] != QPointF(-1, -1))
-					{
-						imageScene_AP_Tibia->Piximage_button_selected[i].setPos(imageScene_AP_Tibia->Piximage_point[i] - QPoint(10, 10)*imageScene_AP_Tibia->Piximage_button->scale());//按钮图片像素/2*倍率
-						imageScene_AP_Tibia->Piximage_button[i].setPos(imageScene_AP_Tibia->Piximage_point[i] - QPoint(10, 10)*imageScene_AP_Tibia->Piximage_button->scale());
-						imageScene_AP_Tibia->Piximage_button[i].show();	
-					}
-					
-				}
-
-                file.close();
+                float ftemp;
+                out_file >> ftemp;
+                imageScene_AP_Femur->Piximage_point[i].setX(ftemp);
+                out_file >> ftemp;
+                imageScene_AP_Femur->Piximage_point[i].setY(ftemp);
             }
+
+
+            out_file >> str;
+            if (str != "Xspot_matrix4d_AP_Femur")
+                return;
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                    out_file >> Xspot_matrix4d_AP_Femur(i, j);
+            }
+
+            out_file >> str;
+            if (str != "tiptopatXspot_AP_Femur")
+                return;
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                    out_file >> tiptopatXspot_AP_Femur(i, j);
+            }
+            out_file >> str;
+            if (str != "transparams_Femur_AP")
+                return;
+            double dtemp;
+            transparams_Femur_AP.clear();
+            while (1)
+            {
+                out_file >> dtemp;
+                if (out_file.atEnd()) break;
+                transparams_Femur_AP.append(dtemp);
+            }
+            imageScene_AP_Femur->selected_hide();
+            imageScene_AP_Femur->selected_show();
+            qDebug()<<1;
+            imageScene_AP_Femur->Marker_Tip->show();
+            for (int i = 0; i < 5; i++)
+            {
+                if (imageScene_AP_Femur->Piximage_point[i] != QPointF(-1, -1))
+                {
+                    imageScene_AP_Femur->Piximage_button_selected[i].setPos(imageScene_AP_Femur->Piximage_point[i] - QPoint(10, 10)*imageScene_AP_Femur->Piximage_button->scale());//按钮图片像素/2*倍率
+                    imageScene_AP_Femur->Piximage_button[i].setPos(imageScene_AP_Femur->Piximage_point[i] - QPoint(10, 10)*imageScene_AP_Femur->Piximage_button->scale());
+                    imageScene_AP_Femur->Piximage_button[i].show();
+                }
+
+            }
+
+
+            file.close();
         }
+    }
+
+    if(ui->tabWidget_manipulate->currentIndex() == INDEX_TIBIA)
+    {
+        path += "/Data_Tibia_AP.txt";
+        file.setFileName(path);
+        QString str;
+        if(file.open(QIODevice::ReadOnly | QIODevice::Text)) //以文本文式写入
+        {
+            out_file.setDevice(&file);
+
+            out_file >> str;
+            if(str != "Piximage_point")
+                return;
+            for(int i = 0; i < 4 ;i++)
+            {
+                float ftemp;
+                out_file>>ftemp;
+                imageScene_AP_Tibia->Piximage_point[i].setX(ftemp);
+                out_file>>ftemp;
+                imageScene_AP_Tibia->Piximage_point[i].setY(ftemp);
+            }
+
+
+            out_file >> str;
+            if(str != "Xspot_matrix4d_AP_Tibia")
+                return;
+            for(int i =0; i < 4;i++)
+            {
+                for(int j =0; j < 4;j++)
+                    out_file >> Xspot_matrix4d_AP_Tibia(i,j);
+            }
+
+            out_file >> str;
+            if(str != "tiptopatXspot_AP_Tibia")
+                return;
+            for(int i =0; i < 4;i++)
+            {
+                for(int j =0; j < 4;j++)
+                    out_file >> tiptopatXspot_AP_Tibia(i,j);
+            }
+            out_file >> str;
+            if (str != "transparams_Tibia_AP")
+                return;
+            double dtemp;
+            transparams_Tibia_AP.clear();
+            while(1)
+            {
+                out_file >> dtemp;
+                if (out_file.atEnd()) break;
+                transparams_Tibia_AP.append(dtemp);
+            }
+            imageScene_AP_Tibia->selected_hide();
+            imageScene_AP_Tibia->selected_show();
+            imageScene_AP_Tibia->Marker_Tip->show();
+            for (int i = 0; i < 4; i++)
+            {
+                if (imageScene_AP_Tibia->Piximage_point[i] != QPointF(-1, -1))
+                {
+                    imageScene_AP_Tibia->Piximage_button_selected[i].setPos(imageScene_AP_Tibia->Piximage_point[i] - QPoint(10, 10)*imageScene_AP_Tibia->Piximage_button->scale());//按钮图片像素/2*倍率
+                    imageScene_AP_Tibia->Piximage_button[i].setPos(imageScene_AP_Tibia->Piximage_point[i] - QPoint(10, 10)*imageScene_AP_Tibia->Piximage_button->scale());
+                    imageScene_AP_Tibia->Piximage_button[i].show();
+                }
+
+            }
+
+            file.close();
+        }
+    }
 
 }
 
@@ -2471,17 +2630,16 @@ void Widget::loadData_Femur_AP()
         }
         imageScene_AP_Femur->selected_hide();
         imageScene_AP_Femur->selected_show();
-        qDebug()<<1;
 
         Vector4d Tiptop;
         Tiptop = tiptopatXspot_AP_Femur * tanzhen2tip;
         Vector2d Pt2D_TipTop,Pt2D_TipEnd;
         get2DPtfrom3D(Tiptop.head(3), transparams_Femur_AP, Pt2D_TipTop);
 
-		Vector4d tanzhen2end = tanzhen2tip;
-		tanzhen2end(0) = 0;
-		Vector4d Tipend = tiptopatXspot_AP_Femur * tanzhen2end;
-		get2DPtfrom3D(Tipend.head(3), transparams_Femur_AP, Pt2D_TipEnd);
+        Vector4d tanzhen2end = tanzhen2tip;
+        tanzhen2end(0) = 0;
+        Vector4d Tipend = tiptopatXspot_AP_Femur * tanzhen2end;
+        get2DPtfrom3D(Tipend.head(3), transparams_Femur_AP, Pt2D_TipEnd);
 
 
         imageScene_AP_Femur->Marker_Tip->setLine(Pt2D_TipEnd(0),Pt2D_TipEnd(1),Pt2D_TipTop(0),Pt2D_TipTop(1));
@@ -2511,85 +2669,85 @@ void Widget::loadData_Femur_Lat()
     QDir dir;
     dir.mkpath(path);
 
-        path += "/Data_Femur_Lat.txt";
-        file.setFileName(path);
-        QString str;
-        if (file.open(QIODevice::ReadOnly | QIODevice::Text)) //以文本文式写入
+    path += "/Data_Femur_Lat.txt";
+    file.setFileName(path);
+    QString str;
+    if (file.open(QIODevice::ReadOnly | QIODevice::Text)) //以文本文式写入
+    {
+        out_file.setDevice(&file);
+
+        out_file >> str;
+        if (str != "Piximage_point")
+            return;
+        for (int i = 0; i < 5; i++)
         {
-            out_file.setDevice(&file);
-
-            out_file >> str;
-            if (str != "Piximage_point")
-                return;
-            for (int i = 0; i < 5; i++)
-            {
-                float ftemp;
-                out_file >> ftemp;
-                imageScene_Lat_Femur->Piximage_point[i].setX(ftemp);
-                out_file >> ftemp;
-                imageScene_Lat_Femur->Piximage_point[i].setY(ftemp);
-            }
-
-            out_file >> str;
-            if (str != "Xspot_matrix4d_Lat_Femur")
-                return;
-            for (int i = 0; i < 4; i++)
-            {
-                for (int j = 0; j < 4; j++)
-                    out_file >> Xspot_matrix4d_Lat_Femur(i, j);
-            }
-
-            out_file >> str;
-            if (str != "tiptopatXspot_Lat_Femur")
-                return;
-            for (int i = 0; i < 4; i++)
-            {
-                for (int j = 0; j < 4; j++)
-                    out_file >> tiptopatXspot_Lat_Femur(i, j);
-            }
-
-            out_file >> str;
-            if (str != "transparams_Femur_Lat")
-                return;
-            transparams_Femur_Lat.clear();
-
-            double dtemp;
-            while (1)
-            {
-                out_file >> dtemp;
-                if (out_file.atEnd()) break;
-                transparams_Femur_Lat.append(dtemp);
-            }
-            imageScene_Lat_Femur->selected_hide();
-            imageScene_Lat_Femur->selected_show();
-
-            Vector4d Tiptop;
-            Tiptop = tiptopatXspot_Lat_Femur * tanzhen2tip;
-
-            Vector2d Pt2D_TipTop,Pt2D_TipEnd;
-            get2DPtfrom3D(Tiptop.head(3), transparams_Femur_Lat, Pt2D_TipTop);
-
-			Vector4d tanzhen2end = tanzhen2tip;
-			tanzhen2end(0) = 0;
-			Vector4d Tipend = tiptopatXspot_Lat_Femur * tanzhen2end;
-			get2DPtfrom3D(Tipend.head(3), transparams_Femur_Lat, Pt2D_TipEnd);
-
-            imageScene_Lat_Femur->Marker_Tip->setLine(Pt2D_TipEnd(0),Pt2D_TipEnd(1),Pt2D_TipTop(0),Pt2D_TipTop(1));
-            imageScene_Lat_Femur->Marker_Tip->show();
-            imageScene_Lat_Femur->update();
-
-            for (int i = 0; i < 6; i++)
-            {
-                if (imageScene_Lat_Femur->Piximage_point[i] != QPointF(-1, -1))
-                {
-                    imageScene_Lat_Femur->Piximage_button_selected[i].setPos(imageScene_Lat_Femur->Piximage_point[i] - QPoint(10, 10)*imageScene_Lat_Femur->Piximage_button->scale());//按钮图片像素/2*倍率
-                    imageScene_Lat_Femur->Piximage_button[i].setPos(imageScene_Lat_Femur->Piximage_point[i] - QPoint(10, 10)*imageScene_Lat_Femur->Piximage_button->scale());
-                    imageScene_Lat_Femur->Piximage_button[i].show();
-                }
-            }
-
-            file.close();
+            float ftemp;
+            out_file >> ftemp;
+            imageScene_Lat_Femur->Piximage_point[i].setX(ftemp);
+            out_file >> ftemp;
+            imageScene_Lat_Femur->Piximage_point[i].setY(ftemp);
         }
+
+        out_file >> str;
+        if (str != "Xspot_matrix4d_Lat_Femur")
+            return;
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+                out_file >> Xspot_matrix4d_Lat_Femur(i, j);
+        }
+
+        out_file >> str;
+        if (str != "tiptopatXspot_Lat_Femur")
+            return;
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+                out_file >> tiptopatXspot_Lat_Femur(i, j);
+        }
+
+        out_file >> str;
+        if (str != "transparams_Femur_Lat")
+            return;
+        transparams_Femur_Lat.clear();
+
+        double dtemp;
+        while (1)
+        {
+            out_file >> dtemp;
+            if (out_file.atEnd()) break;
+            transparams_Femur_Lat.append(dtemp);
+        }
+        imageScene_Lat_Femur->selected_hide();
+        imageScene_Lat_Femur->selected_show();
+
+        Vector4d Tiptop;
+        Tiptop = tiptopatXspot_Lat_Femur * tanzhen2tip;
+
+        Vector2d Pt2D_TipTop,Pt2D_TipEnd;
+        get2DPtfrom3D(Tiptop.head(3), transparams_Femur_Lat, Pt2D_TipTop);
+
+        Vector4d tanzhen2end = tanzhen2tip;
+        tanzhen2end(0) = 0;
+        Vector4d Tipend = tiptopatXspot_Lat_Femur * tanzhen2end;
+        get2DPtfrom3D(Tipend.head(3), transparams_Femur_Lat, Pt2D_TipEnd);
+
+        imageScene_Lat_Femur->Marker_Tip->setLine(Pt2D_TipEnd(0),Pt2D_TipEnd(1),Pt2D_TipTop(0),Pt2D_TipTop(1));
+        imageScene_Lat_Femur->Marker_Tip->show();
+        imageScene_Lat_Femur->update();
+
+        for (int i = 0; i < 6; i++)
+        {
+            if (imageScene_Lat_Femur->Piximage_point[i] != QPointF(-1, -1))
+            {
+                imageScene_Lat_Femur->Piximage_button_selected[i].setPos(imageScene_Lat_Femur->Piximage_point[i] - QPoint(10, 10)*imageScene_Lat_Femur->Piximage_button->scale());//按钮图片像素/2*倍率
+                imageScene_Lat_Femur->Piximage_button[i].setPos(imageScene_Lat_Femur->Piximage_point[i] - QPoint(10, 10)*imageScene_Lat_Femur->Piximage_button->scale());
+                imageScene_Lat_Femur->Piximage_button[i].show();
+            }
+        }
+
+        file.close();
+    }
 
 }
 
@@ -2601,86 +2759,86 @@ void Widget::loadData_Tibia_AP()
     dir.mkpath(path);
 
 
-        path += "/Data_Tibia_AP.txt";
-        file.setFileName(path);
-        QString str;
-        if(file.open(QIODevice::ReadOnly | QIODevice::Text)) //以文本文式写入
+    path += "/Data_Tibia_AP.txt";
+    file.setFileName(path);
+    QString str;
+    if(file.open(QIODevice::ReadOnly | QIODevice::Text)) //以文本文式写入
+    {
+        out_file.setDevice(&file);
+
+        out_file >> str;
+        if(str != "Piximage_point")
+            return;
+        for(int i = 0; i < 4 ;i++)
         {
-            out_file.setDevice(&file);
-
-            out_file >> str;
-            if(str != "Piximage_point")
-                return;
-            for(int i = 0; i < 4 ;i++)
-            {
-                float ftemp;
-                out_file>>ftemp;
-                        imageScene_AP_Tibia->Piximage_point[i].setX(ftemp);
-                out_file>>ftemp;
-                        imageScene_AP_Tibia->Piximage_point[i].setY(ftemp);
-            }
-
-
-            out_file >> str;
-            if(str != "Xspot_matrix4d_AP_Tibia")
-                return;
-            for(int i =0; i < 4;i++)
-            {
-                for(int j =0; j < 4;j++)
-                    out_file >> Xspot_matrix4d_AP_Tibia(i,j);
-            }
-
-            out_file >> str;
-            if(str != "tiptopatXspot_AP_Tibia")
-                return;
-            for(int i =0; i < 4;i++)
-            {
-                for(int j =0; j < 4;j++)
-                    out_file >> tiptopatXspot_AP_Tibia(i,j);
-            }
-            out_file >> str;
-            if (str != "transparams_Tibia_AP")
-                return;
-            double dtemp;
-            transparams_Tibia_AP.clear();
-            while(1)
-            {
-                out_file >> dtemp;
-                if (out_file.atEnd()) break;
-                transparams_Tibia_AP.append(dtemp);
-            }
-            imageScene_AP_Tibia->selected_hide();
-            imageScene_AP_Tibia->selected_show();
-
-            Vector4d Tiptop;
-
-            Tiptop = tiptopatXspot_AP_Tibia * tanzhen2tip;
-
-            Vector2d Pt2D_TipTop,Pt2D_TipEnd;
-            get2DPtfrom3D(Tiptop.head(3), transparams_Tibia_AP, Pt2D_TipTop);
-
-			Vector4d tanzhen2end = tanzhen2tip;
-			tanzhen2end(0) = 0;
-			Vector4d Tipend = tiptopatXspot_AP_Tibia * tanzhen2end;
-			get2DPtfrom3D(Tipend.head(3), transparams_Tibia_AP, Pt2D_TipEnd);
-
-            imageScene_AP_Tibia->Marker_Tip->setLine(Pt2D_TipEnd(0),Pt2D_TipEnd(1),Pt2D_TipTop(0),Pt2D_TipTop(1));
-            imageScene_AP_Tibia->Marker_Tip->show();
-            imageScene_AP_Tibia->update();
-
-            for (int i = 0; i < 4; i++)
-            {
-                if (imageScene_AP_Tibia->Piximage_point[i] != QPointF(-1, -1))
-                {
-                    imageScene_AP_Tibia->Piximage_button_selected[i].setPos(imageScene_AP_Tibia->Piximage_point[i] - QPoint(10, 10)*imageScene_AP_Tibia->Piximage_button->scale());//按钮图片像素/2*倍率
-                    imageScene_AP_Tibia->Piximage_button[i].setPos(imageScene_AP_Tibia->Piximage_point[i] - QPoint(10, 10)*imageScene_AP_Tibia->Piximage_button->scale());
-                    imageScene_AP_Tibia->Piximage_button[i].show();
-                }
-
-            }
-
-            file.close();
+            float ftemp;
+            out_file>>ftemp;
+            imageScene_AP_Tibia->Piximage_point[i].setX(ftemp);
+            out_file>>ftemp;
+            imageScene_AP_Tibia->Piximage_point[i].setY(ftemp);
         }
+
+
+        out_file >> str;
+        if(str != "Xspot_matrix4d_AP_Tibia")
+            return;
+        for(int i =0; i < 4;i++)
+        {
+            for(int j =0; j < 4;j++)
+                out_file >> Xspot_matrix4d_AP_Tibia(i,j);
+        }
+
+        out_file >> str;
+        if(str != "tiptopatXspot_AP_Tibia")
+            return;
+        for(int i =0; i < 4;i++)
+        {
+            for(int j =0; j < 4;j++)
+                out_file >> tiptopatXspot_AP_Tibia(i,j);
+        }
+        out_file >> str;
+        if (str != "transparams_Tibia_AP")
+            return;
+        double dtemp;
+        transparams_Tibia_AP.clear();
+        while(1)
+        {
+            out_file >> dtemp;
+            if (out_file.atEnd()) break;
+            transparams_Tibia_AP.append(dtemp);
+        }
+        imageScene_AP_Tibia->selected_hide();
+        imageScene_AP_Tibia->selected_show();
+
+        Vector4d Tiptop;
+
+        Tiptop = tiptopatXspot_AP_Tibia * tanzhen2tip;
+
+        Vector2d Pt2D_TipTop,Pt2D_TipEnd;
+        get2DPtfrom3D(Tiptop.head(3), transparams_Tibia_AP, Pt2D_TipTop);
+
+        Vector4d tanzhen2end = tanzhen2tip;
+        tanzhen2end(0) = 0;
+        Vector4d Tipend = tiptopatXspot_AP_Tibia * tanzhen2end;
+        get2DPtfrom3D(Tipend.head(3), transparams_Tibia_AP, Pt2D_TipEnd);
+
+        imageScene_AP_Tibia->Marker_Tip->setLine(Pt2D_TipEnd(0),Pt2D_TipEnd(1),Pt2D_TipTop(0),Pt2D_TipTop(1));
+        imageScene_AP_Tibia->Marker_Tip->show();
+        imageScene_AP_Tibia->update();
+
+        for (int i = 0; i < 4; i++)
+        {
+            if (imageScene_AP_Tibia->Piximage_point[i] != QPointF(-1, -1))
+            {
+                imageScene_AP_Tibia->Piximage_button_selected[i].setPos(imageScene_AP_Tibia->Piximage_point[i] - QPoint(10, 10)*imageScene_AP_Tibia->Piximage_button->scale());//按钮图片像素/2*倍率
+                imageScene_AP_Tibia->Piximage_button[i].setPos(imageScene_AP_Tibia->Piximage_point[i] - QPoint(10, 10)*imageScene_AP_Tibia->Piximage_button->scale());
+                imageScene_AP_Tibia->Piximage_button[i].show();
+            }
+
+        }
+
+        file.close();
+    }
 
 }
 
@@ -2705,9 +2863,9 @@ void Widget::loadData_Tibia_Lat()
         {
             float ftemp;
             out_file>>ftemp;
-                    imageScene_Lat_Tibia->Piximage_point[i].setX(ftemp);
+            imageScene_Lat_Tibia->Piximage_point[i].setX(ftemp);
             out_file>>ftemp;
-                    imageScene_Lat_Tibia->Piximage_point[i].setY(ftemp);
+            imageScene_Lat_Tibia->Piximage_point[i].setY(ftemp);
 
         }
 
@@ -2750,10 +2908,10 @@ void Widget::loadData_Tibia_Lat()
         Vector2d Pt2D_TipTop,Pt2D_TipEnd;
         get2DPtfrom3D(Tiptop.head(3), transparams_Tibia_Lat, Pt2D_TipTop);
 
-		Vector4d tanzhen2end = tanzhen2tip;
-		tanzhen2end(0) = 0;
-		Vector4d Tipend = tiptopatXspot_Lat_Tibia * tanzhen2end;
-		get2DPtfrom3D(Tipend.head(3), transparams_Tibia_Lat, Pt2D_TipEnd);
+        Vector4d tanzhen2end = tanzhen2tip;
+        tanzhen2end(0) = 0;
+        Vector4d Tipend = tiptopatXspot_Lat_Tibia * tanzhen2end;
+        get2DPtfrom3D(Tipend.head(3), transparams_Tibia_Lat, Pt2D_TipEnd);
 
         imageScene_Lat_Tibia->Marker_Tip->setLine(Pt2D_TipEnd(0),Pt2D_TipEnd(1),Pt2D_TipTop(0),Pt2D_TipTop(1));
         imageScene_Lat_Tibia->Marker_Tip->show();
@@ -2782,35 +2940,35 @@ void Widget::on_pushButtonSetting_clicked()
 
 void Widget::on_pushButton_guide_Tibia_clicked()
 {
-	if (ui->pushButton_guide_Tibia->text() == u8"开始导航")
-	{
-	    IsopenGuide_AP_Tibia = true;
-		IsopenGuide_Lat_Tibia = true;
-		ui->pushButton_guide_Tibia->setText(u8"结束导航");
-	}
-	else
-	{
-		IsopenGuide_AP_Tibia = false;
-		IsopenGuide_Lat_Tibia = false;
-		ui->pushButton_guide_Tibia->setText(u8"开始导航");
-	}
+    if (ui->pushButton_guide_Tibia->text() == u8"开始导航")
+    {
+        IsopenGuide_AP_Tibia = true;
+        IsopenGuide_Lat_Tibia = true;
+        ui->pushButton_guide_Tibia->setText(u8"结束导航");
+    }
+    else
+    {
+        IsopenGuide_AP_Tibia = false;
+        IsopenGuide_Lat_Tibia = false;
+        ui->pushButton_guide_Tibia->setText(u8"开始导航");
+    }
 
 }
 
 void Widget::on_pushButton_guide_Femur_clicked()
 {
-	if (ui->pushButton_guide_Femur->text() == u8"开始导航")
-	{
-		IsopenGuide_AP_Femur = true;
-		IsopenGuide_Lat_Femur = true;
-		ui->pushButton_guide_Femur->setText(u8"结束导航");
-	}
-	else
-	{
-		IsopenGuide_AP_Femur = false;
-		IsopenGuide_Lat_Femur = false;
-		ui->pushButton_guide_Femur->setText(u8"开始导航");
-	}
+    if (ui->pushButton_guide_Femur->text() == u8"开始导航")
+    {
+        IsopenGuide_AP_Femur = true;
+        IsopenGuide_Lat_Femur = true;
+        ui->pushButton_guide_Femur->setText(u8"结束导航");
+    }
+    else
+    {
+        IsopenGuide_AP_Femur = false;
+        IsopenGuide_Lat_Femur = false;
+        ui->pushButton_guide_Femur->setText(u8"开始导航");
+    }
 }
 
 void Widget::on_radioButton_Femur_clicked()
@@ -2827,11 +2985,12 @@ void Widget::on_radioButton_Tibia_clicked()
 
 void Widget::InitMarkerName(QList<QString> name)
 {
-	MarkerName_Femur = name[0];
-	MarkerName_Tibia = name[1];
-	MarkerName_XSpot = name[2];
-	MarkerName_Tiptool = name[3];
-    MarkerName_Robot = name[4];
+    MarkerName_Femur = name[0];
+    MarkerName_Tibia = name[1];
+    MarkerName_XSpot = name[2];
+    MarkerName_XSpot2 = name[3];
+    MarkerName_Tiptool = name[4];
+    MarkerName_Robot = name[5];
 }
 
 
@@ -3020,11 +3179,11 @@ void Widget::on_checkBox_showLat_clicked(bool checked)
 void Widget::on_pushButton_clicked()
 {
     //摄像头
-           cam_index = 0;
-           camera = new cv::VideoCapture;
-           camTimer = new QTimer();
-           connect(camTimer, SIGNAL(timeout()), this, SLOT(timerSlot()));
-           OpenCamera();
+    if(cam_index < 0 )
+        cam_index = 0;
+
+    connect(camTimer, SIGNAL(timeout()), this, SLOT(timerSlot()));
+    OpenCamera();
 }
 
 
@@ -3033,7 +3192,7 @@ void Widget::on_horizontalSlider_Tibia_AP_valueChanged(int value)
     if(ui->tabWidget_manipulate->currentIndex() == INDEX_TIBIA)
         imageScene_AP_Tibia->pixImage_matching.setOpacity(((float)value)/ui->horizontalSlider_Tibia_AP->maximum());
 
-        update();
+    update();
 }
 
 void Widget::on_horizontalSlider_Femur_Lat_valueChanged(int value)
@@ -3102,6 +3261,8 @@ void Widget::on_pushButton_moveRobot_clicked()
     {
         T_End = caculateMovetoRoute(End3DPt_Femur,Start3DPt_Femur,Femur_matrix4d,100);
         double pos[6];
+		T_End = (Robot_matrix4d * TofMarkeronRobot2Robot * RobotTCP).inverse() * Femur_matrix4d * T_End;
+
         Ur->pUR5->matrix_2_UR6params(T_End,pos);
         Ur->pUR5->yb_movep_TCP(pos);
         return;
@@ -3110,6 +3271,7 @@ void Widget::on_pushButton_moveRobot_clicked()
     {
         T_End = caculateMovetoRoute(End3DPt_Tibia,Start3DPt_Tibia,Tibia_matrix4d,100);
         double pos[6];
+		T_End = (Robot_matrix4d * TofMarkeronRobot2Robot * RobotTCP).inverse() * Tibia_matrix4d * T_End;
         Ur->pUR5->matrix_2_UR6params(T_End,pos);
         Ur->pUR5->yb_movep_TCP(pos);
         return;
@@ -3118,7 +3280,7 @@ void Widget::on_pushButton_moveRobot_clicked()
 
 void Widget::on_pushButton_moveRobotin_pressed()
 {
-   //开始点和止点反了，所以N_DIr = start - end
+    //开始点和止点反了，所以N_DIr = start - end
     if(ui->radioButton_Femur->isChecked())
     {
         T_End = caculateMovetoRoute(End3DPt_Femur,Start3DPt_Femur,Femur_matrix4d,10);
@@ -3149,7 +3311,7 @@ void Widget::on_pushButton_moveRobotin_2_pressed()
 
 void Widget::on_pushButton_moveRobotin_2_released()
 {
-        Ur->pUR5->stopl();
+    Ur->pUR5->stopl();
 }
 
 void Widget::on_pushButton_moveRobotin_3_pressed()
@@ -3164,10 +3326,199 @@ void Widget::on_pushButton_moveRobotin_3_released()
 
 void Widget::on_pushButton_2_clicked()
 {
+    carmwidget.hide();
     carmwidget.show();
 }
 
 void Widget::setTypeofDevice(TypeofDevice type)
 {
     thread_NDI->setTypeofDevice(type);
+}
+
+
+
+void Widget::on_comboBox_CameraIndex_activated(int index)
+{
+    cam_index = index;
+}
+
+void Widget::Point_Change_Femur_AP(int index)
+{
+	if (index != 3 && index != 4)
+		return;
+    if(!transparams_Femur_AP.isEmpty())
+    {
+        if(!transparams_Femur_Lat.isEmpty())
+        {
+            if(index == 3)
+            {
+                Vector2d Pt_Scr;
+                QList<Vector2d> Line_Dist;
+                Pt_Scr  << imageScene_AP_Femur->Piximage_point[3].x(),imageScene_AP_Femur->Piximage_point[3].y();
+
+                Shift2DPtfrom2D(Pt_Scr,transparams_Femur_AP,Line_Dist,transparams_Femur_Lat);
+                //添加图上点 ！！！
+                QPointF dir = QPointF(Line_Dist[0][0] - Line_Dist[1][0], Line_Dist[0][1] - Line_Dist[1][1]);
+                imageScene_Lat_Femur->subline1->show();
+                imageScene_Lat_Femur->subline1->setLine(Line_Dist[0][0] - 1000 * dir.x(),
+                        Line_Dist[0][1] - 1000 * dir.y(),
+                        Line_Dist[0][0] + 1000 * dir.x(),
+                        Line_Dist[0][1] + 1000 * dir.y());
+
+            }
+            else if(index == 4)
+            {
+                Vector2d Pt_Scr;
+                QList<Vector2d> Line_Dist;
+                Pt_Scr  << imageScene_AP_Femur->Piximage_point[4].x(),imageScene_AP_Femur->Piximage_point[4].y();
+                Shift2DPtfrom2D(Pt_Scr,transparams_Femur_AP,Line_Dist,transparams_Femur_Lat);
+                //添加图上点 ！！！
+                QPointF dir = QPointF(Line_Dist[0][0] - Line_Dist[1][0], Line_Dist[0][1] - Line_Dist[1][1]);
+                imageScene_Lat_Femur->subline2->show();
+                imageScene_Lat_Femur->subline2->setLine(Line_Dist[0][0] - 1000 * dir.x(),
+                        Line_Dist[0][1] - 1000 * dir.y(),
+                        Line_Dist[0][0] + 1000 * dir.x(),
+                        Line_Dist[0][1] + 1000 * dir.y());
+            }
+            update();
+        }
+    }
+
+}
+
+
+void Widget::Point_Change_Tibia_AP(int index)
+{
+	if (index != 2 && index != 3)
+		return;
+    if(!transparams_Tibia_AP.isEmpty())
+    {
+        if(!transparams_Tibia_Lat.isEmpty())
+        {
+            if(index == 2)
+            {
+                Vector2d Pt_Scr;
+                QList<Vector2d> Line_Dist;
+                Pt_Scr  << imageScene_AP_Tibia->Piximage_point[2].x(),imageScene_AP_Tibia->Piximage_point[2].y();
+
+                Shift2DPtfrom2D(Pt_Scr,transparams_Tibia_AP,Line_Dist,transparams_Tibia_Lat);
+                //添加图上点 ！！！
+                QPointF dir = QPointF(Line_Dist[0][0] - Line_Dist[1][0], Line_Dist[0][1] - Line_Dist[1][1]);
+                imageScene_Lat_Tibia->subline1->show();
+                imageScene_Lat_Tibia->subline1->setLine(Line_Dist[0][0] - 1000 * dir.x(),
+                        Line_Dist[0][1] - 1000 * dir.y(),
+                        Line_Dist[0][0] + 1000 * dir.x(),
+                        Line_Dist[0][1] + 1000 * dir.y());
+
+            }
+            else if(index == 3)
+            {
+                Vector2d Pt_Scr;
+                QList<Vector2d> Line_Dist;
+                Pt_Scr  << imageScene_AP_Tibia->Piximage_point[3].x(),imageScene_AP_Tibia->Piximage_point[3].y();
+                Shift2DPtfrom2D(Pt_Scr,transparams_Tibia_AP,Line_Dist,transparams_Tibia_Lat);
+                //添加图上点 ！！！
+                QPointF dir = QPointF(Line_Dist[0][0] - Line_Dist[1][0], Line_Dist[0][1] - Line_Dist[1][1]);
+                imageScene_Lat_Tibia->subline2->show();
+                imageScene_Lat_Tibia->subline2->setLine(Line_Dist[0][0] - 1000 * dir.x(),
+                        Line_Dist[0][1] - 1000 * dir.y(),
+                        Line_Dist[0][0] + 1000 * dir.x(),
+                        Line_Dist[0][1] + 1000 * dir.y());
+            }
+            update();
+        }
+    }
+}
+
+void Widget::Point_Change_Femur_Lat(int index)
+{
+	if (index != 3 && index != 4)
+		return;
+    if(!transparams_Femur_Lat.isEmpty())
+    {
+        if(!transparams_Femur_AP.isEmpty())
+        {
+            if(index == 3)
+            {
+                Vector2d Pt_Scr;
+                QList<Vector2d> Line_Dist;
+                Pt_Scr  << imageScene_Lat_Femur->Piximage_point[3].x(),
+					imageScene_Lat_Femur->Piximage_point[3].y();
+
+                Shift2DPtfrom2D(Pt_Scr,transparams_Femur_Lat,Line_Dist,transparams_Femur_AP);
+                //添加图上点 ！！！
+                QPointF dir = QPointF(Line_Dist[0][0] - Line_Dist[1][0], Line_Dist[0][1] - Line_Dist[1][1]);
+                imageScene_AP_Femur->subline1->show();
+                imageScene_AP_Femur->subline1->setLine(Line_Dist[0][0] - 100000 * dir.x(),
+                        Line_Dist[0][1] - 100000 * dir.y(),
+                        Line_Dist[0][0] + 100000 * dir.x(),
+                        Line_Dist[0][1] + 100000 * dir.y());
+				//imageScene_AP_Femur->subline1->setLine(Line_Dist[0][0],Line_Dist[0][1],
+				//	Line_Dist[1][0],Line_Dist[1][1]);
+
+            }
+            else if(index == 4)
+            {
+                Vector2d Pt_Scr;
+                QList<Vector2d> Line_Dist;
+                Pt_Scr  << imageScene_Lat_Femur->Piximage_point[4].x(),
+					imageScene_Lat_Femur->Piximage_point[4].y();
+                Shift2DPtfrom2D(Pt_Scr,transparams_Femur_Lat,Line_Dist,transparams_Femur_AP);
+                //添加图上点 ！！！
+                QPointF dir = QPointF(Line_Dist[0][0] - Line_Dist[1][0], Line_Dist[0][1] - Line_Dist[1][1]);
+                imageScene_AP_Femur->subline2->show();
+				/*imageScene_AP_Femur->subline2->setLine(Line_Dist[0][0],Line_Dist[0][1],
+					Line_Dist[1][0],Line_Dist[1][1]);*/
+				imageScene_AP_Femur->subline2->setLine(Line_Dist[0][0] - 1000 * dir.x(),
+                        Line_Dist[0][1] - 1000 * dir.y(),
+                        Line_Dist[0][0] + 1000 * dir.x(),
+                        Line_Dist[0][1] + 1000 * dir.y());
+            }
+            update();
+        }
+    }
+}
+
+void Widget::Point_Change_Tibia_Lat(int index)
+{
+	if (index != 4 && index != 5)
+		return;
+    if(!transparams_Tibia_Lat.isEmpty())
+    {
+        if(!transparams_Tibia_Lat.isEmpty())
+        {
+            if(index == 4)
+            {
+                Vector2d Pt_Scr;
+                QList<Vector2d> Line_Dist;
+                Pt_Scr  << imageScene_Lat_Tibia->Piximage_point[4].x(),imageScene_Lat_Tibia->Piximage_point[4].y();
+
+                Shift2DPtfrom2D(Pt_Scr,transparams_Tibia_Lat,Line_Dist,transparams_Tibia_AP);
+                //添加图上点 ！！！
+                QPointF dir = QPointF(Line_Dist[0][0] - Line_Dist[1][0], Line_Dist[0][1] - Line_Dist[1][1]);
+                imageScene_AP_Tibia->subline1->show();
+                imageScene_AP_Tibia->subline1->setLine(Line_Dist[0][0] - 1000 * dir.x(),
+                        Line_Dist[0][1] - 1000 * dir.y(),
+                        Line_Dist[0][0] + 1000 * dir.x(),
+                        Line_Dist[0][1] + 1000 * dir.y());
+
+            }
+            else if(index == 5)
+            {
+                Vector2d Pt_Scr;
+                QList<Vector2d> Line_Dist;
+                Pt_Scr  << imageScene_Lat_Tibia->Piximage_point[5].x(),imageScene_Lat_Tibia->Piximage_point[5].y();
+                Shift2DPtfrom2D(Pt_Scr,transparams_Tibia_Lat,Line_Dist,transparams_Tibia_AP);
+                //添加图上点 ！！！
+                QPointF dir = QPointF(Line_Dist[0][0] - Line_Dist[1][0], Line_Dist[0][1] - Line_Dist[1][1]);
+                imageScene_AP_Tibia->subline2->show();
+                imageScene_AP_Tibia->subline2->setLine(Line_Dist[0][0] - 1000 * dir.x(),
+                        Line_Dist[0][1] - 1000 * dir.y(),
+                        Line_Dist[0][0] + 1000 * dir.x(),
+                        Line_Dist[0][1] + 1000 * dir.y());
+            }
+            update();
+        }
+    }
+
 }

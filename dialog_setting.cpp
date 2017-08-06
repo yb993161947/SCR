@@ -1,16 +1,48 @@
 ﻿#include "dialog_setting.h"
 #include "ui_dialog_setting.h"
 
+struct std23
+{
+    int num;
+};
 Dialog_Setting::Dialog_Setting(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog_Setting)
 {
     ui->setupUi(this);
+
+    ReadSettingFile();
 }
 
 Dialog_Setting::~Dialog_Setting()
 {
     delete ui;
+}
+
+void Dialog_Setting::ReadSettingFile()
+{
+    QSettings *configIniRead = new QSettings("configure.ini", QSettings::IniFormat);
+
+    QString Name = configIniRead->value("/MarkerName/MarkerFemur").toString();
+    ui->lineEdi_NameFemur->setText(Name);
+
+    Name = configIniRead->value("/MarkerName/MarkerTibia").toString();
+    ui->lineEdi_NameTibia->setText(Name);
+
+    Name = configIniRead->value("/MarkerName/MarkerXspot1").toString();
+    ui->lineEdi_NameXspot->setText(Name);
+
+    Name = configIniRead->value("/MarkerName/MarkerXspot2").toString();
+    ui->lineEdi_NameXspot_2->setText(Name);
+
+    Name = configIniRead->value("/MarkerName/MarkerTip").toString();
+    ui->lineEdi_NameTipTool->setText(Name);
+
+    Name = configIniRead->value("/MarkerName/MarkerRobot").toString();
+    ui->lineEdi_NameRobot->setText(Name);
+
+    on_pushButton_InitMarker_clicked();
+
 }
 
 void Dialog_Setting::on_pushButtonUDP_clicked()
@@ -46,6 +78,7 @@ void Dialog_Setting::on_pushButton_InitMarker_clicked()
     Name.push_back (ui->lineEdi_NameFemur->text());
     Name.push_back(ui->lineEdi_NameTibia->text());
     Name.push_back(ui->lineEdi_NameXspot->text());
+    Name.push_back(ui->lineEdi_NameXspot_2->text());
     Name.push_back( ui->lineEdi_NameTipTool->text());
     Name.push_back( ui->lineEdi_NameRobot->text());
     emit InitMarkerName(Name);
