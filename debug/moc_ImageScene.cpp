@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_ImageScene_t {
-    QByteArrayData data[22];
-    char stringdata0[215];
+    QByteArrayData data[23];
+    char stringdata0[230];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -50,7 +50,8 @@ QT_MOC_LITERAL(17, 162, 17), // "loadMatchingImage"
 QT_MOC_LITERAL(18, 180, 6), // "Pixmap"
 QT_MOC_LITERAL(19, 187, 9), // "saveImage"
 QT_MOC_LITERAL(20, 197, 15), // "setmouseConnect"
-QT_MOC_LITERAL(21, 213, 1) // "a"
+QT_MOC_LITERAL(21, 213, 1), // "a"
+QT_MOC_LITERAL(22, 215, 14) // "ismouseConnect"
 
     },
     "ImageScene\0pointChanged\0\0index\0zoomIn\0"
@@ -58,7 +59,8 @@ QT_MOC_LITERAL(21, 213, 1) // "a"
     "zoomOutMatching\0setPixImage\0Pix_Scr\0"
     "loadDCMImage\0FilePath\0loadBMPImage\0"
     "loadImage\0cv::Mat\0Image\0loadMatchingImage\0"
-    "Pixmap\0saveImage\0setmouseConnect\0a"
+    "Pixmap\0saveImage\0setmouseConnect\0a\0"
+    "ismouseConnect"
 };
 #undef QT_MOC_LITERAL
 
@@ -68,7 +70,7 @@ static const uint qt_meta_data_ImageScene[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      13,   14, // methods
+      14,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -76,21 +78,22 @@ static const uint qt_meta_data_ImageScene[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   79,    2, 0x06 /* Public */,
+       1,    1,   84,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    1,   82,    2, 0x0a /* Public */,
-       6,    1,   85,    2, 0x0a /* Public */,
-       7,    1,   88,    2, 0x0a /* Public */,
-       8,    1,   91,    2, 0x0a /* Public */,
-       9,    1,   94,    2, 0x0a /* Public */,
-      11,    1,   97,    2, 0x0a /* Public */,
-      13,    1,  100,    2, 0x0a /* Public */,
-      14,    1,  103,    2, 0x0a /* Public */,
-      17,    1,  106,    2, 0x0a /* Public */,
-      17,    1,  109,    2, 0x0a /* Public */,
-      19,    1,  112,    2, 0x0a /* Public */,
-      20,    1,  115,    2, 0x0a /* Public */,
+       4,    1,   87,    2, 0x0a /* Public */,
+       6,    1,   90,    2, 0x0a /* Public */,
+       7,    1,   93,    2, 0x0a /* Public */,
+       8,    1,   96,    2, 0x0a /* Public */,
+       9,    1,   99,    2, 0x0a /* Public */,
+      11,    1,  102,    2, 0x0a /* Public */,
+      13,    1,  105,    2, 0x0a /* Public */,
+      14,    1,  108,    2, 0x0a /* Public */,
+      17,    1,  111,    2, 0x0a /* Public */,
+      17,    1,  114,    2, 0x0a /* Public */,
+      19,    1,  117,    2, 0x0a /* Public */,
+      20,    1,  120,    2, 0x0a /* Public */,
+      22,    0,  123,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int,    3,
@@ -108,6 +111,7 @@ static const uint qt_meta_data_ImageScene[] = {
     QMetaType::Void, QMetaType::QPixmap,   18,
     QMetaType::Void, QMetaType::QString,   12,
     QMetaType::Void, QMetaType::Bool,   21,
+    QMetaType::Bool,
 
        0        // eod
 };
@@ -131,6 +135,8 @@ void ImageScene::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 10: _t->loadMatchingImage((*reinterpret_cast< QPixmap(*)>(_a[1]))); break;
         case 11: _t->saveImage((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 12: _t->setmouseConnect((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 13: { bool _r = _t->ismouseConnect();
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -171,13 +177,13 @@ int ImageScene::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 14)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 14;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 13)
+        if (_id < 14)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 13;
+        _id -= 14;
     }
     return _id;
 }

@@ -26,10 +26,10 @@ public:
     double TcpPos[6] ;
     double Jointangle[6];
     bool TechFlag;
-
+    void Connect_UR();
 
 private slots:
-    void Connect_UR();
+
 
     void getUR_PosData();
 

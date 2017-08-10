@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QFormLayout>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
@@ -143,12 +144,23 @@ public:
     QPushButton *pushButton_move7;
     QPushButton *pushButton_savePoint_8;
     QPushButton *pushButton_move8;
+    QFrame *frame;
 
     void setupUi(QWidget *UR_class_testClass)
     {
         if (UR_class_testClass->objectName().isEmpty())
             UR_class_testClass->setObjectName(QStringLiteral("UR_class_testClass"));
         UR_class_testClass->resize(1042, 665);
+        UR_class_testClass->setStyleSheet(QLatin1String("QPushButton{\n"
+"    color: white;\n"
+"	background-color: rgb(53, 63, 75);\n"
+"}\n"
+"QGroupBox{\n"
+"	color: white;\n"
+"}\n"
+"QLabel{\n"
+"	color: white;	\n"
+"}"));
         groupBox = new QGroupBox(UR_class_testClass);
         groupBox->setObjectName(QStringLiteral("groupBox"));
         groupBox->setGeometry(QRect(20, 10, 991, 81));
@@ -694,6 +706,23 @@ public:
 
         formLayout->setWidget(7, QFormLayout::FieldRole, pushButton_move8);
 
+        frame = new QFrame(UR_class_testClass);
+        frame->setObjectName(QStringLiteral("frame"));
+        frame->setGeometry(QRect(0, 0, 1042, 665));
+        frame->setStyleSheet(QStringLiteral("border-image: url(:/images/bkg4.png);"));
+        frame->setFrameShape(QFrame::StyledPanel);
+        frame->setFrameShadow(QFrame::Raised);
+        frame->raise();
+        groupBox->raise();
+        groupBox_2->raise();
+        groupBox_3->raise();
+        groupBox_4->raise();
+        groupBox_5->raise();
+        pushButton_zero->raise();
+        pushButton_setTCP->raise();
+        pushButton_addPoint->raise();
+        pushButton_SaveAllPoint->raise();
+        layoutWidget->raise();
 
         retranslateUi(UR_class_testClass);
 

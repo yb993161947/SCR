@@ -17,7 +17,6 @@ public:
     //QGraphicsLineItem *Marker_Tip;//探针直线
 
 	float distance_DotToLine(QPointF linePoint1, QPointF linePoint2, QPointF dot);
-protected:
 	void show_otherItem();
 	
 private:

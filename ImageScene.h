@@ -51,6 +51,10 @@ public:
     void saveImage(QString FilePath);
 
     void setmouseConnect(bool a);
+    bool ismouseConnect()
+    {
+        return isOpenMouse;
+    }
 
 public:
     int index_selected;//判断选中的是哪个点
@@ -61,13 +65,9 @@ public:
     void setMoveObj(int Obj);
     QGraphicsPixmapItem Piximage_button[6];
     QGraphicsPixmapItem Piximage_button_selected[6];
-    //needle *needle1;//针模型
-	QGraphicsLineItem *needle1;
-	//needle *Marker_Tip;//探针直线
-    QGraphicsLineItem *Marker_Tip;
-//    cv::Mat ImageRemoveCircle;//消隐图像
-//    cv::Mat ImageRefined;//矫正图像
-
+    QGraphicsLineItem *needle1;//针模型
+    needle *Marker_Tip;
+    virtual void show_otherItem();//响应鼠标事件点改变的虚函数
 protected:
     void mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent) override;
     void mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent) override;
@@ -75,7 +75,7 @@ protected:
     void wheelEvent(QGraphicsSceneWheelEvent *wheelEvent) override;
     void mouseDoubleClickEvent(QGraphicsSceneMouseEvent *mouseEvent) override;
 
-    virtual void show_otherItem();//响应鼠标事件点改变的虚函数
+
 	QVector<double> transparams;
     int chooseMoveObj;
 	QPointF lastmatchingPos;

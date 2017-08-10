@@ -13,6 +13,18 @@
   <property name="windowTitle">
    <string>UR_class_test</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton{
+    color: white;
+	background-color: rgb(53, 63, 75);
+}
+QGroupBox{
+	color: white;
+}
+QLabel{
+	color: white;	
+}</string>
+  </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
@@ -753,6 +765,36 @@
     </item>
    </layout>
   </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1042</width>
+     <height>665</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/images/bkg4.png);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+  </widget>
+  <zorder>frame</zorder>
+  <zorder>groupBox</zorder>
+  <zorder>groupBox_2</zorder>
+  <zorder>groupBox_3</zorder>
+  <zorder>groupBox_4</zorder>
+  <zorder>groupBox_5</zorder>
+  <zorder>pushButton_zero</zorder>
+  <zorder>pushButton_setTCP</zorder>
+  <zorder>pushButton_addPoint</zorder>
+  <zorder>pushButton_SaveAllPoint</zorder>
+  <zorder>layoutWidget</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

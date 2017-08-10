@@ -115,8 +115,8 @@ public:
     Matrix4d TofMarkeronRobot2Robot;
     Matrix4d XSpotMarker1toMarker2;
     Vector4d tanzhen2tip;
-    Matrix4d caculateMovetoRoute(Vector3d End3DPt,Vector3d Start3DPt,Matrix4d Bone_Matrix,double dis);//单位mm
-
+	void caculateMovetoRoute(Vector3d End3DPt, Vector3d Start3DPt, Matrix4d Bone_Matrix, double pos[]);//单位mm
+    void caculateMoveAngle(Vector3d End3DPt,Vector3d Start3DPt,Matrix4d Bone_Matrix ,double pos[]);//单位mm
 
     QString MarkerName_Femur;
     QString MarkerName_Tibia;
@@ -402,6 +402,12 @@ private slots:
     void Point_Change_Tibia_AP(int index);
     void Point_Change_Femur_Lat(int index);
     void Point_Change_Tibia_Lat(int index);
+
+    void on_pushButton_InitRobot_clicked();
+
+
+
+    void on_pushButton_SetRobot_clicked();
 
 private:
     Ui::Widget *ui;

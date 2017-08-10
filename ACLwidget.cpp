@@ -130,13 +130,14 @@ Widget::Widget(QWidget *parent) :
     Vector3d  z_3v = z_robot.head(3);
     Vector3d dir_y =z_3v.cross(x_robot2Marker);
     y_robot << dir_y(0) , dir_y(1) ,dir_y(2) , 0;
-    Vector3d x_dir = dir_y.cross(z_3v);
+    Vector3d x_dir =  - z_3v.cross(dir_y) ;
     Vector4d x_robot;
     x_robot << x_dir(0),x_dir(1),x_dir(2) ,0;
     Vector4d P = (TofTCP_Up2MarkeronRobot + TofTCP_Down2MarkeronRobot) / 2;
     RobotTCP << x_robot ,y_robot,z_robot,P ;
-    std::cout << RobotTCP;
+
     RobotTCP = TofMarkeronRobot2Robot.inverse() * RobotTCP;
+	std::cout << RobotTCP;
     //图像采集窗口
 
 	carmwidget.setWindowModality(Qt::ApplicationModal);
@@ -201,9 +202,8 @@ void Widget::InitializationParameter()
 
 
     //Ur
-    Ur = new UR_class_test(this);
-    Ur->setGeometry(110,110,1200,1200);
-
+    Ur = new UR_class_test();
+    Ur->setWindowTitle(QString().fromLocal8Bit("机器人控制"));
     //初始化捕捉图像窗口
     captureVideoWidget = new CaptureVideoWidget();
 
@@ -505,6 +505,8 @@ void Widget::on_tabWidget_manipulate_currentChanged(int index)//标签修改操�
         ui->horizontalSlider_Femur_Lat->hide();
         ui->horizontalSlider_Tibia_Lat->hide();
 
+
+
         if(lastIndex == INDEX_FEMUR || lastIndex == INDEX_TIBIA)
         {
             imageScene_AP_Femur->zoomOut(1.6667);
@@ -537,7 +539,7 @@ void Widget::on_tabWidget_manipulate_currentChanged(int index)//标签修改操�
         ui->horizontalSlider_Femur_Lat->hide();
         ui->horizontalSlider_Tibia_Lat->hide();
         //机器人操作补充
-        Ur->show();
+
         break;
 
     default:
@@ -591,9 +593,9 @@ void Widget::on_pushButton_AP_OpenPicture_clicked()
 void Widget::on_pushButton_Lat_OpenPicture_clicked()
 {
 
-    qStr_Lat_ImageFilePath = QFileDialog::getOpenFileName(nullptr, "加载图像",
+    qStr_Lat_ImageFilePath = QFileDialog::getOpenFileName(nullptr, QString().fromLocal8Bit("加载图像"),
                                                           QApplication::applicationDirPath());
-    if(qStr_AP_ImageFilePath.isNull())
+    if(qStr_Lat_ImageFilePath.isNull())
         return;
     //对图像进行处理并显示
     if (INDEX_FEMUR == ui->tabWidget_manipulate->currentIndex())
@@ -675,33 +677,79 @@ void Widget::mouseReleaseEvent(QMouseEvent *event)
     //        case INDEX_ROBOT:
 
     //            break;
-
     //        default:
     //            break;
     //    }
 }
 
 
-Matrix4d Widget::caculateMovetoRoute(Vector3d End3DPt, Vector3d Start3DPt, Matrix4d Bone_Matrix, double dis)
+void Widget::caculateMovetoRoute(Vector3d End3DPt, Vector3d Start3DPt, Matrix4d Bone_Matrix, double pos[])
+{
+	//起点与止点方向反了
+	Vector3d N_dir = (-End3DPt + Start3DPt) / (-End3DPt + Start3DPt).norm();
+	Vector3d N1 = (Bone_Matrix.inverse() * Robot_matrix4d * TofTCP_Up2MarkeronRobot).head(3);
+	Vector3d N2 = (Bone_Matrix.inverse() * Robot_matrix4d * TofTCP_Down2MarkeronRobot).head(3);
+	Vector3d Axis_Z = (N2 - N1) / (N2 - N1).norm();
+	Vector3d Axis_X = (Bone_Matrix.inverse() * Robot_matrix4d.col(0)).head(3);
+
+	Vector3d Axis_Y = Axis_Z.cross(Axis_X);
+	Matrix3d Rot;
+	Rot << Axis_X, Axis_Y, Axis_Z;
+	Vector3d N_dirOnRobot = Rot.inverse() * N_dir;
+	double theta_x = atanf(N_dirOnRobot(1) / N_dirOnRobot(2));
+	double theta_y = atanf(N_dirOnRobot(0) / (N_dirOnRobot(1) * sinf(theta_x) + N_dirOnRobot(2) * cosf(theta_x)));
+
+
+	if (theta_x > PI / 2)
+		theta_x -= PI;
+	if (theta_y > PI / 2)
+		theta_y -= PI;
+
+	Vector3d L = (-End3DPt + Start3DPt);
+	Vector3d P = (N1 + N2) / 2;
+	double u = (P(0) - Start3DPt(0))*L(0) + (P(1) - Start3DPt(1))*L(1) + (P(2) - Start3DPt(2))*L(2);
+	u /= (L(0) * L(0) + L(1) * L(1) + L(2) * L(2));
+	Vector3d mov;
+	mov << (Start3DPt(0) + L(0) * u) / 1000 - P[0]/1000, (Start3DPt(1) + L(1) * u) / 1000- P[1]/1000, (Start3DPt(2) + L(2) * u) / 1000 - P[2]/1000;
+	mov = Rot.inverse()*mov;
+	pos[0] = -mov[0];//Bug
+	pos[1] = mov[1];
+	pos[2] = mov[2];
+	pos[3] = theta_x;
+	pos[4] = theta_y;
+	pos[5] = 0;
+
+}
+
+void Widget::caculateMoveAngle(Vector3d End3DPt, Vector3d Start3DPt, Matrix4d Bone_Matrix, double pos[])
 {
     //起点与止点方向反了
+	Vector3d N_dir = (-End3DPt + Start3DPt) / (-End3DPt + Start3DPt).norm();
+	Vector3d N1 = (Bone_Matrix.inverse() * Robot_matrix4d * TofTCP_Up2MarkeronRobot).head(3);
+	Vector3d N2 = (Bone_Matrix.inverse() * Robot_matrix4d * TofTCP_Down2MarkeronRobot).head(3);
+	Vector3d Axis_Z = (N2 - N1) / (N2 - N1).norm();
+	Vector3d Axis_X =(Bone_Matrix.inverse() * Robot_matrix4d.col(0)).head(3);
+	
+	Vector3d Axis_Y = Axis_Z.cross(Axis_X);
+	Matrix3d Rot;
+	Rot << Axis_X, Axis_Y, Axis_Z;
+	Vector3d N_dirOnRobot = Rot.inverse() * N_dir;
+	double theta_x = atanf(N_dirOnRobot(1)/N_dirOnRobot(2));
+	double theta_y = atanf(N_dirOnRobot(0) / (N_dirOnRobot(1) * sinf(theta_x) + N_dirOnRobot(2) * cosf(theta_x)));
 
-    Vector3d N_dir = (-End3DPt + Start3DPt) / (-End3DPt + Start3DPt).norm();
-    Vector3d N1 = (Bone_Matrix.inverse() * Robot_matrix4d * TofTCP_Up2MarkeronRobot).head(3);
-    Vector3d N2 = (Bone_Matrix.inverse() * Robot_matrix4d * TofTCP_Down2MarkeronRobot).head(3);
-    Vector3d Axis_Z = (N2-N1) / (N2-N1).norm();
-    double theta = acosf(N_dir.dot(Axis_Z));
-    Vector3d AxisCross = Axis_Z.cross(N_dir);
-    if (theta < 0)
-        theta =  theta + PI;
 
-    Matrix3d Rotate = rotateWithAxis(AxisCross , theta);
-    Vector3d PosEnd=  ((Start3DPt - N_dir * dis) - N2.head(3))/1000 ;//延长距离200mm
-    Matrix4d T;
-    T.block(0,0,3,3) = Rotate;
-    T.col(3).head(3) = PosEnd;
-    T.row(3)<<0,0,0,1;
-    return T;
+	if (theta_x > PI / 2)
+		theta_x -= PI;
+	if (theta_y > PI / 2)
+		theta_y -= PI;
+
+	pos[0] = 0;
+	pos[1] = 0;
+	pos[2] = 0;
+	pos[3] = theta_x;
+	pos[4] = theta_y;
+	pos[5] = 0;
+  
 }
 
 void Widget::guide()
@@ -755,8 +803,8 @@ void Widget::guide_d(bool IsopenGuide, ImageScene *Imagescene, Matrix4d Xspot_ma
                 Vector4d Tipend = tiptool2Xspot * tanzhen2end;
                 get2DPtfrom3D(Tipend.head(3), transparams, Pt2D_TipEnd);
 
-                Imagescene->Marker_Tip->setLine(Pt2D_TipEnd(0),Pt2D_TipEnd(1),Pt2D_TipTop(0),Pt2D_TipTop(1));
-                Imagescene->Marker_Tip->show();
+                Imagescene->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
+				Imagescene->Marker_Tip->show();
                 Imagescene->update();
             }
 
@@ -767,23 +815,16 @@ void Widget::guide_d(bool IsopenGuide, ImageScene *Imagescene, Matrix4d Xspot_ma
             }
             else
             {
-                Matrix4d Robot2Xspot = Xspot_matrix4d * tone.inverse() * Robot_matrix4d ;
-                Vector4d TCP_upOnRobot = Robot2Xspot * TofTCP_Up2MarkeronRobot;
-                Vector4d TCP_downOnRobot = Robot2Xspot * TofTCP_Down2MarkeronRobot;
-
+                Matrix4d RobotonXspot = Xspot_matrix4d * tone.inverse() * Robot_matrix4d ;
+                Vector4d TCP_upOnRobot = RobotonXspot * TofTCP_Up2MarkeronRobot;
+                Vector4d TCP_downOnRobot = RobotonXspot * TofTCP_Down2MarkeronRobot;
 
                 Vector2d Pt2D_TipTop,Pt2D_TipEnd;
-                get2DPtfrom3D(TCP_upOnRobot.head(3), transparams, Pt2D_TipTop);
-                get2DPtfrom3D(TCP_downOnRobot.head(3), transparams, Pt2D_TipEnd);
+                get2DPtfrom3D(TCP_downOnRobot.head(3), transparams, Pt2D_TipTop);
+                get2DPtfrom3D(TCP_upOnRobot.head(3), transparams, Pt2D_TipEnd);
 
-                Vector2d dir = Pt2D_TipTop - Pt2D_TipEnd;
-                double theta = atan2(dir(1),dir(0)) + PI / 2;
-
-                Imagescene->needle1->setLine(Pt2D_TipEnd(0),Pt2D_TipEnd(1),Pt2D_TipTop(0),Pt2D_TipTop(1));
+                Imagescene->needle1->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
                 Imagescene->needle1->show();
-                //Imagescene->needle1->setPos(Pt2D_TipTop(1)-Imagescene->needle1->width / 2,Pt2D_TipTop(0));
-                //Imagescene->needle1->setRotation(theta);
-                //Imagescene->needle1->show();
                 Imagescene->update();
             }
         }
@@ -1305,7 +1346,8 @@ void Widget::readSettingFile()
     for(int i = 0; i < 16; i++)
         TofMarkeronRobot2Robot(i / 4 ,i % 4) = ValueList[i].toDouble();
 
-    ValueList.clear();
+
+	ValueList.clear();
     Value = configIniRead->value("/Tracker/Marker1ToMarker2").toString();
     ValueList = Value.split(',');
     if(ValueList.size() >= 16)
@@ -1701,9 +1743,7 @@ void Widget::on_checkBox_AP_Femur_clicked(bool checked)
             if(imageScene_AP_Femur->Piximage_point[i] != QPointF(-1,-1))
                 imageScene_AP_Femur->Piximage_button[i].show();
         }
-        imageScene_AP_Femur->Line1_2->show();
-        imageScene_AP_Femur->subline1->show();
-        imageScene_AP_Femur->subline2->show();
+        imageScene_AP_Femur->show_otherItem();
     }
     else
     {
@@ -1713,6 +1753,7 @@ void Widget::on_checkBox_AP_Femur_clicked(bool checked)
             imageScene_AP_Femur->Piximage_button_selected[i].hide();
         }
         imageScene_AP_Femur->Line1_2->hide();
+        imageScene_AP_Femur->Line4_5->hide();
         imageScene_AP_Femur->subline1->hide();
         imageScene_AP_Femur->subline2->hide();
     }
@@ -1725,10 +1766,10 @@ void Widget::on_checkBox_Lat_Femur_clicked(bool checked)
     {
         for(int i = 0 ;i < 5;i++)
         {
-            imageScene_Lat_Femur->Piximage_button[i].show();
+            if(imageScene_AP_Femur->Piximage_point[i] != QPointF(-1,-1))
+                imageScene_Lat_Femur->Piximage_button[i].show();
         }
-        imageScene_Lat_Femur->Line1_2->show();
-        imageScene_Lat_Femur->tablesketch->show();
+        imageScene_Lat_Femur->show_otherItem();
 
     }
     else
@@ -1740,6 +1781,9 @@ void Widget::on_checkBox_Lat_Femur_clicked(bool checked)
         }
         imageScene_Lat_Femur->Line1_2->hide();
         imageScene_Lat_Femur->tablesketch->hide();
+        imageScene_Lat_Femur->Line4_5->hide();
+        imageScene_Lat_Femur->subline1->hide();
+        imageScene_Lat_Femur->subline2->hide();
     }
 }
 
@@ -1749,21 +1793,22 @@ void Widget::on_checkBox_AP_Tibia_clicked(bool checked)
     {
         for(int i = 0 ;i < 4;i++)
         {
-            imageScene_AP_Tibia->Piximage_button[i].show();
-
+            if(imageScene_AP_Tibia->Piximage_point[i] != QPointF(-1,-1))
+                imageScene_AP_Tibia->Piximage_button[i].show();
         }
-        imageScene_AP_Tibia->Line1_2->show();
-        imageScene_AP_Tibia->subline1->show();//等比例辅助线直线
+            imageScene_AP_Tibia->show_otherItem();
     }
     else
     {
         for(int i = 0 ;i < 4;i++)
         {
             imageScene_AP_Tibia->Piximage_button[i].hide();
-            imageScene_Lat_Tibia->Piximage_button_selected[i].hide();
+            imageScene_AP_Tibia->Piximage_button_selected[i].hide();
         }
         imageScene_AP_Tibia->Line1_2->hide();
+        imageScene_AP_Tibia->Line3_4->hide();
         imageScene_AP_Tibia->subline1->hide();//等比例辅助线直线
+        imageScene_AP_Tibia->subline2->hide();
     }
 }
 
@@ -1773,12 +1818,10 @@ void Widget::on_checkBox_Lat_Tibia_clicked(bool checked)
     {
         for(int i = 0 ;i < 6;i++)
         {
+         if(imageScene_Lat_Tibia->Piximage_point[i] != QPointF(-1,-1))
             imageScene_Lat_Tibia->Piximage_button[i].show();
         }
-        imageScene_Lat_Tibia->Line1_2->show();
-        imageScene_Lat_Tibia->Line1_2cross->show();
-        imageScene_Lat_Tibia->Line1_4->show();
-        imageScene_Lat_Tibia->Line2_3->show();
+        imageScene_Lat_Tibia->show_otherItem();
     }
     else
     {
@@ -2044,7 +2087,7 @@ void Widget::on_pushButton_ShowTiptool_Lat_clicked()
         Vector4d Tipend = tiptopatXspot_Lat_Femur * tanzhen2end;
         get2DPtfrom3D(Tipend.head(3), transparams_Femur_Lat, Pt2D_TipEnd);
 
-        imageScene_Lat_Femur->Marker_Tip->setLine(Pt2D_TipEnd(0),Pt2D_TipEnd(1),Pt2D_TipTop(0),Pt2D_TipTop(1));
+        imageScene_Lat_Femur->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
         imageScene_Lat_Femur->Marker_Tip->show();
         imageScene_Lat_Femur->update();
     }
@@ -2065,8 +2108,9 @@ void Widget::on_pushButton_ShowTiptool_Lat_clicked()
         Vector4d Tipend = tiptopatXspot_Lat_Tibia * tanzhen2end;
 
         get2DPtfrom3D(Tipend.head(3), transparams_Tibia_Lat, Pt2D_TipEnd);
-        imageScene_Lat_Tibia->Marker_Tip->setLine(Pt2D_TipEnd(0),Pt2D_TipEnd(1),Pt2D_TipTop(0),Pt2D_TipTop(1));
-        imageScene_Lat_Tibia->Marker_Tip->show();
+        imageScene_Lat_Tibia->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
+       
+		imageScene_Lat_Tibia->Marker_Tip->show();
         imageScene_Lat_Tibia->update();
     }
 }
@@ -2089,7 +2133,7 @@ void Widget::on_pushButton_ShowTiptool_AP_clicked()
         Vector4d Tipend = tiptopatXspot_AP_Femur * tanzhen2end;
         get2DPtfrom3D(Tipend.head(3), transparams_Femur_AP, Pt2D_TipEnd);
 
-        imageScene_AP_Femur->Marker_Tip->setLine(Pt2D_TipEnd(0),Pt2D_TipEnd(1),Pt2D_TipTop(0),Pt2D_TipTop(1));
+        imageScene_AP_Femur->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
         imageScene_AP_Femur->Marker_Tip->show();
         imageScene_AP_Femur->update();
     }
@@ -2111,7 +2155,7 @@ void Widget::on_pushButton_ShowTiptool_AP_clicked()
         Vector4d Tipend = tiptopatXspot_Lat_Tibia* tanzhen2end;
         get2DPtfrom3D(Tipend.head(3), transparams_Tibia_Lat, Pt2D_TipEnd);
 
-        imageScene_AP_Tibia->Marker_Tip->setLine(Pt2D_TipEnd(0),Pt2D_TipEnd(1),Pt2D_TipTop(0),Pt2D_TipTop(1));
+        imageScene_AP_Tibia->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
         imageScene_AP_Tibia->Marker_Tip->show();
         imageScene_AP_Tibia->update();
     }
@@ -2128,6 +2172,9 @@ void Widget::on_pushButton_Save_AP_clicked()
 
     if (ui->tabWidget_manipulate->currentIndex() == INDEX_FEMUR)
     {
+        if(!imageScene_AP_Femur->ismouseConnect())
+            return;
+
         QString path_txt =path + "/Data_Femur_AP.txt";
         file.setFileName(path_txt);
         if (file.open(QIODevice::WriteOnly | QIODevice::Text)) //以文本文式写入
@@ -2161,6 +2208,8 @@ void Widget::on_pushButton_Save_AP_clicked()
     }
     if(ui->tabWidget_manipulate->currentIndex() == INDEX_TIBIA)
     {
+        if(!imageScene_AP_Tibia->ismouseConnect())
+            return;
         QString path_txt =path + "/Data_Tibia_AP.txt";
         file.setFileName(path_txt);
         if(file.open(QIODevice::WriteOnly | QIODevice::Text)) //以文本文式写入
@@ -2197,6 +2246,8 @@ void Widget::on_pushButton_Save_AP_clicked()
 
 void Widget::on_pushButton_Save_Lat_clicked()
 {
+    if(!imageScene_Lat_Femur->ismouseConnect())
+        return;
     QString path = QApplication::applicationDirPath();
     path =path +  "/DataDocument" ;
     QDir dir;
@@ -2237,6 +2288,9 @@ void Widget::on_pushButton_Save_Lat_clicked()
     }
     if(ui->tabWidget_manipulate->currentIndex() == INDEX_TIBIA)
     {
+        if(!imageScene_Lat_Tibia->ismouseConnect())
+            return;
+
         QString path_txt =path + "/Data_Tibia_Lat.txt";
         file.setFileName(path_txt);
         if(file.open(QIODevice::WriteOnly | QIODevice::Text)) //以文本文式写入
@@ -3259,20 +3313,15 @@ void Widget::on_pushButton_moveRobot_clicked()
     //开始点和止点反了，所以N_DIr = start - end
     if(ui->radioButton_Femur->isChecked())
     {
-        T_End = caculateMovetoRoute(End3DPt_Femur,Start3DPt_Femur,Femur_matrix4d,100);
-        double pos[6];
-		T_End = (Robot_matrix4d * TofMarkeronRobot2Robot * RobotTCP).inverse() * Femur_matrix4d * T_End;
-
-        Ur->pUR5->matrix_2_UR6params(T_End,pos);
-        Ur->pUR5->yb_movep_TCP(pos);
-        return;
+		double pos[6];
+		caculateMovetoRoute(End3DPt_Femur, Start3DPt_Femur, Femur_matrix4d, pos);
+		Ur->pUR5->yb_movep_TCP(pos);
+		return;
     }
     if(ui->radioButton_Tibia->isChecked())
-    {
-        T_End = caculateMovetoRoute(End3DPt_Tibia,Start3DPt_Tibia,Tibia_matrix4d,100);
-        double pos[6];
-		T_End = (Robot_matrix4d * TofMarkeronRobot2Robot * RobotTCP).inverse() * Tibia_matrix4d * T_End;
-        Ur->pUR5->matrix_2_UR6params(T_End,pos);
+	{
+		double pos[6];
+        caculateMovetoRoute(End3DPt_Tibia,Start3DPt_Tibia,Tibia_matrix4d,pos);
         Ur->pUR5->yb_movep_TCP(pos);
         return;
     }
@@ -3283,18 +3332,20 @@ void Widget::on_pushButton_moveRobotin_pressed()
     //开始点和止点反了，所以N_DIr = start - end
     if(ui->radioButton_Femur->isChecked())
     {
-        T_End = caculateMovetoRoute(End3DPt_Femur,Start3DPt_Femur,Femur_matrix4d,10);
-        double pos[6];
-        Ur->pUR5->matrix_2_UR6params(T_End,pos);
+		double pos[6];
+        caculateMoveAngle(End3DPt_Femur,Start3DPt_Femur,Femur_matrix4d, pos);
+        
+		qDebug() << pos[3] * 180 / PI << pos[4] * 180 / PI << pos[5] * 180 / PI;
         Ur->pUR5->yb_movep_TCP(pos);
         return;
     }
     if(ui->radioButton_Tibia->isChecked())
-    {
-        T_End = caculateMovetoRoute(End3DPt_Tibia,Start3DPt_Tibia,Tibia_matrix4d,10);
-        double pos[6];
-        Ur->pUR5->matrix_2_UR6params(T_End,pos);
-        Ur->pUR5->yb_movep_TCP(pos);
+    {	
+		double pos[6];
+        caculateMoveAngle(End3DPt_Tibia,Start3DPt_Tibia,Tibia_matrix4d,pos);
+        
+		qDebug() << pos[3] * 180 / PI << pos[4] * 180 / PI << pos[5] * 180 / PI;
+		Ur->pUR5->movej_tool(pos);
         return;
     }
 }
@@ -3306,7 +3357,14 @@ void Widget::on_pushButton_moveRobotin_released()
 
 void Widget::on_pushButton_moveRobotin_2_pressed()
 {
+    double pos[6];
+    for(int i = 0; i < 6;i++)
+    {
+        pos[i] = 0.0;
+    }
+    pos[2] = 1.0;
 
+    Ur->pUR5->speedl(pos);
 }
 
 void Widget::on_pushButton_moveRobotin_2_released()
@@ -3316,7 +3374,14 @@ void Widget::on_pushButton_moveRobotin_2_released()
 
 void Widget::on_pushButton_moveRobotin_3_pressed()
 {
+    double pos[6];
+    for(int i = 0; i < 6;i++)
+    {
+        pos[i] = 0.0;
+    }
+    pos[2] = -1.0;
 
+    Ur->pUR5->speedl(pos);
 }
 
 void Widget::on_pushButton_moveRobotin_3_released()
@@ -3520,5 +3585,25 @@ void Widget::Point_Change_Tibia_Lat(int index)
             update();
         }
     }
+}
 
+
+
+
+void Widget::on_pushButton_InitRobot_clicked()
+{
+        double pos[6];
+
+        Ur->pUR5->matrix_2_UR6params(RobotTCP,pos);
+        pos[0] /= 1000;
+        pos[1] /= 1000;
+        pos[2] /= 1000;
+		qDebug() << pos[3]/PI*180<<pos[4]/PI*180<<pos[5] /PI *180;
+        Ur->pUR5->set_tcp_pos(pos);
+}
+
+
+void Widget::on_pushButton_SetRobot_clicked()
+{
+      Ur->show();
 }

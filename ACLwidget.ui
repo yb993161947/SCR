@@ -114,7 +114,7 @@ QWidget#tab{
     <enum>QTabWidget::Triangular</enum>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="tab_Femur">
     <attribute name="title">
@@ -1726,7 +1726,7 @@ color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>180</y>
+       <y>230</y>
        <width>231</width>
        <height>231</height>
       </rect>
@@ -1734,19 +1734,6 @@ color: rgb(255, 255, 255);</string>
      <property name="title">
       <string>机器人运动</string>
      </property>
-     <widget class="QPushButton" name="pushButton_moveRobot">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>30</y>
-        <width>101</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>移动至路径</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="pushButton_moveRobotin">
       <property name="geometry">
        <rect>
@@ -1757,7 +1744,7 @@ color: rgb(255, 255, 255);</string>
        </rect>
       </property>
       <property name="text">
-       <string>前进至入钉点</string>
+       <string>移动至路径</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_3">
@@ -1838,6 +1825,32 @@ color: rgb(255, 255, 255);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">border-image: url(:/images/bkg_text.png);</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_InitRobot">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>180</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>初始化机器人</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_SetRobot">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>180</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>设置机器人</string>
      </property>
     </widget>
    </widget>

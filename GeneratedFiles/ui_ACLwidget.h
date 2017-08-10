@@ -79,7 +79,6 @@ public:
     QRadioButton *radioButton_Tibia;
     QPushButton *pushButton;
     QGroupBox *groupBox_3;
-    QPushButton *pushButton_moveRobot;
     QPushButton *pushButton_moveRobotin;
     QLabel *label_3;
     QPushButton *pushButton_moveRobotin_2;
@@ -87,6 +86,8 @@ public:
     QPushButton *pushButton_moveRobotin_3;
     QLabel *label_5;
     QComboBox *comboBox_CameraIndex;
+    QPushButton *pushButton_InitRobot;
+    QPushButton *pushButton_SetRobot;
     QWidget *tab_robot;
     QGroupBox *groupBox;
     QPushButton *pushButton_AP_OpenPicture;
@@ -493,10 +494,7 @@ public:
         pushButton->setGeometry(QRect(40, 20, 121, 31));
         groupBox_3 = new QGroupBox(tab_simulate);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
-        groupBox_3->setGeometry(QRect(40, 180, 231, 231));
-        pushButton_moveRobot = new QPushButton(groupBox_3);
-        pushButton_moveRobot->setObjectName(QStringLiteral("pushButton_moveRobot"));
-        pushButton_moveRobot->setGeometry(QRect(10, 30, 101, 31));
+        groupBox_3->setGeometry(QRect(40, 230, 231, 231));
         pushButton_moveRobotin = new QPushButton(groupBox_3);
         pushButton_moveRobotin->setObjectName(QStringLiteral("pushButton_moveRobotin"));
         pushButton_moveRobotin->setGeometry(QRect(10, 80, 101, 31));
@@ -519,6 +517,12 @@ public:
         comboBox_CameraIndex->setObjectName(QStringLiteral("comboBox_CameraIndex"));
         comboBox_CameraIndex->setGeometry(QRect(190, 20, 81, 31));
         comboBox_CameraIndex->setStyleSheet(QStringLiteral("border-image: url(:/images/bkg_text.png);"));
+        pushButton_InitRobot = new QPushButton(tab_simulate);
+        pushButton_InitRobot->setObjectName(QStringLiteral("pushButton_InitRobot"));
+        pushButton_InitRobot->setGeometry(QRect(170, 180, 101, 31));
+        pushButton_SetRobot = new QPushButton(tab_simulate);
+        pushButton_SetRobot->setObjectName(QStringLiteral("pushButton_SetRobot"));
+        pushButton_SetRobot->setGeometry(QRect(50, 180, 101, 31));
         tabWidget_manipulate->addTab(tab_simulate, QString());
         tab_robot = new QWidget();
         tab_robot->setObjectName(QStringLiteral("tab_robot"));
@@ -765,7 +769,7 @@ public:
 
         retranslateUi(Widget);
 
-        tabWidget_manipulate->setCurrentIndex(2);
+        tabWidget_manipulate->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(Widget);
@@ -820,14 +824,15 @@ public:
         radioButton_Tibia->setText(QApplication::translate("Widget", "   \350\203\253\351\252\250", 0));
         pushButton->setText(QApplication::translate("Widget", "\346\211\223\345\274\200\345\205\263\350\212\202\351\225\234", 0));
         groupBox_3->setTitle(QApplication::translate("Widget", "\346\234\272\345\231\250\344\272\272\350\277\220\345\212\250", 0));
-        pushButton_moveRobot->setText(QApplication::translate("Widget", "\347\247\273\345\212\250\350\207\263\350\267\257\345\276\204", 0));
-        pushButton_moveRobotin->setText(QApplication::translate("Widget", "\345\211\215\350\277\233\350\207\263\345\205\245\351\222\211\347\202\271", 0));
+        pushButton_moveRobotin->setText(QApplication::translate("Widget", "\347\247\273\345\212\250\350\207\263\350\267\257\345\276\204", 0));
         label_3->setText(QApplication::translate("Widget", "\357\274\210\351\225\277\346\214\211\350\207\263\345\201\234\346\255\242\357\274\211", 0));
         pushButton_moveRobotin_2->setText(QApplication::translate("Widget", "\345\205\245\351\222\211", 0));
         label_4->setText(QApplication::translate("Widget", "\357\274\210\351\225\277\346\214\211\350\207\263\345\201\234\346\255\242\357\274\211", 0));
         pushButton_moveRobotin_3->setText(QApplication::translate("Widget", "\345\207\272\351\222\211", 0));
         label_5->setText(QApplication::translate("Widget", "\357\274\210\351\225\277\346\214\211\350\207\263\345\201\234\346\255\242\357\274\211\n"
 "\345\217\257\345\244\232\346\254\241\347\202\271\345\207\273\345\220\216\351\200\200", 0));
+        pushButton_InitRobot->setText(QApplication::translate("Widget", "\345\210\235\345\247\213\345\214\226\346\234\272\345\231\250\344\272\272", 0));
+        pushButton_SetRobot->setText(QApplication::translate("Widget", "\350\256\276\347\275\256\346\234\272\345\231\250\344\272\272", 0));
         tabWidget_manipulate->setTabText(tabWidget_manipulate->indexOf(tab_simulate), QApplication::translate("Widget", "\344\273\277\347\234\237", 0));
         tabWidget_manipulate->setTabText(tabWidget_manipulate->indexOf(tab_robot), QApplication::translate("Widget", "\346\234\272\345\231\250\344\272\272", 0));
         groupBox->setTitle(QApplication::translate("Widget", "\346\255\243\344\275\215\346\223\215\344\275\234", 0));

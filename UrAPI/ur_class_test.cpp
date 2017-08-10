@@ -1,7 +1,8 @@
 ﻿#include "ur_class_test.h"
 #include "UR_interface.h"
 #include <QDebug>
-
+#include "qexception.h"
+#include "iostream"
 UR_class_test::UR_class_test(QWidget *parent)
     : QWidget(parent)
 {
@@ -23,13 +24,15 @@ UR_class_test::~UR_class_test()
 }
 void UR_class_test::Connect_UR()
 {
-	const std::string ip = ui.lineEdit_UR_IP->text().toStdString();
-    if(!pUR5->connect_robot(ip))
-    {
-        qDebug()<<"failed in connecting robot";
-        return;
+    const std::string ip = ui.lineEdit_UR_IP->text().toStdString();
+	try {
+		pUR5->connect_robot(ip);
+	}
+	catch (std::basic_string<char, std::char_traits<char>, std::allocator<char> > e)
+	{
+		return;
+	}
 
-    }
     GetRobotInfoThreadFlag = true;
     this->thread = new MyThread(this);  //将该类指针传递
     connect(this->thread, SIGNAL(threadSignal()), this, SLOT(getUR_PosData()));
@@ -266,12 +269,12 @@ void UR_class_test::on_techmode_clicked()
     TechFlag = !TechFlag;
     if (TechFlag)
     {
-        ui.techmode->setText("TechMode");
+        ui.techmode->setText(QString().fromLocal8Bit("自由驱动"));
         pUR5->set_robot_mode(1);
     }
     else
     {
-        ui.techmode->setText("Nomal");
+        ui.techmode->setText(QString().fromLocal8Bit("打开示教"));
         pUR5->set_robot_mode(0);
     }
 

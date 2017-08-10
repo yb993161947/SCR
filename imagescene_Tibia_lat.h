@@ -18,7 +18,6 @@ public:
     QGraphicsLineItem *subline1;//等比例辅助线直线
     QGraphicsLineItem *subline2;//等比例辅助线直线
 
-protected:
 	void show_otherItem();
 
 private:

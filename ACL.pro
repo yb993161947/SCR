@@ -20,7 +20,6 @@ SOURCES += main.cpp\
         thread_get_ndi_marker.cpp \
     carm/DxMath.cpp \
     carm/DxPoint.cpp \
-    carm/DxSpatialMatching.cpp \
     carm/ImageRectify.cpp \
     captureVideo/capturevideowidget.cpp \
     captureVideo/lassowidget.cpp \
@@ -34,6 +33,7 @@ SOURCES += main.cpp\
     UrAPI/UR_interface.cpp \
     needle.cpp \
     CArmAngleCalCuLate/widget.cpp \
+    carm/DxSpatialMatching.cpp
 
 
 
@@ -45,7 +45,6 @@ HEADERS  += ACLwidget.h \
     carm/DxArray.h \
     carm/DxMath.h \
     carm/DxPoint.h \
-    carm/DxSpatialMatching.h \
     carm/ImageRectify.h \
     captureVideo/capturevideowidget.h \
     captureVideo/lassowidget.h \
@@ -59,6 +58,7 @@ HEADERS  += ACLwidget.h \
     UrAPI/UR_interface.h \
     needle.h \
     CArmAngleCalCuLate/widget.h \
+    carm/DxSpatialMatching.h
 
 FORMS    += ACLwidget.ui \
     captureVideo/capturevideowidget.ui \

@@ -63,15 +63,7 @@ void imageScene_Tibia_ap::show_otherItem()
        Line3_4->setLine(Piximage_point[2].x(),Piximage_point[2].y(),Piximage_point[3].x(),Piximage_point[3].y());
        Line3_4->show();
     }	
-//          if (Piximage_point[0] != QPointF(-1, -1)
-//            && Piximage_point[1] != QPointF(-1, -1)
-//            && Piximage_point[2] != QPointF(-1, -1))
-//        {
-//			  float disB3toLine12 = distance_DotToLine(Piximage_point[1], Piximage_point[0], Piximage_point[2]);
-//			  float disB4toLine12 = disB3toLine12 * radioB4toB3;
 
-//			  subline1->setLine(offsetLine(Piximage_point[0], Piximage_point[1], disB4toLine12));
-//        }
 }
 
 float imageScene_Tibia_ap::distance_DotToLine(QPointF linePoint1, QPointF linePoint2, QPointF dot)
@@ -89,9 +81,9 @@ QLineF imageScene_Tibia_ap::offsetLine(QPointF linePoint1, QPointF linePoint2, f
     float sita = atan2f(linePoint2.y() - linePoint1.y(), linePoint2.x() - linePoint1.x())+PI/2;
     float move_x = distance *cosf(sita);
     float move_y = distance *sinf(sita);
-    P1.setX(linePoint1.x() +  move_x);
+    P1.setX(linePoint1.x() + move_x);
     P1.setY(linePoint1.y() + move_y);
-    P2.setX(linePoint2.x() +  move_x);
+    P2.setX(linePoint2.x() + move_x);
     P2.setY(linePoint2.y() + move_y);
     QLineF line(P1,P2);
     return line;

@@ -107,16 +107,21 @@ ImageScene::ImageScene(QObject *parent) :
 	pen.setColor(Qt::green);
 	pen.setWidth(2);
 
-    Marker_Tip = new QGraphicsLineItem();
-	addItem(Marker_Tip);
-	Marker_Tip->setParentItem(&(pixImage));
-    Marker_Tip->setPen(pen);
-	Marker_Tip->hide();
+//    Marker_Tip = new QGraphicsLineItem();
+//    addItem(Marker_Tip);
+//    Marker_Tip->setParentItem(&(pixImage));
+//    Marker_Tip->setPen(pen);
+//    Marker_Tip->hide();
+
+    Marker_Tip = new needle();
+    addItem(Marker_Tip);
+    Marker_Tip->setParentItem(&(pixImage));
+    Marker_Tip->hide();
 
 	//needle1 = new needle();
 	//addItem(needle1);
 	//needle1->setParentItem(&(pixImage));
-	//needle1->setTransformOriginPoint(needle1->width/2,0);
+	//needle1->setPen(pen);
 	//needle1->hide();
 
 	needle1 = new QGraphicsLineItem();
