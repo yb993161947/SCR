@@ -33,6 +33,7 @@
 #include "highgui.h"
 #include "UrAPI/ur_class_test.h"
 #include "CArmAngleCalCuLate/widget.h"
+#include "imagescene_camera.h"
 
 //Xspot上有两个Marker标记，Marker1相对于模型中心点1的坐标，Marker2相对于模型中心点2的坐标
 
@@ -47,6 +48,9 @@ using namespace cv;
 namespace Ui {
 class Widget;
 }
+#define CAMERAINDEX 0
+#define APINDEX 1
+#define LATINDEX 2
 
 class Widget : public QWidget
 {
@@ -78,8 +82,8 @@ public:
 
     //虚拟函数
     void paintEvent(QPaintEvent *e);//重写绘图函数内容
-    void mouseReleaseEvent(QMouseEvent *event);	//鼠标事件
-
+    void mouseReleaseEvent(QMouseEvent *e);	//鼠标事件
+    void mouseDoubleClickEvent ( QMouseEvent * e );
     //日志文件
     QFile file;
     QTextStream out_file;
@@ -99,6 +103,12 @@ public:
 	Matrix4d Tibia_matrix4d;//胫骨坐标
     Matrix4d Robot_matrix4d;//胫骨坐标
 
+    QList<Matrix4d> Tiptool_matrix4d_ver;//探针坐标
+    QList<Matrix4d> Xspot_matrix4d_ver;//Xspot坐标
+    QList<Matrix4d> Femur_matrix4d_ver;//股骨坐标
+    QList<Matrix4d> Tibia_matrix4d_ver;//胫骨坐标
+    QList<Matrix4d> Robot_matrix4d_ver;//胫骨坐标
+
     Matrix4d Xspot_matrix4d_AP_Femur;//采集图像时骨头Marker在Xspot下的坐标，后续用于探针导航；
     Matrix4d Xspot_matrix4d_Lat_Femur;//采集图像时骨头Marker在Xspot下的坐标，后续用于探针导航；
     Matrix4d Xspot_matrix4d_AP_Tibia;//采集图像时骨头Marker在Xspot下的坐标，后续用于探针导航；
@@ -112,8 +122,12 @@ public:
     //标定数据
     Vector4d TofTCP_Up2MarkeronRobot;
     Vector4d TofTCP_Down2MarkeronRobot;
+    Matrix4d TofMarkerTip1toMarkerTip2;
     Matrix4d TofMarkeronRobot2Robot;
     Matrix4d XSpotMarker1toMarker2;
+    Matrix4d XSpotMarker1toMarkerUp;
+    Matrix4d TCPMarker1toTCPMarker2;
+    Matrix4d TCPMarker1toTCPMarkerUp;
     Vector4d tanzhen2tip;
 	void caculateMovetoRoute(Vector3d End3DPt, Vector3d Start3DPt, Matrix4d Bone_Matrix, double pos[]);//单位mm
     void caculateMoveAngle(Vector3d End3DPt,Vector3d Start3DPt,Matrix4d Bone_Matrix ,double pos[]);//单位mm
@@ -122,13 +136,21 @@ public:
     QString MarkerName_Tibia;
     QString MarkerName_XSpot;
     QString MarkerName_XSpot2;
-    QString MarkerName_Tiptool;
+    QString MarkerName_XSpot3;
+    QString MarkerName_Tiptool1;
+    QString MarkerName_Tiptool2;
     QString MarkerName_Robot;
+    QString MarkerName_Robot2;
+    QString MarkerName_Robot3;
     //导航标志
     bool IsopenGuide_AP_Femur;
     bool IsopenGuide_Lat_Femur;
     bool IsopenGuide_AP_Tibia;
     bool IsopenGuide_Lat_Tibia;
+    bool IsopenGuide_AP_Femur_last = false;
+    bool IsopenGuide_Lat_Femur_last = false;
+    bool IsopenGuide_AP_Tibia_last = false;
+    bool IsopenGuide_Lat_Tibia_last = false;
     void guide();
     void guide_d(bool IsopenGuide,ImageScene *Imagescene,Matrix4d Xspot_matrix4d,Matrix4d tone,  QList<double> transparams);
 
@@ -144,8 +166,12 @@ public:
     bool get2DPtfrom3D(Vector3d Pt_3D, QList<double> transparams, Vector2d &Pt_2D);
     bool get3DLinefrom2D(Vector2d Pt_2D, QList<double> transparams,QList<Vector4d> &transparams_Line);
 
-    bool Shift2DPtfrom2D(Vector2d Pt_Scr, QList<double> transparams_Scr,QList<Vector2d> &Line_Dist,QList<double> transparams_Dist);
-
+	bool Widget::Shift2DPtfrom2D(Vector2d Pt_Scr,
+		QList<double> transparams_Scr,
+		QList<Vector2d> &Line_Dist,
+		QList<double> transparams_Dist,
+		Matrix4d MarkerOnXspot_scr,
+		Matrix4d MarkerOnXspot_dist);
 
     bool get3DPtfrom2Ds(QList<Vector2d > Pt_2Ds, QList<QList<double> > ListOfTransparams,QList<Matrix4d> Xspot_matrix4d,Vector3d &Pt_3D);
 	//3D规划文件处理
@@ -208,13 +234,7 @@ public:
     int lastIsShow[4];
 
     //摄像头
-    QTimer* camTimer;
-    cv::VideoCapture* camera;
-    cv::Mat camImage; //视频采集的图片
-    bool OpenCamera();
-    int cam_index;
-    int countCameras();
-    void initCamera();
+    imagescene_camera *cameraScene;
 
 
     //图像叠加
@@ -234,9 +254,19 @@ public:
     //配置文件
     void readSettingFile();
 
+    //监视程序
+    QProcess *pro_fileWatcher;
+
+    //窗口切换
+    QGraphicsScene *CameraScene;
+    QGraphicsPixmapItem *CameraPix;
+
+    QGraphicsView *CameraWidget, *APWidget, *LatWidget;
+    int Index_widget[3] = {CAMERAINDEX,APINDEX,LATINDEX};
+
+
 private slots:
 
-    void timerSlot();
 
     void on_pushButton_Exit_clicked();
 
@@ -396,7 +426,6 @@ private slots:
 
     void setTypeofDevice(TypeofDevice type);
 
-    void on_comboBox_CameraIndex_activated(int index);
 
     void Point_Change_Femur_AP(int index);
     void Point_Change_Tibia_AP(int index);
@@ -405,9 +434,14 @@ private slots:
 
     void on_pushButton_InitRobot_clicked();
 
+    //视角切换
+
 
 
     void on_pushButton_SetRobot_clicked();
+
+    void on_pushButton_3_clicked();
+
 
 private:
     Ui::Widget *ui;

@@ -21,6 +21,7 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -44,16 +45,26 @@ public:
     QLineEdit *lineEdi_NameFemur;
     QLineEdit *lineEdi_NameTibia;
     QLabel *label_port_3;
-    QLineEdit *lineEdi_NameXspot;
     QLabel *label_port_4;
-    QLineEdit *lineEdi_NameTipTool;
     QLabel *label_port_5;
     QPushButton *pushButton_InitMarker;
     QLabel *label_port_6;
-    QLineEdit *lineEdi_NameRobot;
-    QLineEdit *lineEdi_NameXspot_2;
-    QGroupBox *groupBox_3;
     QWidget *layoutWidget;
+    QVBoxLayout *verticalLayout;
+    QLineEdit *lineEdi_NameRobot_1;
+    QLineEdit *lineEdi_NameRobot_2;
+    QLineEdit *lineEdi_NameRobot_3;
+    QWidget *layoutWidget1;
+    QVBoxLayout *verticalLayout_2;
+    QLineEdit *lineEdi_NameXspot_1;
+    QLineEdit *lineEdi_NameXspot_2;
+    QLineEdit *lineEdi_NameXspot_3;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout_3;
+    QLineEdit *lineEdi_NameTipTool_1;
+    QLineEdit *lineEdi_NameTipTool_2;
+    QGroupBox *groupBox_3;
+    QWidget *layoutWidget2;
     QGridLayout *gridLayout;
     QLabel *label_Femur;
     QLabel *label_Tibia;
@@ -65,7 +76,7 @@ public:
     {
         if (Dialog_Setting->objectName().isEmpty())
             Dialog_Setting->setObjectName(QStringLiteral("Dialog_Setting"));
-        Dialog_Setting->resize(703, 455);
+        Dialog_Setting->resize(706, 558);
         Dialog_Setting->setStyleSheet(QLatin1String("#Dialog_Setting{border-image: url(:/images/bkg41.png);}\n"
 "QPushButton{\n"
 "    color: white;\n"
@@ -76,7 +87,7 @@ public:
 "}"));
         groupBox_Data = new QGroupBox(Dialog_Setting);
         groupBox_Data->setObjectName(QStringLiteral("groupBox_Data"));
-        groupBox_Data->setGeometry(QRect(30, 160, 301, 131));
+        groupBox_Data->setGeometry(QRect(30, 170, 301, 131));
         pushButton_Femur_AP = new QPushButton(groupBox_Data);
         pushButton_Femur_AP->setObjectName(QStringLiteral("pushButton_Femur_AP"));
         pushButton_Femur_AP->setGeometry(QRect(10, 40, 89, 24));
@@ -110,7 +121,7 @@ public:
         radioButton_TypeofTracker->setGeometry(QRect(90, 80, 117, 21));
         groupBox = new QGroupBox(Dialog_Setting);
         groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setGeometry(QRect(360, 40, 311, 251));
+        groupBox->setGeometry(QRect(360, 40, 311, 371));
         label_port_2 = new QLabel(groupBox);
         label_port_2->setObjectName(QStringLiteral("label_port_2"));
         label_port_2->setGeometry(QRect(10, 30, 72, 25));
@@ -123,64 +134,110 @@ public:
         label_port_3 = new QLabel(groupBox);
         label_port_3->setObjectName(QStringLiteral("label_port_3"));
         label_port_3->setGeometry(QRect(10, 60, 72, 25));
-        lineEdi_NameXspot = new QLineEdit(groupBox);
-        lineEdi_NameXspot->setObjectName(QStringLiteral("lineEdi_NameXspot"));
-        lineEdi_NameXspot->setGeometry(QRect(80, 90, 85, 25));
         label_port_4 = new QLabel(groupBox);
         label_port_4->setObjectName(QStringLiteral("label_port_4"));
-        label_port_4->setGeometry(QRect(10, 90, 72, 25));
-        lineEdi_NameTipTool = new QLineEdit(groupBox);
-        lineEdi_NameTipTool->setObjectName(QStringLiteral("lineEdi_NameTipTool"));
-        lineEdi_NameTipTool->setGeometry(QRect(80, 120, 181, 25));
+        label_port_4->setGeometry(QRect(11, 91, 55, 16));
         label_port_5 = new QLabel(groupBox);
         label_port_5->setObjectName(QStringLiteral("label_port_5"));
-        label_port_5->setGeometry(QRect(10, 120, 72, 25));
+        label_port_5->setGeometry(QRect(10, 180, 72, 25));
         pushButton_InitMarker = new QPushButton(groupBox);
         pushButton_InitMarker->setObjectName(QStringLiteral("pushButton_InitMarker"));
-        pushButton_InitMarker->setGeometry(QRect(190, 210, 89, 24));
+        pushButton_InitMarker->setGeometry(QRect(200, 330, 89, 24));
         label_port_6 = new QLabel(groupBox);
         label_port_6->setObjectName(QStringLiteral("label_port_6"));
-        label_port_6->setGeometry(QRect(10, 150, 72, 25));
-        lineEdi_NameRobot = new QLineEdit(groupBox);
-        lineEdi_NameRobot->setObjectName(QStringLiteral("lineEdi_NameRobot"));
-        lineEdi_NameRobot->setGeometry(QRect(80, 150, 181, 25));
-        lineEdi_NameXspot_2 = new QLineEdit(groupBox);
+        label_port_6->setGeometry(QRect(11, 240, 60, 16));
+        layoutWidget = new QWidget(groupBox);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(80, 240, 181, 85));
+        verticalLayout = new QVBoxLayout(layoutWidget);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        lineEdi_NameRobot_1 = new QLineEdit(layoutWidget);
+        lineEdi_NameRobot_1->setObjectName(QStringLiteral("lineEdi_NameRobot_1"));
+
+        verticalLayout->addWidget(lineEdi_NameRobot_1);
+
+        lineEdi_NameRobot_2 = new QLineEdit(layoutWidget);
+        lineEdi_NameRobot_2->setObjectName(QStringLiteral("lineEdi_NameRobot_2"));
+
+        verticalLayout->addWidget(lineEdi_NameRobot_2);
+
+        lineEdi_NameRobot_3 = new QLineEdit(layoutWidget);
+        lineEdi_NameRobot_3->setObjectName(QStringLiteral("lineEdi_NameRobot_3"));
+
+        verticalLayout->addWidget(lineEdi_NameRobot_3);
+
+        layoutWidget1 = new QWidget(groupBox);
+        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(80, 91, 181, 85));
+        verticalLayout_2 = new QVBoxLayout(layoutWidget1);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+        lineEdi_NameXspot_1 = new QLineEdit(layoutWidget1);
+        lineEdi_NameXspot_1->setObjectName(QStringLiteral("lineEdi_NameXspot_1"));
+
+        verticalLayout_2->addWidget(lineEdi_NameXspot_1);
+
+        lineEdi_NameXspot_2 = new QLineEdit(layoutWidget1);
         lineEdi_NameXspot_2->setObjectName(QStringLiteral("lineEdi_NameXspot_2"));
-        lineEdi_NameXspot_2->setGeometry(QRect(175, 90, 85, 25));
+
+        verticalLayout_2->addWidget(lineEdi_NameXspot_2);
+
+        lineEdi_NameXspot_3 = new QLineEdit(layoutWidget1);
+        lineEdi_NameXspot_3->setObjectName(QStringLiteral("lineEdi_NameXspot_3"));
+
+        verticalLayout_2->addWidget(lineEdi_NameXspot_3);
+
+        widget = new QWidget(groupBox);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(80, 180, 181, 55));
+        verticalLayout_3 = new QVBoxLayout(widget);
+        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
+        lineEdi_NameTipTool_1 = new QLineEdit(widget);
+        lineEdi_NameTipTool_1->setObjectName(QStringLiteral("lineEdi_NameTipTool_1"));
+
+        verticalLayout_3->addWidget(lineEdi_NameTipTool_1);
+
+        lineEdi_NameTipTool_2 = new QLineEdit(widget);
+        lineEdi_NameTipTool_2->setObjectName(QStringLiteral("lineEdi_NameTipTool_2"));
+
+        verticalLayout_3->addWidget(lineEdi_NameTipTool_2);
+
         groupBox_3 = new QGroupBox(Dialog_Setting);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
-        groupBox_3->setGeometry(QRect(30, 300, 641, 121));
-        layoutWidget = new QWidget(groupBox_3);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(20, 30, 601, 91));
-        gridLayout = new QGridLayout(layoutWidget);
+        groupBox_3->setGeometry(QRect(30, 410, 641, 121));
+        layoutWidget2 = new QWidget(groupBox_3);
+        layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
+        layoutWidget2->setGeometry(QRect(20, 30, 601, 91));
+        gridLayout = new QGridLayout(layoutWidget2);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        label_Femur = new QLabel(layoutWidget);
+        label_Femur = new QLabel(layoutWidget2);
         label_Femur->setObjectName(QStringLiteral("label_Femur"));
         label_Femur->setStyleSheet(QStringLiteral("border-image: url(:/Resources/resource/Femur_disable.png);"));
 
         gridLayout->addWidget(label_Femur, 0, 0, 1, 1);
 
-        label_Tibia = new QLabel(layoutWidget);
+        label_Tibia = new QLabel(layoutWidget2);
         label_Tibia->setObjectName(QStringLiteral("label_Tibia"));
         label_Tibia->setStyleSheet(QStringLiteral("border-image: url(:/Resources/resource/Tibia_disable.png);"));
 
         gridLayout->addWidget(label_Tibia, 0, 1, 1, 1);
 
-        label_Xspot = new QLabel(layoutWidget);
+        label_Xspot = new QLabel(layoutWidget2);
         label_Xspot->setObjectName(QStringLiteral("label_Xspot"));
         label_Xspot->setStyleSheet(QStringLiteral("border-image: url(:/Resources/XSpot_disable.png);"));
 
         gridLayout->addWidget(label_Xspot, 0, 2, 1, 1);
 
-        label_Tip = new QLabel(layoutWidget);
+        label_Tip = new QLabel(layoutWidget2);
         label_Tip->setObjectName(QStringLiteral("label_Tip"));
         label_Tip->setStyleSheet(QStringLiteral("border-image: url(:/Resources/tip_disable.png);"));
 
         gridLayout->addWidget(label_Tip, 0, 3, 1, 1);
 
-        label_Robot = new QLabel(layoutWidget);
+        label_Robot = new QLabel(layoutWidget2);
         label_Robot->setObjectName(QStringLiteral("label_Robot"));
         label_Robot->setStyleSheet(QStringLiteral("border-image: url(:/Resources/ur_robot_disable.png);"));
 
@@ -211,14 +268,18 @@ public:
         lineEdi_NameFemur->setText(QApplication::translate("Dialog_Setting", "TTBLOCK0714", 0));
         lineEdi_NameTibia->setText(QApplication::translate("Dialog_Setting", "Marker_UR_new", 0));
         label_port_3->setText(QApplication::translate("Dialog_Setting", "\350\203\253\351\252\250\357\274\232", 0));
-        lineEdi_NameXspot->setText(QApplication::translate("Dialog_Setting", "XSPOT1", 0));
         label_port_4->setText(QApplication::translate("Dialog_Setting", "Xspot\357\274\232", 0));
-        lineEdi_NameTipTool->setText(QApplication::translate("Dialog_Setting", "MARKERTIP_LONG", 0));
         label_port_5->setText(QApplication::translate("Dialog_Setting", "\346\216\242\351\222\210\357\274\232", 0));
         pushButton_InitMarker->setText(QApplication::translate("Dialog_Setting", "\350\256\276\347\275\256", 0));
         label_port_6->setText(QApplication::translate("Dialog_Setting", "\346\234\272\345\231\250\344\272\272\357\274\232", 0));
-        lineEdi_NameRobot->setText(QApplication::translate("Dialog_Setting", "Marker_Robot", 0));
+        lineEdi_NameRobot_1->setText(QApplication::translate("Dialog_Setting", "Marker_Robot", 0));
+        lineEdi_NameRobot_2->setText(QApplication::translate("Dialog_Setting", "Marker_Robot", 0));
+        lineEdi_NameRobot_3->setText(QApplication::translate("Dialog_Setting", "Marker_Robot", 0));
+        lineEdi_NameXspot_1->setText(QApplication::translate("Dialog_Setting", "XSPOT1", 0));
         lineEdi_NameXspot_2->setText(QApplication::translate("Dialog_Setting", "XSPOT1", 0));
+        lineEdi_NameXspot_3->setText(QApplication::translate("Dialog_Setting", "XSPOT1", 0));
+        lineEdi_NameTipTool_1->setText(QApplication::translate("Dialog_Setting", "MARKERTIP1", 0));
+        lineEdi_NameTipTool_2->setText(QApplication::translate("Dialog_Setting", "MARKERTIP2", 0));
         groupBox_3->setTitle(QApplication::translate("Dialog_Setting", "NDI", 0));
         label_Femur->setText(QString());
         label_Tibia->setText(QString());

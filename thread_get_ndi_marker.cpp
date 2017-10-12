@@ -61,7 +61,7 @@ if(typeofdevice == Type_NDI)
 	datalist.pop_front();
 	for (int i = 0; i < datalist.length() / 13; i++)
 	{
-		Info_NDI Marker;
+        Info_NDI Marker;
 		if (i == 0)
 			Marker.name = datalist[i * 13];
 		else
@@ -75,8 +75,8 @@ if(typeofdevice == Type_NDI)
 			Marker.Pos((j - 1) / 4, (j - 1) % 4) = datalist[i * 13 + j].toDouble();
 
 		}
-		Marker.Pos.row(3) << 0, 0, 0, 1;
-		ListInfoNDI.push_back(Marker);
+        Marker.Pos.row(3) << 0, 0, 0, 1;
+        ListInfoNDI.push_back(Marker);
 	}
 	
 }
@@ -122,7 +122,8 @@ void thread_get_NDI_marker::setTypeofDevice(TypeofDevice Type)
 
 void thread_get_NDI_marker::run()
 {
-    while(1);
+    //while(1);
+	this->exec();
 }
 
 //UDP接收数据
@@ -138,6 +139,7 @@ void thread_get_NDI_marker::revData()
         emit threadSignal(ProcessReceiveData(datas));
         out_file<<datas;
     }
+	
 
 }
 //UDP出错警告

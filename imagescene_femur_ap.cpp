@@ -118,7 +118,7 @@ void imageScene_Femur_AP::showsubline1(float radio)
        }
 
        subline1->show();
-       update();
+ //      update();
 
 }
 
@@ -134,6 +134,6 @@ void imageScene_Femur_AP::showsubline2(float radio)
     subline2->setLine(offsetLine(Piximage_point[0], Piximage_point[1], -disA5toLine12 + disA3toLine12));
     }
     subline2->show();
-    update();
+ //   update();
 }
 

@@ -25,6 +25,7 @@
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QWidget>
+#include <navilabel.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -85,9 +86,11 @@ public:
     QLabel *label_4;
     QPushButton *pushButton_moveRobotin_3;
     QLabel *label_5;
+    QPushButton *pushButton_moveRobot;
     QComboBox *comboBox_CameraIndex;
     QPushButton *pushButton_InitRobot;
     QPushButton *pushButton_SetRobot;
+    NaviLabel *label_Navi;
     QWidget *tab_robot;
     QGroupBox *groupBox;
     QPushButton *pushButton_AP_OpenPicture;
@@ -117,10 +120,11 @@ public:
     QGraphicsView *graphicsView_Lat;
     QFrame *frame;
     QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
     QLabel *label_APdata;
     QLabel *label_Latdata;
     QPushButton *pushButtonSetting;
-    QLabel *label_arthroscopy;
+    QGraphicsView *graphicsView_Main;
 
     void setupUi(QWidget *Widget)
     {
@@ -513,6 +517,9 @@ public:
         label_5 = new QLabel(groupBox_3);
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setGeometry(QRect(120, 160, 111, 61));
+        pushButton_moveRobot = new QPushButton(groupBox_3);
+        pushButton_moveRobot->setObjectName(QStringLiteral("pushButton_moveRobot"));
+        pushButton_moveRobot->setGeometry(QRect(10, 40, 101, 31));
         comboBox_CameraIndex = new QComboBox(tab_simulate);
         comboBox_CameraIndex->setObjectName(QStringLiteral("comboBox_CameraIndex"));
         comboBox_CameraIndex->setGeometry(QRect(190, 20, 81, 31));
@@ -523,6 +530,11 @@ public:
         pushButton_SetRobot = new QPushButton(tab_simulate);
         pushButton_SetRobot->setObjectName(QStringLiteral("pushButton_SetRobot"));
         pushButton_SetRobot->setGeometry(QRect(50, 180, 101, 31));
+        label_Navi = new NaviLabel(tab_simulate);
+        label_Navi->setObjectName(QStringLiteral("label_Navi"));
+        label_Navi->setGeometry(QRect(30, 510, 250, 250));
+        label_Navi->setStyleSheet(QStringLiteral("border-image: url(:/Resources/rr.png);"));
+        label_Navi->setFrameShape(QFrame::StyledPanel);
         tabWidget_manipulate->addTab(tab_simulate, QString());
         tab_robot = new QWidget();
         tab_robot->setObjectName(QStringLiteral("tab_robot"));
@@ -735,6 +747,9 @@ public:
         pushButton_2 = new QPushButton(frame);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         pushButton_2->setGeometry(QRect(1740, 990, 101, 51));
+        pushButton_3 = new QPushButton(frame);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(1620, 990, 101, 51));
         label_APdata = new QLabel(Widget);
         label_APdata->setObjectName(QStringLiteral("label_APdata"));
         label_APdata->setGeometry(QRect(470, 760, 300, 100));
@@ -751,12 +766,11 @@ public:
         pushButtonSetting->setObjectName(QStringLiteral("pushButtonSetting"));
         pushButtonSetting->setGeometry(QRect(1850, 990, 61, 51));
         pushButtonSetting->setStyleSheet(QStringLiteral(""));
-        label_arthroscopy = new QLabel(Widget);
-        label_arthroscopy->setObjectName(QStringLiteral("label_arthroscopy"));
-        label_arthroscopy->setGeometry(QRect(110, 110, 900, 900));
-        label_arthroscopy->setStyleSheet(QStringLiteral("border-image: url(:/images/bkg5.png);"));
+        graphicsView_Main = new QGraphicsView(Widget);
+        graphicsView_Main->setObjectName(QStringLiteral("graphicsView_Main"));
+        graphicsView_Main->setGeometry(QRect(110, 110, 900, 900));
+        graphicsView_Main->setStyleSheet(QStringLiteral("border-image: url(:/images/bkg41.png);"));
         frame->raise();
-        label_arthroscopy->raise();
         pushButton_Exit->raise();
         tabWidget_manipulate->raise();
         groupBox_2->raise();
@@ -766,10 +780,11 @@ public:
         label_APdata->raise();
         label_Latdata->raise();
         pushButtonSetting->raise();
+        graphicsView_Main->raise();
 
         retranslateUi(Widget);
 
-        tabWidget_manipulate->setCurrentIndex(1);
+        tabWidget_manipulate->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(Widget);
@@ -831,8 +846,10 @@ public:
         pushButton_moveRobotin_3->setText(QApplication::translate("Widget", "\345\207\272\351\222\211", 0));
         label_5->setText(QApplication::translate("Widget", "\357\274\210\351\225\277\346\214\211\350\207\263\345\201\234\346\255\242\357\274\211\n"
 "\345\217\257\345\244\232\346\254\241\347\202\271\345\207\273\345\220\216\351\200\200", 0));
+        pushButton_moveRobot->setText(QApplication::translate("Widget", "PushButton", 0));
         pushButton_InitRobot->setText(QApplication::translate("Widget", "\345\210\235\345\247\213\345\214\226\346\234\272\345\231\250\344\272\272", 0));
         pushButton_SetRobot->setText(QApplication::translate("Widget", "\350\256\276\347\275\256\346\234\272\345\231\250\344\272\272", 0));
+        label_Navi->setText(QString());
         tabWidget_manipulate->setTabText(tabWidget_manipulate->indexOf(tab_simulate), QApplication::translate("Widget", "\344\273\277\347\234\237", 0));
         tabWidget_manipulate->setTabText(tabWidget_manipulate->indexOf(tab_robot), QApplication::translate("Widget", "\346\234\272\345\231\250\344\272\272", 0));
         groupBox->setTitle(QApplication::translate("Widget", "\346\255\243\344\275\215\346\223\215\344\275\234", 0));
@@ -856,10 +873,10 @@ public:
         label_2->setText(QApplication::translate("Widget", "\351\200\217\346\230\216\345\272\246", 0));
         pushButton_mirror_Lat->setText(QApplication::translate("Widget", "\347\277\273\350\275\254", 0));
         pushButton_2->setText(QApplication::translate("Widget", "\346\255\243\344\276\247\344\275\215\351\207\207\351\233\206", 0));
+        pushButton_3->setText(QApplication::translate("Widget", "\345\257\274\345\205\245\346\225\260\346\215\256", 0));
         label_APdata->setText(QApplication::translate("Widget", "\346\225\260\346\215\256\357\274\232", 0));
         label_Latdata->setText(QApplication::translate("Widget", "\346\225\260\346\215\256\357\274\232", 0));
         pushButtonSetting->setText(QApplication::translate("Widget", "\350\256\276\347\275\256", 0));
-        label_arthroscopy->setText(QString());
     } // retranslateUi
 
 };

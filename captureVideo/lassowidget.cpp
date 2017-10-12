@@ -25,7 +25,7 @@ void LassoWidget::mouseMoveEvent(QMouseEvent* event)
         selection.setY(qMin(startPoint.y(), endPoint.y()));
         selection.setWidth(qAbs(startPoint.x() - endPoint.x()));
         selection.setHeight(qAbs(startPoint.y() - endPoint.y()));
-        update();
+//        update();
     }
 }
 
@@ -35,7 +35,7 @@ void LassoWidget::mouseReleaseEvent(QMouseEvent* event)
     {
         emit finished();
         state = Disabled;
-        update();
+//        update();
     }
 }
 

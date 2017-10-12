@@ -124,7 +124,7 @@ ImageScene::ImageScene(QObject *parent) :
 	//needle1->setPen(pen);
 	//needle1->hide();
 
-	needle1 = new QGraphicsLineItem();
+	needle1 = new needle();
 	addItem(needle1);
 	needle1->setParentItem(&(pixImage));
 	needle1->setPen(pen);
@@ -147,7 +147,7 @@ void ImageScene::zoomOut(float ratio)
 {
 	/***************************************/
     pixImage.setScale(pixImage.scale() / ratio);
-   pixImage.setPos(pixImage.pos()/ ratio );
+    pixImage.setPos(pixImage.pos()/ ratio );
     update();
 }
 
@@ -423,7 +423,8 @@ void ImageScene::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *mouseEvent)
     if(isOpenMouse == false)
         return;
     QGraphicsScene::mouseDoubleClickEvent(mouseEvent);
-    pixImage.resetTransform();
+    //pixImage.resetTransform();
+	emit doubleclicked1(this);
 }
 
 void ImageScene::show_otherItem()
@@ -511,7 +512,7 @@ void  ImageScene::selected_show()
         emit pointChanged(index_selected);
 	}
 	show_otherItem();
-    update();
+//    update();
 }
 
 void ImageScene::selected_hide()

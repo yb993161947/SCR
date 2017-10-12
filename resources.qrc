@@ -286,5 +286,7 @@
         <file>images/bkg - 副本.png</file>
         <file>images/iamge_xRay.png</file>
         <file>images/iamge_Xray_Lat.png</file>
+        <file>Resources/resource/xspot小球编号.png</file>
+        <file>Resources/rr.png</file>
     </qresource>
 </RCC>

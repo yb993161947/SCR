@@ -1,7 +1,7 @@
 ﻿#ifndef UR_CLASS_TEST_H
 #define UR_CLASS_TEST_H
 
-#define PI 3.1415926
+
 
 #include "ui_ur_class_test.h"
 #include "UR_interface.h"
@@ -28,6 +28,7 @@ public:
     bool TechFlag;
     void Connect_UR();
 
+    Ui::UR_class_testClass ui;
 private slots:
 
 
@@ -131,7 +132,7 @@ private slots:
 
 
 private:
-	Ui::UR_class_testClass ui;
+
 };
 
 #endif // UR_CLASS_TEST_H

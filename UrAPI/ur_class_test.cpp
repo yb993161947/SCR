@@ -3,6 +3,7 @@
 #include <QDebug>
 #include "qexception.h"
 #include "iostream"
+#define PI 3.1415926
 UR_class_test::UR_class_test(QWidget *parent)
     : QWidget(parent)
 {
@@ -328,27 +329,43 @@ void UR_class_test::on_pushButton_zero_released()
     ui.Rx_Or_Wrist1->setText("0");
     ui.Ry_Or_Wrist2->setText("0");
     ui.Rz_Or_Wrist3->setText("0");
+    double Pos[] = {0,0,0,0,0,0};
+    pUR5->set_tcp_pos(Pos);
 }
 
 void UR_class_test::on_pushButton_setTCP_clicked()
 {
 
-        QSettings *configIniRead = new QSettings("configure.ini", QSettings::IniFormat);
-        QString TCP = configIniRead->value("/UR/TCP").toString();
-        QStringList TCPList = TCP.split(',');
-        delete configIniRead;
-        double var[6];
-        for(int i = 0; i < 6; i++)
-        {
-            var[i] = TCPList[i].toDouble();
+//        QSettings *configIniRead = new QSettings("configure.ini", QSettings::IniFormat);
+//        QString TCP = configIniRead->value("/UR/TCP").toString();
+//        QStringList TCPList = TCP.split(',');
+//        delete configIniRead;
+//        double var[6];
+//        for(int i = 0; i < 6; i++)
+//        {
+//            var[i] = TCPList[i].toDouble();
 
-        }
-        for (int i=0;i<3;i++)
-        {
-            var[i] = var[i]/1000;
-            var[i+3] =var[i+3]/180.0*PI;
-        }
-        pUR5->set_tcp_pos(var);
+//        }
+//        for (int i=0;i<3;i++)
+//        {
+//            var[i] = var[i]/1000;
+//            var[i+3] =var[i+3]/180.0*PI;
+//        }
+//        pUR5->set_tcp_pos(var);
+    QString str[6];
+    double var[6];
+    str[0] = ui.X_Or_Base->text();
+    str[1] = ui.Y_Or_Shoulder->text();
+    str[2] = ui.Z_Or_Elbow->text();
+    str[3] = ui.Rx_Or_Wrist1->text();
+    str[4] = ui.Ry_Or_Wrist2->text();
+    str[5] = ui.Rz_Or_Wrist3->text();
+    for (int i=0;i<3;i++)
+    {
+        var[i] = str[i].toDouble()/1000;  //转化为m
+        var[i+3] = (str[i+3].toDouble())/180.0*PI; //转为弧度
+    }
+    pUR5->set_tcp_pos(var);
 }
 
 void UR_class_test::on_pushButton_resetTCP_clicked()
@@ -386,4 +403,5 @@ void UR_class_test::on_Debug_Joint_clicked()
 
       pUR5->movej_joint(var);
 }
+
 

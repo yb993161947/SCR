@@ -2,9 +2,15 @@
 #include <QApplication>
 #include "captureVideo/capturevideowidget.h"
 #include "./CArmAngleCalCuLate/widget.h"
+#include "FileSystemWatcher.h"
+#include "QSettings"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    QSettings *configIniRead = new QSettings("configure.ini", QSettings::IniFormat);
+    QString WatchPath = configIniRead->value("/DcmFilePath/path").toString();
+    FileSystemWatcher::addWatchPath(WatchPath);
     Widget w;
     w.show();
     return a.exec();

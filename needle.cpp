@@ -1,8 +1,9 @@
 ﻿#include "needle.h"
 #include "qpainter.h"
 #include "QGraphicsLineItem"
+#include "qbrush.h"
 needle::needle(QGraphicsItem *parent):QGraphicsItem(parent),
-	width(10),height(100),pen(QPen(Qt::cyan, 1, Qt::DashLine))
+	width(10),height(100),pen(QPen(Qt::cyan, 1))
 {
 //    width = 10;
 //    height = 1000;
@@ -47,7 +48,15 @@ void needle::paint(QPainter * painter, const QStyleOptionGraphicsItem * option, 
     painter->drawLine(QPoint( 0, 0), QPoint( -width/2 , width/2));
     painter->drawLine(QPoint( 0, 0), QPoint( width/2 , width/2));
     painter->drawLine(QPoint(-width/2 , width/2), QPoint( -width/2 , height));
-    painter->drawLine(QPoint(width/2 , width/2), QPoint( width/2 , height));
+	painter->drawLine(QPoint(width / 2, width / 2), QPoint(width / 2, height));
+	painter->setBrush(QColor(150, 150, 80, 150));
+	painter->drawRect(QRect(-width / 2, width / 2, width, height - width / 2));
+	QPoint pt[3] = { QPoint(-width / 2, width / 2) , QPoint(0,0) , QPoint(width / 2 ,width / 2) };
+	painter->drawPolygon(pt, 3);
+
+    painter->setPen(QPen(Qt::magenta, 2, Qt::DashLine));
+    painter->drawLine(QPoint(0,height+10),QPoint(0,-1000));
+
 }
 
 void needle::setLine(QPointF pt1, QPointF pt2)
@@ -67,13 +76,13 @@ void needle::setLine(float pt1_x, float pt1_y, float pt2_x, float pt2_y)
     setHeight(norm);
     float angle =  atanf((pt1_y - pt2_y)/(pt1_x - pt2_x));
 
-    if(((pt1_y - pt2_y) > 0 && (pt1_x - pt2_x) < 0) || ((pt1_y - pt2_y) < 0 && (pt1_x - pt2_x) < 0))
+    if(((pt1_y - pt2_y) > 0 && (pt1_x - pt2_x) > 0) || ((pt1_y - pt2_y) < 0 && (pt1_x - pt2_x) > 0))
     {
         angle += 3.141592653;
     }
-	angle -= 3.141592653 / 2;
+    angle -= 3.141592653 / 2;
     this->setTransform(QTransform().rotate(angle * 180 / 3.141592653));
-	setPos(QPointF(pt2_x, pt2_y));
+    setPos(QPointF(pt1_x, pt1_y));
 }
 
 void needle::setPen(QPen pen1)

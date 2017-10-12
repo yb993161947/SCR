@@ -17,8 +17,6 @@ public:
     ~Dialog_Setting();
 
     void ReadSettingFile();
-private slots:
-    void on_pushButtonUDP_clicked();
 
     void on_pushButton_Femur_AP_clicked();
 
@@ -27,11 +25,14 @@ private slots:
     void on_pushButton_Tibia_AP_clicked();
 
     void on_pushButton_Tibia_Lat_clicked();
+private slots:
+    void on_pushButtonUDP_clicked();
+
+
 
     void on_pushButton_InitMarker_clicked();
 
     void on_radioButton_TypeofNDI_clicked();
-
 
     void on_radioButton_TypeofTracker_clicked();
 

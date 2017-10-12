@@ -1,9 +1,9 @@
-#ifndef NAVILABEL_H
+﻿#ifndef NAVILABEL_H
 #define NAVILABEL_H
 #include<vector>
 #include<math.h>
 #include<iostream>
-#include"./eigen-eigen-07105f7124f9/Eigen/Eigen"
+#include"./Eigen/Eigen"
 #include<qpixmap.h>
 #include "QPainter"
 #include "QLabel"
@@ -17,19 +17,19 @@ public:
     NaviLabel(QWidget *parent = 0);
     ~NaviLabel();
     void Input_points(Vector3d p1,Vector3d p2,Vector3d p3,Vector3d p4);
-    void initPix(QString path);
     double Angle(Vector3d d1,Vector3d d2);
     Vector3d Project_line(Vector3d f1,Vector3d f2);
-    void setparameters(double origin,double size,double radius);
+    void setparameters(double size, double radius);
     void setpicture(QPixmap &pix1);
 
-
-protected:
-    void paintEvent(QPaintEvent *event);
+//
+//protected:
+//    void paintEvent(QPaintEvent *event);
 
 private:
 
      QPixmap pix;
+	 QPixmap pix_temp;
      QPointF P1,P2;
 };
 

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>703</width>
-    <height>455</height>
+    <width>706</width>
+    <height>558</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,7 +27,7 @@ QRadioButton{
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>160</y>
+     <y>170</y>
      <width>301</width>
      <height>131</height>
     </rect>
@@ -175,7 +175,7 @@ QRadioButton{
      <x>360</x>
      <y>40</y>
      <width>311</width>
-     <height>251</height>
+     <height>371</height>
     </rect>
    </property>
    <property name="title">
@@ -233,50 +233,24 @@ QRadioButton{
      <string>胫骨：</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdi_NameXspot">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>90</y>
-      <width>85</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>XSPOT1</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_port_4">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>90</y>
-      <width>72</width>
-      <height>25</height>
+      <x>11</x>
+      <y>91</y>
+      <width>55</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
      <string>Xspot：</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdi_NameTipTool">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>120</y>
-      <width>181</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>MARKERTIP_LONG</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_port_5">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>120</y>
+      <y>180</y>
       <width>72</width>
       <height>25</height>
      </rect>
@@ -288,8 +262,8 @@ QRadioButton{
    <widget class="QPushButton" name="pushButton_InitMarker">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>210</y>
+      <x>200</x>
+      <y>330</y>
       <width>89</width>
       <height>24</height>
      </rect>
@@ -301,48 +275,114 @@ QRadioButton{
    <widget class="QLabel" name="label_port_6">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>150</y>
-      <width>72</width>
-      <height>25</height>
+      <x>11</x>
+      <y>240</y>
+      <width>60</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
      <string>机器人：</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdi_NameRobot">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>80</x>
-      <y>150</y>
+      <y>240</y>
       <width>181</width>
-      <height>25</height>
+      <height>85</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Marker_Robot</string>
-    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLineEdit" name="lineEdi_NameRobot_1">
+       <property name="text">
+        <string>Marker_Robot</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdi_NameRobot_2">
+       <property name="text">
+        <string>Marker_Robot</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdi_NameRobot_3">
+       <property name="text">
+        <string>Marker_Robot</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
-   <widget class="QLineEdit" name="lineEdi_NameXspot_2">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>175</x>
-      <y>90</y>
-      <width>85</width>
-      <height>25</height>
+      <x>80</x>
+      <y>91</y>
+      <width>181</width>
+      <height>85</height>
      </rect>
     </property>
-    <property name="text">
-     <string>XSPOT1</string>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QLineEdit" name="lineEdi_NameXspot_1">
+       <property name="text">
+        <string>XSPOT1</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdi_NameXspot_2">
+       <property name="text">
+        <string>XSPOT1</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdi_NameXspot_3">
+       <property name="text">
+        <string>XSPOT1</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>180</y>
+      <width>181</width>
+      <height>55</height>
+     </rect>
     </property>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QLineEdit" name="lineEdi_NameTipTool_1">
+       <property name="text">
+        <string>MARKERTIP1</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdi_NameTipTool_2">
+       <property name="text">
+        <string>MARKERTIP2</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QGroupBox" name="groupBox_3">
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>300</y>
+     <y>410</y>
      <width>641</width>
      <height>121</height>
     </rect>

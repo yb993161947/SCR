@@ -116,14 +116,14 @@ public:
     QGridLayout *gridLayout_2;
     QPushButton *Debug_TCP;
     QPushButton *Debug_Joint;
+    QPushButton *pushButton_setTCP;
+    QPushButton *pushButton_zero;
     QGroupBox *groupBox_5;
     QWidget *layoutWidget5;
     QHBoxLayout *horizontalLayout_4;
     QLabel *label_19;
     QSlider *Speed_Slider;
     QLineEdit *Speed_value;
-    QPushButton *pushButton_zero;
-    QPushButton *pushButton_setTCP;
     QPushButton *pushButton_addPoint;
     QPushButton *pushButton_SaveAllPoint;
     QWidget *layoutWidget6;
@@ -576,6 +576,12 @@ public:
 
         gridLayout_2->addWidget(Debug_Joint, 0, 1, 1, 1);
 
+        pushButton_setTCP = new QPushButton(groupBox_4);
+        pushButton_setTCP->setObjectName(QStringLiteral("pushButton_setTCP"));
+        pushButton_setTCP->setGeometry(QRect(530, 120, 61, 31));
+        pushButton_zero = new QPushButton(groupBox_4);
+        pushButton_zero->setObjectName(QStringLiteral("pushButton_zero"));
+        pushButton_zero->setGeometry(QRect(460, 120, 61, 31));
         groupBox_5 = new QGroupBox(UR_class_testClass);
         groupBox_5->setObjectName(QStringLiteral("groupBox_5"));
         groupBox_5->setGeometry(QRect(20, 360, 461, 81));
@@ -606,12 +612,6 @@ public:
 
         horizontalLayout_4->addWidget(Speed_value);
 
-        pushButton_zero = new QPushButton(UR_class_testClass);
-        pushButton_zero->setObjectName(QStringLiteral("pushButton_zero"));
-        pushButton_zero->setGeometry(QRect(510, 380, 61, 31));
-        pushButton_setTCP = new QPushButton(UR_class_testClass);
-        pushButton_setTCP->setObjectName(QStringLiteral("pushButton_setTCP"));
-        pushButton_setTCP->setGeometry(QRect(510, 420, 61, 31));
         pushButton_addPoint = new QPushButton(UR_class_testClass);
         pushButton_addPoint->setObjectName(QStringLiteral("pushButton_addPoint"));
         pushButton_addPoint->setGeometry(QRect(910, 380, 89, 24));
@@ -718,8 +718,6 @@ public:
         groupBox_3->raise();
         groupBox_4->raise();
         groupBox_5->raise();
-        pushButton_zero->raise();
-        pushButton_setTCP->raise();
         pushButton_addPoint->raise();
         pushButton_SaveAllPoint->raise();
         layoutWidget->raise();
@@ -781,10 +779,10 @@ public:
         label_20->setText(QApplication::translate("UR_class_testClass", "Rz/Wrist3", 0));
         Debug_TCP->setText(QApplication::translate("UR_class_testClass", "Debug TCP", 0));
         Debug_Joint->setText(QApplication::translate("UR_class_testClass", "Debug Joint", 0));
+        pushButton_setTCP->setText(QApplication::translate("UR_class_testClass", "setTCP", 0));
+        pushButton_zero->setText(QApplication::translate("UR_class_testClass", "zeroTCP", 0));
         groupBox_5->setTitle(QApplication::translate("UR_class_testClass", "set speed", 0));
         label_19->setText(QApplication::translate("UR_class_testClass", "speed", 0));
-        pushButton_zero->setText(QApplication::translate("UR_class_testClass", "zeroTCP", 0));
-        pushButton_setTCP->setText(QApplication::translate("UR_class_testClass", "setTCP", 0));
         pushButton_addPoint->setText(QApplication::translate("UR_class_testClass", "\345\212\240\350\275\275\347\202\271", 0));
         pushButton_SaveAllPoint->setText(QApplication::translate("UR_class_testClass", "\345\255\230\345\202\250\347\202\271", 0));
         pushButton_savePoint_1->setText(QApplication::translate("UR_class_testClass", "\345\255\230L1\345\267\246", 0));

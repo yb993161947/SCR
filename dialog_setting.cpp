@@ -30,16 +30,28 @@ void Dialog_Setting::ReadSettingFile()
     ui->lineEdi_NameTibia->setText(Name);
 
     Name = configIniRead->value("/MarkerName/MarkerXspot1").toString();
-    ui->lineEdi_NameXspot->setText(Name);
+    ui->lineEdi_NameXspot_1->setText(Name);
 
     Name = configIniRead->value("/MarkerName/MarkerXspot2").toString();
     ui->lineEdi_NameXspot_2->setText(Name);
 
-    Name = configIniRead->value("/MarkerName/MarkerTip").toString();
-    ui->lineEdi_NameTipTool->setText(Name);
+    Name = configIniRead->value("/MarkerName/MarkerXspotUp").toString();
+    ui->lineEdi_NameXspot_3->setText(Name);
 
-    Name = configIniRead->value("/MarkerName/MarkerRobot").toString();
-    ui->lineEdi_NameRobot->setText(Name);
+    Name = configIniRead->value("/MarkerName/MarkerTip1").toString();
+    ui->lineEdi_NameTipTool_1->setText(Name);
+
+    Name = configIniRead->value("/MarkerName/MarkerTip2").toString();
+    ui->lineEdi_NameTipTool_2->setText(Name);
+
+    Name = configIniRead->value("/MarkerName/MarkerRobot1").toString();
+    ui->lineEdi_NameRobot_1->setText(Name);
+
+    Name = configIniRead->value("/MarkerName/MarkerRobot2").toString();
+    ui->lineEdi_NameRobot_2->setText(Name);
+
+    Name = configIniRead->value("/MarkerName/MarkerRobotUp").toString();
+    ui->lineEdi_NameRobot_3->setText(Name);
 
     on_pushButton_InitMarker_clicked();
 
@@ -61,6 +73,7 @@ void Dialog_Setting::on_pushButton_Femur_Lat_clicked()
     emit loadData_Femur_Lat();
 }
 
+
 void Dialog_Setting::on_pushButton_Tibia_AP_clicked()
 {
     emit loadData_Tibia_AP();
@@ -77,11 +90,16 @@ void Dialog_Setting::on_pushButton_InitMarker_clicked()
 	Name.clear();
     Name.push_back (ui->lineEdi_NameFemur->text());
     Name.push_back(ui->lineEdi_NameTibia->text());
-    Name.push_back(ui->lineEdi_NameXspot->text());
+    Name.push_back(ui->lineEdi_NameXspot_1->text());
     Name.push_back(ui->lineEdi_NameXspot_2->text());
-    Name.push_back( ui->lineEdi_NameTipTool->text());
-    Name.push_back( ui->lineEdi_NameRobot->text());
+    Name.push_back(ui->lineEdi_NameXspot_3->text());
+    Name.push_back( ui->lineEdi_NameTipTool_1->text());
+    Name.push_back( ui->lineEdi_NameTipTool_2->text());
+    Name.push_back( ui->lineEdi_NameRobot_1->text());
+    Name.push_back( ui->lineEdi_NameRobot_2->text());
+    Name.push_back( ui->lineEdi_NameRobot_3->text());
     emit InitMarkerName(Name);
+    
 }
 
 void Dialog_Setting::on_radioButton_TypeofNDI_clicked()

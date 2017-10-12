@@ -20,6 +20,7 @@ private:
     float width;
     float height;
 	QPen  pen;
+	QBrush brush;
 };
 
 #endif // NEEDLE_H

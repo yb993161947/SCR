@@ -65,7 +65,7 @@ public:
     void setMoveObj(int Obj);
     QGraphicsPixmapItem Piximage_button[6];
     QGraphicsPixmapItem Piximage_button_selected[6];
-    QGraphicsLineItem *needle1;//针模型
+	needle *needle1;//针模型
     needle *Marker_Tip;
     virtual void show_otherItem();//响应鼠标事件点改变的虚函数
 protected:
@@ -93,6 +93,8 @@ private:
 
 signals:
     void pointChanged(int index);
+
+    void doubleclicked1(QGraphicsScene *scene);
 
 
 

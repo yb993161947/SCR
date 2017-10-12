@@ -50,7 +50,6 @@ CArmWidget::CArmWidget(QWidget *parent) :
     {
         qPoint_originalImagePoint[i] = QPoint(0,0);
     }
-    connect(this,SIGNAL(sendsingnal()),this,SLOT(slot_text()));
         ui->frame_Femur->setGeometry(QRect(720,400,280,280));
         ui->frame_Tibia->setGeometry(QRect(720,400,280,280));
         ui->radioButton_femur->setChecked(true);

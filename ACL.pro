@@ -33,7 +33,10 @@ SOURCES += main.cpp\
     UrAPI/UR_interface.cpp \
     needle.cpp \
     CArmAngleCalCuLate/widget.cpp \
-    carm/DxSpatialMatching.cpp
+    carm/DxSpatialMatching.cpp \
+    fileWatcher/FileSystemWatcher.cpp \
+    imagescene_camera.cpp \
+    navilabel.cpp
 
 
 
@@ -58,7 +61,10 @@ HEADERS  += ACLwidget.h \
     UrAPI/UR_interface.h \
     needle.h \
     CArmAngleCalCuLate/widget.h \
-    carm/DxSpatialMatching.h
+    carm/DxSpatialMatching.h \
+    fileWatcher/FileSystemWatcher.h \
+    imagescene_camera.h \
+    navilabel.h
 
 FORMS    += ACLwidget.ui \
     captureVideo/capturevideowidget.ui \

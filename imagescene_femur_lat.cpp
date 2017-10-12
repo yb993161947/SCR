@@ -98,7 +98,7 @@ void imageScene_Femur_Lat::show_otherItem()
        Line4_5->setLine(Piximage_point[4].x(),Piximage_point[4].y(),Piximage_point[3].x(),Piximage_point[3].y());
        Line4_5->show();
     }
-
+//	update();
 
 	
 }

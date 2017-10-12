@@ -104,5 +104,5 @@ void imageScene_Tibia_ap::showsubline1(float radio)
           }
 
           subline1->show();
-          update();
+ //         update();
 }

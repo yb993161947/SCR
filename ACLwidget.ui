@@ -114,7 +114,7 @@ QWidget#tab{
     <enum>QTabWidget::Triangular</enum>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="tab_Femur">
     <attribute name="title">
@@ -1813,6 +1813,19 @@ color: rgb(255, 255, 255);</string>
 可多次点击后退</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="pushButton_moveRobot">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QComboBox" name="comboBox_CameraIndex">
      <property name="geometry">
@@ -1851,6 +1864,25 @@ color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>设置机器人</string>
+     </property>
+    </widget>
+    <widget class="NaviLabel" name="label_Navi">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>510</y>
+       <width>250</width>
+       <height>250</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/Resources/rr.png);</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="text">
+      <string/>
      </property>
     </widget>
    </widget>
@@ -2389,6 +2421,19 @@ color: rgb(255, 255, 255);</string>
      <string>正侧位采集</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>1620</x>
+      <y>990</y>
+      <width>101</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>导入数据</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QLabel" name="label_APdata">
    <property name="geometry">
@@ -2446,7 +2491,7 @@ color: rgb(255, 255, 255);</string>
     <string>设置</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_arthroscopy">
+  <widget class="QGraphicsView" name="graphicsView_Main">
    <property name="geometry">
     <rect>
      <x>110</x>
@@ -2456,14 +2501,10 @@ color: rgb(255, 255, 255);</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/images/bkg5.png);</string>
-   </property>
-   <property name="text">
-    <string/>
+    <string notr="true">border-image: url(:/images/bkg41.png);</string>
    </property>
   </widget>
   <zorder>frame</zorder>
-  <zorder>label_arthroscopy</zorder>
   <zorder>pushButton_Exit</zorder>
   <zorder>tabWidget_manipulate</zorder>
   <zorder>groupBox_2</zorder>
@@ -2473,8 +2514,16 @@ color: rgb(255, 255, 255);</string>
   <zorder>label_APdata</zorder>
   <zorder>label_Latdata</zorder>
   <zorder>pushButtonSetting</zorder>
+  <zorder>graphicsView_Main</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>NaviLabel</class>
+   <extends>QLabel</extends>
+   <header location="global">navilabel.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
  <slots>
