@@ -114,7 +114,7 @@ QWidget#tab{
     <enum>QTabWidget::Triangular</enum>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab_Femur">
     <attribute name="title">
@@ -836,7 +836,7 @@ QWidget#tab{
     <widget class="QPushButton" name="pushButton_Femur_finished">
      <property name="geometry">
       <rect>
-       <x>170</x>
+       <x>160</x>
        <y>760</y>
        <width>111</width>
        <height>41</height>
@@ -886,6 +886,38 @@ color: rgb(255, 255, 255);</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_Femur_finished_2">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>720</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>针孔直线测试</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_Femur_finished_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>720</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>针孔数据采集</string>
      </property>
     </widget>
    </widget>
@@ -2505,6 +2537,7 @@ color: rgb(255, 255, 255);</string>
    </property>
   </widget>
   <zorder>frame</zorder>
+  <zorder>graphicsView_Main</zorder>
   <zorder>pushButton_Exit</zorder>
   <zorder>tabWidget_manipulate</zorder>
   <zorder>groupBox_2</zorder>
@@ -2514,7 +2547,6 @@ color: rgb(255, 255, 255);</string>
   <zorder>label_APdata</zorder>
   <zorder>label_Latdata</zorder>
   <zorder>pushButtonSetting</zorder>
-  <zorder>graphicsView_Main</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>

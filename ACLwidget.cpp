@@ -133,7 +133,7 @@ Widget::Widget(QWidget *parent) :
  //   Vector3d  z_3v = z_robot.head(3);
  //   Vector3d dir_y =z_3v.cross(x_robot2Marker);
  //   y_robot << dir_y(0) , dir_y(1) ,dir_y(2) , 0;
-	////之前版本调试有bug
+	////之前版本调试有
  //   Vector3d x_dir =   -z_3v.cross(dir_y) ;
  //   Vector4d x_robot;
  //   x_robot << x_dir(0),x_dir(1),x_dir(2) ,0;
@@ -344,6 +344,15 @@ void Widget::InitializationParameter()
     End3DPt_Femur << 0,0,0;
     Start3DPt_Tibia << 0,0,0;
     End3DPt_Tibia << 0,0,0;
+
+    for(int i = 0;i < 3;i++ )
+    {
+        Marker_Adjust[i] <<1,0,0,0,
+                        0,1,0,0,
+                        0,0,1,0,
+                        0,0,0,1;
+    }
+
 
 
 }
@@ -1153,22 +1162,22 @@ void Widget::caculateMoveAngle(Vector3d End3DPt, Vector3d Start3DPt, Matrix4d Bo
 void Widget::guide()
 {
 
-    guide_d(IsopenGuide_AP_Femur, imageScene_AP_Femur,
-            Xspot_matrix4d_AP_Femur, Femur_matrix4d, transparams_Femur_AP);
+	guide_d(IsopenGuide_AP_Femur, imageScene_AP_Femur,
+		Xspot_matrix4d_AP_Femur, Femur_matrix4d, transparams_Femur_AP, Marker_Adjust[0]);
 
-    guide_d(IsopenGuide_Lat_Femur, imageScene_Lat_Femur,
-            Xspot_matrix4d_Lat_Femur, Femur_matrix4d, transparams_Femur_Lat);
+	guide_d(IsopenGuide_Lat_Femur, imageScene_Lat_Femur,
+		Xspot_matrix4d_Lat_Femur, Femur_matrix4d, transparams_Femur_Lat, Marker_Adjust[1]);
 
-    guide_d(IsopenGuide_AP_Tibia, imageScene_AP_Tibia,
-            Xspot_matrix4d_AP_Tibia, Tibia_matrix4d, transparams_Tibia_AP);
+	guide_d(IsopenGuide_AP_Tibia, imageScene_AP_Tibia,
+		Xspot_matrix4d_AP_Tibia, Tibia_matrix4d, transparams_Tibia_AP, Marker_Adjust[2]);
 
-    guide_d(IsopenGuide_Lat_Tibia, imageScene_Lat_Tibia,
-            Xspot_matrix4d_Lat_Tibia, Tibia_matrix4d, transparams_Tibia_Lat);
+	guide_d(IsopenGuide_Lat_Tibia, imageScene_Lat_Tibia,
+		Xspot_matrix4d_Lat_Tibia, Tibia_matrix4d, transparams_Tibia_Lat, Marker_Adjust[3]);
 
 	update();
 }
 
-void Widget::guide_d(bool IsopenGuide, ImageScene *Imagescene, Matrix4d Xspot_matrix4d, Matrix4d tone, QList<double> transparams)
+void Widget::guide_d(bool IsopenGuide, ImageScene *Imagescene, Matrix4d Xspot_matrix4d, Matrix4d tone, QList<double> transparams,Matrix4d Mark_Adjust)
 {
     if(IsopenGuide)//导航
     {
@@ -1192,19 +1201,19 @@ void Widget::guide_d(bool IsopenGuide, ImageScene *Imagescene, Matrix4d Xspot_ma
             }
             else
             {
-                Matrix4d tiptool2Xspot = Xspot_matrix4d * tone.inverse() * Tiptool_matrix4d;
+                Matrix4d tiptoolonXspot = Xspot_matrix4d * tone.inverse() * Tiptool_matrix4d;
                 Vector4d Tiptop;
-                Tiptop = tiptool2Xspot * tanzhen2tip;
+                Tiptop = tiptoolonXspot *Mark_Adjust* tanzhen2tip;
 
                 Vector2d Pt2D_TipTop,Pt2D_TipEnd;
                 get2DPtfrom3D(Tiptop.head(3), transparams, Pt2D_TipTop);
-                Vector4d tanzhen2end = tanzhen2tip;
-                tanzhen2end(0) = 0;
-                Vector4d Tipend = tiptool2Xspot * tanzhen2end;
+ 
+                Vector4d Tipend = tiptoolonXspot *Mark_Adjust* tanzhen2tipend;
                 get2DPtfrom3D(Tipend.head(3), transparams, Pt2D_TipEnd);
 
                 Imagescene->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
 				Imagescene->Marker_Tip->show();
+
             }
 
             if(Robot_matrix4d(3,3) == 0)
@@ -1214,7 +1223,7 @@ void Widget::guide_d(bool IsopenGuide, ImageScene *Imagescene, Matrix4d Xspot_ma
             }
             else
             {
-                Matrix4d RobotonXspot = Xspot_matrix4d * tone.inverse() * Robot_matrix4d ;
+                Matrix4d RobotonXspot = Xspot_matrix4d * tone.inverse() * Robot_matrix4d *Mark_Adjust;
                 TCP_upOnRobot = RobotonXspot * TofTCP_Up2MarkeronRobot;
                 TCP_downOnRobot = RobotonXspot * TofTCP_Down2MarkeronRobot;
 
@@ -1712,7 +1721,14 @@ void Widget::readSettingFile()
         tanzhen2tip(i) = ValueList[i].toDouble();
 
     ValueList.clear();
-    Value = configIniRead->value("/Tracker/TofMarkerTip1toMarkerTip2").toString();
+    Value = configIniRead->value("/Register/tanzhen2tipend").toString();
+    ValueList = Value.split(',');
+    if(ValueList.size() >= 4)
+    for(int i = 0; i < 4; i++)
+        tanzhen2tipend(i) = ValueList[i].toDouble();
+
+    ValueList.clear();
+    Value = configIniRead->value("/Register/TofMarkerTip1toMarkerTip2").toString();
     ValueList = Value.split(',');
     if(ValueList.size() >= 16)
     for(int i = 0; i < 16; i++)
@@ -1748,12 +1764,19 @@ void Widget::readSettingFile()
     for(int i = 0; i < 16; i++)
         TCPMarker1toTCPMarker2(i / 4 ,i % 4) = ValueList[i].toDouble();
 
-    ValueList.clear();
-    Value = configIniRead->value("/Register/TCPMarker1toTCPMarkerUp").toString();
-    ValueList = Value.split(',');
-    if(ValueList.size() >= 16)
-    for(int i = 0; i < 16; i++)
-        TCPMarker1toTCPMarkerUp(i / 4 ,i % 4) = ValueList[i].toDouble();
+	ValueList.clear();
+	Value = configIniRead->value("/Register/TCPMarker1toTCPMarker3").toString();
+	ValueList = Value.split(',');
+	if (ValueList.size() >= 16)
+		for (int i = 0; i < 16; i++)
+			TCPMarker1toTCPMarker3(i / 4, i % 4) = ValueList[i].toDouble();
+
+    //ValueList.clear();
+    //Value = configIniRead->value("/Register/TCPMarker1toTCPMarkerUp").toString();
+    //ValueList = Value.split(',');
+    //if(ValueList.size() >= 16)
+    //for(int i = 0; i < 16; i++)
+    //    TCPMarker1toTCPMarkerUp(i / 4 ,i % 4) = ValueList[i].toDouble();
 
 	ValueList.clear();
 	Value = configIniRead->value("/Register/RobotTCP").toString();
@@ -1775,6 +1798,13 @@ void Widget::readSettingFile()
     if(ValueList.size() >= 16)
     for(int i = 0; i < 16; i++)
         XSpotMarker1toMarkerUp(i / 4 ,i % 4) = ValueList[i].toDouble();
+
+    ValueList.clear();
+    Value = configIniRead->value("/Tracker/Marker1ToTip1").toString();
+    ValueList = Value.split(',');
+    if(ValueList.size() >= 16)
+    for(int i = 0; i < 16; i++)
+        TofMarker1ToTip1(i / 4 ,i % 4) = ValueList[i].toDouble();
 
     Value = configIniRead->value("/UR/IP").toString();
     Ur->ui.lineEdit_UR_IP->setText(Value);
@@ -1910,11 +1940,11 @@ void Widget::rev_NDI(QList<Info_NDI> ListInfo_NDI)
             Tiptool_matrix4d_temp = (*i).Pos;
             DialogSetting->ui->label_Tip->setStyleSheet("border-image: url(:/Resources/tip_enable.png);");
         }
-        //else if ((*i).name == MarkerName_Tiptool2)
-        //{
-        //    Tiptool_matrix4d = (*i).Pos * TofMarkerTip1toMarkerTip2.inverse();
-        //    DialogSetting->ui->label_Tip->setStyleSheet("border-image: url(:/Resources/tip_enable.png);");
-        //}
+        else if ((*i).name == MarkerName_Tiptool2)
+        {
+            Tiptool_matrix4d_temp = (*i).Pos * TofMarkerTip1toMarkerTip2.inverse();
+            DialogSetting->ui->label_Tip->setStyleSheet("border-image: url(:/Resources/tip_enable.png);");
+        }
 
         if ((*i).name == MarkerName_XSpot)
         {
@@ -1956,7 +1986,7 @@ void Widget::rev_NDI(QList<Info_NDI> ListInfo_NDI)
         }
         else if((*i).name == MarkerName_Robot3)
         {
-            Robot_matrix4d_temp = (*i).Pos *TCPMarker1toTCPMarkerUp.inverse();
+            Robot_matrix4d_temp = (*i).Pos *TCPMarker1toTCPMarker3.inverse();
             DialogSetting->ui->label_Robot->setStyleSheet("border-image: url(:/Resources/ur_robot_enable.png);");
         }
 
@@ -2031,7 +2061,7 @@ void Widget::rev_NDI(QList<Info_NDI> ListInfo_NDI)
             {
                Robot_matrix4d_ver.pop_front();
                Robot_matrix4d  = Matrix4d::Zero();
-               Robot_matrix4d += 0.5 * Robot_matrix4d_ver[4] + 0.28 * Robot_matrix4d_ver[3]
+               Robot_matrix4d += 0.39 * Robot_matrix4d_ver[4] + 0.39 * Robot_matrix4d_ver[3]
                        + 0.12 * Robot_matrix4d_ver[2] + 0.07 * Robot_matrix4d_ver[1] + 0.03 * Robot_matrix4d_ver[0];
             }
         }
@@ -2109,11 +2139,9 @@ void Widget::imageHasLoad(bool issuccessfully)
     switch(current_operation)
     {
     case AP_FEMUR:
-        if(!captureVideoWidget->refined_image_nopoints.empty())
-            imageScene_AP_Femur->loadImage(captureVideoWidget->refined_image_nopoints);
-        else
-            imageScene_AP_Femur->loadImage(captureVideoWidget->original_image);
-        if(!captureVideoWidget->original_image.empty())//调整按键大小
+
+            imageScene_AP_Femur->loadImage(captureVideoWidget->image_show);
+        if(!captureVideoWidget->image_show.empty())//调整按键大小
             for(int i = 0; i < 6;i++)
             {
                 imageScene_AP_Femur->Piximage_button[i].setScale(size11/750);
@@ -2127,12 +2155,10 @@ void Widget::imageHasLoad(bool issuccessfully)
 
         break;
 
-    case LAT_FEMUR:
-        if(!captureVideoWidget->refined_image_nopoints.empty())
-            imageScene_Lat_Femur->loadImage(captureVideoWidget->refined_image_nopoints);
-        else
-            imageScene_Lat_Femur->loadImage(captureVideoWidget->original_image);
-        if(!captureVideoWidget->original_image.empty())//调整按键大小
+	case LAT_FEMUR:
+
+            imageScene_Lat_Femur->loadImage(captureVideoWidget->image_show);
+        if(!captureVideoWidget->image_show.empty())//调整按键大小
             for(int i = 0; i < 6;i++)
             {
                 imageScene_Lat_Femur->Piximage_button[i].setScale(size11/750);
@@ -2147,11 +2173,8 @@ void Widget::imageHasLoad(bool issuccessfully)
         break;
 
     case AP_TIBIA:
-        if(!captureVideoWidget->refined_image_nopoints.empty())
-            imageScene_AP_Tibia->loadImage(captureVideoWidget->refined_image_nopoints);
-        else
-            imageScene_AP_Tibia->loadImage(captureVideoWidget->original_image);
-        if(!captureVideoWidget->original_image.empty())//调整按键大小
+            imageScene_AP_Tibia->loadImage(captureVideoWidget->image_show);
+        if(!captureVideoWidget->image_show.empty())//调整按键大小
             for(int i = 0; i < 6;i++)
             {
                 imageScene_AP_Tibia->Piximage_button[i].setScale(size11/750);
@@ -2165,11 +2188,8 @@ void Widget::imageHasLoad(bool issuccessfully)
 
         break;
     case LAT_TIBIA:
-        if(!captureVideoWidget->refined_image_nopoints.empty())
-            imageScene_Lat_Tibia->loadImage(captureVideoWidget->refined_image_nopoints);
-        else
-            imageScene_Lat_Tibia->loadImage(captureVideoWidget->original_image);
-        if(!captureVideoWidget->original_image.empty())//调整按键大小
+            imageScene_Lat_Tibia->loadImage(captureVideoWidget->image_show);
+        if(!captureVideoWidget->image_show.empty())//调整按键大小
             for(int i = 0; i < 6;i++)
             {
                 imageScene_Lat_Tibia->Piximage_button[i].setScale(size11/750);
@@ -2372,8 +2392,6 @@ void Widget::on_checkBox_Lat_Tibia_clicked(bool checked)
 
 void Widget::on_pushButton_getXspottransform_AP_clicked()
 {
-    //    disconnect(thread_NDI, SIGNAL(threadSignal(QList<Info_NDI>))//线程冲突？？
-    //                   , this, SLOT(rev_NDI(QList<Info_NDI>)));
     if(Xspot_matrix4d(3,3) == 0 )
     {
         QMessageBox::warning(this,u8"操作失败",u8"未发现Xpot");
@@ -2388,6 +2406,15 @@ void Widget::on_pushButton_getXspottransform_AP_clicked()
         }
 
         Xspot_matrix4d_AP_Femur = Xspot_matrix4d.inverse() * Femur_matrix4d;
+
+        if(Tiptool_matrix4d(3,3) == 0)
+            Marker_Adjust[0] <<1,0,0,0,
+                            0,1,0,0,
+                            0,0,1,0,
+                            0,0,0,1;
+        else
+            Marker_Adjust[0] = Tiptool_matrix4d.inverse() * Xspot_matrix4d * TofMarker1ToTip1;
+
         if(Tiptool_matrix4d(3,3) != 0)
             tiptopatXspot_AP_Femur = Xspot_matrix4d.inverse() * Tiptool_matrix4d;
     }
@@ -2400,17 +2427,25 @@ void Widget::on_pushButton_getXspottransform_AP_clicked()
         }
 
         Xspot_matrix4d_AP_Tibia = Xspot_matrix4d.inverse() * Tibia_matrix4d;
+
+        if(Tiptool_matrix4d(3,3) == 0)
+            Marker_Adjust[2] <<1,0,0,0,
+                            0,1,0,0,
+                            0,0,1,0,
+                            0,0,0,1;
+        else
+            Marker_Adjust[2] = Tiptool_matrix4d.inverse() * Xspot_matrix4d * TofMarker1ToTip1;
+
+
         if(Tiptool_matrix4d(3,3) != 0)
             tiptopatXspot_AP_Tibia =Xspot_matrix4d.inverse() * Tiptool_matrix4d;
     }
-    //    connect(thread_NDI, SIGNAL(threadSignal(QList<Info_NDI>))//线程冲突？？
-    //       , this, SLOT(rev_NDI(QList<Info_NDI>)));
+
 }
 
 void Widget::on_pushButton_getXspottransform_Lat_clicked()
 {
-    //    disconnect(thread_NDI, SIGNAL(threadSignal(QList<Info_NDI>))//线程冲突？？
-    //        , this, SLOT(rev_NDI(QList<Info_NDI>)));
+
     if(Xspot_matrix4d(3,3) == 0)
     {
         QMessageBox::warning(this,u8"操作失败",u8"未发现Xpot");
@@ -2424,6 +2459,14 @@ void Widget::on_pushButton_getXspottransform_Lat_clicked()
             return;
         }
         Xspot_matrix4d_Lat_Femur =  Xspot_matrix4d.inverse() * Femur_matrix4d ;
+        if(Tiptool_matrix4d(3,3) == 0)
+            Marker_Adjust[1] <<1,0,0,0,
+                            0,1,0,0,
+                            0,0,1,0,
+                            0,0,0,1;
+        else
+            Marker_Adjust[1] = Tiptool_matrix4d.inverse() * Xspot_matrix4d * TofMarker1ToTip1;
+
         if(Tiptool_matrix4d(3,3) != 0)
             tiptopatXspot_Lat_Femur = Xspot_matrix4d.inverse() * Tiptool_matrix4d;
     }
@@ -2434,13 +2477,18 @@ void Widget::on_pushButton_getXspottransform_Lat_clicked()
             QMessageBox::warning(this,u8"操作失败",u8"未发现胫骨");
             return;
         }
-
         Xspot_matrix4d_Lat_Tibia = Xspot_matrix4d.inverse()* Tibia_matrix4d;
+        if(Tiptool_matrix4d(3,3) == 0)
+            Marker_Adjust[3] <<1,0,0,0,
+                            0,1,0,0,
+                            0,0,1,0,
+                            0,0,0,1;
+        else
+            Marker_Adjust[3] = Tiptool_matrix4d.inverse() * Xspot_matrix4d * TofMarker1ToTip1;
+
         if(Tiptool_matrix4d(3,3) != 0)
             tiptopatXspot_Lat_Tibia = Xspot_matrix4d.inverse() * Tiptool_matrix4d;
     }
-    //    connect(thread_NDI, SIGNAL(threadSignal(QList<Info_NDI>))//线程冲突？？
-    //       , this, SLOT(rev_NDI(QList<Info_NDI>)));
 }
 
 void Widget::on_pushButton_Femur_finished_clicked()
@@ -2613,13 +2661,12 @@ void Widget::on_pushButton_ShowTiptool_Lat_clicked()
             return;
         }
         Vector4d Tiptop;
-        Tiptop = tiptopatXspot_Lat_Femur * tanzhen2tip;
+        Tiptop = tiptopatXspot_Lat_Femur *Marker_Adjust[1] * tanzhen2tip;
         Vector2d Pt2D_TipTop,Pt2D_TipEnd;
         get2DPtfrom3D(Tiptop.head(3), transparams_Femur_Lat, Pt2D_TipTop);
 
-        Vector4d tanzhen2end = tanzhen2tip;
-        tanzhen2end(0) = 0;
-        Vector4d Tipend = tiptopatXspot_Lat_Femur * tanzhen2end;
+        Vector4d tanzhen2end = tanzhen2tipend;
+        Vector4d Tipend = tiptopatXspot_Lat_Femur *Marker_Adjust[1] * tanzhen2end;
         get2DPtfrom3D(Tipend.head(3), transparams_Femur_Lat, Pt2D_TipEnd);
 
         imageScene_Lat_Femur->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
@@ -2633,12 +2680,11 @@ void Widget::on_pushButton_ShowTiptool_Lat_clicked()
             return;
         }
         Vector4d Tiptop;
-        Tiptop = tiptopatXspot_Lat_Tibia * tanzhen2tip;
+        Tiptop = tiptopatXspot_Lat_Tibia * Marker_Adjust[3] * tanzhen2tip;
         Vector2d Pt2D_TipTop,Pt2D_TipEnd;
         get2DPtfrom3D(Tiptop.head(3), transparams_Tibia_Lat, Pt2D_TipTop);
         
-        Vector4d tanzhen2end = tanzhen2tip;
-        tanzhen2end(0) = 0;
+        Vector4d tanzhen2end = tanzhen2tipend;
         Vector4d Tipend = tiptopatXspot_Lat_Tibia * tanzhen2end;
         get2DPtfrom3D(Tipend.head(3), transparams_Tibia_Lat, Pt2D_TipEnd);
         
@@ -2661,9 +2707,8 @@ void Widget::on_pushButton_ShowTiptool_AP_clicked()
         Vector2d Pt2D_TipTop,Pt2D_TipEnd;
         get2DPtfrom3D(Tiptop.head(3), transparams_Femur_AP, Pt2D_TipTop);
 
-        Vector4d tanzhen2end = tanzhen2tip;
-        tanzhen2end(0) = 0;
-        Vector4d Tipend = tiptopatXspot_AP_Femur * tanzhen2end;
+        Vector4d tanzhen2end = tanzhen2tipend;
+        Vector4d Tipend = tiptopatXspot_AP_Femur * Marker_Adjust[0] * tanzhen2end;
         get2DPtfrom3D(Tipend.head(3), transparams_Femur_AP, Pt2D_TipEnd);
 
         imageScene_AP_Femur->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
@@ -2683,9 +2728,8 @@ void Widget::on_pushButton_ShowTiptool_AP_clicked()
         Vector2d Pt2D_TipTop,Pt2D_TipEnd;
         get2DPtfrom3D(Tiptop.head(3), transparams_Tibia_AP, Pt2D_TipTop);
 
-        Vector4d tanzhen2end = tanzhen2tip;
-        tanzhen2end(0) = 0;
-        Vector4d Tipend = tiptopatXspot_AP_Tibia* tanzhen2end;
+        Vector4d tanzhen2end = tanzhen2tipend;
+        Vector4d Tipend = tiptopatXspot_AP_Tibia *Marker_Adjust[2]* tanzhen2end;
         get2DPtfrom3D(Tipend.head(3), transparams_Tibia_AP, Pt2D_TipEnd);
 
         imageScene_AP_Tibia->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
@@ -3223,8 +3267,7 @@ void Widget::loadData_Femur_AP()
         Vector2d Pt2D_TipTop,Pt2D_TipEnd;
         get2DPtfrom3D(Tiptop.head(3), transparams_Femur_AP, Pt2D_TipTop);
 
-        Vector4d tanzhen2end = tanzhen2tip;
-        tanzhen2end(0) = 0;
+        Vector4d tanzhen2end = tanzhen2tipend;
         Vector4d Tipend = tiptopatXspot_AP_Femur * tanzhen2end;
         get2DPtfrom3D(Tipend.head(3), transparams_Femur_AP, Pt2D_TipEnd);
 
@@ -3314,8 +3357,7 @@ void Widget::loadData_Femur_Lat()
         Vector2d Pt2D_TipTop,Pt2D_TipEnd;
         get2DPtfrom3D(Tiptop.head(3), transparams_Femur_Lat, Pt2D_TipTop);
 
-        Vector4d tanzhen2end = tanzhen2tip;
-        tanzhen2end(0) = 0;
+        Vector4d tanzhen2end = tanzhen2tipend;
         Vector4d Tipend = tiptopatXspot_Lat_Femur * tanzhen2end;
         get2DPtfrom3D(Tipend.head(3), transparams_Femur_Lat, Pt2D_TipEnd);
 
@@ -3405,8 +3447,7 @@ void Widget::loadData_Tibia_AP()
         Vector2d Pt2D_TipTop,Pt2D_TipEnd;
         get2DPtfrom3D(Tiptop.head(3), transparams_Tibia_AP, Pt2D_TipTop);
 
-        Vector4d tanzhen2end = tanzhen2tip;
-        tanzhen2end(0) = 0;
+        Vector4d tanzhen2end = tanzhen2tipend;
         Vector4d Tipend = tiptopatXspot_AP_Tibia * tanzhen2end;
         get2DPtfrom3D(Tipend.head(3), transparams_Tibia_AP, Pt2D_TipEnd);
 
@@ -3496,8 +3537,7 @@ void Widget::loadData_Tibia_Lat()
         Vector2d Pt2D_TipTop,Pt2D_TipEnd;
         get2DPtfrom3D(Tiptop.head(3), transparams_Tibia_Lat, Pt2D_TipTop);
 
-        Vector4d tanzhen2end = tanzhen2tip;
-        tanzhen2end(0) = 0;
+        Vector4d tanzhen2end = tanzhen2tipend;
         Vector4d Tipend = tiptopatXspot_Lat_Tibia * tanzhen2end;
         get2DPtfrom3D(Tipend.head(3), transparams_Tibia_Lat, Pt2D_TipEnd);
 
@@ -4278,3 +4318,72 @@ void Widget::on_pushButton_3_clicked()
 
 }
 
+
+void Widget::on_pushButton_Femur_finished_2_clicked()
+{
+    if(  Xspot_matrix4d_AP_Femur(3,3) == 0 )
+    {
+        QMessageBox::warning(this,u8"操作失败",u8"未记录股骨正位Xpot");
+        return;
+    }
+//    if(  Xspot_matrix4d_Lat_Femur(3,3) == 0 )
+//    {
+//        QMessageBox::warning(this,u8"操作失败",u8"未记录股骨侧位Xpot");
+//        return;
+//    }
+    if(
+            imageScene_AP_Femur->Piximage_point[4] == QPointF(-1,-1))
+    {
+        QMessageBox::warning(this,u8"操作失败",u8"未规划股骨正位手术路径");
+        return;
+    }
+//    if( imageScene_Lat_Femur->Piximage_point[4] == QPointF(-1,-1) ||
+//            imageScene_Lat_Femur->Piximage_point[3] == QPointF(-1,-1))
+//    {
+//        QMessageBox::warning(this,u8"操作失败",u8"未规划股骨侧位手术路径");
+//        return;
+//    }
+    if( transparams_Femur_AP.size() != 11 )
+
+    {
+        QMessageBox::warning(this,u8"操作失败",u8"无法识别股骨正位Xpot点");
+        return;
+    }
+//    if( transparams_Femur_Lat.size() != 11 )
+//    {
+//        QMessageBox::warning(this,u8"操作失败",u8"无法识别股骨侧位Xpot点");
+//        return;
+//    }
+
+    ui->radioButton_Femur->setEnabled(true);
+    ui->radioButton_Femur->setChecked(true);
+    on_radioButton_Femur_clicked();
+
+    StartPt_Femur_AP(0) = double(imageScene_AP_Femur->Piximage_point[4].x());
+    StartPt_Femur_AP(1) = double(imageScene_AP_Femur->Piximage_point[4].y());
+
+    QList<Vector4d> Line1;
+    Line1.clear();
+    get3DLinefrom2D(StartPt_Femur_AP,transparams_Femur_AP,Line1);
+    if(Line1[0][0] != 0 && Line1[0][1] != 0 && Line1[0][2] != 0
+		&& Line1[1][0] != 0 && Line1[1][1] != 0 && Line1[1][2] != 0)
+    {
+        Start3DPt_Femur(0) = 0;
+        Start3DPt_Femur(1) = 1/(Line1[0][1]*Line1[1][2] - Line1[0][2]*Line1[1][1])*(-Line1[0][3]*Line1[1][2] + Line1[0][2]*Line1[1][3]);
+        Start3DPt_Femur(2) = 1 / (Line1[0][1] * Line1[1][2] - Line1[0][2] * Line1[1][1])*(-Line1[0][1] * Line1[1][3] + Line1[0][3] * Line1[1][1]);
+        End3DPt_Femur(0) = 1 / (Line1[0][0] * Line1[1][2] - Line1[0][2] * Line1[1][0])*(-Line1[0][3] * Line1[1][2] + Line1[0][2] * Line1[1][3]);
+        End3DPt_Femur(1) =0;
+        End3DPt_Femur(2) = 1 / (Line1[0][0] * Line1[1][2] - Line1[0][2] * Line1[1][0])*(-Line1[0][0] * Line1[1][3] + Line1[0][3] * Line1[1][0]);;
+    }
+    else//考虑系数为零的情况，几乎不可能，懒得写。未解决的东西
+    {
+
+    }
+
+
+    QString str;
+    str = QString("Start3DPt_Femur:%1,\n%2,\n%3\nEnd3DPt_Femur:%4,\n%5,\n%6\n")
+            .arg(Start3DPt_Femur(0)).arg(Start3DPt_Femur(1)).arg(Start3DPt_Femur(2))
+            .arg(End3DPt_Femur(0)).arg(End3DPt_Femur(1)).arg(End3DPt_Femur(2));
+    ui->labelResult_Femur->setText(str);
+}

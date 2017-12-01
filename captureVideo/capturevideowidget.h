@@ -40,6 +40,7 @@ public:
     cv::Mat original_image; // original image
     cv::Mat refined_image;
     cv::Mat refined_image_nopoints;
+	cv::Mat image_show;
 
     //函数
     bool openCamera(); //打开摄像头
@@ -52,7 +53,7 @@ public:
     //鼠标选中点
     QPointF	 _2DPt[9];
 
-	vector<cv::Vec3f> XSpotPts2D; //图像上识别出的Xspot点
+    vector<cv::Vec3f> XSpotPts2D;//图像上识别出的Xspot点
     //vector<QPoint> XSpotPts2D_sort;
     //标定参数
     //模型的两个特征坐标系在两个贴的Makrer的位置

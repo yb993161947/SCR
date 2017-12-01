@@ -144,6 +144,7 @@ void CaptureVideoWidget::timerSlot()
         cv::cvtColor(camImage, camImage, cv::COLOR_BGR2GRAY);
         QImage disImage = cvMat2QImage(camImage);
         ui->label_Picture->setPixmap(QPixmap::fromImage(disImage));
+		refined_image = camImage;
     }
     update();
 }
@@ -169,6 +170,7 @@ void CaptureVideoWidget::lassoHandler()
 void CaptureVideoWidget::displaySrcImage()
 {
     ui->label_Picture->setPixmap(QPixmap::fromImage(cvMat2QImage(original_image)));
+	image_show = original_image;
 }
 
 
@@ -451,6 +453,7 @@ void CaptureVideoWidget::on_pushButton_OpenImage_clicked()
         QImage qimg = cvMat2QImage(original_image);
 
         ui->label_Picture->setPixmap(QPixmap::fromImage(qimg));
+		image_show = original_image;
     }
     else if(strcmp(prefix, "BMP") == 0 || strcmp(prefix, "bmp") == 0 ||
             strcmp(prefix, "JPG") == 0 || strcmp(prefix, "jpg") == 0)
@@ -465,6 +468,7 @@ void CaptureVideoWidget::on_pushButton_OpenImage_clicked()
         QImage qimg;
         qimg.load(FilePath);
         ui->label_Picture->setPixmap(QPixmap::fromImage(qimg));
+		image_show = original_image;
     }
     else
     {
@@ -571,17 +575,23 @@ void CaptureVideoWidget::on_checkBox_removeCircle_toggled(bool checked)
     if(checked)
     {
         ui->label_Picture->setPixmap(QPixmap::fromImage(cvMat2QImage(refined_image_nopoints)));
+		image_show = refined_image_nopoints;
     }
     else
     {
         ui->label_Picture->setPixmap(QPixmap::fromImage(cvMat2QImage(refined_image)));
+		image_show = refined_image;
     }
 }
 
 void CaptureVideoWidget::on_radioButton_source_toggled(bool checked)
 {
-    if(checked)
-        ui->label_Picture->setPixmap(QPixmap::fromImage(cvMat2QImage(original_image)));
+	if (checked)
+	{
+		ui->label_Picture->setPixmap(QPixmap::fromImage(cvMat2QImage(original_image)));
+		image_show = original_image;
+	}
+        
 }
 
 void CaptureVideoWidget::on_radioButton_refined_toggled(bool checked)
@@ -591,10 +601,12 @@ void CaptureVideoWidget::on_radioButton_refined_toggled(bool checked)
         if(ui->checkBox_removeCircle->isChecked())
         {
             ui->label_Picture->setPixmap(QPixmap::fromImage(cvMat2QImage(refined_image_nopoints)));
+			image_show = refined_image_nopoints;
         }
         else
         {
             ui->label_Picture->setPixmap(QPixmap::fromImage(cvMat2QImage(refined_image)));
+			image_show = refined_image;
         }
     }
 }

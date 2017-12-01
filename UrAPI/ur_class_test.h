@@ -28,6 +28,7 @@ public:
     bool TechFlag;
     void Connect_UR();
 
+    double joint_save[6];
     Ui::UR_class_testClass ui;
 private slots:
 
@@ -127,9 +128,7 @@ private slots:
 
     void on_pushButton_Connect_clicked();
 
-
     void on_Debug_Joint_clicked();
-
 
 private:
 

@@ -127,8 +127,11 @@ public:
     Matrix4d XSpotMarker1toMarker2;
     Matrix4d XSpotMarker1toMarkerUp;
     Matrix4d TCPMarker1toTCPMarker2;
+	Matrix4d TCPMarker1toTCPMarker3;
     Matrix4d TCPMarker1toTCPMarkerUp;
+    Matrix4d TofMarker1ToTip1;
     Vector4d tanzhen2tip;
+    Vector4d tanzhen2tipend;
 	void caculateMovetoRoute(Vector3d End3DPt, Vector3d Start3DPt, Matrix4d Bone_Matrix, double pos[]);//单位mm
     void caculateMoveAngle(Vector3d End3DPt,Vector3d Start3DPt,Matrix4d Bone_Matrix ,double pos[]);//单位mm
 
@@ -152,7 +155,7 @@ public:
     bool IsopenGuide_AP_Tibia_last = false;
     bool IsopenGuide_Lat_Tibia_last = false;
     void guide();
-    void guide_d(bool IsopenGuide,ImageScene *Imagescene,Matrix4d Xspot_matrix4d,Matrix4d tone,  QList<double> transparams);
+    void guide_d(bool IsopenGuide,ImageScene *Imagescene,Matrix4d Xspot_matrix4d,Matrix4d tone, QList<double> transparams,Matrix4d Mark_Adjust);
 
 
 	thread_get_NDI_marker *thread_NDI;
@@ -264,6 +267,8 @@ public:
     QGraphicsView *CameraWidget, *APWidget, *LatWidget;
     int Index_widget[3] = {CAMERAINDEX,APINDEX,LATINDEX};
 
+    //探针矫正
+    Matrix4d Marker_Adjust[4];
 
 private slots:
 
@@ -441,6 +446,9 @@ private slots:
     void on_pushButton_SetRobot_clicked();
 
     void on_pushButton_3_clicked();
+
+
+    void on_pushButton_Femur_finished_2_clicked();
 
 
 private:

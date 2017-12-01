@@ -54,6 +54,8 @@ public:
     QPushButton *pushButton_Femur_finished;
     QPushButton *pushButton_guide_Femur;
     QLabel *labelResult_Femur;
+    QPushButton *pushButton_Femur_finished_2;
+    QPushButton *pushButton_Femur_finished_3;
     QWidget *tab_Tibia;
     QGroupBox *groupBox_Lat_Tibia;
     QRadioButton *radioButton_T1;
@@ -317,7 +319,7 @@ public:
         checkBox_AP_Femur->setChecked(true);
         pushButton_Femur_finished = new QPushButton(tab_Femur);
         pushButton_Femur_finished->setObjectName(QStringLiteral("pushButton_Femur_finished"));
-        pushButton_Femur_finished->setGeometry(QRect(170, 760, 111, 41));
+        pushButton_Femur_finished->setGeometry(QRect(160, 760, 111, 41));
         pushButton_Femur_finished->setStyleSheet(QStringLiteral(""));
         pushButton_guide_Femur = new QPushButton(tab_Femur);
         pushButton_guide_Femur->setObjectName(QStringLiteral("pushButton_guide_Femur"));
@@ -330,6 +332,14 @@ public:
 "color: rgb(255, 255, 255);"));
         labelResult_Femur->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         labelResult_Femur->setWordWrap(true);
+        pushButton_Femur_finished_2 = new QPushButton(tab_Femur);
+        pushButton_Femur_finished_2->setObjectName(QStringLiteral("pushButton_Femur_finished_2"));
+        pushButton_Femur_finished_2->setGeometry(QRect(160, 720, 111, 41));
+        pushButton_Femur_finished_2->setStyleSheet(QStringLiteral(""));
+        pushButton_Femur_finished_3 = new QPushButton(tab_Femur);
+        pushButton_Femur_finished_3->setObjectName(QStringLiteral("pushButton_Femur_finished_3"));
+        pushButton_Femur_finished_3->setGeometry(QRect(20, 720, 111, 41));
+        pushButton_Femur_finished_3->setStyleSheet(QStringLiteral(""));
         tabWidget_manipulate->addTab(tab_Femur, QString());
         tab_Tibia = new QWidget();
         tab_Tibia->setObjectName(QStringLiteral("tab_Tibia"));
@@ -771,6 +781,7 @@ public:
         graphicsView_Main->setGeometry(QRect(110, 110, 900, 900));
         graphicsView_Main->setStyleSheet(QStringLiteral("border-image: url(:/images/bkg41.png);"));
         frame->raise();
+        graphicsView_Main->raise();
         pushButton_Exit->raise();
         tabWidget_manipulate->raise();
         groupBox_2->raise();
@@ -780,11 +791,10 @@ public:
         label_APdata->raise();
         label_Latdata->raise();
         pushButtonSetting->raise();
-        graphicsView_Main->raise();
 
         retranslateUi(Widget);
 
-        tabWidget_manipulate->setCurrentIndex(2);
+        tabWidget_manipulate->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(Widget);
@@ -813,6 +823,8 @@ public:
         pushButton_Femur_finished->setText(QApplication::translate("Widget", "\350\247\204\345\210\222\345\256\214\346\210\220", 0));
         pushButton_guide_Femur->setText(QApplication::translate("Widget", "\345\274\200\345\247\213\345\257\274\350\210\252", 0));
         labelResult_Femur->setText(QString());
+        pushButton_Femur_finished_2->setText(QApplication::translate("Widget", "\351\222\210\345\255\224\347\233\264\347\272\277\346\265\213\350\257\225", 0));
+        pushButton_Femur_finished_3->setText(QApplication::translate("Widget", "\351\222\210\345\255\224\346\225\260\346\215\256\351\207\207\351\233\206", 0));
         tabWidget_manipulate->setTabText(tabWidget_manipulate->indexOf(tab_Femur), QApplication::translate("Widget", "\350\202\241\351\252\250", 0));
         groupBox_Lat_Tibia->setTitle(QApplication::translate("Widget", "GroupBox", 0));
         radioButton_T1->setText(QApplication::translate("Widget", "T1", 0));

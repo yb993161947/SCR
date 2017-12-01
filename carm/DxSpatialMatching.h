@@ -1,4 +1,4 @@
-#ifndef DxSpatialMatching_H
+﻿#ifndef DxSpatialMatching_H
 #define DxSpatialMatching_H
 #pragma once
 #include <QVector>
@@ -31,7 +31,6 @@ public:
     DxSpatialMatching(void);
     ~DxSpatialMatching(void);
 
-//    bool PushAllPointInfo( QVector<DxPoint>&vecPoint3DInfo,QVector<DxPoint>&vecPoint2DInfo,DxMatrix4x4 transformMatrix, int *nPixel);
       bool PushAllPointInfo( QVector<DxPoint>&vecPoint3DInfo,QVector<DxPoint>&vecPoint2DInfo);
 
     QVector<double>& GetxSpotMatrix();
