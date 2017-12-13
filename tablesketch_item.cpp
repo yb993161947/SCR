@@ -19,13 +19,13 @@ TableSketch_Item::~TableSketch_Item() {
 void TableSketch_Item::setWidth(float ItemWidth)
 {
 	width = ItemWidth;
-//	update();
+   // update();
 }
 
 void TableSketch_Item::setHeight(float ItemHeight)
 {
 	height = ItemHeight;
-//	update();
+   // update();
 }
 
 QRectF TableSketch_Item::boundingRect() const

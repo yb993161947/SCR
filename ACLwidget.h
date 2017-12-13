@@ -132,8 +132,8 @@ public:
     Matrix4d TofMarker1ToTip1;
     Vector4d tanzhen2tip;
     Vector4d tanzhen2tipend;
-	void caculateMovetoRoute(Vector3d End3DPt, Vector3d Start3DPt, Matrix4d Bone_Matrix, double pos[]);//单位mm
-    void caculateMoveAngle(Vector3d End3DPt,Vector3d Start3DPt,Matrix4d Bone_Matrix ,double pos[]);//单位mm
+	void caculateMovetoRoute(Vector3d End3DPt, Vector3d Start3DPt, Matrix4d &Bone_Matrix, double pos[]);//单位mm
+    void caculateMoveAngle(Vector3d End3DPt,Vector3d Start3DPt,Matrix4d &Bone_Matrix ,double pos[]);//单位mm
 
     QString MarkerName_Femur;
     QString MarkerName_Tibia;
@@ -155,7 +155,7 @@ public:
     bool IsopenGuide_AP_Tibia_last = false;
     bool IsopenGuide_Lat_Tibia_last = false;
     void guide();
-    void guide_d(bool IsopenGuide,ImageScene *Imagescene,Matrix4d Xspot_matrix4d,Matrix4d tone, QList<double> transparams,Matrix4d Mark_Adjust);
+    void guide_d(bool IsopenGuide,ImageScene *Imagescene,Matrix4d &Xspot_matrix4d,Matrix4d &tone, QList<double> transparams,Matrix4d &Mark_Adjust);
 
 
 	thread_get_NDI_marker *thread_NDI;
@@ -167,14 +167,14 @@ public:
     QList<double> transparams_Tibia_AP;
     QList<double> transparams_Tibia_Lat;
     bool get2DPtfrom3D(Vector3d Pt_3D, QList<double> transparams, Vector2d &Pt_2D);
-    bool get3DLinefrom2D(Vector2d Pt_2D, QList<double> transparams,QList<Vector4d> &transparams_Line);
+    bool get3DLinefrom2D(Vector2d &Pt_2D, QList<double> transparams,QList<Vector4d> &transparams_Line);
 
-	bool Widget::Shift2DPtfrom2D(Vector2d Pt_Scr,
+	bool Widget::Shift2DPtfrom2D(Vector2d &Pt_Scr,
 		QList<double> transparams_Scr,
 		QList<Vector2d> &Line_Dist,
 		QList<double> transparams_Dist,
-		Matrix4d MarkerOnXspot_scr,
-		Matrix4d MarkerOnXspot_dist);
+		Matrix4d &MarkerOnXspot_scr,
+		Matrix4d &MarkerOnXspot_dist);
 
     bool get3DPtfrom2Ds(QList<Vector2d > Pt_2Ds, QList<QList<double> > ListOfTransparams,QList<Matrix4d> Xspot_matrix4d,Vector3d &Pt_3D);
 	//3D规划文件处理
@@ -450,6 +450,8 @@ private slots:
 
     void on_pushButton_Femur_finished_2_clicked();
 
+
+    void on_pushButton_Femur_finished_3_clicked();
 
 private:
     Ui::Widget *ui;

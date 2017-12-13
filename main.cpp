@@ -2,7 +2,7 @@
 #include <QApplication>
 #include "captureVideo/capturevideowidget.h"
 #include "./CArmAngleCalCuLate/widget.h"
-#include "FileSystemWatcher.h"
+#include "./fileWatcher/FileSystemWatcher.h"
 #include "QSettings"
 int main(int argc, char *argv[])
 {

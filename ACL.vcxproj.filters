@@ -46,12 +46,12 @@
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="Generated Files\Debug">
-      <UniqueIdentifier>{7d82fdb4-572a-4f90-adec-d4770ab03e69}</UniqueIdentifier>
+      <UniqueIdentifier>{848d8267-738e-4d34-b04c-20aabbfcf880}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Release">
-      <UniqueIdentifier>{b925429e-4300-4baa-af26-820ebbdd92bc}</UniqueIdentifier>
+      <UniqueIdentifier>{389ed5ad-0620-428c-8f5c-20806b12f456}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
@@ -67,6 +67,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="carm\DxSpatialMatching.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fileWatcher\FileSystemWatcher.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="carm\ImageRectify.cpp">
@@ -90,6 +93,9 @@
     <ClCompile Include="imagescene_Tibia_lat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="imagescene_camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="imagescene_femur_ap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -103,6 +109,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="UrAPI\mythread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="navilabel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="needle.cpp">
@@ -127,6 +136,12 @@
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="Release\moc_ACLwidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_FileSystemWatcher.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_FileSystemWatcher.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="Debug\moc_ImageScene.cpp">
@@ -157,6 +172,12 @@
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="Release\moc_imagescene_Tibia_lat.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_imagescene_camera.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_imagescene_camera.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="Debug\moc_imagescene_femur_ap.cpp">
@@ -204,27 +225,6 @@
     <ClCompile Include="GeneratedFiles\qrc_resources.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="Debug\moc_imagescene_camera.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="Release\moc_imagescene_camera.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="imagescene_camera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="navilabel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="fileWatcher\FileSystemWatcher.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Debug\moc_FileSystemWatcher.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="Release\moc_FileSystemWatcher.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="ACLwidget.h">
@@ -242,6 +242,9 @@
     <ClInclude Include="carm\DxSpatialMatching.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <CustomBuild Include="fileWatcher\FileSystemWatcher.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
     <ClInclude Include="carm\ImageRectify.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -263,6 +266,9 @@
     <CustomBuild Include="imagescene_Tibia_lat.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="imagescene_camera.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
     <CustomBuild Include="imagescene_femur_ap.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
@@ -275,6 +281,9 @@
     <CustomBuild Include="UrAPI\mythread.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <ClInclude Include="navilabel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="needle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -291,12 +300,6 @@
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="CArmAngleCalCuLate\widget.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="imagescene_camera.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="fileWatcher\FileSystemWatcher.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>
@@ -403,9 +406,6 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="Resources\XSpot_enable.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\resource\Xspot.png">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="Resources\add_page_horizontal.png">
@@ -708,7 +708,7 @@
     <None Include="Resources\imagetool_dot4_down.png">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="Resources\lock.pngResources\imagetool_dot5-disable.png">
+    <None Include="Resources\imagetool_dot5-disable.png">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="Resources\imagetool_dot5.png">
@@ -909,6 +909,9 @@
     <None Include="Resources\load_matrix_down.png">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="Resources\lock.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <None Include="Resources\lockdwn.png">
       <Filter>Resource Files</Filter>
     </None>
@@ -1041,6 +1044,9 @@
     <None Include="Resources\rightfemur_bg.png">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="Resources\rr.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <None Include="images\savePoints.png">
       <Filter>Resource Files</Filter>
     </None>
@@ -1167,6 +1173,9 @@
     <None Include="images\whitecircle.png">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="Resources\resource\xspot????.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <None Include="Resources\y_disable.png">
       <Filter>Resource Files</Filter>
     </None>
@@ -1185,18 +1194,7 @@
     <None Include="images\zhengweiA.png">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="images\exit - Copy.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\imagetool_dot5-disable.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\lock.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="images\bkg - 副本.png">
-      <Filter>Resource Files</Filter>
-    </None>
+    <None Include="Resources\resource\xspot????.png" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_ACLwidget.h">
@@ -1214,12 +1212,12 @@
     <ClInclude Include="GeneratedFiles\ui_ur_class_test.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="navilabel.h">
-      <Filter>Form Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Resources\resource\xspot小球编号.png">
+    <Image Include="images\exit - Copy.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\bkg - 副本.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

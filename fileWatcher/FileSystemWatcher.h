@@ -6,7 +6,7 @@
 #include <QFileSystemWatcher>
 #include "socket.h"
 #include"opencv.hpp"
-const int PORT = 5000;
+//const int PORT = 5000;
 
 class FileSystemWatcher : public QObject
 {

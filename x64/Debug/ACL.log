@@ -1,70 +1,66 @@
-﻿  Moc'ing ACLwidget.h...
-  ACLwidget.cpp
-ACLwidget.cpp(421): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(422): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(427): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(428): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(498): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(499): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(504): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(505): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(585): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(586): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(587): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(588): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(627): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(628): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(646): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(647): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(672): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(673): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(691): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(692): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(878): warning C4100: “event”: 未引用的形参
-ACLwidget.cpp(919): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(920): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(924): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(925): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(940): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(941): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(945): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(946): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(953): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(954): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(955): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(956): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(971): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(972): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(973): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(974): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1007): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1008): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1012): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1013): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1030): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1031): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1035): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1036): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1043): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1044): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1045): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1046): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1061): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1062): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1063): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1064): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1412): warning C4101: “alpha”: 未引用的局部变量
-ACLwidget.cpp(1411): warning C4101: “k0”: 未引用的局部变量
-ACLwidget.cpp(1459): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-ACLwidget.cpp(1468): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-ACLwidget.cpp(1664): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-ACLwidget.cpp(1666): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-ACLwidget.cpp(4309): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(4310): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(4314): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(4315): warning C4305: “参数”: 从“double”到“float”截断
-  moc_ACLwidget.cpp
-  main.cpp
-  正在生成代码...
-  ACL.vcxproj -> E:\BUAA\ACLRecontructQt_Cmake\SCR\debug\ACLReconstruction.exe
+﻿  ACLwidget.cpp
+ACLwidget.cpp(421): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(422): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(427): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(428): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(498): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(499): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(504): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(505): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(585): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(586): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(587): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(588): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(627): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(628): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(646): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(647): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(672): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(673): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(691): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(692): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(878): warning C4100: 'event': unreferenced formal parameter
+ACLwidget.cpp(919): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(920): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(924): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(925): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(940): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(941): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(945): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(946): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(953): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(954): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(955): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(956): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(971): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(972): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(973): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(974): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1007): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1008): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1012): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1013): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1030): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1031): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1035): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1036): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1043): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1044): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1045): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1046): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1061): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1062): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1063): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1064): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1415): warning C4101: 'alpha': unreferenced local variable
+ACLwidget.cpp(1414): warning C4101: 'k0': unreferenced local variable
+ACLwidget.cpp(1462): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+ACLwidget.cpp(1471): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+ACLwidget.cpp(1667): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+ACLwidget.cpp(1669): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+ACLwidget.cpp(4313): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(4314): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(4318): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(4319): warning C4305: 'argument': truncation from 'double' to 'float'
+  ACL.vcxproj -> C:\Demo\ACLRecontructQt_Cmake\SCR\debug\ACLReconstruction.exe
   ACL.vcxproj -> debug\ACLReconstruction.pdb (Full PDB)

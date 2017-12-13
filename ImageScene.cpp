@@ -138,7 +138,7 @@ void ImageScene::zoomIn(float ratio)
     /***************************************/
     pixImage.setScale(pixImage.scale() * ratio);
     pixImage.setPos(pixImage.pos()* ratio);
-    update();
+   // update();
 
 
 }
@@ -148,21 +148,21 @@ void ImageScene::zoomOut(float ratio)
 	/***************************************/
     pixImage.setScale(pixImage.scale() / ratio);
     pixImage.setPos(pixImage.pos()/ ratio );
-    update();
+ //   update();
 }
 
 void ImageScene::zoomInMatching(float ratio)
 {
     pixImage_matching.setScale(pixImage_matching.scale() * ratio);
    // pixImage_matching.setPos(pixImage_matching.pos()* ratio);
-    update();
+ //   update();
 }
 
 void ImageScene::zoomOutMatching(float ratio)
 {
     pixImage_matching.setScale(pixImage_matching.scale() / ratio);
   //  pixImage_matching.setPos(pixImage_matching.pos()/ ratio );
-    update();
+ //   update();
 }
 
 void ImageScene::setPixImage(QPixmap Pix_Scr)
@@ -221,7 +221,7 @@ void ImageScene::loadDCMImage(QString FilePath)
     pixImage.setPixmap(Pixmap_scr);
     pixImage.setPos(-375, -375);
     pixImage.setScale(width() / qimg.width());
-    update();
+ // update();
 }
 
 void ImageScene::loadBMPImage(QString FilePath)
@@ -233,7 +233,7 @@ void ImageScene::loadBMPImage(QString FilePath)
     pixImage.setPixmap(Pixmap_scr);
      pixImage.setPos(-375, -375);
     pixImage.setScale(width() / qimg.width());
-    update();
+ //   update();
 }
 
 void ImageScene::loadImage(cv::Mat Image)
@@ -245,7 +245,7 @@ void ImageScene::loadImage(cv::Mat Image)
    pixImage.setPixmap(Pixmap_scr);
    pixImage.setPos(-375, -375);
    pixImage.setScale(width() / qimg.width());
-   update();
+//   update();
 }
 
 void ImageScene::loadMatchingImage(cv::Mat Image)
@@ -258,7 +258,7 @@ void ImageScene::loadMatchingImage(cv::Mat Image)
     pixImage_matching.setPos(-375, -375);
     pixImage_matching.setTransformOriginPoint(pixImage_matching.pixmap().width() / 2, pixImage_matching.pixmap().height() / 2);
    // zoomOutMatching(1.5);
-    update();
+ //   update();
 }
 
 void ImageScene::loadMatchingImage(QPixmap Pixmap)
@@ -267,7 +267,7 @@ void ImageScene::loadMatchingImage(QPixmap Pixmap)
     pixImage_matching.setPos(-375, -375);
     pixImage_matching.setTransformOriginPoint(pixImage_matching.pixmap().width() / 2, pixImage_matching.pixmap().height() / 2);
    // zoomOutMatching(1.5);
-    update();
+ //   update();
 }
 
 void ImageScene::saveImage(QString FilePath)
@@ -304,6 +304,7 @@ void ImageScene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
     default:
         break;
     }
+    update();
 }
 
 void ImageScene::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
@@ -319,17 +320,6 @@ void ImageScene::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
           {
               pixImage.setPos(lastPos + move);
           }
-//          if (mouseEvent->buttons() & Qt::RightButton)
-//          {
-//              if (move.y() < 0)
-//              {
-//                  zoomIn((float)1.02);
-//              }
-//              else
-//              {
-//                  zoomOut((float)1.02);
-//              }
-//          }
       }
       else if(chooseMoveObj == 1)
       {
@@ -377,6 +367,8 @@ void ImageScene::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
 
 
       }
+      update();
+//	  update();
 
 }
 
@@ -394,6 +386,7 @@ void ImageScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
 
     movingImage = false;
     movingMatchiingImage = false;
+
 
 }
 
@@ -416,6 +409,7 @@ void ImageScene::wheelEvent(QGraphicsSceneWheelEvent *wheelEvent)
         else
             zoomOutMatching( (float)1.03);
     }
+    this->update();
 }
 
 void ImageScene::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *mouseEvent)
@@ -423,8 +417,9 @@ void ImageScene::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *mouseEvent)
     if(isOpenMouse == false)
         return;
     QGraphicsScene::mouseDoubleClickEvent(mouseEvent);
-    //pixImage.resetTransform();
-	emit doubleclicked1(this);
+  //  pixImage.resetTransform();
+    emit doubleclicked1(this);
+
 }
 
 void ImageScene::show_otherItem()

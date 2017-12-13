@@ -6,7 +6,8 @@
 
 class LassoWidget : public QWidget
 {
-    Q_OBJECT
+  
+	Q_OBJECT
 public:
     explicit LassoWidget(QWidget* parent = 0);
     enum State

@@ -17,7 +17,7 @@ CXXFLAGS      = -nologo -Zc:wchar_t -FS -Zc:strictStrings -Zc:throwingNew -O2 -M
 INCPATH       = -I. -IUrAPI -IThirdLib\libmodbus\windows64\includes -IThirdLib\OpenCVMSVC2015_x64\include -IThirdLib\OpenCVMSVC2015_x64\include\opencv -IThirdLib\OpenCVMSVC2015_x64\include\opencv2 -IThirdLib\eigen-eigen-07105f7124f9 -IThirdLib\DCMTK3.6.0x64\include -IThirdLib\DCMTK3.6.0x64\include\dcmtk -IThirdLib\DCMTK3.6.0x64\include\dcmtk\config -IThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmdata\libi2d -IThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmdata -IThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmimage -IThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmimgle -IThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmjpeg -IThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmjpls -IThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmnet -IThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmpstat -IThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmqrdb -IThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmsign -IThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmsr -IThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmtls -IThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmwlm -IThirdLib\DCMTK3.6.0x64\include\dcmtk\oflog -IThirdLib\DCMTK3.6.0x64\include\dcmtk\oflog\config -IThirdLib\DCMTK3.6.0x64\include\dcmtk\oflog\helpers -IThirdLib\DCMTK3.6.0x64\include\dcmtk\oflog\spi -IThirdLib\DCMTK3.6.0x64\include\dcmtk\ofstd -ID:\Qt\Qt5.7.0\5.7\msvc2015_64\include -ID:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtOpenGL -ID:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets -ID:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui -ID:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtANGLE -ID:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork -ID:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore -Irelease -I. -ID:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\win32-msvc2015 
 LINKER        = link
 LFLAGS        = /NOLOGO /DYNAMICBASE /NXCOMPAT /INCREMENTAL:NO /SUBSYSTEM:WINDOWS "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'"
-LIBS          = /LIBPATH:D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\qtmain.lib /LIBPATH:C:\utils\postgresql\pgsql\lib /LIBPATH:C:\utils\my_sql\my_sql\lib shell32.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\libmodbus\windows64\lib\libmodbus.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_calib3d2413.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_contrib2413.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_core2413.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_features2d2413.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_flann2413.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_gpu2413.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_highgui2413.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_imgproc2413.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_legacy2413.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_ml2413.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_nonfree2413.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_objdetect2413.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_ocl2413.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_photo2413.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_stitching2413.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_superres2413.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_ts2413.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_video2413.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_videostab2413.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\NetAPI32.Lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\WSock32.Lib ws2_32.lib Advapi32.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\charls.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmdata.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmdsig.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmimage.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmimgle.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmjpeg.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmjpls.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmnet.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmpstat.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmqrdb.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmsr.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmtls.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmwlm.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\ijg8.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\ijg12.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\ijg16.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\libi2d.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\oflog.lib E:\BUAA\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\ofstd.lib D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\Qt5OpenGL.lib D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\Qt5Widgets.lib D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\Qt5Gui.lib D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\Qt5Network.lib D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\Qt5Core.lib 
+LIBS          = /LIBPATH:D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\qtmain.lib /LIBPATH:C:\utils\postgresql\pgsql\lib /LIBPATH:C:\utils\my_sql\my_sql\lib shell32.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\libmodbus\windows64\lib\libmodbus.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_calib3d2413.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_contrib2413.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_core2413.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_features2d2413.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_flann2413.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_gpu2413.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_highgui2413.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_imgproc2413.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_legacy2413.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_ml2413.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_nonfree2413.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_objdetect2413.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_ocl2413.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_photo2413.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_stitching2413.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_superres2413.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_ts2413.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_video2413.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\OpenCVMSVC2015_x64\x64\vc14\lib\opencv_videostab2413.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\NetAPI32.Lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\WSock32.Lib ws2_32.lib Advapi32.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\charls.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmdata.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmdsig.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmimage.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmimgle.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmjpeg.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmjpls.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmnet.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmpstat.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmqrdb.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmsr.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmtls.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\dcmwlm.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\ijg8.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\ijg12.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\ijg16.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\libi2d.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\oflog.lib C:\Demo\ACLRecontructQt_Cmake\SCR\ThirdLib\DCMTK3.6.0x64\lib\release\ofstd.lib D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\Qt5OpenGL.lib D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\Qt5Widgets.lib D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\Qt5Gui.lib D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\Qt5Network.lib D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\Qt5Core.lib 
 QMAKE         = D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\qmake.exe
 IDC           = idc
 IDL           = midl
@@ -183,17 +183,145 @@ DESTDIR_TARGET = release\ACLReconstruction.exe
 
 .SUFFIXES: .c .cpp .cc .cxx
 
-.cpp.obj:
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fo$@ $<
+{fileWatcher}.cpp{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
 
-.cc.obj:
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fo$@ $<
+{fileWatcher}.cc{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
 
-.cxx.obj:
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fo$@ $<
+{fileWatcher}.cxx{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
 
-.c.obj:
-	$(CC) -c $(CFLAGS) $(INCPATH) -Fo$@ $<
+{fileWatcher}.c{release\}.obj::
+	$(CC) -c $(CFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{carm}.cpp{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{carm}.cc{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{carm}.cxx{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{carm}.c{release\}.obj::
+	$(CC) -c $(CFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{UrAPI}.cpp{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{UrAPI}.cc{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{UrAPI}.cxx{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{UrAPI}.c{release\}.obj::
+	$(CC) -c $(CFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{CArmAngleCalCuLate}.cpp{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{CArmAngleCalCuLate}.cc{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{CArmAngleCalCuLate}.cxx{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{CArmAngleCalCuLate}.c{release\}.obj::
+	$(CC) -c $(CFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{release}.cpp{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{release}.cc{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{release}.cxx{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{release}.c{release\}.obj::
+	$(CC) -c $(CFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{.}.cpp{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{.}.cc{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{.}.cxx{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{.}.c{release\}.obj::
+	$(CC) -c $(CFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{captureVideo}.cpp{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{captureVideo}.cc{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{captureVideo}.cxx{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{captureVideo}.c{release\}.obj::
+	$(CC) -c $(CFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
 
 ####### Build rules
 
@@ -517,7 +645,6 @@ release\qrc_resources.cpp: resources.qrc \
 		Resources\resource\Femur_disable.png \
 		Resources\resource\Tibia_enable.png \
 		Resources\resource\icon-capture.png \
-		Resources\resource\Xspot.png \
 		Resources\resource\Tibia_disable.png \
 		Resources\resource\bkgNull.png \
 		Resources\resource\Femur_enable.png
@@ -1084,53 +1211,9 @@ release\moc_ACLwidget.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QWidg
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdialog.h \
 		ui_dialog_setting.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QAction \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qaction.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QApplication \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGridLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGroupBox \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgroupbox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvalidator.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qslider.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLineEdit \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlineedit.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextcursor.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextformat.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QPushButton \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QRadioButton \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qradiobutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
 		ThirdLib\OpenCVMSVC2015_x64\include\opencv\highgui.h \
 		UrAPI\ur_class_test.h \
 		ui_ur_class_test.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QFormLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qformlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QFrame \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QSlider \
 		UrAPI\UR_interface.h \
 		UrAPI\mythread.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QSettings \
@@ -1139,7 +1222,7 @@ release\moc_ACLwidget.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QWidg
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsPixmapItem \
 		ACLwidget.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe
-	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/BUAA/ACLRecontructQt_Cmake/SCR -IE:/BUAA/ACLRecontructQt_Cmake/SCR/UrAPI -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore ACLwidget.h -o release\moc_ACLwidget.cpp
+	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Demo/ACLRecontructQt_Cmake/SCR -IC:/Demo/ACLRecontructQt_Cmake/SCR/UrAPI -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore ACLwidget.h -o release\moc_ACLwidget.cpp
 
 release\moc_ImageScene.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsLineItem \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgraphicsitem.h \
@@ -1491,7 +1574,7 @@ release\moc_ImageScene.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGra
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QPen \
 		ImageScene.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe
-	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/BUAA/ACLRecontructQt_Cmake/SCR -IE:/BUAA/ACLRecontructQt_Cmake/SCR/UrAPI -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore ImageScene.h -o release\moc_ImageScene.cpp
+	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Demo/ACLRecontructQt_Cmake/SCR -IC:/Demo/ACLRecontructQt_Cmake/SCR/UrAPI -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore ImageScene.h -o release\moc_ImageScene.cpp
 
 release\moc_imagescene_femur_lat.cpp: ImageScene.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsLineItem \
@@ -1849,7 +1932,7 @@ release\moc_imagescene_femur_lat.cpp: ImageScene.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qfontmetrics.h \
 		imagescene_femur_lat.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe
-	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/BUAA/ACLRecontructQt_Cmake/SCR -IE:/BUAA/ACLRecontructQt_Cmake/SCR/UrAPI -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore imagescene_femur_lat.h -o release\moc_imagescene_femur_lat.cpp
+	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Demo/ACLRecontructQt_Cmake/SCR -IC:/Demo/ACLRecontructQt_Cmake/SCR/UrAPI -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore imagescene_femur_lat.h -o release\moc_imagescene_femur_lat.cpp
 
 release\moc_thread_get_ndi_marker.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QThread \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qthread.h \
@@ -2285,7 +2368,7 @@ release\moc_thread_get_ndi_marker.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtC
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QTextStream \
 		thread_get_ndi_marker.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe
-	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/BUAA/ACLRecontructQt_Cmake/SCR -IE:/BUAA/ACLRecontructQt_Cmake/SCR/UrAPI -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore thread_get_ndi_marker.h -o release\moc_thread_get_ndi_marker.cpp
+	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Demo/ACLRecontructQt_Cmake/SCR -IC:/Demo/ACLRecontructQt_Cmake/SCR/UrAPI -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore thread_get_ndi_marker.h -o release\moc_thread_get_ndi_marker.cpp
 
 release\moc_capturevideowidget.cpp: ThirdLib\eigen-eigen-07105f7124f9\Eigen\Eigen \
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\Dense \
@@ -2656,7 +2739,7 @@ release\moc_capturevideowidget.cpp: ThirdLib\eigen-eigen-07105f7124f9\Eigen\Eige
 		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\highgui\highgui_c.h \
 		captureVideo\capturevideowidget.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe
-	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/BUAA/ACLRecontructQt_Cmake/SCR -IE:/BUAA/ACLRecontructQt_Cmake/SCR/UrAPI -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore captureVideo\capturevideowidget.h -o release\moc_capturevideowidget.cpp
+	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Demo/ACLRecontructQt_Cmake/SCR -IC:/Demo/ACLRecontructQt_Cmake/SCR/UrAPI -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore captureVideo\capturevideowidget.h -o release\moc_capturevideowidget.cpp
 
 release\moc_lassowidget.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QRect \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qrect.h \
@@ -2758,7 +2841,7 @@ release\moc_lassowidget.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QRect 
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
 		captureVideo\lassowidget.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe
-	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/BUAA/ACLRecontructQt_Cmake/SCR -IE:/BUAA/ACLRecontructQt_Cmake/SCR/UrAPI -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore captureVideo\lassowidget.h -o release\moc_lassowidget.cpp
+	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Demo/ACLRecontructQt_Cmake/SCR -IC:/Demo/ACLRecontructQt_Cmake/SCR/UrAPI -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore captureVideo\lassowidget.h -o release\moc_lassowidget.cpp
 
 release\moc_imagescene_femur_ap.cpp: ImageScene.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsLineItem \
@@ -3116,7 +3199,7 @@ release\moc_imagescene_femur_ap.cpp: ImageScene.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qfontmetrics.h \
 		imagescene_femur_ap.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe
-	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/BUAA/ACLRecontructQt_Cmake/SCR -IE:/BUAA/ACLRecontructQt_Cmake/SCR/UrAPI -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore imagescene_femur_ap.h -o release\moc_imagescene_femur_ap.cpp
+	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Demo/ACLRecontructQt_Cmake/SCR -IC:/Demo/ACLRecontructQt_Cmake/SCR/UrAPI -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore imagescene_femur_ap.h -o release\moc_imagescene_femur_ap.cpp
 
 release\moc_imagescene_Tibia_ap.cpp: ImageScene.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsLineItem \
@@ -3469,7 +3552,7 @@ release\moc_imagescene_Tibia_ap.cpp: ImageScene.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QPen \
 		imagescene_Tibia_ap.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe
-	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/BUAA/ACLRecontructQt_Cmake/SCR -IE:/BUAA/ACLRecontructQt_Cmake/SCR/UrAPI -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore imagescene_Tibia_ap.h -o release\moc_imagescene_Tibia_ap.cpp
+	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Demo/ACLRecontructQt_Cmake/SCR -IC:/Demo/ACLRecontructQt_Cmake/SCR/UrAPI -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore imagescene_Tibia_ap.h -o release\moc_imagescene_Tibia_ap.cpp
 
 release\moc_imagescene_Tibia_lat.cpp: ImageScene.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsLineItem \
@@ -3822,7 +3905,7 @@ release\moc_imagescene_Tibia_lat.cpp: ImageScene.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QPen \
 		imagescene_Tibia_lat.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe
-	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/BUAA/ACLRecontructQt_Cmake/SCR -IE:/BUAA/ACLRecontructQt_Cmake/SCR/UrAPI -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore imagescene_Tibia_lat.h -o release\moc_imagescene_Tibia_lat.cpp
+	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Demo/ACLRecontructQt_Cmake/SCR -IC:/Demo/ACLRecontructQt_Cmake/SCR/UrAPI -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore imagescene_Tibia_lat.h -o release\moc_imagescene_Tibia_lat.cpp
 
 release\moc_dialog_setting.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdialog.h \
@@ -3923,60 +4006,6 @@ release\moc_dialog_setting.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvector2d.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
 		ui_dialog_setting.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QVariant \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QAction \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qaction.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qicon.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QApplication \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qeventloop.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGridLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGroupBox \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgroupbox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qframe.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvalidator.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qslider.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLabel \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlabel.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLineEdit \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlineedit.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextcursor.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextformat.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpen.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextoption.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QPushButton \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QRadioButton \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qradiobutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QWidget \
 		thread_get_ndi_marker.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QThread \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qthread.h \
@@ -4213,8 +4242,10 @@ release\moc_dialog_setting.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qtemporarydir.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QScopedPointer \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qtemporaryfile.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractproxymodel.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qidentityproxymodel.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsortfilterproxymodel.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qstringlistmodel.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qjsonarray.h \
@@ -4222,8 +4253,10 @@ release\moc_dialog_setting.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qjsondocument.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qjsonobject.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstracteventdispatcher.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qeventloop.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractnativeeventfilter.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qbasictimer.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmath.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmetaobject.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmimedata.h \
@@ -4276,6 +4309,7 @@ release\moc_dialog_setting.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qlinkedlist.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmessageauthenticationcode.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qqueue.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qscopedvaluerollback.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qstack.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qtextboundaryfinder.h \
@@ -4289,6 +4323,7 @@ release\moc_dialog_setting.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QSharedDataPointer \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QString \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QUrl \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QVariant \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qhttpmultipart.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QByteArray \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QIODevice \
@@ -4336,7 +4371,7 @@ release\moc_dialog_setting.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QTextStream \
 		dialog_setting.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe
-	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/BUAA/ACLRecontructQt_Cmake/SCR -IE:/BUAA/ACLRecontructQt_Cmake/SCR/UrAPI -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore dialog_setting.h -o release\moc_dialog_setting.cpp
+	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Demo/ACLRecontructQt_Cmake/SCR -IC:/Demo/ACLRecontructQt_Cmake/SCR/UrAPI -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore dialog_setting.h -o release\moc_dialog_setting.cpp
 
 release\moc_mythread.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QThread \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qthread.h \
@@ -4439,63 +4474,6 @@ release\moc_mythread.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QThread \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
 		UrAPI\ur_class_test.h \
 		ui_ur_class_test.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QVariant \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QAction \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qaction.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qicon.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QApplication \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qeventloop.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QFormLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qformlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QFrame \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qframe.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGridLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGroupBox \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgroupbox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvalidator.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qslider.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLabel \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlabel.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLineEdit \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlineedit.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextcursor.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextformat.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpen.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextoption.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QPushButton \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QSlider \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
 		UrAPI\UR_interface.h \
 		UrAPI\mythread.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QDebug \
@@ -4503,12 +4481,16 @@ release\moc_mythread.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QThread \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsettings.h \
 		UrAPI\mythread.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe
-	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/BUAA/ACLRecontructQt_Cmake/SCR -IE:/BUAA/ACLRecontructQt_Cmake/SCR/UrAPI -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore UrAPI\mythread.h -o release\moc_mythread.cpp
+	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Demo/ACLRecontructQt_Cmake/SCR -IC:/Demo/ACLRecontructQt_Cmake/SCR/UrAPI -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore UrAPI\mythread.h -o release\moc_mythread.cpp
 
 release\moc_ur_class_test.cpp: ui_ur_class_test.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QVariant \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qvariant.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qatomic.h \
+		UrAPI\UR_interface.h \
+		UrAPI\mythread.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QThread \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qthread.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qobject.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qobjectdefs.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qnamespace.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qglobal.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qconfig.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qfeatures.h \
@@ -4521,21 +4503,22 @@ release\moc_ur_class_test.cpp: ui_ur_class_test.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsysinfo.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qlogging.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qflags.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qglobalstatic.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmutex.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qnumeric.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qversiontagging.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qatomic.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qbasicatomic.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qatomic_bootstrap.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qgenericatomic.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qatomic_cxx11.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qatomic_msvc.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qbytearray.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qrefcount.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qnamespace.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qarraydata.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qglobalstatic.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmutex.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qnumeric.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qversiontagging.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qobjectdefs_impl.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qstring.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qchar.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qbytearray.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qrefcount.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qarraydata.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qstringbuilder.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qlist.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qalgorithms.h \
@@ -4546,31 +4529,13 @@ release\moc_ur_class_test.cpp: ui_ur_class_test.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qstringlist.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qregexp.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qstringmatcher.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcoreevent.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qscopedpointer.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmetatype.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qvarlengtharray.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcontainerfwd.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qobjectdefs.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qobjectdefs_impl.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmap.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qdebug.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qhash.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qtextstream.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qiodevice.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qobject.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcoreevent.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qscopedpointer.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qobject_impl.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qlocale.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qshareddata.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qvector.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qpoint.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qset.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcontiguouscache.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsharedpointer.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsharedpointer_impl.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QAction \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qaction.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qkeysequence.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QWidget \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qwidget.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qwindowdefs.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qwindowdefs_win.h \
@@ -4578,99 +4543,55 @@ release\moc_ur_class_test.cpp: ui_ur_class_test.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpaintdevice.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qrect.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsize.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qpoint.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpalette.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qcolor.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qrgb.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qrgba64.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qbrush.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qvector.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qmatrix.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpolygon.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qregion.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qdatastream.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qiodevice.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qline.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtransform.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpainterpath.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qimage.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpixelformat.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpixmap.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsharedpointer.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qshareddata.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qhash.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsharedpointer_impl.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qfont.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qfontmetrics.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qfontinfo.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qsizepolicy.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qcursor.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qkeysequence.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qevent.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qvariant.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmap.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qdebug.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qtextstream.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qlocale.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qset.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcontiguouscache.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qurl.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qurlquery.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qfile.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qfiledevice.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvector2d.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qicon.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QApplication \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qeventloop.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QFormLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qformlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QFrame \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qframe.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGridLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGroupBox \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgroupbox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvalidator.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qslider.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLabel \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlabel.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLineEdit \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlineedit.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextcursor.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextformat.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpen.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextoption.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QPushButton \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QSlider \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QWidget \
-		UrAPI\UR_interface.h \
-		UrAPI\mythread.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QThread \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qthread.h \
 		UrAPI\ur_class_test.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QDebug \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QSettings \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsettings.h \
 		UrAPI\ur_class_test.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe
-	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/BUAA/ACLRecontructQt_Cmake/SCR -IE:/BUAA/ACLRecontructQt_Cmake/SCR/UrAPI -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore UrAPI\ur_class_test.h -o release\moc_ur_class_test.cpp
+	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Demo/ACLRecontructQt_Cmake/SCR -IC:/Demo/ACLRecontructQt_Cmake/SCR/UrAPI -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore UrAPI\ur_class_test.h -o release\moc_ur_class_test.cpp
 
 release\moc_widget.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QWidget \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qwidget.h \
@@ -4980,7 +4901,7 @@ release\moc_widget.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QWidget 
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigenvalues\SelfAdjointEigenSolver_MKL.h \
 		CArmAngleCalCuLate\widget.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe
-	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/BUAA/ACLRecontructQt_Cmake/SCR -IE:/BUAA/ACLRecontructQt_Cmake/SCR/UrAPI -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore CArmAngleCalCuLate\widget.h -o release\moc_widget.cpp
+	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Demo/ACLRecontructQt_Cmake/SCR -IC:/Demo/ACLRecontructQt_Cmake/SCR/UrAPI -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore CArmAngleCalCuLate\widget.h -o release\moc_widget.cpp
 
 release\moc_FileSystemWatcher.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QObject \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qobject.h \
@@ -5079,7 +5000,7 @@ release\moc_FileSystemWatcher.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\
 		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\contrib\openfabmap.hpp \
 		fileWatcher\FileSystemWatcher.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe
-	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/BUAA/ACLRecontructQt_Cmake/SCR -IE:/BUAA/ACLRecontructQt_Cmake/SCR/UrAPI -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore fileWatcher\FileSystemWatcher.h -o release\moc_FileSystemWatcher.cpp
+	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Demo/ACLRecontructQt_Cmake/SCR -IC:/Demo/ACLRecontructQt_Cmake/SCR/UrAPI -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore fileWatcher\FileSystemWatcher.h -o release\moc_FileSystemWatcher.cpp
 
 release\moc_imagescene_camera.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsScene \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgraphicsscene.h \
@@ -5346,7 +5267,7 @@ release\moc_imagescene_camera.cpp: D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidge
 		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\eigen.hpp \
 		imagescene_camera.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe
-	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/BUAA/ACLRecontructQt_Cmake/SCR -IE:/BUAA/ACLRecontructQt_Cmake/SCR/UrAPI -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IE:/BUAA/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore imagescene_camera.h -o release\moc_imagescene_camera.cpp
+	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Demo/ACLRecontructQt_Cmake/SCR -IC:/Demo/ACLRecontructQt_Cmake/SCR/UrAPI -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/libmodbus/windows64/includes -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/OpenCVMSVC2015_x64/include/opencv2 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/eigen-eigen-07105f7124f9 -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata/libi2d -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmdata -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimage -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmimgle -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpeg -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmjpls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmnet -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmpstat -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmqrdb -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsign -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmsr -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmtls -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/dcmwlm -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/config -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/helpers -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/oflog/spi -IC:/Demo/ACLRecontructQt_Cmake/SCR/ThirdLib/DCMTK3.6.0x64/include/dcmtk/ofstd -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtOpenGL -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore imagescene_camera.h -o release\moc_imagescene_camera.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -6345,60 +6266,21 @@ release\main.obj: main.cpp ACLwidget.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdialog.h \
 		ui_dialog_setting.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QAction \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qaction.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QApplication \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGridLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGroupBox \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgroupbox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvalidator.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qslider.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLineEdit \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlineedit.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextcursor.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextformat.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QPushButton \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QRadioButton \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qradiobutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
 		ThirdLib\OpenCVMSVC2015_x64\include\opencv\highgui.h \
 		UrAPI/ur_class_test.h \
 		ui_ur_class_test.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QFormLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qformlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QFrame \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QSlider \
 		UrAPI/UR_interface.h \
 		UrAPI/mythread.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QSettings \
 		CArmAngleCalCuLate/widget.h \
 		imagescene_camera.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsPixmapItem \
-		FileSystemWatcher.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QApplication \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
+		fileWatcher/FileSystemWatcher.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QMap \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QFileSystemWatcher \
 		UrAPI/socket.h \
@@ -6412,7 +6294,6 @@ release\main.obj: main.cpp ACLwidget.h \
 		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\contrib\contrib.hpp \
 		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\contrib\retina.hpp \
 		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\contrib\openfabmap.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\main.obj main.cpp
 
 release\ACLwidget.obj: ACLwidget.cpp ACLwidget.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QWidget \
@@ -6973,53 +6854,9 @@ release\ACLwidget.obj: ACLwidget.cpp ACLwidget.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdialog.h \
 		ui_dialog_setting.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QAction \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qaction.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QApplication \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGridLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGroupBox \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgroupbox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvalidator.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qslider.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLineEdit \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlineedit.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextcursor.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextformat.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QPushButton \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QRadioButton \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qradiobutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
 		ThirdLib\OpenCVMSVC2015_x64\include\opencv\highgui.h \
 		UrAPI/ur_class_test.h \
 		ui_ur_class_test.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QFormLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qformlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QFrame \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QSlider \
 		UrAPI/UR_interface.h \
 		UrAPI/mythread.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QSettings \
@@ -7027,13 +6864,6 @@ release\ACLwidget.obj: ACLwidget.cpp ACLwidget.h \
 		imagescene_camera.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsPixmapItem \
 		ui_ACLwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QComboBox \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qcombobox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsView \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgraphicsview.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qscrollarea.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QTabWidget \
-		navilabel.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QMessageBox \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qmessagebox.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QFileDialog.h \
@@ -7122,8 +6952,8 @@ release\ACLwidget.obj: ACLwidget.cpp ACLwidget.h \
 		ThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmimgle\dibaslut.h \
 		ThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmimgle\dimoopx.h \
 		ThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmimgle\didispfn.h \
-		carm/ImageRectify.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ACLwidget.obj ACLwidget.cpp
+		carm/ImageRectify.h \
+		navilabel.h
 
 release\ImageScene.obj: ImageScene.cpp ImageScene.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsLineItem \
@@ -7595,7 +7425,6 @@ release\ImageScene.obj: ImageScene.cpp ImageScene.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QMessageBox \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qmessagebox.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgraphicseffect.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ImageScene.obj ImageScene.cpp
 
 release\imagescene_femur_lat.obj: imagescene_femur_lat.cpp imagescene_femur_lat.h \
 		ImageScene.h \
@@ -7952,7 +7781,6 @@ release\imagescene_femur_lat.obj: imagescene_femur_lat.cpp imagescene_femur_lat.
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextoption.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qfontinfo.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qfontmetrics.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\imagescene_femur_lat.obj imagescene_femur_lat.cpp
 
 release\tablesketch_item.obj: tablesketch_item.cpp tablesketch_item.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsItem \
@@ -8044,7 +7872,6 @@ release\tablesketch_item.obj: tablesketch_item.cpp tablesketch_item.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qfontinfo.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qfont.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qfontmetrics.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\tablesketch_item.obj tablesketch_item.cpp
 
 release\thread_get_ndi_marker.obj: thread_get_ndi_marker.cpp thread_get_ndi_marker.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QThread \
@@ -8480,7 +8307,6 @@ release\thread_get_ndi_marker.obj: thread_get_ndi_marker.cpp thread_get_ndi_mark
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QFile \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QTextStream \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QDebug
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\thread_get_ndi_marker.obj thread_get_ndi_marker.cpp
 
 release\DxMath.obj: carm\DxMath.cpp carm/DxMath.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QtMath \
@@ -8507,7 +8333,6 @@ release\DxMath.obj: carm\DxMath.cpp carm/DxMath.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmutex.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qnumeric.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qversiontagging.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\DxMath.obj carm\DxMath.cpp
 
 release\DxPoint.obj: carm\DxPoint.cpp D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QXmlStreamReader \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qxmlstream.h \
@@ -8569,7 +8394,6 @@ release\DxPoint.obj: carm\DxPoint.cpp D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCo
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QXmlStreamWriter \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QStringlist \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QString
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\DxPoint.obj carm\DxPoint.cpp
 
 release\ImageRectify.obj: carm\ImageRectify.cpp carm/ImageRectify.h \
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\Eigen \
@@ -8827,7 +8651,6 @@ release\ImageRectify.obj: carm\ImageRectify.cpp carm/ImageRectify.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qnumeric.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qversiontagging.h \
 		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\legacy\compat.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ImageRectify.obj carm\ImageRectify.cpp
 
 release\capturevideowidget.obj: captureVideo\capturevideowidget.cpp captureVideo/capturevideowidget.h \
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\Eigen \
@@ -9221,50 +9044,6 @@ release\capturevideowidget.obj: captureVideo\capturevideowidget.cpp captureVideo
 		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\contrib\retina.hpp \
 		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\contrib\openfabmap.hpp \
 		ui_capturevideowidget.h \
-		captureVideo/lassowidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QRect \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QVariant \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QAction \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qaction.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qicon.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QApplication \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QCheckBox \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qcheckbox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QFrame \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGroupBox \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgroupbox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvalidator.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qslider.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QPushButton \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QRadioButton \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qradiobutton.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QDebug \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QMessageBox \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qmessagebox.h \
@@ -9345,7 +9124,6 @@ release\capturevideowidget.obj: captureVideo\capturevideowidget.cpp captureVideo
 		ThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmimgle\didispfn.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QSettings \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsettings.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\capturevideowidget.obj captureVideo\capturevideowidget.cpp
 
 release\lassowidget.obj: captureVideo\lassowidget.cpp captureVideo/lassowidget.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QRect \
@@ -9451,7 +9229,6 @@ release\lassowidget.obj: captureVideo\lassowidget.cpp captureVideo/lassowidget.h
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpainter.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextoption.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpen.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\lassowidget.obj captureVideo\lassowidget.cpp
 
 release\imagescene_femur_ap.obj: imagescene_femur_ap.cpp imagescene_femur_AP.h \
 		ImageScene.h \
@@ -9808,7 +9585,6 @@ release\imagescene_femur_ap.obj: imagescene_femur_ap.cpp imagescene_femur_AP.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextoption.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qfontinfo.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qfontmetrics.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\imagescene_femur_ap.obj imagescene_femur_ap.cpp
 
 release\imagescene_Tibia_ap.obj: imagescene_Tibia_ap.cpp imagescene_Tibia_ap.h \
 		ImageScene.h \
@@ -10160,7 +9936,6 @@ release\imagescene_Tibia_ap.obj: imagescene_Tibia_ap.cpp imagescene_Tibia_ap.h \
 		needle.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsItem \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QPen
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\imagescene_Tibia_ap.obj imagescene_Tibia_ap.cpp
 
 release\imagescene_Tibia_lat.obj: imagescene_Tibia_lat.cpp imagescene_Tibia_lat.h \
 		ImageScene.h \
@@ -10512,7 +10287,6 @@ release\imagescene_Tibia_lat.obj: imagescene_Tibia_lat.cpp imagescene_Tibia_lat.
 		needle.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsItem \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QPen
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\imagescene_Tibia_lat.obj imagescene_Tibia_lat.cpp
 
 release\dialog_setting.obj: dialog_setting.cpp dialog_setting.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QDialog \
@@ -10614,60 +10388,6 @@ release\dialog_setting.obj: dialog_setting.cpp dialog_setting.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvector2d.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
 		ui_dialog_setting.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QVariant \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QAction \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qaction.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qicon.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QApplication \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qeventloop.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGridLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGroupBox \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgroupbox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qframe.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvalidator.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qslider.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLabel \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlabel.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLineEdit \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlineedit.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextcursor.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextformat.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpen.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextoption.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QPushButton \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QRadioButton \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qradiobutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QWidget \
 		thread_get_ndi_marker.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QThread \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qthread.h \
@@ -10904,8 +10624,10 @@ release\dialog_setting.obj: dialog_setting.cpp dialog_setting.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qtemporarydir.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QScopedPointer \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qtemporaryfile.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractproxymodel.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qidentityproxymodel.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsortfilterproxymodel.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qstringlistmodel.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qjsonarray.h \
@@ -10913,8 +10635,10 @@ release\dialog_setting.obj: dialog_setting.cpp dialog_setting.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qjsondocument.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qjsonobject.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstracteventdispatcher.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qeventloop.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractnativeeventfilter.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qbasictimer.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmath.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmetaobject.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmimedata.h \
@@ -10967,6 +10691,7 @@ release\dialog_setting.obj: dialog_setting.cpp dialog_setting.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qlinkedlist.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmessageauthenticationcode.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qqueue.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qscopedvaluerollback.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qstack.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qtextboundaryfinder.h \
@@ -10980,6 +10705,7 @@ release\dialog_setting.obj: dialog_setting.cpp dialog_setting.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QSharedDataPointer \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QString \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QUrl \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QVariant \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qhttpmultipart.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QByteArray \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QIODevice \
@@ -11025,7 +10751,6 @@ release\dialog_setting.obj: dialog_setting.cpp dialog_setting.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qtnetworkversion.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QFile \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QTextStream
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\dialog_setting.obj dialog_setting.cpp
 
 release\mythread.obj: UrAPI\mythread.cpp UrAPI/mythread.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QThread \
@@ -11129,77 +10854,22 @@ release\mythread.obj: UrAPI\mythread.cpp UrAPI/mythread.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
 		UrAPI/ur_class_test.h \
 		ui_ur_class_test.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QVariant \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QAction \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qaction.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qicon.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QApplication \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qeventloop.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QFormLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qformlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QFrame \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qframe.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGridLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGroupBox \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgroupbox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvalidator.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qslider.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLabel \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlabel.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLineEdit \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlineedit.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextcursor.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextformat.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpen.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextoption.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QPushButton \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QSlider \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
 		UrAPI/UR_interface.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QDebug \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QSettings \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsettings.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\mythread.obj UrAPI\mythread.cpp
 
 release\socket.obj: UrAPI\socket.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\socket.obj UrAPI\socket.cpp
 
 release\ur_class_test.obj: UrAPI\ur_class_test.cpp UrAPI/ur_class_test.h \
 		ui_ur_class_test.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QVariant \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qvariant.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qatomic.h \
+		UrAPI/UR_interface.h \
+		UrAPI/mythread.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QThread \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qthread.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qobject.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qobjectdefs.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qnamespace.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qglobal.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qconfig.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qfeatures.h \
@@ -11212,21 +10882,22 @@ release\ur_class_test.obj: UrAPI\ur_class_test.cpp UrAPI/ur_class_test.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsysinfo.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qlogging.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qflags.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qglobalstatic.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmutex.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qnumeric.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qversiontagging.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qatomic.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qbasicatomic.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qatomic_bootstrap.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qgenericatomic.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qatomic_cxx11.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qatomic_msvc.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qbytearray.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qrefcount.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qnamespace.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qarraydata.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qglobalstatic.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmutex.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qnumeric.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qversiontagging.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qobjectdefs_impl.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qstring.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qchar.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qbytearray.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qrefcount.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qarraydata.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qstringbuilder.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qlist.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qalgorithms.h \
@@ -11237,31 +10908,13 @@ release\ur_class_test.obj: UrAPI\ur_class_test.cpp UrAPI/ur_class_test.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qstringlist.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qregexp.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qstringmatcher.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcoreevent.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qscopedpointer.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmetatype.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qvarlengtharray.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcontainerfwd.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qobjectdefs.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qobjectdefs_impl.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmap.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qdebug.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qhash.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qtextstream.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qiodevice.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qobject.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcoreevent.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qscopedpointer.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qobject_impl.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qlocale.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qshareddata.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qvector.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qpoint.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qset.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcontiguouscache.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsharedpointer.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsharedpointer_impl.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QAction \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qaction.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qkeysequence.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QWidget \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qwidget.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qwindowdefs.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qwindowdefs_win.h \
@@ -11269,100 +10922,54 @@ release\ur_class_test.obj: UrAPI\ur_class_test.cpp UrAPI/ur_class_test.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpaintdevice.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qrect.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsize.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qpoint.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpalette.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qcolor.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qrgb.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qrgba64.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qbrush.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qvector.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qmatrix.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpolygon.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qregion.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qdatastream.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qiodevice.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qline.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtransform.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpainterpath.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qimage.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpixelformat.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpixmap.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsharedpointer.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qshareddata.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qhash.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsharedpointer_impl.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qfont.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qfontmetrics.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qfontinfo.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qsizepolicy.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qcursor.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qkeysequence.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qevent.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qvariant.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmap.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qdebug.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qtextstream.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qlocale.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qset.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcontiguouscache.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qurl.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qurlquery.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qfile.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qfiledevice.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvector2d.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qicon.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QApplication \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qeventloop.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QFormLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qformlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QFrame \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qframe.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGridLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGroupBox \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgroupbox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvalidator.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qslider.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLabel \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlabel.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLineEdit \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlineedit.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextcursor.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextformat.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpen.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextoption.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QPushButton \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QSlider \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QWidget \
-		UrAPI/UR_interface.h \
-		UrAPI/mythread.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QThread \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qthread.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QDebug \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QSettings \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsettings.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qexception.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ur_class_test.obj UrAPI\ur_class_test.cpp
 
 release\UR_interface.obj: UrAPI\UR_interface.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\UR_interface.obj UrAPI\UR_interface.cpp
 
 release\needle.obj: needle.cpp needle.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsItem \
@@ -11456,7 +11063,6 @@ release\needle.obj: needle.cpp needle.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qfont.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qfontmetrics.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsLineItem
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\needle.obj needle.cpp
 
 release\widget.obj: CArmAngleCalCuLate\widget.cpp CArmAngleCalCuLate/widget.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QWidget \
@@ -11766,57 +11372,6 @@ release\widget.obj: CArmAngleCalCuLate\widget.cpp CArmAngleCalCuLate/widget.h \
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigenvalues\ComplexSchur_MKL.h \
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigenvalues\SelfAdjointEigenSolver_MKL.h \
 		ui_CArmwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QVariant \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QAction \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qaction.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qicon.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QApplication \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qeventloop.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QFrame \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGridLayout \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGroupBox \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgroupbox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvalidator.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qslider.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLineEdit \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlineedit.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextcursor.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextformat.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QPushButton \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QRadioButton \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qradiobutton.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QTextBrowser \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtextbrowser.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtextedit.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextdocument.h \
-		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QTextEdit \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QFileDialog \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qfiledialog.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qdir.h \
@@ -11824,6 +11379,7 @@ release\widget.obj: CArmAngleCalCuLate\widget.cpp CArmAngleCalCuLate/widget.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdialog.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QDebug \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QIcon \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qicon.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmath.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QMatrix4x4 \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qmatrix4x4.h \
@@ -11831,7 +11387,6 @@ release\widget.obj: CArmAngleCalCuLate\widget.cpp CArmAngleCalCuLate/widget.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvector4d.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qquaternion.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qgenericmatrix.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\widget.obj CArmAngleCalCuLate\widget.cpp
 
 release\DxSpatialMatching.obj: carm\DxSpatialMatching.cpp carm/DxSpatialMatching.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QVector \
@@ -12103,7 +11658,6 @@ release\DxSpatialMatching.obj: carm\DxSpatialMatching.cpp carm/DxSpatialMatching
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\StdVector \
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\StlSupport\StdVector.h \
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\StlSupport\details.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\DxSpatialMatching.obj carm\DxSpatialMatching.cpp
 
 release\FileSystemWatcher.obj: fileWatcher\FileSystemWatcher.cpp D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QDir \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qdir.h \
@@ -12173,7 +11727,7 @@ release\FileSystemWatcher.obj: fileWatcher\FileSystemWatcher.cpp D:\Qt\Qt5.7.0\5
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcontiguouscache.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsharedpointer.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsharedpointer_impl.h \
-		FileSystemWatcher.h \
+		fileWatcher/FileSystemWatcher.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QObject \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QMap \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QFileSystemWatcher \
@@ -12305,7 +11859,6 @@ release\FileSystemWatcher.obj: fileWatcher\FileSystemWatcher.cpp D:\Qt\Qt5.7.0\5
 		ThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmimgle\dimoopx.h \
 		ThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmimgle\didispfn.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qthread.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\FileSystemWatcher.obj fileWatcher\FileSystemWatcher.cpp
 
 release\imagescene_camera.obj: imagescene_camera.cpp imagescene_camera.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsScene \
@@ -12571,7 +12124,6 @@ release\imagescene_camera.obj: imagescene_camera.cpp imagescene_camera.h \
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\Minor.h \
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\MathFunctions.h \
 		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\eigen.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\imagescene_camera.obj imagescene_camera.cpp
 
 release\navilabel.obj: navilabel.cpp navilabel.h \
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\Eigen \
@@ -12875,55 +12427,38 @@ release\navilabel.obj: navilabel.cpp navilabel.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qfiledevice.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvector2d.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtouchdevice.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\navilabel.obj navilabel.cpp
 
 release\qrc_resources.obj: release\qrc_resources.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\qrc_resources.obj release\qrc_resources.cpp
 
 release\moc_ACLwidget.obj: release\moc_ACLwidget.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\moc_ACLwidget.obj release\moc_ACLwidget.cpp
 
 release\moc_ImageScene.obj: release\moc_ImageScene.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\moc_ImageScene.obj release\moc_ImageScene.cpp
 
 release\moc_imagescene_femur_lat.obj: release\moc_imagescene_femur_lat.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\moc_imagescene_femur_lat.obj release\moc_imagescene_femur_lat.cpp
 
 release\moc_thread_get_ndi_marker.obj: release\moc_thread_get_ndi_marker.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\moc_thread_get_ndi_marker.obj release\moc_thread_get_ndi_marker.cpp
 
 release\moc_capturevideowidget.obj: release\moc_capturevideowidget.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\moc_capturevideowidget.obj release\moc_capturevideowidget.cpp
 
 release\moc_lassowidget.obj: release\moc_lassowidget.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\moc_lassowidget.obj release\moc_lassowidget.cpp
 
 release\moc_imagescene_femur_ap.obj: release\moc_imagescene_femur_ap.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\moc_imagescene_femur_ap.obj release\moc_imagescene_femur_ap.cpp
 
 release\moc_imagescene_Tibia_ap.obj: release\moc_imagescene_Tibia_ap.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\moc_imagescene_Tibia_ap.obj release\moc_imagescene_Tibia_ap.cpp
 
 release\moc_imagescene_Tibia_lat.obj: release\moc_imagescene_Tibia_lat.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\moc_imagescene_Tibia_lat.obj release\moc_imagescene_Tibia_lat.cpp
 
 release\moc_dialog_setting.obj: release\moc_dialog_setting.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\moc_dialog_setting.obj release\moc_dialog_setting.cpp
 
 release\moc_mythread.obj: release\moc_mythread.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\moc_mythread.obj release\moc_mythread.cpp
 
 release\moc_ur_class_test.obj: release\moc_ur_class_test.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\moc_ur_class_test.obj release\moc_ur_class_test.cpp
 
 release\moc_widget.obj: release\moc_widget.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\moc_widget.obj release\moc_widget.cpp
 
 release\moc_FileSystemWatcher.obj: release\moc_FileSystemWatcher.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\moc_FileSystemWatcher.obj release\moc_FileSystemWatcher.cpp
 
 release\moc_imagescene_camera.obj: release\moc_imagescene_camera.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\moc_imagescene_camera.obj release\moc_imagescene_camera.cpp
 
 ####### Install
 

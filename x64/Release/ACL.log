@@ -1,138 +1,194 @@
-﻿  ACLwidget.cpp
-ACLwidget.cpp(412): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(413): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(418): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(419): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(489): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(490): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(495): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(496): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(576): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(577): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(578): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(579): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(618): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(619): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(637): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(638): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(663): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(664): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(682): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(683): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(869): warning C4100: “event”: 未引用的形参
-ACLwidget.cpp(910): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(911): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(915): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(916): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(931): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(932): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(936): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(937): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(944): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(945): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(946): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(947): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(962): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(963): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(964): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(965): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(998): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(999): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1003): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1004): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1021): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1022): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1026): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1027): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1034): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1035): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1036): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1037): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1052): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1053): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1054): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1055): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(1403): warning C4101: “alpha”: 未引用的局部变量
-ACLwidget.cpp(1402): warning C4101: “k0”: 未引用的局部变量
-ACLwidget.cpp(1450): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-ACLwidget.cpp(1459): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-ACLwidget.cpp(1655): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-ACLwidget.cpp(1657): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-ACLwidget.cpp(4290): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(4291): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(4295): warning C4305: “参数”: 从“double”到“float”截断
-ACLwidget.cpp(4296): warning C4305: “参数”: 从“double”到“float”截断
-  widget.cpp
-CArmAngleCalCuLate\widget.cpp(590): warning C4189: “temp2”: 局部变量已初始化但不引用
-CArmAngleCalCuLate\widget.cpp(591): warning C4189: “temp3”: 局部变量已初始化但不引用
-CArmAngleCalCuLate\widget.cpp(752): warning C4100: “arg1”: 未引用的形参
-CArmAngleCalCuLate\widget.cpp(757): warning C4100: “arg1”: 未引用的形参
+﻿  Moc'ing ACLwidget.h...
+  Moc'ing FileSystemWatcher.h...
+  Moc'ing ImageScene.h...
+  Moc'ing capturevideowidget.h...
+  Moc'ing dialog_setting.h...
+  Moc'ing imagescene_Tibia_ap.h...
+  Moc'ing imagescene_Tibia_lat.h...
+  Moc'ing imagescene_camera.h...
+  Moc'ing imagescene_femur_ap.h...
+  Moc'ing imagescene_femur_lat.h...
+  Moc'ing lassowidget.h...
+  Moc'ing mythread.h...
+  Moc'ing thread_get_ndi_marker.h...
+  Moc'ing ur_class_test.h...
+  Moc'ing widget.h...
+  Uic'ing ACLwidget.ui...
+  Uic'ing CArmAngleCalCuLate\CArmwidget.ui...
+  Uic'ing captureVideo\capturevideowidget.ui...
+  Uic'ing dialog_setting.ui...
+C:\Demo\ACLRecontructQt_Cmake\SCR\dialog_setting.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget1'.
+C:\Demo\ACLRecontructQt_Cmake\SCR\dialog_setting.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget2'.
+  Uic'ing UrAPI\ur_class_test.ui...
+C:\Demo\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget1'.
+C:\Demo\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget2'.
+C:\Demo\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget3'.
+C:\Demo\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget4'.
+C:\Demo\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget5'.
+C:\Demo\ACLRecontructQt_Cmake\SCR\UrAPI\ur_class_test.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget6'.
+  Rcc'ing resources.qrc...
+  ACLwidget.cpp
+ACLwidget.cpp(421): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(422): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(427): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(428): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(498): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(499): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(504): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(505): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(585): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(586): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(587): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(588): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(627): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(628): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(646): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(647): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(672): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(673): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(691): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(692): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(878): warning C4100: 'event': unreferenced formal parameter
+ACLwidget.cpp(919): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(920): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(924): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(925): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(940): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(941): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(945): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(946): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(953): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(954): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(955): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(956): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(971): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(972): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(973): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(974): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1007): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1008): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1012): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1013): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1030): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1031): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1035): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1036): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1043): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1044): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1045): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1046): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1061): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1062): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1063): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1064): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1415): warning C4101: 'alpha': unreferenced local variable
+ACLwidget.cpp(1414): warning C4101: 'k0': unreferenced local variable
+ACLwidget.cpp(1462): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+ACLwidget.cpp(1471): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+ACLwidget.cpp(1667): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+ACLwidget.cpp(1669): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+ACLwidget.cpp(4313): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(4314): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(4318): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(4319): warning C4305: 'argument': truncation from 'double' to 'float'
+  DxMath.cpp
+  DxPoint.cpp
+  DxSpatialMatching.cpp
+carm\DxSpatialMatching.cpp(74): warning C4189: 'n': local variable is initialized but not referenced
+carm\DxSpatialMatching.cpp(124): warning C4189: 'nTOTAl': local variable is initialized but not referenced
+carm\DxSpatialMatching.cpp(112): warning C4189: 'bSuccess': local variable is initialized but not referenced
+carm\DxSpatialMatching.cpp(110): warning C4189: 'nMissGroup': local variable is initialized but not referenced
+carm\DxSpatialMatching.cpp(157): warning C4189: 'bNear': local variable is initialized but not referenced
+carm\DxSpatialMatching.cpp(505): warning C4189: 'dCrossPoint_x': local variable is initialized but not referenced
+carm\DxSpatialMatching.cpp(511): warning C4189: 'bIsParaller': local variable is initialized but not referenced
+carm\DxSpatialMatching.cpp(506): warning C4189: 'dCrossPoint_y': local variable is initialized but not referenced
+carm\DxSpatialMatching.cpp(1041): warning C4189: 'fMinDistance': local variable is initialized but not referenced
+carm\DxSpatialMatching.cpp(1456): warning C4189: 'd1': local variable is initialized but not referenced
+carm\DxSpatialMatching.cpp(1473): warning C4189: 'a2': local variable is initialized but not referenced
+carm\DxSpatialMatching.cpp(1472): warning C4189: 'a1': local variable is initialized but not referenced
+carm\DxSpatialMatching.cpp(1363): warning C4189: 'bBlackPt': local variable is initialized but not referenced
+carm\DxSpatialMatching.cpp(1455): warning C4189: 'dd': local variable is initialized but not referenced
+carm\DxSpatialMatching.cpp(1471): warning C4189: 'aa': local variable is initialized but not referenced
+carm\DxSpatialMatching.cpp(1457): warning C4189: 'd2': local variable is initialized but not referenced
+carm\DxSpatialMatching.cpp(1517): warning C4189: 'i': local variable is initialized but not referenced
+  FileSystemWatcher.cpp
+fileWatcher\FileSystemWatcher.cpp(173): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+fileWatcher\FileSystemWatcher.cpp(182): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  ImageRectify.cpp
+carm\ImageRectify.cpp(141): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+carm\ImageRectify.cpp(142): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+carm\ImageRectify.cpp(237): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+carm\ImageRectify.cpp(305): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+carm\ImageRectify.cpp(419): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+carm\ImageRectify.cpp(578): warning C4189: 'nMinR': local variable is initialized but not referenced
+carm\ImageRectify.cpp(791): warning C4101: 't': unreferenced local variable
+carm\ImageRectify.cpp(960): warning C4189: 'nMinDisPtIndex': local variable is initialized but not referenced
+carm\ImageRectify.cpp(1014): warning C4189: 'nIndex': local variable is initialized but not referenced
+carm\ImageRectify.cpp(1035): warning C4189: 'fMinDis': local variable is initialized but not referenced
+carm\ImageRectify.cpp(1064): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+carm\ImageRectify.cpp(1099): warning C4100: 'nHeight': unreferenced formal parameter
   ImageScene.cpp
   moc_ACLwidget.cpp
-  moc_FileSystemWatcher.cpp
-  moc_ImageScene.cpp
   moc_capturevideowidget.cpp
   moc_dialog_setting.cpp
-  moc_imagescene_Tibia_ap.cpp
-  moc_imagescene_Tibia_lat.cpp
+  moc_FileSystemWatcher.cpp
+  moc_ImageScene.cpp
   moc_imagescene_camera.cpp
   moc_imagescene_femur_ap.cpp
   moc_imagescene_femur_lat.cpp
+  moc_imagescene_Tibia_ap.cpp
+  moc_imagescene_Tibia_lat.cpp
   moc_lassowidget.cpp
   moc_mythread.cpp
   moc_thread_get_ndi_marker.cpp
+  Generating Code...
+c:\demo\aclrecontructqt_cmake\scr\carm\dxspatialmatching.cpp(763): warning C4715: 'DxSpatialMatching::RankedPointInfo': not all control paths return a value
+  Compiling...
   moc_ur_class_test.cpp
   moc_widget.cpp
   UR_interface.cpp
-UrAPI\UR_interface.cpp(161): warning C4189: “temp2”: 局部变量已初始化但不引用
-UrAPI\UR_interface.cpp(162): warning C4189: “temp3”: 局部变量已初始化但不引用
-UrAPI\UR_interface.cpp(520): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
-  mythread.cpp
-  正在生成代码...
-  正在编译...
-  ur_class_test.cpp
+UrAPI\UR_interface.cpp(161): warning C4189: 'temp2': local variable is initialized but not referenced
+UrAPI\UR_interface.cpp(162): warning C4189: 'temp3': local variable is initialized but not referenced
+UrAPI\UR_interface.cpp(520): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   capturevideowidget.cpp
-captureVideo\capturevideowidget.cpp(206): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-captureVideo\capturevideowidget.cpp(215): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-captureVideo\capturevideowidget.cpp(275): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-captureVideo\capturevideowidget.cpp(374): warning C4100: “event”: 未引用的形参
-  lassowidget.cpp
-captureVideo\lassowidget.cpp(32): warning C4100: “event”: 未引用的形参
-captureVideo\lassowidget.cpp(42): warning C4100: “event”: 未引用的形参
-  DxSpatialMatching.cpp
-carm\DxSpatialMatching.cpp(74): warning C4189: “n”: 局部变量已初始化但不引用
-carm\DxSpatialMatching.cpp(124): warning C4189: “nTOTAl”: 局部变量已初始化但不引用
-carm\DxSpatialMatching.cpp(112): warning C4189: “bSuccess”: 局部变量已初始化但不引用
-carm\DxSpatialMatching.cpp(110): warning C4189: “nMissGroup”: 局部变量已初始化但不引用
-carm\DxSpatialMatching.cpp(157): warning C4189: “bNear”: 局部变量已初始化但不引用
-carm\DxSpatialMatching.cpp(505): warning C4189: “dCrossPoint_x”: 局部变量已初始化但不引用
-carm\DxSpatialMatching.cpp(511): warning C4189: “bIsParaller”: 局部变量已初始化但不引用
-carm\DxSpatialMatching.cpp(506): warning C4189: “dCrossPoint_y”: 局部变量已初始化但不引用
-carm\DxSpatialMatching.cpp(1041): warning C4189: “fMinDistance”: 局部变量已初始化但不引用
-carm\DxSpatialMatching.cpp(1456): warning C4189: “d1”: 局部变量已初始化但不引用
-carm\DxSpatialMatching.cpp(1473): warning C4189: “a2”: 局部变量已初始化但不引用
-carm\DxSpatialMatching.cpp(1472): warning C4189: “a1”: 局部变量已初始化但不引用
-carm\DxSpatialMatching.cpp(1363): warning C4189: “bBlackPt”: 局部变量已初始化但不引用
-carm\DxSpatialMatching.cpp(1455): warning C4189: “dd”: 局部变量已初始化但不引用
-carm\DxSpatialMatching.cpp(1471): warning C4189: “aa”: 局部变量已初始化但不引用
-carm\DxSpatialMatching.cpp(1457): warning C4189: “d2”: 局部变量已初始化但不引用
-carm\DxSpatialMatching.cpp(1517): warning C4189: “i”: 局部变量已初始化但不引用
+captureVideo\capturevideowidget.cpp(206): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+captureVideo\capturevideowidget.cpp(215): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+captureVideo\capturevideowidget.cpp(275): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+captureVideo\capturevideowidget.cpp(374): warning C4100: 'event': unreferenced formal parameter
   dialog_setting.cpp
   imagescene_Tibia_ap.cpp
+  imagescene_Tibia_lat.cpp
+  imagescene_camera.cpp
+imagescene_camera.cpp(53): warning C4100: 'mouseEvent': unreferenced formal parameter
+imagescene_camera.cpp(99): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+imagescene_camera.cpp(108): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   imagescene_femur_ap.cpp
   imagescene_femur_lat.cpp
+  lassowidget.cpp
+captureVideo\lassowidget.cpp(32): warning C4100: 'event': unreferenced formal parameter
+captureVideo\lassowidget.cpp(42): warning C4100: 'event': unreferenced formal parameter
   main.cpp
+  mythread.cpp
   navilabel.cpp
   needle.cpp
-needle.cpp(42): warning C4100: “widget”: 未引用的形参
-needle.cpp(42): warning C4100: “option”: 未引用的形参
-needle.cpp(81): warning C4305: “+=”: 从“double”到“float”截断
-needle.cpp(83): warning C4305: “-=”: 从“double”到“float”截断
+needle.cpp(42): warning C4100: 'widget': unreferenced formal parameter
+needle.cpp(42): warning C4100: 'option': unreferenced formal parameter
+needle.cpp(81): warning C4305: '+=': truncation from 'double' to 'float'
+needle.cpp(83): warning C4305: '-=': truncation from 'double' to 'float'
+  socket.cpp
+UrAPI\socket.cpp(157): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+UrAPI\socket.cpp(163): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+UrAPI\socket.cpp(168): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   tablesketch_item.cpp
-tablesketch_item.cpp(37): warning C4100: “widget”: 未引用的形参
-tablesketch_item.cpp(37): warning C4100: “option”: 未引用的形参
+tablesketch_item.cpp(37): warning C4100: 'widget': unreferenced formal parameter
+tablesketch_item.cpp(37): warning C4100: 'option': unreferenced formal parameter
   thread_get_ndi_marker.cpp
-  正在生成代码...
-e:\buaa\aclrecontructqt_cmake\scr\carm\dxspatialmatching.cpp(763): warning C4715: “DxSpatialMatching::RankedPointInfo”: 不是所有的控件路径都返回值
+  ur_class_test.cpp
+  widget.cpp
+CArmAngleCalCuLate\widget.cpp(590): warning C4189: 'temp2': local variable is initialized but not referenced
+CArmAngleCalCuLate\widget.cpp(591): warning C4189: 'temp3': local variable is initialized but not referenced
+CArmAngleCalCuLate\widget.cpp(752): warning C4100: 'arg1': unreferenced formal parameter
+CArmAngleCalCuLate\widget.cpp(757): warning C4100: 'arg1': unreferenced formal parameter
+  Generating Code...
   qrc_resources.cpp
-  ACL.vcxproj -> E:\BUAA\ACLRecontructQt_Cmake\SCR\release\ACLReconstruction.exe
+  ACL.vcxproj -> C:\Demo\ACLRecontructQt_Cmake\SCR\release\ACLReconstruction.exe

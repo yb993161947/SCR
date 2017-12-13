@@ -1078,16 +1078,18 @@ void Widget::mouseDoubleClickEvent(QMouseEvent *e)
 }
 
 
-void Widget::caculateMovetoRoute(Vector3d End3DPt, Vector3d Start3DPt, Matrix4d Bone_Matrix, double pos[])
+void Widget::caculateMovetoRoute(Vector3d End3DPt, Vector3d Start3DPt, Matrix4d &Bone_Matrix, double pos[])
 {//////////////////////////次函数计算符号有问题，需改进
 	//起点与止点方向反了
 	Vector3d N_dir = (-End3DPt + Start3DPt) / (-End3DPt + Start3DPt).norm();
 	Vector3d N2 = (Bone_Matrix.inverse() * Robot_matrix4d * TofTCP_Up2MarkeronRobot).head(3);
 	Vector3d N1 = (Bone_Matrix.inverse() * Robot_matrix4d * TofTCP_Down2MarkeronRobot).head(3);
 	Vector3d Axis_Z = (N2 - N1) / (N2 - N1).norm();
-	Vector3d Axis_X = (Bone_Matrix.inverse() * -Robot_matrix4d.col(2)).head(3);
+    //根据TCP修改
+    Vector3d Axis_X = (Bone_Matrix.inverse() * Robot_matrix4d.col(1)).head(3);
 
 	Vector3d Axis_Y = Axis_Z.cross(Axis_X);
+    Axis_X = Axis_Y.cross(Axis_Z);
 	Matrix3d Rot;
 	Rot << Axis_X, Axis_Y, Axis_Z;
 	Vector3d N_dirOnRobot = Rot.inverse() * N_dir;
@@ -1099,18 +1101,19 @@ void Widget::caculateMovetoRoute(Vector3d End3DPt, Vector3d Start3DPt, Matrix4d 
 		theta_x -= PI;
 	if (theta_x < -PI / 2)
 		theta_x += PI;
-	if (theta_y > PI / 2)
+    if (theta_y > PI / 2)
 		theta_y -= PI;
 	if (theta_y < -PI / 2)
 		theta_y += PI;
 
-	Vector3d L = (-End3DPt + Start3DPt);
-	Vector3d P = (N1 + N2) / 2;
-	double u = (P(0) - Start3DPt(0))*L(0) + (P(1) - Start3DPt(1))*L(1) + (P(2) - Start3DPt(2))*L(2);
-	u /= (L(0) * L(0) + L(1) * L(1) + L(2) * L(2));
-	Vector3d mov;
-	mov << (Start3DPt(0) + L(0) * u) / 1000 - P[0]/1000, (Start3DPt(1) + L(1) * u) / 1000- P[1]/1000, (Start3DPt(2) + L(2) * u) / 1000 - P[2]/1000;
-	mov = Rot.inverse()*mov;
+
+    Vector3d L = (-End3DPt + Start3DPt);
+    Vector3d P = (N1 + N2) / 2;
+    double u = (P(0) - Start3DPt(0))*L(0) + (P(1) - Start3DPt(1))*L(1) + (P(2) - Start3DPt(2))*L(2);
+    u /= (L(0) * L(0) + L(1) * L(1) + L(2) * L(2));
+    Vector3d mov;
+    mov << (Start3DPt(0) + L(0) * u) / 1000 - P[0]/1000, (Start3DPt(1) + L(1) * u) / 1000- P[1]/1000, (Start3DPt(2) + L(2) * u) / 1000 - P[2]/1000;
+    mov = Rot.inverse()*mov;
     pos[0] = mov[0];
     pos[1] = mov[1];
 	pos[2] = mov[2];
@@ -1120,7 +1123,7 @@ void Widget::caculateMovetoRoute(Vector3d End3DPt, Vector3d Start3DPt, Matrix4d 
 
 }
 
-void Widget::caculateMoveAngle(Vector3d End3DPt, Vector3d Start3DPt, Matrix4d Bone_Matrix, double pos[])
+void Widget::caculateMoveAngle(Vector3d End3DPt, Vector3d Start3DPt, Matrix4d &Bone_Matrix, double pos[])
 {//////////////////////////次函数计算符号有问题，需改进
     //起点与止点方向反了
 	Vector3d N_dir = (-End3DPt + Start3DPt) / (-End3DPt + Start3DPt).norm();
@@ -1177,7 +1180,7 @@ void Widget::guide()
 	update();
 }
 
-void Widget::guide_d(bool IsopenGuide, ImageScene *Imagescene, Matrix4d Xspot_matrix4d, Matrix4d tone, QList<double> transparams,Matrix4d Mark_Adjust)
+void Widget::guide_d(bool IsopenGuide, ImageScene *Imagescene, Matrix4d &Xspot_matrix4d, Matrix4d &tone, QList<double> transparams,Matrix4d &Mark_Adjust)
 {
     if(IsopenGuide)//导航
     {
@@ -1277,7 +1280,7 @@ bool Widget::get2DPtfrom3D(Vector3d Pt_3D, QList<double> transparams, Vector2d &
     return true;
 }
 
-bool Widget::get3DLinefrom2D(Vector2d Pt_2D, QList<double> transparams, QList<Vector4d> &transparams_Line)
+bool Widget::get3DLinefrom2D(Vector2d &Pt_2D, QList<double> transparams, QList<Vector4d> &transparams_Line)
 {
     if(transparams.size() != 11)
         return false;
@@ -1296,12 +1299,12 @@ bool Widget::get3DLinefrom2D(Vector2d Pt_2D, QList<double> transparams, QList<Ve
     return true;
 }
 
-bool Widget::Shift2DPtfrom2D(Vector2d Pt_Scr, 
+bool Widget::Shift2DPtfrom2D(Vector2d &Pt_Scr, 
 	QList<double> transparams_Scr,
 	QList<Vector2d> &Line_Dist,
 	QList<double> transparams_Dist,
-	Matrix4d MarkerOnXspot_scr,
-	Matrix4d MarkerOnXspot_dist)
+	Matrix4d &MarkerOnXspot_scr,
+	Matrix4d &MarkerOnXspot_dist)
 {
     QList<Vector4d> transparams_Line;
     Vector2d Pt_Temp;
@@ -2671,7 +2674,7 @@ void Widget::on_pushButton_ShowTiptool_Lat_clicked()
 
         imageScene_Lat_Femur->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
         imageScene_Lat_Femur->Marker_Tip->show();
-        imageScene_Lat_Femur->update();
+//        imageScene_Lat_Femur->update();
     }
     else if(ui->tabWidget_manipulate->currentIndex() == INDEX_TIBIA)
     {
@@ -2690,7 +2693,7 @@ void Widget::on_pushButton_ShowTiptool_Lat_clicked()
         
         imageScene_Lat_Tibia->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
 		imageScene_Lat_Tibia->Marker_Tip->show();
-        imageScene_Lat_Tibia->update();
+//        imageScene_Lat_Tibia->update();
     }
 }
 
@@ -2713,7 +2716,7 @@ void Widget::on_pushButton_ShowTiptool_AP_clicked()
 
         imageScene_AP_Femur->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
         imageScene_AP_Femur->Marker_Tip->show();
-        imageScene_AP_Femur->update();
+//        imageScene_AP_Femur->update();
     }
     else if(ui->tabWidget_manipulate->currentIndex() == INDEX_TIBIA)
     {
@@ -2734,7 +2737,7 @@ void Widget::on_pushButton_ShowTiptool_AP_clicked()
 
         imageScene_AP_Tibia->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
         imageScene_AP_Tibia->Marker_Tip->show();
-        imageScene_AP_Tibia->update();
+//        imageScene_AP_Tibia->update();
     }
 }
 
@@ -3274,7 +3277,7 @@ void Widget::loadData_Femur_AP()
 
         imageScene_AP_Femur->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));;
         imageScene_AP_Femur->Marker_Tip->show();
-        imageScene_AP_Femur->update();
+//        imageScene_AP_Femur->update();
 
         for (int i = 0; i < 5; i++)
         {
@@ -3363,7 +3366,7 @@ void Widget::loadData_Femur_Lat()
 
         imageScene_Lat_Femur->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));;
         imageScene_Lat_Femur->Marker_Tip->show();
-        imageScene_Lat_Femur->update();
+ //       imageScene_Lat_Femur->update();
         imageScene_Lat_Femur->index_selected = -1;
         for (int i = 0; i < 6; i++)
         {
@@ -3453,7 +3456,7 @@ void Widget::loadData_Tibia_AP()
 
         imageScene_AP_Tibia->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));;
         imageScene_AP_Tibia->Marker_Tip->show();
-        imageScene_AP_Tibia->update();
+//        imageScene_AP_Tibia->update();
 
         for (int i = 0; i < 4; i++)
         {
@@ -3543,7 +3546,7 @@ void Widget::loadData_Tibia_Lat()
 
         imageScene_Lat_Tibia->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));;
         imageScene_Lat_Tibia->Marker_Tip->show();
-        imageScene_Lat_Tibia->update();
+//        imageScene_Lat_Tibia->update();
 
         for (int i = 0; i < 6; i++)
         {
@@ -3915,6 +3918,7 @@ void Widget::on_pushButton_moveRobot_clicked()
     {
 		double pos[6];
         caculateMovetoRoute(End3DPt_Femur, Start3DPt_Femur, Femur_matrix4d, pos);
+        qDebug() << pos[0] <<pos[1] << pos[2] << pos[3] << pos[4] << pos[5];
         Ur->pUR5->yb_movep_TCP(pos);
 		return;
     }
@@ -4188,9 +4192,9 @@ void Widget::Point_Change_Tibia_Lat(int index)
                 Pt_Scr  << imageScene_Lat_Tibia->Piximage_point[4].x(),imageScene_Lat_Tibia->Piximage_point[4].y();
 
 				Shift2DPtfrom2D(Pt_Scr,
-					transparams_Femur_Lat,
+                    transparams_Tibia_Lat,
 					Line_Dist,
-					transparams_Femur_AP,
+                    transparams_Tibia_AP,
 					Xspot_matrix4d_Lat_Tibia,
 					Xspot_matrix4d_AP_Tibia);
                 //添加图上点 ！！！
@@ -4209,9 +4213,9 @@ void Widget::Point_Change_Tibia_Lat(int index)
                 Pt_Scr  << imageScene_Lat_Tibia->Piximage_point[5].x(),imageScene_Lat_Tibia->Piximage_point[5].y();
                
 				Shift2DPtfrom2D(Pt_Scr,
-					transparams_Femur_Lat,
+                    transparams_Tibia_Lat,
 					Line_Dist,
-					transparams_Femur_AP,
+                    transparams_Tibia_AP,
 					Xspot_matrix4d_Lat_Tibia,
 					Xspot_matrix4d_AP_Tibia);
                 //添加图上点 ！！！
@@ -4331,8 +4335,7 @@ void Widget::on_pushButton_Femur_finished_2_clicked()
 //        QMessageBox::warning(this,u8"操作失败",u8"未记录股骨侧位Xpot");
 //        return;
 //    }
-    if(
-            imageScene_AP_Femur->Piximage_point[4] == QPointF(-1,-1))
+    if(imageScene_AP_Femur->Piximage_point[4] == QPointF(-1,-1))
     {
         QMessageBox::warning(this,u8"操作失败",u8"未规划股骨正位手术路径");
         return;
@@ -4386,4 +4389,9 @@ void Widget::on_pushButton_Femur_finished_2_clicked()
             .arg(Start3DPt_Femur(0)).arg(Start3DPt_Femur(1)).arg(Start3DPt_Femur(2))
             .arg(End3DPt_Femur(0)).arg(End3DPt_Femur(1)).arg(End3DPt_Femur(2));
     ui->labelResult_Femur->setText(str);
+}
+
+void Widget::on_pushButton_Femur_finished_3_clicked()
+{
+
 }
