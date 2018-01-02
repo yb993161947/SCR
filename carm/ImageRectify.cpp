@@ -574,8 +574,8 @@ bool DxImageRectify::CheckSeedPointIsAccCenter(uint8_t* inPixels,
         }
     }
 
-    int nMaxR = int(float(nMaxRadius / sqrt(2)) + 0.5f);
-    int nMinR = int(float(nMinRadius / sqrt(2)) - 0.5f);
+    int nMaxR = int(float(nMaxRadius / sqrt(2.0f)) + 0.5f);
+    int nMinR = int(float(nMinRadius / sqrt(2.0f)) - 0.5f);
     for (int x = x1 - 1, y = y1 - 1; x >= x1 - nMaxR && y >= y1 - nMaxR; x--, y--)
     {
         if (cannyPixel[x + y * nWidth] == nWhiteColor)
@@ -1102,7 +1102,7 @@ bool DxImageRectify::CheckIfCirleByColor(uint8_t* uimageData, int nWidth, int nH
     int nCenterX = cvRound(fCenterX);
     int nCenterY = cvRound(fCenterY);
     int nOuterSquareLen = cvRound(sqrt(fRadius * fRadius * 2)) + 2;
-    int nInnerSquareLen = cvRound(fRadius / sqrt(2)) - 1;
+    int nInnerSquareLen = cvRound(fRadius / sqrt(2.0f)) - 1;
 
     int nInnerSumColor = 0;
     int nOuterSumColor = 0;

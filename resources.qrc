@@ -1,7 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>images/1.1.png</file>
-        <file>images/4.1.png</file>
         <file>images/Action.png</file>
         <file>images/back.png</file>
         <file>images/bkg.jpg</file>
@@ -92,7 +90,6 @@
         <file>images/zhengwei.png</file>
         <file>images/zhengweiA.jpg</file>
         <file>images/zhengweiA.png</file>
-        <file>images/侧位.jpg</file>
         <file>Resources/resource/bkgNull.png</file>
         <file>Resources/resource/icon-capture.ico</file>
         <file>Resources/resource/icon-capture.png</file>
@@ -282,10 +279,10 @@
         <file>images/btn.png</file>
         <file>images/sketch.png</file>
         <file>images/sketch_2.png</file>
-        <file>images/bkg - 副本.png</file>
         <file>images/iamge_xRay.png</file>
         <file>images/iamge_Xray_Lat.png</file>
-        <file>Resources/resource/xspot小球编号.png</file>
         <file>Resources/rr.png</file>
+        <file>images/ACLApp.ico</file>
+        <file>images/bkg - 副本.png</file>
     </qresource>
 </RCC>

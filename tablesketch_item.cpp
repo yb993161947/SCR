@@ -30,7 +30,7 @@ void TableSketch_Item::setHeight(float ItemHeight)
 
 QRectF TableSketch_Item::boundingRect() const
 {
-	return QRectF(0, 0, width, height);
+    return QRectF(0-2, 0-2, width +4, height +4);
 	//return QRectF(0 - penWidth / 2, 0 - penWidth / 2, width + penWidth / 2, height + penWidth / 2);
 }
 
@@ -53,5 +53,4 @@ void TableSketch_Item::paint(QPainter * painter, const QStyleOptionGraphicsItem 
     painter->setRenderHint(QPainter::Antialiasing, true);
     painter->setPen(QPen(Qt::red, 2, Qt::DashDotLine, Qt::RoundCap));
     painter->drawEllipse(width * (0.25 - 0.07), height * 0.25- width * 0.07, width * 0.14 , width * 0.14);
-
 }

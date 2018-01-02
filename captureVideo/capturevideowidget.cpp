@@ -367,7 +367,6 @@ void CaptureVideoWidget::paintPt()
         }
         p.end();
         ui->label_Picture->setPixmap(pix.scaled(ui->label_Picture->width(), ui->label_Picture->height()));
-        update();
     }
 }
 
@@ -378,6 +377,7 @@ void CaptureVideoWidget::paintEvent(QPaintEvent* event)
 
  //   style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
 	//QWidget::paintEvent(event);
+    paintPt();
 
 }
 
@@ -419,7 +419,7 @@ void CaptureVideoWidget::mouseReleaseEvent(QMouseEvent *event)
             _2DPt[selectedIndex].setX( float(pos.x()- ui->label_Picture->pos().x()) / radio_w);//原始图像坐标
             _2DPt[selectedIndex].setY( float(pos.y()- ui->label_Picture->pos().y()) / radio_h);
 
-            paintPt();
+            update();
         }
     }
 
@@ -659,22 +659,34 @@ void CaptureVideoWidget::on_radioButton_9_clicked()
 
 void CaptureVideoWidget::on_radioButton_source_clicked()
 {
-    paintPt();
+    update();
 }
 
 void CaptureVideoWidget::on_radioButton_refined_clicked()
 {
-    paintPt();
+    update();
 }
 
 void CaptureVideoWidget::on_checkBox_removeCircle_clicked()
 {
-    paintPt();
+    update();
 }
 
 void CaptureVideoWidget::on_pushButton_clicked()
 {
     if(selectedIndex >= 0 && selectedIndex < 9)
     _2DPt[selectedIndex] =QPointF(0,0);
-    paintPt();
+   update();
 }
+
+void CaptureVideoWidget::on_pushButton_2_clicked()
+{
+    for(int i = 0;i < 9; i++)
+    {
+//        qDebug() << "imagePoints.push_back(cv::Point2d("<<_2DPt[i].x()<<","<<_2DPt[i].y()<<"));";
+          qDebug() << _2DPt[i].x()<<","<<_2DPt[i].y()<<",";
+    }
+//        qDebug()<< "imagePoints_ver.push_back(imagePoints);";
+//        qDebug()<< "imagePoints.clear();";
+}
+

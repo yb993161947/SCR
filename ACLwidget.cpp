@@ -58,6 +58,7 @@ Widget::Widget(QWidget *parent) :
 {
     ui->setupUi(this);
 
+
     this->setWindowFlags(Qt::FramelessWindowHint);//不显示对话框
     //监视程序
     pro_fileWatcher = new QProcess;
@@ -1177,7 +1178,7 @@ void Widget::guide()
 	guide_d(IsopenGuide_Lat_Tibia, imageScene_Lat_Tibia,
 		Xspot_matrix4d_Lat_Tibia, Tibia_matrix4d, transparams_Tibia_Lat, Marker_Adjust[3]);
 
-	update();
+
 }
 
 void Widget::guide_d(bool IsopenGuide, ImageScene *Imagescene, Matrix4d &Xspot_matrix4d, Matrix4d &tone, QList<double> transparams,Matrix4d &Mark_Adjust)
@@ -1215,7 +1216,7 @@ void Widget::guide_d(bool IsopenGuide, ImageScene *Imagescene, Matrix4d &Xspot_m
                 get2DPtfrom3D(Tipend.head(3), transparams, Pt2D_TipEnd);
 
                 Imagescene->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
-				Imagescene->Marker_Tip->show();
+                Imagescene->Marker_Tip->show();
 
             }
 
@@ -1972,7 +1973,6 @@ void Widget::rev_NDI(QList<Info_NDI> ListInfo_NDI)
         }
 
         if ((*i).name == MarkerName_Tibia)
-            //        else if ((*i).name == MarkerName_Tibia)
         {
             Tibia_matrix4d_temp = (*i).Pos;
             DialogSetting->ui->label_Tibia->setStyleSheet("border-image: url(:/Resources/resource/Tibia_enable.png);");
@@ -1996,7 +1996,7 @@ void Widget::rev_NDI(QList<Info_NDI> ListInfo_NDI)
         if(Tiptool_matrix4d_temp(3,3) != 0)
         {
             Tiptool_matrix4d_ver.push_back(Tiptool_matrix4d_temp);
-            if(Tiptool_matrix4d_ver.size() <= 5)
+            if(Tiptool_matrix4d_ver.size() <= 50)
             {
                Tiptool_matrix4d = Tiptool_matrix4d_temp;
             }
@@ -2004,14 +2004,17 @@ void Widget::rev_NDI(QList<Info_NDI> ListInfo_NDI)
             {
                Tiptool_matrix4d_ver.pop_front();
                Tiptool_matrix4d  = Matrix4d::Zero();
-               Tiptool_matrix4d += 0.5 * Tiptool_matrix4d_ver[4] + 0.28 * Tiptool_matrix4d_ver[3]
-                       + 0.12 * Tiptool_matrix4d_ver[2] + 0.07 * Tiptool_matrix4d_ver[1] + 0.03 * Tiptool_matrix4d_ver[0];
+               for( auto i = Tiptool_matrix4d_ver.begin();i < Tiptool_matrix4d_ver.end(); i++)
+               {
+                Tiptool_matrix4d += *i;
+               }
+               Tiptool_matrix4d /= 50;
             }
         }
         if(Xspot_matrix4d_temp(3,3) != 0)
         {
             Xspot_matrix4d_ver.push_back(Xspot_matrix4d_temp);
-            if(Xspot_matrix4d_ver.size() <= 5)
+            if(Xspot_matrix4d_ver.size() <= 50)
             {
                Xspot_matrix4d = Xspot_matrix4d_temp;
             }
@@ -2019,14 +2022,17 @@ void Widget::rev_NDI(QList<Info_NDI> ListInfo_NDI)
             {
                Xspot_matrix4d_ver.pop_front();
                Xspot_matrix4d  = Matrix4d::Zero();
-               Xspot_matrix4d += 0.5 * Xspot_matrix4d_ver[4] + 0.28 * Xspot_matrix4d_ver[3]
-                       + 0.12 * Xspot_matrix4d_ver[2] + 0.07 * Xspot_matrix4d_ver[1] + 0.03 * Xspot_matrix4d_ver[0];
+               for( auto i = Xspot_matrix4d_ver.begin();i < Xspot_matrix4d_ver.end(); i++)
+               {
+                Xspot_matrix4d += *i;
+               }
+               Xspot_matrix4d /= 50;
             }
         }
         if(Femur_matrix4d_temp(3,3) != 0)
         {
             Femur_matrix4d_ver.push_back(Femur_matrix4d_temp);
-            if(Femur_matrix4d_ver.size() <= 5)
+            if(Femur_matrix4d_ver.size() <= 50)
             {
                Femur_matrix4d = Femur_matrix4d_temp;
             }
@@ -2034,14 +2040,17 @@ void Widget::rev_NDI(QList<Info_NDI> ListInfo_NDI)
             {
                Femur_matrix4d_ver.pop_front();
                Femur_matrix4d  = Matrix4d::Zero();
-               Femur_matrix4d += 0.5 * Femur_matrix4d_ver[4] + 0.28 * Femur_matrix4d_ver[3]
-                       + 0.12 * Femur_matrix4d_ver[2] + 0.07 * Femur_matrix4d_ver[1] + 0.03 * Femur_matrix4d_ver[0];
+               for( auto i = Femur_matrix4d_ver.begin();i < Femur_matrix4d_ver.end(); i++)
+               {
+                Femur_matrix4d += *i;
+               }
+               Femur_matrix4d /= 50;
             }
         }
         if(Tibia_matrix4d_temp(3,3) != 0)
         {
             Tibia_matrix4d_ver.push_back(Tibia_matrix4d_temp);
-            if(Tibia_matrix4d_ver.size() <= 5)
+            if(Tibia_matrix4d_ver.size() <= 50)
             {
                Tibia_matrix4d = Tibia_matrix4d_temp;
             }
@@ -2049,14 +2058,17 @@ void Widget::rev_NDI(QList<Info_NDI> ListInfo_NDI)
             {
                Tibia_matrix4d_ver.pop_front();
                Tibia_matrix4d  = Matrix4d::Zero();
-               Tibia_matrix4d += 0.5 * Tibia_matrix4d_ver[4] + 0.28 * Tibia_matrix4d_ver[3]
-                       + 0.12 * Tibia_matrix4d_ver[2] + 0.07 * Tibia_matrix4d_ver[1] + 0.03 * Tibia_matrix4d_ver[0];
+               for( auto i = Tibia_matrix4d_ver.begin();i < Tibia_matrix4d_ver.end(); i++)
+               {
+                Tibia_matrix4d += *i;
+               }
+               Tibia_matrix4d /= 50;
             }
         }
         if(Robot_matrix4d_temp(3,3) != 0)
         {
             Robot_matrix4d_ver.push_back(Robot_matrix4d_temp);
-            if(Robot_matrix4d_ver.size() <= 5)
+            if(Robot_matrix4d_ver.size() <= 50)
             {
                Robot_matrix4d = Robot_matrix4d_temp;
             }
@@ -2064,14 +2076,17 @@ void Widget::rev_NDI(QList<Info_NDI> ListInfo_NDI)
             {
                Robot_matrix4d_ver.pop_front();
                Robot_matrix4d  = Matrix4d::Zero();
-               Robot_matrix4d += 0.39 * Robot_matrix4d_ver[4] + 0.39 * Robot_matrix4d_ver[3]
-                       + 0.12 * Robot_matrix4d_ver[2] + 0.07 * Robot_matrix4d_ver[1] + 0.03 * Robot_matrix4d_ver[0];
+               for( auto i = Robot_matrix4d_ver.begin();i < Robot_matrix4d_ver.end(); i++)
+               {
+                Robot_matrix4d += *i;
+               }
+               Robot_matrix4d /= 50;
             }
         }
     }
 
     guide();//导航
-
+    update();
 
 }
 
@@ -2533,6 +2548,7 @@ void Widget::on_pushButton_Femur_finished_clicked()
     ui->radioButton_Femur->setEnabled(true);
 	ui->radioButton_Femur->setChecked(true);
     on_radioButton_Femur_clicked();
+    ui->label_Navi->setNaviState(true);
 
     StartPt_Femur_AP(0) = double(imageScene_AP_Femur->Piximage_point[4].x());
     StartPt_Femur_AP(1) = double(imageScene_AP_Femur->Piximage_point[4].y());
@@ -2612,7 +2628,7 @@ void Widget::on_pushButton_Tibia_finished_clicked()
     ui->radioButton_Tibia->setEnabled(true);
     ui->radioButton_Tibia->setChecked(true);
     on_radioButton_Tibia_clicked();
-
+    ui->label_Navi->setNaviState(true);
 
     StartPt_Tibia_AP(0) = double(imageScene_AP_Tibia->Piximage_point[3].x());
     StartPt_Tibia_AP(1) = double(imageScene_AP_Tibia->Piximage_point[3].y());
@@ -2674,7 +2690,7 @@ void Widget::on_pushButton_ShowTiptool_Lat_clicked()
 
         imageScene_Lat_Femur->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
         imageScene_Lat_Femur->Marker_Tip->show();
-//        imageScene_Lat_Femur->update();
+        imageScene_Lat_Femur->update();
     }
     else if(ui->tabWidget_manipulate->currentIndex() == INDEX_TIBIA)
     {
@@ -2693,7 +2709,7 @@ void Widget::on_pushButton_ShowTiptool_Lat_clicked()
         
         imageScene_Lat_Tibia->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
 		imageScene_Lat_Tibia->Marker_Tip->show();
-//        imageScene_Lat_Tibia->update();
+        imageScene_Lat_Tibia->update();
     }
 }
 
@@ -2716,7 +2732,7 @@ void Widget::on_pushButton_ShowTiptool_AP_clicked()
 
         imageScene_AP_Femur->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
         imageScene_AP_Femur->Marker_Tip->show();
-//        imageScene_AP_Femur->update();
+        imageScene_AP_Femur->update();
     }
     else if(ui->tabWidget_manipulate->currentIndex() == INDEX_TIBIA)
     {
@@ -2737,7 +2753,7 @@ void Widget::on_pushButton_ShowTiptool_AP_clicked()
 
         imageScene_AP_Tibia->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
         imageScene_AP_Tibia->Marker_Tip->show();
-//        imageScene_AP_Tibia->update();
+        imageScene_AP_Tibia->update();
     }
 }
 
@@ -3277,7 +3293,7 @@ void Widget::loadData_Femur_AP()
 
         imageScene_AP_Femur->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));;
         imageScene_AP_Femur->Marker_Tip->show();
-//        imageScene_AP_Femur->update();
+        imageScene_AP_Femur->update();
 
         for (int i = 0; i < 5; i++)
         {
@@ -3366,7 +3382,7 @@ void Widget::loadData_Femur_Lat()
 
         imageScene_Lat_Femur->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));;
         imageScene_Lat_Femur->Marker_Tip->show();
- //       imageScene_Lat_Femur->update();
+       imageScene_Lat_Femur->update();
         imageScene_Lat_Femur->index_selected = -1;
         for (int i = 0; i < 6; i++)
         {
@@ -3456,7 +3472,7 @@ void Widget::loadData_Tibia_AP()
 
         imageScene_AP_Tibia->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));;
         imageScene_AP_Tibia->Marker_Tip->show();
-//        imageScene_AP_Tibia->update();
+        imageScene_AP_Tibia->update();
 
         for (int i = 0; i < 4; i++)
         {
@@ -3546,7 +3562,7 @@ void Widget::loadData_Tibia_Lat()
 
         imageScene_Lat_Tibia->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));;
         imageScene_Lat_Tibia->Marker_Tip->show();
-//        imageScene_Lat_Tibia->update();
+        imageScene_Lat_Tibia->update();
 
         for (int i = 0; i < 6; i++)
         {
@@ -3918,7 +3934,7 @@ void Widget::on_pushButton_moveRobot_clicked()
     {
 		double pos[6];
         caculateMovetoRoute(End3DPt_Femur, Start3DPt_Femur, Femur_matrix4d, pos);
-        qDebug() << pos[0] <<pos[1] << pos[2] << pos[3] << pos[4] << pos[5];
+        qDebug() << pos[0] << pos[1] << pos[2] << pos[3] << pos[4] << pos[5];
         Ur->pUR5->yb_movep_TCP(pos);
 		return;
     }
@@ -3936,16 +3952,15 @@ void Widget::on_pushButton_moveRobotin_pressed()
     //开始点和止点反了，所以N_DIr = start - end
     if(ui->radioButton_Femur->isChecked())
     {
-		double pos[6];
-		caculateMovetoRoute(End3DPt_Femur,Start3DPt_Femur,Femur_matrix4d, pos);
-		qDebug() << pos[3] * 180 / PI << pos[4] * 180 / PI;
+        double pos[6];
+        caculateMovetoRoute(End3DPt_Femur, Start3DPt_Femur, Femur_matrix4d, pos);
         Ur->pUR5->yb_movep_TCP(pos);
         return;
     }
     if(ui->radioButton_Tibia->isChecked())
-    {	
-		double pos[6];
-		caculateMovetoRoute(End3DPt_Tibia,Start3DPt_Tibia,Tibia_matrix4d,pos);
+    {
+        double pos[6];
+        caculateMovetoRoute(End3DPt_Tibia,Start3DPt_Tibia,Tibia_matrix4d,pos);
         Ur->pUR5->yb_movep_TCP(pos);
         return;
     }
@@ -4027,11 +4042,52 @@ void Widget::Point_Change_Femur_AP(int index)
 
                 //添加图上点 ！！！
                 QPointF dir = QPointF(Line_Dist[0][0] - Line_Dist[1][0], Line_Dist[0][1] - Line_Dist[1][1]);
-                
-                imageScene_Lat_Femur->subline1->setLine(Line_Dist[0][0] - 1000 * dir.x(),
-                        Line_Dist[0][1] - 1000 * dir.y(),
-                        Line_Dist[0][0] + 1000 * dir.x(),
-                        Line_Dist[0][1] + 1000 * dir.y());
+
+                float x1 =0,x2 = 1000;
+                float y1 = (Line_Dist[0][1] - Line_Dist[1][1])/(Line_Dist[0][0] - Line_Dist[1][0])*(x1 - Line_Dist[0][0]) + Line_Dist[0][1];
+                float y2 = (Line_Dist[0][1] - Line_Dist[1][1])/(Line_Dist[0][0] - Line_Dist[1][0])*(x2 - Line_Dist[0][0]) + Line_Dist[0][1];
+
+                float y3 =0,y4 = 1000;
+                float x3 = (Line_Dist[0][0] - Line_Dist[1][0])/(Line_Dist[0][1] - Line_Dist[1][1])*(y3 - Line_Dist[0][1]) + Line_Dist[0][0];
+                float x4 = (Line_Dist[0][0] - Line_Dist[1][0])/(Line_Dist[0][1] - Line_Dist[1][1])*(y4 - Line_Dist[0][1]) + Line_Dist[0][0];
+                qDebug() << "x1,y1,x2,y2" << x1<<y1<<x2<<y2;
+                qDebug() << "x3,y3,x4,y4" << x3<<y3<<x4<<y4;
+                QPointF pt[2];
+                int  i = 0;
+                while(i == 0)
+                {
+                    if(y1 <= 1000 && y1 >= 0)
+                    {
+                        pt[i].setX(x1);
+                        pt[i].setY(y1);
+                        i++;
+                    }
+                    if(y2 <= 1000 && y2 >=0)
+                    {
+                        pt[i].setX(x2);
+                        pt[i].setY(y2);
+                        i++;
+                    }
+                    if(i >= 2)
+                        break;
+                    if(x3 <= 1000 && x3 >=0)
+                    {
+                        pt[i].setX(x3);
+                        pt[i].setY(y3);
+                        i++;
+                    }
+                    if(i >= 2)
+                        break;
+                    if(x4 <= 1000 && x4 >=0)
+                    {
+                        pt[i].setX(x4);
+                        pt[i].setY(y4);
+                        i++;
+                    }
+                }
+
+
+                imageScene_Lat_Femur->subline1->setLine(pt[0].x(),pt[0].y(),pt[1].x(),pt[1].y());
 				imageScene_Lat_Femur->subline1->show();
 
             }
@@ -4050,10 +4106,51 @@ void Widget::Point_Change_Femur_AP(int index)
                 //添加图上点 ！！！
                 QPointF dir = QPointF(Line_Dist[0][0] - Line_Dist[1][0], Line_Dist[0][1] - Line_Dist[1][1]);
                 
-                imageScene_Lat_Femur->subline2->setLine(Line_Dist[0][0] - 1000 * dir.x(),
-                        Line_Dist[0][1] - 1000 * dir.y(),
-                        Line_Dist[0][0] + 1000 * dir.x(),
-                        Line_Dist[0][1] + 1000 * dir.y());
+                float x1 =0,x2 = 1000;
+                float y1 = (Line_Dist[0][1] - Line_Dist[1][1])/(Line_Dist[0][0] - Line_Dist[1][0])*(x1 - Line_Dist[0][0]) + Line_Dist[0][1];
+                float y2 = (Line_Dist[0][1] - Line_Dist[1][1])/(Line_Dist[0][0] - Line_Dist[1][0])*(x2 - Line_Dist[0][0]) + Line_Dist[0][1];
+
+                float y3 =0,y4 = 1000;
+                float x3 = (Line_Dist[0][0] - Line_Dist[1][0])/(Line_Dist[0][1] - Line_Dist[1][1])*(y3 - Line_Dist[0][1]) + Line_Dist[0][0];
+                float x4 = (Line_Dist[0][0] - Line_Dist[1][0])/(Line_Dist[0][1] - Line_Dist[1][1])*(y4 - Line_Dist[0][1]) + Line_Dist[0][0];
+                qDebug() << "x1,y1,x2,y2" << x1<<y1<<x2<<y2;
+                qDebug() << "x3,y3,x4,y4" << x3<<y3<<x4<<y4;
+                QPointF pt[2];
+                int  i = 0;
+                while(i == 0)
+                {
+                    if(y1 <= 1000 && y1 >= 0)
+                    {
+                        pt[i].setX(x1);
+                        pt[i].setY(y1);
+                        i++;
+                    }
+                    if(y2 <= 1000 && y2 >=0)
+                    {
+                        pt[i].setX(x2);
+                        pt[i].setY(y2);
+                        i++;
+                    }
+                    if(i >= 2)
+                        break;
+                    if(x3 <= 1000 && x3 >=0)
+                    {
+                        pt[i].setX(x3);
+                        pt[i].setY(y3);
+                        i++;
+                    }
+                    if(i >= 2)
+                        break;
+                    if(x4 <= 1000 && x4 >=0)
+                    {
+                        pt[i].setX(x4);
+                        pt[i].setY(y4);
+                        i++;
+                    }
+                }
+
+
+                imageScene_Lat_Femur->subline2->setLine(pt[0].x(),pt[0].y(),pt[1].x(),pt[1].y());
 				imageScene_Lat_Femur->subline2->show();
             }
             update();
@@ -4085,12 +4182,53 @@ void Widget::Point_Change_Tibia_AP(int index)
 					Xspot_matrix4d_Lat_Tibia);
 
                 //添加图上点 ！！！
-                QPointF dir = QPointF(Line_Dist[0][0] - Line_Dist[1][0], Line_Dist[0][1] - Line_Dist[1][1]);
+                float x1 =0,x2 = 1000;
+                float y1 = (Line_Dist[0][1] - Line_Dist[1][1])/(Line_Dist[0][0] - Line_Dist[1][0])*(x1 - Line_Dist[0][0]) + Line_Dist[0][1];
+                float y2 = (Line_Dist[0][1] - Line_Dist[1][1])/(Line_Dist[0][0] - Line_Dist[1][0])*(x2 - Line_Dist[0][0]) + Line_Dist[0][1];
+
+                float y3 =0,y4 = 1000;
+                float x3 = (Line_Dist[0][0] - Line_Dist[1][0])/(Line_Dist[0][1] - Line_Dist[1][1])*(y3 - Line_Dist[0][1]) + Line_Dist[0][0];
+                float x4 = (Line_Dist[0][0] - Line_Dist[1][0])/(Line_Dist[0][1] - Line_Dist[1][1])*(y4 - Line_Dist[0][1]) + Line_Dist[0][0];
+                qDebug() << "x1,y1,x2,y2" << x1<<y1<<x2<<y2;
+                qDebug() << "x3,y3,x4,y4" << x3<<y3<<x4<<y4;
+                QPointF pt[2];
+                int  i = 0;
+                while(i == 0)
+                {
+                    if(y1 <= 1000 && y1 >= 0)
+                    {
+                        pt[i].setX(x1);
+                        pt[i].setY(y1);
+                        i++;
+                    }
+                    if(y2 <= 1000 && y2 >=0)
+                    {
+                        pt[i].setX(x2);
+                        pt[i].setY(y2);
+                        i++;
+                    }
+                    if(i >= 2)
+                        break;
+                    if(x3 <= 1000 && x3 >=0)
+                    {
+                        pt[i].setX(x3);
+                        pt[i].setY(y3);
+                        i++;
+                    }
+                    if(i >= 2)
+                        break;
+                    if(x4 <= 1000 && x4 >=0)
+                    {
+                        pt[i].setX(x4);
+                        pt[i].setY(y4);
+                        i++;
+                    }
+                }
+
+
+                imageScene_Lat_Tibia->subline1->setLine(pt[0].x(),pt[0].y(),pt[1].x(),pt[1].y());
                 imageScene_Lat_Tibia->subline1->show();
-                imageScene_Lat_Tibia->subline1->setLine(Line_Dist[0][0] - 1000 * dir.x(),
-                        Line_Dist[0][1] - 1000 * dir.y(),
-                        Line_Dist[0][0] + 1000 * dir.x(),
-                        Line_Dist[0][1] + 1000 * dir.y());
+
 
             }
             else if(index == 3)
@@ -4106,12 +4244,52 @@ void Widget::Point_Change_Tibia_AP(int index)
 					Xspot_matrix4d_Lat_Tibia);
 
                 //添加图上点 ！！！
-                QPointF dir = QPointF(Line_Dist[0][0] - Line_Dist[1][0], Line_Dist[0][1] - Line_Dist[1][1]);
+                float x1 =0,x2 = 1000;
+                float y1 = (Line_Dist[0][1] - Line_Dist[1][1])/(Line_Dist[0][0] - Line_Dist[1][0])*(x1 - Line_Dist[0][0]) + Line_Dist[0][1];
+                float y2 = (Line_Dist[0][1] - Line_Dist[1][1])/(Line_Dist[0][0] - Line_Dist[1][0])*(x2 - Line_Dist[0][0]) + Line_Dist[0][1];
+
+                float y3 =0,y4 = 1000;
+                float x3 = (Line_Dist[0][0] - Line_Dist[1][0])/(Line_Dist[0][1] - Line_Dist[1][1])*(y3 - Line_Dist[0][1]) + Line_Dist[0][0];
+                float x4 = (Line_Dist[0][0] - Line_Dist[1][0])/(Line_Dist[0][1] - Line_Dist[1][1])*(y4 - Line_Dist[0][1]) + Line_Dist[0][0];
+                qDebug() << "x1,y1,x2,y2" << x1<<y1<<x2<<y2;
+                qDebug() << "x3,y3,x4,y4" << x3<<y3<<x4<<y4;
+                QPointF pt[2];
+                int  i = 0;
+                while(i == 0)
+                {
+                    if(y1 <= 1000 && y1 >= 0)
+                    {
+                        pt[i].setX(x1);
+                        pt[i].setY(y1);
+                        i++;
+                    }
+                    if(y2 <= 1000 && y2 >=0)
+                    {
+                        pt[i].setX(x2);
+                        pt[i].setY(y2);
+                        i++;
+                    }
+                    if(i >= 2)
+                        break;
+                    if(x3 <= 1000 && x3 >=0)
+                    {
+                        pt[i].setX(x3);
+                        pt[i].setY(y3);
+                        i++;
+                    }
+                    if(i >= 2)
+                        break;
+                    if(x4 <= 1000 && x4 >=0)
+                    {
+                        pt[i].setX(x4);
+                        pt[i].setY(y4);
+                        i++;
+                    }
+                }
+
+
+                imageScene_Lat_Tibia->subline2->setLine(pt[0].x(),pt[0].y(),pt[1].x(),pt[1].y());
                 imageScene_Lat_Tibia->subline2->show();
-                imageScene_Lat_Tibia->subline2->setLine(Line_Dist[0][0] - 1000 * dir.x(),
-                        Line_Dist[0][1] - 1000 * dir.y(),
-                        Line_Dist[0][0] + 1000 * dir.x(),
-                        Line_Dist[0][1] + 1000 * dir.y());
             }
             update();
         }
@@ -4139,15 +4317,53 @@ void Widget::Point_Change_Femur_Lat(int index)
 					transparams_Femur_AP,
 					Xspot_matrix4d_Lat_Femur,
 					Xspot_matrix4d_AP_Femur);
-                //添加图上点 ！！！
-                QPointF dir = QPointF(Line_Dist[0][0] - Line_Dist[1][0], Line_Dist[0][1] - Line_Dist[1][1]);
+                //添加图上点 ！！
+                float x1 =0,x2 = 1000;
+                float y1 = (Line_Dist[0][1] - Line_Dist[1][1])/(Line_Dist[0][0] - Line_Dist[1][0])*(x1 - Line_Dist[0][0]) + Line_Dist[0][1];
+                float y2 = (Line_Dist[0][1] - Line_Dist[1][1])/(Line_Dist[0][0] - Line_Dist[1][0])*(x2 - Line_Dist[0][0]) + Line_Dist[0][1];
+
+                float y3 =0,y4 = 1000;
+                float x3 = (Line_Dist[0][0] - Line_Dist[1][0])/(Line_Dist[0][1] - Line_Dist[1][1])*(y3 - Line_Dist[0][1]) + Line_Dist[0][0];
+                float x4 = (Line_Dist[0][0] - Line_Dist[1][0])/(Line_Dist[0][1] - Line_Dist[1][1])*(y4 - Line_Dist[0][1]) + Line_Dist[0][0];
+                qDebug() << "x1,y1,x2,y2" << x1<<y1<<x2<<y2;
+                qDebug() << "x3,y3,x4,y4" << x3<<y3<<x4<<y4;
+                QPointF pt[2];
+                int  i = 0;
+                while(i == 0)
+                {
+                    if(y1 <= 1000 && y1 >= 0)
+                    {
+                        pt[i].setX(x1);
+                        pt[i].setY(y1);
+                        i++;
+                    }
+                    if(y2 <= 1000 && y2 >=0)
+                    {
+                        pt[i].setX(x2);
+                        pt[i].setY(y2);
+                        i++;
+                    }
+                    if(i >= 2)
+                        break;
+                    if(x3 <= 1000 && x3 >=0)
+                    {
+                        pt[i].setX(x3);
+                        pt[i].setY(y3);
+                        i++;
+                    }
+                    if(i >= 2)
+                        break;
+                    if(x4 <= 1000 && x4 >=0)
+                    {
+                        pt[i].setX(x4);
+                        pt[i].setY(y4);
+                        i++;
+                    }
+                }
+
+
+                imageScene_AP_Femur->subline1->setLine(pt[0].x(),pt[0].y(),pt[1].x(),pt[1].y());
                 imageScene_AP_Femur->subline1->show();
-                imageScene_AP_Femur->subline1->setLine(Line_Dist[0][0] - 100000 * dir.x(),
-                        Line_Dist[0][1] - 100000 * dir.y(),
-                        Line_Dist[0][0] + 100000 * dir.x(),
-                        Line_Dist[0][1] + 100000 * dir.y());
-				//imageScene_AP_Femur->subline1->setLine(Line_Dist[0][0],Line_Dist[0][1],
-				//	Line_Dist[1][0],Line_Dist[1][1]);
 
             }
             else if(index == 4)
@@ -4163,14 +4379,52 @@ void Widget::Point_Change_Femur_Lat(int index)
 					Xspot_matrix4d_Lat_Femur,
 					Xspot_matrix4d_AP_Femur);
                 //添加图上点 ！！！
-                QPointF dir = QPointF(Line_Dist[0][0] - Line_Dist[1][0], Line_Dist[0][1] - Line_Dist[1][1]);
+                float x1 =0,x2 = 1000;
+                float y1 = (Line_Dist[0][1] - Line_Dist[1][1])/(Line_Dist[0][0] - Line_Dist[1][0])*(x1 - Line_Dist[0][0]) + Line_Dist[0][1];
+                float y2 = (Line_Dist[0][1] - Line_Dist[1][1])/(Line_Dist[0][0] - Line_Dist[1][0])*(x2 - Line_Dist[0][0]) + Line_Dist[0][1];
+
+                float y3 =0,y4 = 1000;
+                float x3 = (Line_Dist[0][0] - Line_Dist[1][0])/(Line_Dist[0][1] - Line_Dist[1][1])*(y3 - Line_Dist[0][1]) + Line_Dist[0][0];
+                float x4 = (Line_Dist[0][0] - Line_Dist[1][0])/(Line_Dist[0][1] - Line_Dist[1][1])*(y4 - Line_Dist[0][1]) + Line_Dist[0][0];
+                qDebug() << "x1,y1,x2,y2" << x1<<y1<<x2<<y2;
+                qDebug() << "x3,y3,x4,y4" << x3<<y3<<x4<<y4;
+                QPointF pt[2];
+                int  i = 0;
+                while(i == 0)
+                {
+                    if(y1 <= 1000 && y1 >= 0)
+                    {
+                        pt[i].setX(x1);
+                        pt[i].setY(y1);
+                        i++;
+                    }
+                    if(y2 <= 1000 && y2 >=0)
+                    {
+                        pt[i].setX(x2);
+                        pt[i].setY(y2);
+                        i++;
+                    }
+                    if(i >= 2)
+                        break;
+                    if(x3 <= 1000 && x3 >=0)
+                    {
+                        pt[i].setX(x3);
+                        pt[i].setY(y3);
+                        i++;
+                    }
+                    if(i >= 2)
+                        break;
+                    if(x4 <= 1000 && x4 >=0)
+                    {
+                        pt[i].setX(x4);
+                        pt[i].setY(y4);
+                        i++;
+                    }
+                }
+
+
+                imageScene_AP_Femur->subline2->setLine(pt[0].x(),pt[0].y(),pt[1].x(),pt[1].y());
                 imageScene_AP_Femur->subline2->show();
-				/*imageScene_AP_Femur->subline2->setLine(Line_Dist[0][0],Line_Dist[0][1],
-					Line_Dist[1][0],Line_Dist[1][1]);*/
-				imageScene_AP_Femur->subline2->setLine(Line_Dist[0][0] - 1000 * dir.x(),
-                        Line_Dist[0][1] - 1000 * dir.y(),
-                        Line_Dist[0][0] + 1000 * dir.x(),
-                        Line_Dist[0][1] + 1000 * dir.y());
             }
             update();
         }
@@ -4198,12 +4452,52 @@ void Widget::Point_Change_Tibia_Lat(int index)
 					Xspot_matrix4d_Lat_Tibia,
 					Xspot_matrix4d_AP_Tibia);
                 //添加图上点 ！！！
-                QPointF dir = QPointF(Line_Dist[0][0] - Line_Dist[1][0], Line_Dist[0][1] - Line_Dist[1][1]);
+                float x1 =0,x2 = 1000;
+                float y1 = (Line_Dist[0][1] - Line_Dist[1][1])/(Line_Dist[0][0] - Line_Dist[1][0])*(x1 - Line_Dist[0][0]) + Line_Dist[0][1];
+                float y2 = (Line_Dist[0][1] - Line_Dist[1][1])/(Line_Dist[0][0] - Line_Dist[1][0])*(x2 - Line_Dist[0][0]) + Line_Dist[0][1];
+
+                float y3 =0,y4 = 1000;
+                float x3 = (Line_Dist[0][0] - Line_Dist[1][0])/(Line_Dist[0][1] - Line_Dist[1][1])*(y3 - Line_Dist[0][1]) + Line_Dist[0][0];
+                float x4 = (Line_Dist[0][0] - Line_Dist[1][0])/(Line_Dist[0][1] - Line_Dist[1][1])*(y4 - Line_Dist[0][1]) + Line_Dist[0][0];
+                qDebug() << "x1,y1,x2,y2" << x1<<y1<<x2<<y2;
+                qDebug() << "x3,y3,x4,y4" << x3<<y3<<x4<<y4;
+                QPointF pt[2];
+                int  i = 0;
+                while(i == 0)
+                {
+                    if(y1 <= 1000 && y1 >= 0)
+                    {
+                        pt[i].setX(x1);
+                        pt[i].setY(y1);
+                        i++;
+                    }
+                    if(y2 <= 1000 && y2 >=0)
+                    {
+                        pt[i].setX(x2);
+                        pt[i].setY(y2);
+                        i++;
+                    }
+                    if(i >= 2)
+                        break;
+                    if(x3 <= 1000 && x3 >=0)
+                    {
+                        pt[i].setX(x3);
+                        pt[i].setY(y3);
+                        i++;
+                    }
+                    if(i >= 2)
+                        break;
+                    if(x4 <= 1000 && x4 >=0)
+                    {
+                        pt[i].setX(x4);
+                        pt[i].setY(y4);
+                        i++;
+                    }
+                }
+
+
+                imageScene_AP_Tibia->subline1->setLine(pt[0].x(),pt[0].y(),pt[1].x(),pt[1].y());
                 imageScene_AP_Tibia->subline1->show();
-                imageScene_AP_Tibia->subline1->setLine(Line_Dist[0][0] - 1000 * dir.x(),
-                        Line_Dist[0][1] - 1000 * dir.y(),
-                        Line_Dist[0][0] + 1000 * dir.x(),
-                        Line_Dist[0][1] + 1000 * dir.y());
 
             }
             else if(index == 5)
@@ -4219,12 +4513,52 @@ void Widget::Point_Change_Tibia_Lat(int index)
 					Xspot_matrix4d_Lat_Tibia,
 					Xspot_matrix4d_AP_Tibia);
                 //添加图上点 ！！！
-                QPointF dir = QPointF(Line_Dist[0][0] - Line_Dist[1][0], Line_Dist[0][1] - Line_Dist[1][1]);
+                float x1 =0,x2 = 1000;
+                float y1 = (Line_Dist[0][1] - Line_Dist[1][1])/(Line_Dist[0][0] - Line_Dist[1][0])*(x1 - Line_Dist[0][0]) + Line_Dist[0][1];
+                float y2 = (Line_Dist[0][1] - Line_Dist[1][1])/(Line_Dist[0][0] - Line_Dist[1][0])*(x2 - Line_Dist[0][0]) + Line_Dist[0][1];
+
+                float y3 =0,y4 = 1000;
+                float x3 = (Line_Dist[0][0] - Line_Dist[1][0])/(Line_Dist[0][1] - Line_Dist[1][1])*(y3 - Line_Dist[0][1]) + Line_Dist[0][0];
+                float x4 = (Line_Dist[0][0] - Line_Dist[1][0])/(Line_Dist[0][1] - Line_Dist[1][1])*(y4 - Line_Dist[0][1]) + Line_Dist[0][0];
+                qDebug() << "x1,y1,x2,y2" << x1<<y1<<x2<<y2;
+                qDebug() << "x3,y3,x4,y4" << x3<<y3<<x4<<y4;
+                QPointF pt[2];
+                int  i = 0;
+                while(i == 0)
+                {
+                    if(y1 <= 1000 && y1 >= 0)
+                    {
+                        pt[i].setX(x1);
+                        pt[i].setY(y1);
+                        i++;
+                    }
+                    if(y2 <= 1000 && y2 >=0)
+                    {
+                        pt[i].setX(x2);
+                        pt[i].setY(y2);
+                        i++;
+                    }
+                    if(i >= 2)
+                        break;
+                    if(x3 <= 1000 && x3 >=0)
+                    {
+                        pt[i].setX(x3);
+                        pt[i].setY(y3);
+                        i++;
+                    }
+                    if(i >= 2)
+                        break;
+                    if(x4 <= 1000 && x4 >=0)
+                    {
+                        pt[i].setX(x4);
+                        pt[i].setY(y4);
+                        i++;
+                    }
+                }
+
+
+                imageScene_AP_Tibia->subline2->setLine(pt[0].x(),pt[0].y(),pt[1].x(),pt[1].y());
                 imageScene_AP_Tibia->subline2->show();
-                imageScene_AP_Tibia->subline2->setLine(Line_Dist[0][0] - 1000 * dir.x(),
-                        Line_Dist[0][1] - 1000 * dir.y(),
-                        Line_Dist[0][0] + 1000 * dir.x(),
-                        Line_Dist[0][1] + 1000 * dir.y());
             }
             update();
         }
@@ -4391,7 +4725,9 @@ void Widget::on_pushButton_Femur_finished_2_clicked()
     ui->labelResult_Femur->setText(str);
 }
 
-void Widget::on_pushButton_Femur_finished_3_clicked()
-{
 
+void Widget::on_pushButton_moveRobotin_4_clicked()
+{
+    double pos[6] = {-0.64267,0.14939,0.28470,0.0314,-0.0063,2.3716};
+    Ur->pUR5->movej_pose(pos);
 }

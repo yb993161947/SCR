@@ -2,6 +2,7 @@
 #define NEEDLE_H
 #include "QGraphicsItem"
 #include <QPen>
+#include <qwidget.h>
 class needle : public QGraphicsItem
 {
 public:

@@ -21,7 +21,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Widget_t {
     QByteArrayData data[101];
-    char stringdata0[2670];
+    char stringdata0[2667];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -130,7 +130,7 @@ QT_MOC_LITERAL(96, 2505, 31), // "on_pushButton_InitRobot_clicked"
 QT_MOC_LITERAL(97, 2537, 30), // "on_pushButton_SetRobot_clicked"
 QT_MOC_LITERAL(98, 2568, 23), // "on_pushButton_3_clicked"
 QT_MOC_LITERAL(99, 2592, 38), // "on_pushButton_Femur_finished_..."
-QT_MOC_LITERAL(100, 2631, 38) // "on_pushButton_Femur_finished_..."
+QT_MOC_LITERAL(100, 2631, 35) // "on_pushButton_moveRobotin_4_c..."
 
     },
     "Widget\0on_pushButton_Exit_clicked\0\0"
@@ -213,7 +213,7 @@ QT_MOC_LITERAL(100, 2631, 38) // "on_pushButton_Femur_finished_..."
     "on_pushButton_SetRobot_clicked\0"
     "on_pushButton_3_clicked\0"
     "on_pushButton_Femur_finished_2_clicked\0"
-    "on_pushButton_Femur_finished_3_clicked"
+    "on_pushButton_moveRobotin_4_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -506,7 +506,7 @@ void Widget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         case 84: _t->on_pushButton_SetRobot_clicked(); break;
         case 85: _t->on_pushButton_3_clicked(); break;
         case 86: _t->on_pushButton_Femur_finished_2_clicked(); break;
-        case 87: _t->on_pushButton_Femur_finished_3_clicked(); break;
+        case 87: _t->on_pushButton_moveRobotin_4_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {

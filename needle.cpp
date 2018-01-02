@@ -35,27 +35,29 @@ void needle::setHeight(float ItemHeight)
 
 QRectF needle::boundingRect() const
 {
-    return QRectF(0, 0, width, height);
-    //return QRectF(0 - penWidth / 2, 0 - penWidth / 2, width + penWidth / 2, height + penWidth / 2);
+    return QRectF(0 - pen.width() / 2 - width/2, -500 - pen.width()/2 , width/2 + pen.width() / 2, height + pen.width() / 2 +10);
 }
 
 void needle::paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)
 {
-
+    QRect ur = widget->geometry();//得到组件尺寸
+    QPixmap pix(ur.size());//以此为参数创建一个位图变量
+    pix.fill();
+    painter->setBackgroundMode(Qt::TransparentMode);
     painter->setRenderHint(QPainter::Antialiasing, true);
     painter->setPen(pen);
 
     painter->drawLine(QPoint( 0, 0), QPoint( -width/2 , width/2));
     painter->drawLine(QPoint( 0, 0), QPoint( width/2 , width/2));
     painter->drawLine(QPoint(-width/2 , width/2), QPoint( -width/2 , height));
-	painter->drawLine(QPoint(width / 2, width / 2), QPoint(width / 2, height));
-	painter->setBrush(QColor(150, 150, 80, 150));
-	painter->drawRect(QRect(-width / 2, width / 2, width, height - width / 2));
-	QPoint pt[3] = { QPoint(-width / 2, width / 2) , QPoint(0,0) , QPoint(width / 2 ,width / 2) };
-	painter->drawPolygon(pt, 3);
+    painter->drawLine(QPoint(width / 2, width / 2), QPoint(width / 2, height));
+    painter->setBrush(QColor(150, 150, 80, 150));
+    painter->drawRect(QRect(-width / 2, width / 2, width, height - width / 2));
+    QPoint pt[3] = { QPoint(-width / 2, width / 2) , QPoint(0,0) , QPoint(width / 2 ,width / 2) };
+    painter->drawPolygon(pt, 3);
 
-    painter->setPen(QPen(Qt::magenta, 2, Qt::DashLine));
-    painter->drawLine(QPoint(0,height+10),QPoint(0,-1000));
+    painter->setPen(QPen(Qt::magenta, 2, Qt::SolidLine));
+    painter->drawLine(QPoint(0,height+10),QPoint(0,-500));
 
 }
 

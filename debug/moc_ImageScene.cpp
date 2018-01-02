@@ -16,7 +16,7 @@
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
-
+#define ri 1
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_ImageScene_t {
     QByteArrayData data[26];

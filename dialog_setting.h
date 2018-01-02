@@ -11,7 +11,6 @@ class Dialog_Setting;
 class Dialog_Setting : public QDialog
 {
     Q_OBJECT
-
 public:
     explicit Dialog_Setting(QWidget *parent = 0);
     ~Dialog_Setting();

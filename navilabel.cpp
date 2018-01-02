@@ -14,61 +14,12 @@ NaviLabel::~NaviLabel()
 
 }
 
-void NaviLabel::Input_points(Vector3d p1, Vector3d p2, Vector3d p3, Vector3d p4)
+void NaviLabel::Input_points(Vector3d pp1, Vector3d pp2, Vector3d pp3, Vector3d pp4)
 {
-
-	Vector3d X_ = p1.cross(p2);
-	X_ = X_ / X_.norm();
-	Vector3d Z_ = p1 - p2;
-	Z_ = Z_ / Z_.norm();
-	cout << (p3 - p4) / (p3 - p4).norm();
-	Vector3d Y_ = Z_.cross(X_);
-	Matrix4d  O_;
-	O_.col(0).head(3) = X_;
-	O_.col(1).head(3) = Y_;
-	O_.col(2).head(3) = Z_;
-	O_.col(3).head(3) = p2;
-	O_.row(3) << 0, 0, 0, 1;
-	Vector4d Dir;
-	Dir.head(3) = (p3-p4) /(p3-p4).norm() * 80 + p4;
-	Dir(3) = 1;
-	Matrix4d O_inverse = O_.inverse();
-	Vector2d tp3 = (O_inverse * Dir).head(2);
-	Dir.head(3) = p4;
-	Vector2d tp4 = (O_inverse * Dir).head(2);
-
-    P1.setX(tp3(0) / rad * siz / 12+ori);
-    P1.setY(tp3(1) / rad * siz / 12+ori);
-    P2.setX(tp4(0) / rad * siz / 12+ori);
-    P2.setY(tp4(1) / rad * siz / 12+ori);
-
-	if (pix.isNull())
-		return;
-	pix_temp = pix;
-	if (P1 != QPointF(-1, -1) && P2 != QPointF(-1, -1))
-	{
-		QPainter painter(this);
-		painter.begin(&pix_temp);
-		if (((P1.x() - ori)*(P1.x() - ori) + (P1.y() - ori)*(P1.y() - ori) < rad*rad) 
-			&& ((P2.x() - ori)*(P2.x() - ori) + (P2.y() - ori)*(P2.y() - ori) < rad*rad))
-		{
-			painter.setPen(QPen(Qt::green, 5));
-			painter.drawLine(P1, P2);
-			painter.drawEllipse(QRect(P2.x() - 5, P2.y() - 5, 10, 10));
-		}
-		else
-		{
-			painter.setPen(QPen(Qt::red, 5));
-			painter.drawLine(P1, P2);
-			painter.drawEllipse(QRect(P2.x() - 5, P2.y() - 5, 10, 10));
-		}
-
-		painter.setPen(QPen(Qt::magenta, 3, Qt::DashLine));
-		painter.drawLine(QPoint(ori, ori), QPoint(((P1.x() + P2.x()) / 2), ((P1.y() + P2.y()) / 2)));
-
-		painter.end();
-	}
-	setPixmap(pix_temp);
+    p1 = pp1;
+    p2 = pp2;
+    p3 = pp3;
+    p4 = pp4;
  }
 
 
@@ -96,11 +47,73 @@ void NaviLabel::setparameters(double size, double radius)
 void NaviLabel::setpicture(QPixmap &pix1)
 {
     pix = pix1.scaled(siz,siz);
-//	setPixmap(pix);
 }
 
-//void NaviLabel::paintEvent(QPaintEvent *event)
-//{
-//
-//}	
+void NaviLabel::setNaviState(bool isWork)
+{
+    isOpen = isWork;
+}
+
+bool NaviLabel::getNavistate()
+{
+    return isOpen;
+}
+void NaviLabel::paintEvent(QPaintEvent *event)
+{
+	if (!isOpen || p1 == Vector3d(0, 0, 0))
+	{
+		if (pix.isNull())
+			return;
+		pix_temp = pix;
+		setPixmap(pix_temp);
+		return;
+	}
+
+    Vector3d X_ = p1.cross(p2);
+    X_ = X_ / X_.norm();
+    Vector3d Z_ = p1 - p2;
+    Z_ = Z_ / Z_.norm();
+    cout << (p3 - p4) / (p3 - p4).norm();
+    Vector3d Y_ = Z_.cross(X_);
+    Matrix4d  O_;
+    O_.col(0).head(3) = X_;
+    O_.col(1).head(3) = Y_;
+    O_.col(2).head(3) = Z_;
+    O_.col(3).head(3) = p2;
+    O_.row(3) << 0, 0, 0, 1;
+    Vector4d Dir;
+    Dir.head(3) = (p3-p4) /(p3-p4).norm() * 80 + p4;
+    Dir(3) = 1;
+    Matrix4d O_inverse = O_.inverse();
+    Vector2d tp3 = (O_inverse * Dir).head(2);
+    Dir.head(3) = p4;
+    Vector2d tp4 = (O_inverse * Dir).head(2);
+
+    P1.setX(tp3(0) / rad * siz / 12+ori);
+    P1.setY(tp3(1) / rad * siz / 12+ori);
+    P2.setX(tp4(0) / rad * siz / 12+ori);
+    P2.setY(tp4(1) / rad * siz / 12+ori);
+    pix_temp = pix;
+    if (P1 != QPointF(-1, -1) && P2 != QPointF(-1, -1))
+    {
+        QPainter painter(&pix_temp);
+        if (((P1.x() - ori)*(P1.x() - ori) + (P1.y() - ori)*(P1.y() - ori) < rad*rad)
+            && ((P2.x() - ori)*(P2.x() - ori) + (P2.y() - ori)*(P2.y() - ori) < rad*rad))
+        {
+            painter.setPen(QPen(Qt::green, 5));
+            painter.drawLine(P1, P2);
+            painter.drawEllipse(QRect(P2.x() - 5, P2.y() - 5, 10, 10));
+        }
+        else
+        {
+            painter.setPen(QPen(Qt::red, 5));
+            painter.drawLine(P1, P2);
+            painter.drawEllipse(QRect(P2.x() - 5, P2.y() - 5, 10, 10));
+        }
+
+        painter.setPen(QPen(Qt::magenta, 3, Qt::DashLine));
+        painter.drawLine(QPoint(ori, ori), QPoint(((P1.x() + P2.x()) / 2), ((P1.y() + P2.y()) / 2)));
+    }
+    setPixmap(pix_temp);
+}
 

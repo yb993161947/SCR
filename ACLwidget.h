@@ -451,7 +451,7 @@ private slots:
     void on_pushButton_Femur_finished_2_clicked();
 
 
-    void on_pushButton_Femur_finished_3_clicked();
+    void on_pushButton_moveRobotin_4_clicked();
 
 private:
     Ui::Widget *ui;

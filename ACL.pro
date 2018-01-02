@@ -11,6 +11,7 @@ TARGET = ACLReconstruction
 TEMPLATE = app
 
 RESOURCES += resources.qrc
+RC_FILE = ACL.rc
 
 SOURCES += main.cpp\
         ACLwidget.cpp \

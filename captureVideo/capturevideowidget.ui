@@ -400,6 +400,19 @@ position:relative;
        <string>撤销点</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>840</x>
+        <y>350</y>
+        <width>89</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
      <zorder>widget_lasso</zorder>
      <zorder>pushButton_Exit</zorder>
      <zorder>pushButton_Process</zorder>
@@ -409,6 +422,7 @@ position:relative;
      <zorder>radioButton_findPt</zorder>
      <zorder>frame</zorder>
      <zorder>pushButton</zorder>
+     <zorder>pushButton_2</zorder>
     </widget>
    </item>
   </layout>

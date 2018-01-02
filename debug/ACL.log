@@ -1,0 +1,43 @@
+﻿  MOC ACLwidget.h
+  系统找不到指定的路径。
+  MOC fileWatcher/FileSystemWatcher.h
+  系统找不到指定的路径。
+  MOC ImageScene.h
+  系统找不到指定的路径。
+  MOC captureVideo/capturevideowidget.h
+  系统找不到指定的路径。
+  MOC dialog_setting.h
+  系统找不到指定的路径。
+  MOC imagescene_Tibia_ap.h
+  系统找不到指定的路径。
+  MOC imagescene_Tibia_lat.h
+  系统找不到指定的路径。
+  MOC imagescene_camera.h
+  系统找不到指定的路径。
+  MOC imagescene_femur_ap.h
+  系统找不到指定的路径。
+  MOC imagescene_femur_lat.h
+  系统找不到指定的路径。
+  MOC captureVideo/lassowidget.h
+  系统找不到指定的路径。
+  MOC UrAPI/mythread.h
+  系统找不到指定的路径。
+  MOC thread_get_ndi_marker.h
+  系统找不到指定的路径。
+  MOC UrAPI/ur_class_test.h
+  系统找不到指定的路径。
+  MOC CArmAngleCalCuLate/widget.h
+  系统找不到指定的路径。
+  UIC ACLwidget.ui
+  系统找不到指定的路径。
+  UIC CArmAngleCalCuLate/CArmwidget.ui
+  系统找不到指定的路径。
+  UIC captureVideo/capturevideowidget.ui
+  系统找不到指定的路径。
+  UIC dialog_setting.ui
+  系统找不到指定的路径。
+  UIC UrAPI/ur_class_test.ui
+  系统找不到指定的路径。
+  RCC resources.qrc
+  系统找不到指定的路径。
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets(171,5): error MSB6006: "cmd.exe" exited with code 3.

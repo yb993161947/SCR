@@ -89,6 +89,7 @@ public:
     QPushButton *pushButton_moveRobotin_3;
     QLabel *label_5;
     QPushButton *pushButton_moveRobot;
+    QPushButton *pushButton_moveRobotin_4;
     QComboBox *comboBox_CameraIndex;
     QPushButton *pushButton_InitRobot;
     QPushButton *pushButton_SetRobot;
@@ -338,7 +339,7 @@ public:
         pushButton_Femur_finished_2->setStyleSheet(QStringLiteral(""));
         pushButton_Femur_finished_3 = new QPushButton(tab_Femur);
         pushButton_Femur_finished_3->setObjectName(QStringLiteral("pushButton_Femur_finished_3"));
-        pushButton_Femur_finished_3->setGeometry(QRect(20, 720, 111, 41));
+        pushButton_Femur_finished_3->setGeometry(QRect(20, 720, 101, 41));
         pushButton_Femur_finished_3->setStyleSheet(QStringLiteral(""));
         tabWidget_manipulate->addTab(tab_Femur, QString());
         tab_Tibia = new QWidget();
@@ -508,7 +509,7 @@ public:
         pushButton->setGeometry(QRect(40, 20, 121, 31));
         groupBox_3 = new QGroupBox(tab_simulate);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
-        groupBox_3->setGeometry(QRect(40, 230, 231, 231));
+        groupBox_3->setGeometry(QRect(40, 230, 231, 271));
         pushButton_moveRobotin = new QPushButton(groupBox_3);
         pushButton_moveRobotin->setObjectName(QStringLiteral("pushButton_moveRobotin"));
         pushButton_moveRobotin->setGeometry(QRect(10, 80, 101, 31));
@@ -530,6 +531,9 @@ public:
         pushButton_moveRobot = new QPushButton(groupBox_3);
         pushButton_moveRobot->setObjectName(QStringLiteral("pushButton_moveRobot"));
         pushButton_moveRobot->setGeometry(QRect(10, 40, 101, 31));
+        pushButton_moveRobotin_4 = new QPushButton(groupBox_3);
+        pushButton_moveRobotin_4->setObjectName(QStringLiteral("pushButton_moveRobotin_4"));
+        pushButton_moveRobotin_4->setGeometry(QRect(10, 220, 101, 31));
         comboBox_CameraIndex = new QComboBox(tab_simulate);
         comboBox_CameraIndex->setObjectName(QStringLiteral("comboBox_CameraIndex"));
         comboBox_CameraIndex->setGeometry(QRect(190, 20, 81, 31));
@@ -794,7 +798,7 @@ public:
 
         retranslateUi(Widget);
 
-        tabWidget_manipulate->setCurrentIndex(2);
+        tabWidget_manipulate->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(Widget);
@@ -858,7 +862,8 @@ public:
         pushButton_moveRobotin_3->setText(QApplication::translate("Widget", "\345\207\272\351\222\211", 0));
         label_5->setText(QApplication::translate("Widget", "\357\274\210\351\225\277\346\214\211\350\207\263\345\201\234\346\255\242\357\274\211\n"
 "\345\217\257\345\244\232\346\254\241\347\202\271\345\207\273\345\220\216\351\200\200", 0));
-        pushButton_moveRobot->setText(QApplication::translate("Widget", "PushButton", 0));
+        pushButton_moveRobot->setText(QApplication::translate("Widget", "\347\247\273\345\212\250\346\234\272\345\231\250\344\272\272", 0));
+        pushButton_moveRobotin_4->setText(QApplication::translate("Widget", "\345\210\235\345\247\213\345\214\226\344\275\215\345\247\277", 0));
         pushButton_InitRobot->setText(QApplication::translate("Widget", "\345\210\235\345\247\213\345\214\226\346\234\272\345\231\250\344\272\272", 0));
         pushButton_SetRobot->setText(QApplication::translate("Widget", "\350\256\276\347\275\256\346\234\272\345\231\250\344\272\272", 0));
         label_Navi->setText(QString());
