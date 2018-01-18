@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Form Files">
@@ -45,16 +45,6 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Generated Files\Debug">
-      <UniqueIdentifier>{cf3b5eda-918d-4248-a9c5-a5ce2a0cfbfa}</UniqueIdentifier>
-      <Extensions>cpp;moc</Extensions>
-      <SourceControlFiles>False</SourceControlFiles>
-    </Filter>
-    <Filter Include="Generated Files\Release">
-      <UniqueIdentifier>{9268f30f-8f11-4e94-bd9a-71a587a994a8}</UniqueIdentifier>
-      <Extensions>cpp;moc</Extensions>
-      <SourceControlFiles>False</SourceControlFiles>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ACLwidget.cpp">
@@ -85,6 +75,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="dialog_setting.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\user\Desktop\FindCircle\FindCircle\find_circle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="imagescene_Tibia_ap.cpp">
@@ -167,6 +160,9 @@
     <CustomBuild Include="dialog_setting.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <ClInclude Include="..\..\..\Users\user\Desktop\FindCircle\FindCircle\find_circle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <CustomBuild Include="imagescene_Tibia_ap.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
@@ -211,6 +207,119 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="debug\moc_ACLwidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_ACLwidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_FileSystemWatcher.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_FileSystemWatcher.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_ImageScene.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_ImageScene.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_capturevideowidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_capturevideowidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_dialog_setting.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_dialog_setting.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_imagescene_Tibia_ap.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_imagescene_Tibia_ap.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_imagescene_Tibia_lat.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_imagescene_Tibia_lat.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_imagescene_camera.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_imagescene_camera.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_imagescene_femur_ap.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_imagescene_femur_ap.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_imagescene_femur_lat.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_imagescene_femur_lat.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_lassowidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_lassowidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_mythread.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_mythread.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_thread_get_ndi_marker.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_thread_get_ndi_marker.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_ur_class_test.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_ur_class_test.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_widget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_widget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\qrc_resources.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\qrc_resources.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClInclude Include="ui_ACLwidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_CArmwidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_capturevideowidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_dialog_setting.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_ur_class_test.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
     <CustomBuild Include="ACLwidget.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
@@ -229,6 +338,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="-">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="??.png">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="images\ACLApp.ico">
@@ -358,6 +470,9 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="images\bkg_text3.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\bkg">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="images\btn.png">
@@ -1085,72 +1200,6 @@
     </None>
     <None Include="images\zhengweiA.png">
       <Filter>Resource Files</Filter>
-    </None>
-    <None Include="GeneratedFiles\ui_ACLwidget.h">
-      <Filter>Generated Files</Filter>
-    </None>
-    <None Include="GeneratedFiles\ui_CArmwidget.h">
-      <Filter>Generated Files</Filter>
-    </None>
-    <None Include="GeneratedFiles\ui_capturevideowidget.h">
-      <Filter>Generated Files</Filter>
-    </None>
-    <None Include="GeneratedFiles\ui_dialog_setting.h">
-      <Filter>Generated Files</Filter>
-    </None>
-    <None Include="GeneratedFiles\ui_ur_class_test.h">
-      <Filter>Generated Files</Filter>
-    </None>
-    <None Include="images\exit - Copy.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="GeneratedFiles\qrc_resources.cpp">
-      <Filter>Generated Files</Filter>
-    </None>
-    <None Include="debug\moc_ACLwidget.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </None>
-    <None Include="debug\moc_capturevideowidget.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </None>
-    <None Include="debug\moc_dialog_setting.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </None>
-    <None Include="debug\moc_FileSystemWatcher.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </None>
-    <None Include="debug\moc_ImageScene.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </None>
-    <None Include="debug\moc_imagescene_camera.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </None>
-    <None Include="debug\moc_imagescene_femur_ap.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </None>
-    <None Include="debug\moc_imagescene_femur_lat.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </None>
-    <None Include="debug\moc_imagescene_Tibia_ap.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </None>
-    <None Include="debug\moc_imagescene_Tibia_lat.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </None>
-    <None Include="debug\moc_lassowidget.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </None>
-    <None Include="debug\moc_mythread.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </None>
-    <None Include="debug\moc_thread_get_ndi_marker.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </None>
-    <None Include="debug\moc_ur_class_test.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </None>
-    <None Include="debug\moc_widget.cpp">
-      <Filter>Generated Files\Debug</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

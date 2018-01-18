@@ -4,13 +4,21 @@
 #include "./CArmAngleCalCuLate/widget.h"
 #include "./fileWatcher/FileSystemWatcher.h"
 #include "QSettings"
+#include "QProcess"
+#include "QDir"
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
 
-    QSettings *configIniRead = new QSettings("configure.ini", QSettings::IniFormat);
-    QString WatchPath = configIniRead->value("/DcmFilePath/path").toString();
-    FileSystemWatcher::addWatchPath(WatchPath);
+
+    QApplication a(argc, argv);
+    QDir dir;
+    dir.mkdir("DcmFile");
+        FileSystemWatcher::addWatchPath("DcmFile");
+    QString program = "storescp.exe";
+    QStringList arguments;
+    arguments <<"-od"<<"DcmFile"<<"5679";
+    QProcess *myProcess = new QProcess();
+    myProcess->start(program, arguments);
     Widget w;
     w.show();
     return a.exec();
@@ -45,3 +53,4 @@ int main(int argc, char *argv[])
 //TofTCP_Up2MarkeronRobot = ""
 //TofTCP_Down2MarkeronRobot = ""
 //TofMarkeronRobot2Robot = "-0.01892333118,0.004903443199,-0.9993053558,423.4891478,-0.9997157185,-0.01115633245,0.02974294868,-24.54059943,0.01449105839,0.9999246591,0.02259664511,17.39326934,0,	0,	0,	1"
+

@@ -153,7 +153,7 @@ INCLUDEPATH +=  $$PWD\ThirdLib\DCMTK3.6.0x64\include\
                 $$PWD\ThirdLib\DCMTK3.6.0x64\include\dcmtk\oflog\helpers\
                 $$PWD\ThirdLib\DCMTK3.6.0x64\include\dcmtk\oflog\spi\
                 $$PWD\ThirdLib\DCMTK3.6.0x64\include\dcmtk\ofstd
-LIBS += $$PWD\ThirdLib\NetAPI32.Lib\
+LIBS += $$PWD\ThirdLib\netapi32.Lib\
         $$PWD\ThirdLib\WSock32.Lib\
         ws2_32.lib\
         Advapi32.lib

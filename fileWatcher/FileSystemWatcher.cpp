@@ -102,8 +102,8 @@ void FileSystemWatcher::directoryUpdated(const QString &path)
                 size_t filename_length = strlen(filename); // length ()
                 prefix = filename + filename_length - 3; //获得后三位字符
                 QString path = WatchPath +QString("/")+ file;
-                if(strcmp(prefix, "IMA") == 0 || strcmp(prefix, "dcm") == 0) //判断是什么文件
-                {
+               // if(strcmp(prefix, "IMA") == 0 || strcmp(prefix, "dcm") == 0) //判断是什么文件
+               // {
 					QThread::sleep(1);
                     DicomImage img(path.toLocal8Bit().data());
                     //	DicomImage img(filename);
@@ -113,7 +113,7 @@ void FileSystemWatcher::directoryUpdated(const QString &path)
                     cv::minMaxLoc(original_image, nullptr, &maxVal);
                     original_image.convertTo(original_image, CV_8UC1, 256.0 / maxVal);
                     cvMat2QImage(original_image).save("XRayData.bmp");
-                }
+               //}
 
             }
         }

@@ -5,7 +5,8 @@ imagescene_camera::imagescene_camera(QObject *parent): QGraphicsScene(parent)
 {
     camera = new cv::VideoCapture;
     camTimer = new QTimer();
-    cameraCount = countCameras();
+   // cameraCount = countCameras();
+    cameraCount = 0;
     CameraPix = new QGraphicsPixmapItem();
     CameraPix->setPos(0,0);
     this->addItem(CameraPix);
