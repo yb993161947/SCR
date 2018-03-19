@@ -4,7 +4,7 @@
 #include "ImageScene.h"
 class imageScene_Tibia_ap : public ImageScene {
 	
-Q_OBJECT
+	Q_OBJECT
 public:
     imageScene_Tibia_ap(QObject * parent = 0);
     ~imageScene_Tibia_ap();

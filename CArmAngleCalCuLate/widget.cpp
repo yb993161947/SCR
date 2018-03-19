@@ -795,3 +795,14 @@ void CArmWidget::on_radioButton_tibia_clicked()
     ui->label_Rz->clear();
     update();
 }
+
+void CArmWidget::on_pushButtonRotatePic_clicked()
+{
+    QMatrix matrix;
+    matrix.rotate(90.0);
+    QImage temp=OpenPiture.toImage();
+    temp = temp.transformed(matrix,Qt::FastTransformation);
+    OpenPiture = QPixmap::fromImage(temp);
+    OpenPiture_temp = OpenPiture;
+    update();
+}

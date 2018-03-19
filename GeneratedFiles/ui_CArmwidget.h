@@ -72,6 +72,7 @@ public:
     QRadioButton *radioButton_8;
     QRadioButton *radioButton_14;
     QRadioButton *radioButton_15;
+    QPushButton *pushButtonRotatePic;
 
     void setupUi(QWidget *CArmWidget)
     {
@@ -290,6 +291,11 @@ public:
         radioButton_8->raise();
         radioButton_14->raise();
         radioButton_15->raise();
+        pushButtonRotatePic = new QPushButton(CArmWidget);
+        pushButtonRotatePic->setObjectName(QStringLiteral("pushButtonRotatePic"));
+        pushButtonRotatePic->setGeometry(QRect(1140, 110, 81, 31));
+        pushButtonRotatePic->setStyleSheet(QLatin1String("border-image: url(:/images/btn.png);\n"
+"color: rgb(255, 255, 255);"));
         textBrowserMeasureValue->raise();
         label_2->raise();
         textEditReferenceValue->raise();
@@ -300,6 +306,7 @@ public:
         groupBox->raise();
         frame_Femur->raise();
         frame_Tibia->raise();
+        pushButtonRotatePic->raise();
 
         retranslateUi(CArmWidget);
 
@@ -340,6 +347,7 @@ public:
         radioButton_8->setText(QApplication::translate("CArmWidget", "\345\217\202\350\200\2030", 0));
         radioButton_14->setText(QApplication::translate("CArmWidget", "\346\265\213\351\207\2176", 0));
         radioButton_15->setText(QApplication::translate("CArmWidget", "\346\265\213\351\207\2177", 0));
+        pushButtonRotatePic->setText(QApplication::translate("CArmWidget", "\346\227\213\350\275\254\345\233\276\345\203\217", 0));
     } // retranslateUi
 
 };

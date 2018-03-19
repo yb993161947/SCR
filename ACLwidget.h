@@ -120,8 +120,14 @@ public:
     Matrix4d tiptopatXspot_Lat_Tibia;
 
     //标定数据
+    Vector4d TofTCP_2MarkeronRobot1;
+    Vector4d TofTCP_2MarkeronRobot2;
+    Vector4d TofTCP_Left2MarkeronRobot;
+    Vector4d TofTCP_Right2MarkeronRobot;
     Vector4d TofTCP_Up2MarkeronRobot;
     Vector4d TofTCP_Down2MarkeronRobot;
+
+
     Matrix4d TofMarkerTip1toMarkerTip2;
     Matrix4d TofMarkeronRobot2Robot;
     Matrix4d XSpotMarker1toMarker2;
@@ -130,8 +136,14 @@ public:
 	Matrix4d TCPMarker1toTCPMarker3;
     Matrix4d TCPMarker1toTCPMarkerUp;
     Matrix4d TofMarker1ToTip1;
+
     Vector4d tanzhen2tip;
     Vector4d tanzhen2tipend;
+    Vector4d tanzhen2tip_1;
+    Vector4d tanzhen2tipend_1;
+    Vector4d tanzhen2tip_2;
+    Vector4d tanzhen2tipend_2;
+
 	void caculateMovetoRoute(Vector3d End3DPt, Vector3d Start3DPt, Matrix4d &Bone_Matrix, double pos[]);//单位mm
     void caculateMoveAngle(Vector3d End3DPt,Vector3d Start3DPt,Matrix4d &Bone_Matrix ,double pos[]);//单位mm
 
@@ -246,6 +258,8 @@ public:
     //Ur控制
     UR_class_test *Ur;
     Matrix4d RobotTCP;
+    Matrix4d RobotTCP1;
+    Matrix4d RobotTCP2;
     Matrix3d rotateWithAxis(Vector3d Axis,double theta);//弧度
     Matrix4d T_End; //第一步，运动到路径上
     Matrix4d T_End1; //第一步，运动到路径上
@@ -269,6 +283,9 @@ public:
 
     //探针矫正
     Matrix4d Marker_Adjust[4];
+
+    //设置末端模式
+    int TCPmodel;
 
 private slots:
 
@@ -441,8 +458,6 @@ private slots:
 
     //视角切换
 
-
-
     void on_pushButton_SetRobot_clicked();
 
     void on_pushButton_3_clicked();
@@ -452,6 +467,10 @@ private slots:
 
 
     void on_pushButton_moveRobotin_4_clicked();
+
+    void on_pushButton_InitRobot_2_clicked();
+
+    void on_pushButton_InitRobot_3_clicked();
 
 private:
     Ui::Widget *ui;

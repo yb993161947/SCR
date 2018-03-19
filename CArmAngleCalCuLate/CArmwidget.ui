@@ -591,6 +591,23 @@ color: rgb(255, 255, 255);</string>
    <zorder>radioButton_14</zorder>
    <zorder>radioButton_15</zorder>
   </widget>
+  <widget class="QPushButton" name="pushButtonRotatePic">
+   <property name="geometry">
+    <rect>
+     <x>1140</x>
+     <y>110</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/images/btn.png);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>旋转图像</string>
+   </property>
+  </widget>
   <zorder>textBrowserMeasureValue</zorder>
   <zorder>label_2</zorder>
   <zorder>textEditReferenceValue</zorder>
@@ -601,6 +618,7 @@ color: rgb(255, 255, 255);</string>
   <zorder>groupBox</zorder>
   <zorder>frame_Femur</zorder>
   <zorder>frame_Tibia</zorder>
+  <zorder>pushButtonRotatePic</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

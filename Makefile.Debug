@@ -67,8 +67,7 @@ SOURCES       = main.cpp \
 		carm\DxSpatialMatching.cpp \
 		fileWatcher\FileSystemWatcher.cpp \
 		imagescene_camera.cpp \
-		navilabel.cpp \
-		..\..\..\Users\user\Desktop\FindCircle\FindCircle\find_circle.cpp debug\qrc_resources.cpp \
+		navilabel.cpp debug\qrc_resources.cpp \
 		debug\moc_ACLwidget.cpp \
 		debug\moc_ImageScene.cpp \
 		debug\moc_imagescene_femur_lat.cpp \
@@ -109,7 +108,6 @@ OBJECTS       = debug\main.obj \
 		debug\FileSystemWatcher.obj \
 		debug\imagescene_camera.obj \
 		debug\navilabel.obj \
-		debug\find_circle.obj \
 		debug\qrc_resources.obj \
 		debug\moc_ACLwidget.obj \
 		debug\moc_ImageScene.obj \
@@ -151,8 +149,7 @@ DIST          =  ACLwidget.h \
 		carm\DxSpatialMatching.h \
 		fileWatcher\FileSystemWatcher.h \
 		imagescene_camera.h \
-		navilabel.h \
-		..\..\..\Users\user\Desktop\FindCircle\FindCircle\find_circle.h main.cpp \
+		navilabel.h main.cpp \
 		ACLwidget.cpp \
 		ImageScene.cpp \
 		imagescene_femur_lat.cpp \
@@ -176,8 +173,7 @@ DIST          =  ACLwidget.h \
 		carm\DxSpatialMatching.cpp \
 		fileWatcher\FileSystemWatcher.cpp \
 		imagescene_camera.cpp \
-		navilabel.cpp \
-		..\..\..\Users\user\Desktop\FindCircle\FindCircle\find_circle.cpp
+		navilabel.cpp
 QMAKE_TARGET  = ACLReconstruction
 DESTDIR        = debug\ #avoid trailing-slash linebreak
 TARGET         = ACLReconstruction.exe
@@ -187,17 +183,145 @@ DESTDIR_TARGET = debug\ACLReconstruction.exe
 
 .SUFFIXES: .c .cpp .cc .cxx
 
-.cpp.obj:
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fo$@ $<
+{fileWatcher}.cpp{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
 
-.cc.obj:
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fo$@ $<
+{fileWatcher}.cc{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
 
-.cxx.obj:
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fo$@ $<
+{fileWatcher}.cxx{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
 
-.c.obj:
-	$(CC) -c $(CFLAGS) $(INCPATH) -Fo$@ $<
+{fileWatcher}.c{debug\}.obj::
+	$(CC) -c $(CFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{debug}.cpp{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{debug}.cc{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{debug}.cxx{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{debug}.c{debug\}.obj::
+	$(CC) -c $(CFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{carm}.cpp{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{carm}.cc{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{carm}.cxx{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{carm}.c{debug\}.obj::
+	$(CC) -c $(CFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{UrAPI}.cpp{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{UrAPI}.cc{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{UrAPI}.cxx{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{UrAPI}.c{debug\}.obj::
+	$(CC) -c $(CFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{CArmAngleCalCuLate}.cpp{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{CArmAngleCalCuLate}.cc{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{CArmAngleCalCuLate}.cxx{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{CArmAngleCalCuLate}.c{debug\}.obj::
+	$(CC) -c $(CFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{.}.cpp{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{.}.cc{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{.}.cxx{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{.}.c{debug\}.obj::
+	$(CC) -c $(CFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{captureVideo}.cpp{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{captureVideo}.cc{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{captureVideo}.cxx{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{captureVideo}.c{debug\}.obj::
+	$(CC) -c $(CFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
 
 ####### Build rules
 
@@ -221,7 +345,7 @@ dist:
 	$(ZIP) ACLReconstruction.zip $(SOURCES) $(DIST) ACL.pro D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\spec_pre.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\common\angle.conf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\common\msvc-base.conf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\common\msvc-desktop.conf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\qconfig.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dcore.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dcore_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dextras.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dextras_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dinput.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dinput_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dlogic.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dlogic_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquick.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquick_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquickextras.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquickextras_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquickinput.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquickinput_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquickrender.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquickrender_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_3drender.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_3drender_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_axbase.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_axbase_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_axcontainer.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_axcontainer_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_axserver.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_axserver_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_bluetooth.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_bluetooth_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_bootstrap_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_clucene_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_concurrent.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_concurrent_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_core.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_core_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_dbus.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_dbus_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_designer.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_designer_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_designercomponents_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_gamepad.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_gamepad_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_gui.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_gui_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_help.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_help_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_location.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_location_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_multimedia.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_multimedia_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_multimediawidgets.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_network.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_network_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_nfc.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_nfc_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_opengl.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_opengl_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_openglextensions.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_openglextensions_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_packetprotocol_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_platformsupport_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_positioning.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_positioning_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_printsupport.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_printsupport_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_purchasing.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_purchasing_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_qml.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_qml_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_qmldebug_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_qmldevtools_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_qmltest.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_qmltest_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_quick.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_quick_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_quickcontrols2.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_quickparticles_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_quickwidgets.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_quickwidgets_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_script.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_script_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_scripttools.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_scripttools_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_scxml.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_scxml_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_sensors.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_sensors_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_serialbus.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_serialbus_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_serialport.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_serialport_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_sql.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_sql_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_svg.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_svg_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_testlib.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_testlib_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_uiplugin.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_uitools.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_uitools_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_webchannel.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_webchannel_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_webengine.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_webengine_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_webenginecore.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_webenginecore_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_webenginecoreheaders_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_webenginewidgets.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_webenginewidgets_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_websockets.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_websockets_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_webview.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_webview_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_widgets.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_widgets_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_winextras.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_winextras_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_xml.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_xml_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_xmlpatterns.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\modules\qt_lib_zlib_private.pri D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\qt_functions.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\qt_config.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\win32\qt_config.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\win32-msvc2015\qmake.conf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\spec_post.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\exclusive_builds.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\default_pre.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\win32\default_pre.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\resolve_config.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\exclusive_builds_post.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\default_post.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\build_pass.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\win32\rtti.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\precompile_header.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\warn_on.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\qt.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\resources.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\moc.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\win32\opengl.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\uic.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\file_copies.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\win32\windows.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\testcase_targets.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\exceptions.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\yacc.prf D:\Qt\Qt5.7.0\5.7\msvc2015_64\mkspecs\features\lex.prf ACL.pro resources.qrc D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\qtmaind.prl D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\Qt5OpenGLd.prl D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\Qt5Widgetsd.prl D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\Qt5Guid.prl D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\Qt5Networkd.prl D:\Qt\Qt5.7.0\5.7\msvc2015_64\lib\Qt5Cored.prl  NO_PCH_SOURCES RESOURCES HEADERS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
 
 clean: compiler_clean 
-	-$(DEL_FILE) debug\main.obj debug\ACLwidget.obj debug\ImageScene.obj debug\imagescene_femur_lat.obj debug\tablesketch_item.obj debug\thread_get_ndi_marker.obj debug\DxMath.obj debug\DxPoint.obj debug\ImageRectify.obj debug\capturevideowidget.obj debug\lassowidget.obj debug\imagescene_femur_ap.obj debug\imagescene_Tibia_ap.obj debug\imagescene_Tibia_lat.obj debug\dialog_setting.obj debug\mythread.obj debug\socket.obj debug\ur_class_test.obj debug\UR_interface.obj debug\needle.obj debug\widget.obj debug\DxSpatialMatching.obj debug\FileSystemWatcher.obj debug\imagescene_camera.obj debug\navilabel.obj debug\find_circle.obj debug\qrc_resources.obj debug\moc_ACLwidget.obj debug\moc_ImageScene.obj debug\moc_imagescene_femur_lat.obj debug\moc_thread_get_ndi_marker.obj debug\moc_capturevideowidget.obj debug\moc_lassowidget.obj debug\moc_imagescene_femur_ap.obj debug\moc_imagescene_Tibia_ap.obj debug\moc_imagescene_Tibia_lat.obj debug\moc_dialog_setting.obj debug\moc_mythread.obj debug\moc_ur_class_test.obj debug\moc_widget.obj debug\moc_FileSystemWatcher.obj debug\moc_imagescene_camera.obj
+	-$(DEL_FILE) debug\main.obj debug\ACLwidget.obj debug\ImageScene.obj debug\imagescene_femur_lat.obj debug\tablesketch_item.obj debug\thread_get_ndi_marker.obj debug\DxMath.obj debug\DxPoint.obj debug\ImageRectify.obj debug\capturevideowidget.obj debug\lassowidget.obj debug\imagescene_femur_ap.obj debug\imagescene_Tibia_ap.obj debug\imagescene_Tibia_lat.obj debug\dialog_setting.obj debug\mythread.obj debug\socket.obj debug\ur_class_test.obj debug\UR_interface.obj debug\needle.obj debug\widget.obj debug\DxSpatialMatching.obj debug\FileSystemWatcher.obj debug\imagescene_camera.obj debug\navilabel.obj debug\qrc_resources.obj debug\moc_ACLwidget.obj debug\moc_ImageScene.obj debug\moc_imagescene_femur_lat.obj debug\moc_thread_get_ndi_marker.obj debug\moc_capturevideowidget.obj debug\moc_lassowidget.obj debug\moc_imagescene_femur_ap.obj debug\moc_imagescene_Tibia_ap.obj debug\moc_imagescene_Tibia_lat.obj debug\moc_dialog_setting.obj debug\moc_mythread.obj debug\moc_ur_class_test.obj debug\moc_widget.obj debug\moc_FileSystemWatcher.obj debug\moc_imagescene_camera.obj
 	-$(DEL_FILE) debug\ACLReconstruction.exp debug\ACLReconstruction.ilk debug\ACLReconstruction.idb
 	-$(DEL_FILE) debug\ACL.res
 
@@ -523,8 +647,10 @@ debug\qrc_resources.cpp: resources.qrc \
 		Resources\resource\icon-capture.ico \
 		Resources\resource\Femur_disable.png \
 		Resources\resource\Tibia_enable.png \
+		Resources\resource\xspot_Robot.png \
 		Resources\resource\icon-capture.png \
 		Resources\resource\Tibia_disable.png \
+		Resources\resource\xspot_smallball.png \
 		Resources\resource\bkgNull.png \
 		Resources\resource\Femur_enable.png
 	D:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\rcc.exe -name resources resources.qrc -o debug\qrc_resources.cpp
@@ -5858,68 +5984,133 @@ compiler_clean: compiler_rcc_clean compiler_moc_header_clean compiler_uic_clean
 
 ####### Compile
 
-debug\main.obj: main.cpp ThirdLib\OpenCVMSVC2015_x64\include\opencv2\opencv.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\opencv_modules.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\core_c.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\types_c.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\core.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\version.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\operations.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\mat.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\miniflann.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\defines.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\config.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\imgproc\imgproc_c.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\imgproc\types_c.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\imgproc\imgproc.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\photo\photo.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\photo\photo_c.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\video\video.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\video\tracking.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\video\background_segm.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\features2d\features2d.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\objdetect\objdetect.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\calib3d\calib3d.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\affine.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\ml\ml.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\highgui\highgui_c.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\highgui\highgui.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\contrib\contrib.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\contrib\retina.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\contrib\openfabmap.hpp \
-		C:\Users\user\Desktop\FindCircle\FindCircle\find_circle.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv\cv.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\flann.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\flann_base.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\general.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\matrix.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\params.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\any.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\saving.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\nn_index.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\result_set.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\all_indices.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\kdtree_index.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\dynamic_bitset.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\dist.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\heap.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\allocator.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\random.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\kdtree_single_index.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\kmeans_index.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\logger.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\composite_index.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\linear_index.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\hierarchical_clustering_index.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\lsh_index.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\lsh_table.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\autotuned_index.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\ground_truth.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\index_testing.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\timer.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\sampling.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\legacy\compat.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\internal.hpp \
+debug\main.obj: main.cpp ACLwidget.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QWidget \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qwidget.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qwindowdefs.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qglobal.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qconfig.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qfeatures.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsystemdetection.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qprocessordetection.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcompilerdetection.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qtypeinfo.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qtypetraits.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qisenum.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsysinfo.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qlogging.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qflags.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qatomic.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qbasicatomic.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qatomic_bootstrap.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qgenericatomic.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qatomic_cxx11.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qatomic_msvc.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qglobalstatic.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmutex.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qnumeric.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qversiontagging.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qobjectdefs.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qnamespace.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qobjectdefs_impl.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qwindowdefs_win.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qobject.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qstring.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qchar.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qbytearray.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qrefcount.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qarraydata.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qstringbuilder.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qlist.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qalgorithms.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qiterator.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qhashfunctions.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qpair.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qbytearraylist.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qstringlist.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qregexp.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qstringmatcher.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcoreevent.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qscopedpointer.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmetatype.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qvarlengtharray.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcontainerfwd.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qobject_impl.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmargins.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpaintdevice.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qrect.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsize.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qpoint.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpalette.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qcolor.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qrgb.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qrgba64.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qbrush.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qvector.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qmatrix.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpolygon.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qregion.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qdatastream.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qiodevice.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qline.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtransform.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpainterpath.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qimage.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpixelformat.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpixmap.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsharedpointer.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qshareddata.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qhash.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsharedpointer_impl.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qfont.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qfontmetrics.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qfontinfo.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qsizepolicy.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qcursor.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qkeysequence.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qevent.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qvariant.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmap.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qdebug.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qtextstream.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qlocale.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qset.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcontiguouscache.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qurl.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qurlquery.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qfile.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qfiledevice.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvector2d.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QMouseEvent \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QPaintEvent \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QPainter \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpainter.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextoption.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpen.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QCheckBox \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qcheckbox.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qicon.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QPen \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QImage \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QRgb \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QColor \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QDebug \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QFile \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QThread \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qthread.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QString \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QTextStream \
+		ImageScene.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsLineItem \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgraphicsitem.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsScene \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgraphicsscene.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QList \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QPixmap \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\Eigen \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\Dense \
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\Core \
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\util\DisableStupidWarnings.h \
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\util\Macros.h \
@@ -6041,8 +6232,386 @@ debug\main.obj: main.cpp ThirdLib\OpenCVMSVC2015_x64\include\opencv2\opencv.hpp 
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\VectorBlock.h \
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\Minor.h \
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\MathFunctions.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\eigen.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\main.obj main.cpp
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\LU \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\misc\Solve.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\misc\Kernel.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\misc\Image.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\LU\FullPivLU.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\LU\PartialPivLU.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\LU\PartialPivLU_MKL.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\LU\Determinant.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\LU\Inverse.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\LU\arch\Inverse_SSE.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\LU.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\Cholesky \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Cholesky\LLT.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Cholesky\LDLT.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Cholesky\LLT_MKL.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\QR \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\Jacobi \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Jacobi\Jacobi.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\Householder \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Householder\Householder.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Householder\HouseholderSequence.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Householder\BlockHouseholder.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\QR\HouseholderQR.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\QR\FullPivHouseholderQR.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\QR\ColPivHouseholderQR.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\QR\HouseholderQR_MKL.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\QR\ColPivHouseholderQR_MKL.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\QR.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\Eigenvalues \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\Geometry \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\SVD \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\SVD\JacobiSVD.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\SVD\JacobiSVD_MKL.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\SVD\UpperBidiagonalization.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\SVD.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Geometry\OrthoMethods.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Geometry\EulerAngles.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Geometry\Homogeneous.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Geometry\RotationBase.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Geometry\Rotation2D.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Geometry\Quaternion.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Geometry\AngleAxis.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Geometry\Transform.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Geometry\Translation.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Geometry\Scaling.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Geometry\Hyperplane.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Geometry\ParametrizedLine.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Geometry\AlignedBox.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Geometry\Umeyama.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Geometry\arch\Geometry_SSE.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\Geometry\All.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\Geometry\RotationBase.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\Geometry\Rotation2D.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\Geometry\Quaternion.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\Geometry\AngleAxis.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\Geometry\Transform.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\Geometry\Translation.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\Geometry\Scaling.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\Geometry\AlignedBox.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\Geometry\Hyperplane.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\Geometry\ParametrizedLine.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigenvalues\Tridiagonalization.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigenvalues\RealSchur.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigenvalues\HessenbergDecomposition.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigenvalues\EigenSolver.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigenvalues\SelfAdjointEigenSolver.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigenvalues\GeneralizedSelfAdjointEigenSolver.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigenvalues\ComplexSchur.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigenvalues\ComplexEigenSolver.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigenvalues\RealQZ.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigenvalues\GeneralizedEigenSolver.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigenvalues\MatrixBaseEigenvalues.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigenvalues\RealSchur_MKL.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigenvalues\ComplexSchur_MKL.h \
+		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigenvalues\SelfAdjointEigenSolver_MKL.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QVector4D \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvector4d.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QVector \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv\cv.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv\cv.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\core_c.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\types_c.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\core.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\version.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\operations.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\mat.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\imgproc\imgproc_c.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\imgproc\types_c.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\imgproc\imgproc.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\video\tracking.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\features2d\features2d.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\miniflann.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\defines.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\config.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\flann.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\flann_base.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\general.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\matrix.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\params.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\any.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\saving.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\nn_index.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\result_set.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\all_indices.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\kdtree_index.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\dynamic_bitset.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\dist.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\heap.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\allocator.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\random.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\kdtree_single_index.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\kmeans_index.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\logger.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\composite_index.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\linear_index.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\hierarchical_clustering_index.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\lsh_index.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\lsh_table.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\autotuned_index.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\ground_truth.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\index_testing.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\timer.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\sampling.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\calib3d\calib3d.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\affine.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\objdetect\objdetect.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\legacy\compat.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\internal.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\eigen.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\highgui.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\highgui\highgui.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\highgui\highgui_c.h \
+		needle.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsItem \
+		imagescene_femur_lat.h \
+		tablesketch_item.h \
+		imagescene_femur_ap.h \
+		imagescene_Tibia_ap.h \
+		imagescene_Tibia_lat.h \
+		thread_get_ndi_marker.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\QtNetwork \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\QtNetworkDepends \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QtCore \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QtCoreDepends \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractanimation.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qanimationgroup.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qparallelanimationgroup.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qpauseanimation.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qpropertyanimation.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qvariantanimation.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qeasingcurve.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsequentialanimationgroup.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qtextcodec.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qendian.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qlibraryinfo.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qdatetime.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qbuffer.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qdir.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qfileinfo.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qdiriterator.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qfileselector.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QObject \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QStringList \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qfilesystemwatcher.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qlockfile.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qloggingcategory.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qprocess.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qresource.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsavefile.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsettings.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qstandardpaths.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qstorageinfo.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qtemporarydir.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QScopedPointer \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qtemporaryfile.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractproxymodel.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qidentityproxymodel.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsortfilterproxymodel.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qstringlistmodel.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qjsonarray.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qjsonvalue.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qjsondocument.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qjsonobject.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstracteventdispatcher.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qeventloop.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractnativeeventfilter.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qbasictimer.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmath.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmetaobject.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmimedata.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qobjectcleanuphandler.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qpointer.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsharedmemory.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsignalmapper.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsocketnotifier.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsystemsemaphore.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qtimer.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qtranslator.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qwineventnotifier.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmimedatabase.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmimetype.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qfactoryinterface.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qlibrary.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qplugin.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qpluginloader.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\quuid.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractstate.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstracttransition.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qeventtransition.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qfinalstate.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qhistorystate.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsignaltransition.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qstate.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qstatemachine.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qexception.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qfuture.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qfutureinterface.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qrunnable.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qresultstore.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qfuturesynchronizer.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qfuturewatcher.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qreadwritelock.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsemaphore.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qthreadpool.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qthreadstorage.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qwaitcondition.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qarraydataops.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qarraydatapointer.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qbitarray.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qbytearraymatcher.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcache.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcollator.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcommandlineoption.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcommandlineparser.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcryptographichash.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qelapsedtimer.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qlinkedlist.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmessageauthenticationcode.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qqueue.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qscopedvaluerollback.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qstack.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qtextboundaryfinder.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qtimeline.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qtimezone.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qversionnumber.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qxmlstream.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qtcoreversion.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qabstractnetworkcache.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qnetworkrequest.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QSharedDataPointer \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QUrl \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QVariant \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qhttpmultipart.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QByteArray \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QIODevice \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\QNetworkRequest \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qnetworkaccessmanager.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\QSslConfiguration \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qsslconfiguration.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qsslsocket.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qtcpsocket.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qabstractsocket.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qsslerror.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qsslcertificate.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qssl.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QFlags \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\QSslPreSharedKeyAuthenticator \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qsslpresharedkeyauthenticator.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QtGlobal \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QMetaType \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qnetworkcookie.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qnetworkcookiejar.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qnetworkdiskcache.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qnetworkreply.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\QNetworkAccessManager \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qnetworkconfigmanager.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qnetworkconfiguration.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qnetworksession.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qnetworkinterface.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qhostaddress.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qauthenticator.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qdnslookup.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qhostinfo.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qnetworkproxy.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qlocalserver.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qlocalsocket.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qtcpserver.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qudpsocket.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qsslcertificateextension.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qsslcipher.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qsslellipticcurve.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QHash \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qsslkey.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qtnetworkversion.h \
+		captureVideo/capturevideowidget.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QCommandLineParser \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLabel \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlabel.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qframe.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QTimer \
+		dialog_setting.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QDialog \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdialog.h \
+		ui_dialog_setting.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QAction \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qaction.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QApplication \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGridLayout \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGroupBox \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgroupbox.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvalidator.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qslider.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLineEdit \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlineedit.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextcursor.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextformat.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QPushButton \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QRadioButton \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qradiobutton.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv\highgui.h \
+		UrAPI/ur_class_test.h \
+		ui_ur_class_test.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QFormLayout \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qformlayout.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLayout \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QFrame \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QSlider \
+		UrAPI/UR_interface.h \
+		UrAPI/mythread.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QSettings \
+		CArmAngleCalCuLate/widget.h \
+		imagescene_camera.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsPixmapItem \
+		fileWatcher/FileSystemWatcher.h \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QMap \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QFileSystemWatcher \
+		UrAPI/socket.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\opencv.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\opencv_modules.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\photo\photo.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\photo\photo_c.h \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\video\video.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\video\background_segm.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\ml\ml.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\contrib\contrib.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\contrib\retina.hpp \
+		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\contrib\openfabmap.hpp \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QProcess \
+		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QDir
 
 debug\ACLwidget.obj: ACLwidget.cpp ACLwidget.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QWidget \
@@ -6753,7 +7322,6 @@ debug\ACLwidget.obj: ACLwidget.cpp ACLwidget.h \
 		ThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmimgle\dimoopx.h \
 		ThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmimgle\didispfn.h \
 		carm/ImageRectify.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ACLwidget.obj ACLwidget.cpp
 
 debug\ImageScene.obj: ImageScene.cpp ImageScene.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsLineItem \
@@ -7225,7 +7793,6 @@ debug\ImageScene.obj: ImageScene.cpp ImageScene.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QMessageBox \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qmessagebox.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgraphicseffect.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ImageScene.obj ImageScene.cpp
 
 debug\imagescene_femur_lat.obj: imagescene_femur_lat.cpp imagescene_femur_lat.h \
 		ImageScene.h \
@@ -7594,7 +8161,6 @@ debug\imagescene_femur_lat.obj: imagescene_femur_lat.cpp imagescene_femur_lat.h 
 		tablesketch_item.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpainter.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextoption.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\imagescene_femur_lat.obj imagescene_femur_lat.cpp
 
 debug\tablesketch_item.obj: tablesketch_item.cpp tablesketch_item.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsItem \
@@ -7686,7 +8252,6 @@ debug\tablesketch_item.obj: tablesketch_item.cpp tablesketch_item.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qfontinfo.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qfont.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qfontmetrics.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\tablesketch_item.obj tablesketch_item.cpp
 
 debug\thread_get_ndi_marker.obj: thread_get_ndi_marker.cpp thread_get_ndi_marker.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QThread \
@@ -8122,7 +8687,6 @@ debug\thread_get_ndi_marker.obj: thread_get_ndi_marker.cpp thread_get_ndi_marker
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QFile \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QTextStream \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QDebug
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\thread_get_ndi_marker.obj thread_get_ndi_marker.cpp
 
 debug\DxMath.obj: carm\DxMath.cpp carm/DxMath.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QtMath \
@@ -8149,7 +8713,6 @@ debug\DxMath.obj: carm\DxMath.cpp carm/DxMath.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qmutex.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qnumeric.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qversiontagging.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\DxMath.obj carm\DxMath.cpp
 
 debug\DxPoint.obj: carm\DxPoint.cpp D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QXmlStreamReader \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qxmlstream.h \
@@ -8211,7 +8774,6 @@ debug\DxPoint.obj: carm\DxPoint.cpp D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QXmlStreamWriter \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QStringlist \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QString
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\DxPoint.obj carm\DxPoint.cpp
 
 debug\ImageRectify.obj: carm\ImageRectify.cpp carm/ImageRectify.h \
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\Eigen \
@@ -8469,7 +9031,6 @@ debug\ImageRectify.obj: carm\ImageRectify.cpp carm/ImageRectify.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qnumeric.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qversiontagging.h \
 		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\legacy\compat.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ImageRectify.obj carm\ImageRectify.cpp
 
 debug\capturevideowidget.obj: captureVideo\capturevideowidget.cpp captureVideo/capturevideowidget.h \
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\Eigen \
@@ -8987,7 +9548,6 @@ debug\capturevideowidget.obj: captureVideo\capturevideowidget.cpp captureVideo/c
 		ThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmimgle\didispfn.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QSettings \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsettings.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\capturevideowidget.obj captureVideo\capturevideowidget.cpp
 
 debug\lassowidget.obj: captureVideo\lassowidget.cpp captureVideo/lassowidget.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QRect \
@@ -9093,7 +9653,6 @@ debug\lassowidget.obj: captureVideo\lassowidget.cpp captureVideo/lassowidget.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpainter.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextoption.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpen.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\lassowidget.obj captureVideo\lassowidget.cpp
 
 debug\imagescene_femur_ap.obj: imagescene_femur_ap.cpp imagescene_femur_AP.h \
 		ImageScene.h \
@@ -9462,7 +10021,6 @@ debug\imagescene_femur_ap.obj: imagescene_femur_ap.cpp imagescene_femur_AP.h \
 		tablesketch_item.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpainter.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextoption.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\imagescene_femur_ap.obj imagescene_femur_ap.cpp
 
 debug\imagescene_Tibia_ap.obj: imagescene_Tibia_ap.cpp imagescene_Tibia_ap.h \
 		ImageScene.h \
@@ -9828,7 +10386,6 @@ debug\imagescene_Tibia_ap.obj: imagescene_Tibia_ap.cpp imagescene_Tibia_ap.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qfiledevice.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvector2d.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtouchdevice.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\imagescene_Tibia_ap.obj imagescene_Tibia_ap.cpp
 
 debug\imagescene_Tibia_lat.obj: imagescene_Tibia_lat.cpp imagescene_Tibia_lat.h \
 		ImageScene.h \
@@ -10194,7 +10751,6 @@ debug\imagescene_Tibia_lat.obj: imagescene_Tibia_lat.cpp imagescene_Tibia_lat.h 
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qfiledevice.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvector2d.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtouchdevice.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\imagescene_Tibia_lat.obj imagescene_Tibia_lat.cpp
 
 debug\dialog_setting.obj: dialog_setting.cpp dialog_setting.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QDialog \
@@ -10707,7 +11263,6 @@ debug\dialog_setting.obj: dialog_setting.cpp dialog_setting.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtNetwork\qtnetworkversion.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QFile \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QTextStream
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\dialog_setting.obj dialog_setting.cpp
 
 debug\mythread.obj: UrAPI\mythread.cpp UrAPI/mythread.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QThread \
@@ -10872,10 +11427,8 @@ debug\mythread.obj: UrAPI\mythread.cpp UrAPI/mythread.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QDebug \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QSettings \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsettings.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\mythread.obj UrAPI\mythread.cpp
 
 debug\socket.obj: UrAPI\socket.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\socket.obj UrAPI\socket.cpp
 
 debug\ur_class_test.obj: UrAPI\ur_class_test.cpp UrAPI/ur_class_test.h \
 		ui_ur_class_test.h \
@@ -11041,10 +11594,8 @@ debug\ur_class_test.obj: UrAPI\ur_class_test.cpp UrAPI/ur_class_test.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QSettings \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qsettings.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qexception.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ur_class_test.obj UrAPI\ur_class_test.cpp
 
 debug\UR_interface.obj: UrAPI\UR_interface.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\UR_interface.obj UrAPI\UR_interface.cpp
 
 debug\needle.obj: needle.cpp needle.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsItem \
@@ -11150,7 +11701,6 @@ debug\needle.obj: needle.cpp needle.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpainter.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextoption.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsLineItem
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\needle.obj needle.cpp
 
 debug\widget.obj: CArmAngleCalCuLate\widget.cpp CArmAngleCalCuLate/widget.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QWidget \
@@ -11525,7 +12075,6 @@ debug\widget.obj: CArmAngleCalCuLate\widget.cpp CArmAngleCalCuLate/widget.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvector4d.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qquaternion.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qgenericmatrix.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\widget.obj CArmAngleCalCuLate\widget.cpp
 
 debug\DxSpatialMatching.obj: carm\DxSpatialMatching.cpp carm/DxSpatialMatching.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QVector \
@@ -11797,7 +12346,6 @@ debug\DxSpatialMatching.obj: carm\DxSpatialMatching.cpp carm/DxSpatialMatching.h
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\StdVector \
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\StlSupport\StdVector.h \
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\StlSupport\details.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\DxSpatialMatching.obj carm\DxSpatialMatching.cpp
 
 debug\FileSystemWatcher.obj: fileWatcher\FileSystemWatcher.cpp D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QDir \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qdir.h \
@@ -11999,7 +12547,6 @@ debug\FileSystemWatcher.obj: fileWatcher\FileSystemWatcher.cpp D:\Qt\Qt5.7.0\5.7
 		ThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmimgle\dimoopx.h \
 		ThirdLib\DCMTK3.6.0x64\include\dcmtk\dcmimgle\didispfn.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qthread.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\FileSystemWatcher.obj fileWatcher\FileSystemWatcher.cpp
 
 debug\imagescene_camera.obj: imagescene_camera.cpp imagescene_camera.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGraphicsScene \
@@ -12265,7 +12812,6 @@ debug\imagescene_camera.obj: imagescene_camera.cpp imagescene_camera.h \
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\Minor.h \
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\MathFunctions.h \
 		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\eigen.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\imagescene_camera.obj imagescene_camera.cpp
 
 debug\navilabel.obj: navilabel.cpp navilabel.h \
 		ThirdLib\eigen-eigen-07105f7124f9\Eigen\Eigen \
@@ -12569,242 +13115,38 @@ debug\navilabel.obj: navilabel.cpp navilabel.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qfiledevice.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvector2d.h \
 		D:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtouchdevice.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\navilabel.obj navilabel.cpp
-
-debug\find_circle.obj: ..\..\..\Users\user\Desktop\FindCircle\FindCircle\find_circle.cpp ../../../Users/user/Desktop/FindCircle/FindCircle/find_circle.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv\cv.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\core_c.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\types_c.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\core.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\version.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\operations.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\mat.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\imgproc\imgproc_c.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\imgproc\types_c.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\imgproc\imgproc.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\video\tracking.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\features2d\features2d.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\miniflann.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\defines.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\config.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\flann.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\flann_base.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\general.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\matrix.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\params.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\any.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\saving.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\nn_index.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\result_set.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\all_indices.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\kdtree_index.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\dynamic_bitset.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\dist.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\heap.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\allocator.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\random.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\kdtree_single_index.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\kmeans_index.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\logger.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\composite_index.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\linear_index.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\hierarchical_clustering_index.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\lsh_index.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\lsh_table.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\autotuned_index.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\ground_truth.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\index_testing.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\timer.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\flann\sampling.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\calib3d\calib3d.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\affine.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\objdetect\objdetect.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\legacy\compat.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\internal.hpp \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\Core \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\util\DisableStupidWarnings.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\util\Macros.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\util\MKL_support.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\util\Constants.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\util\ForwardDeclarations.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\util\Meta.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\util\StaticAssert.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\util\XprHelper.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\util\Memory.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\NumTraits.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\MathFunctions.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\GenericPacketMath.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\arch\SSE\PacketMath.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\arch\SSE\MathFunctions.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\arch\SSE\Complex.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\arch\AltiVec\PacketMath.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\arch\AltiVec\Complex.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\arch\NEON\PacketMath.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\arch\NEON\Complex.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\arch\Default\Settings.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\Functors.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\DenseCoeffsBase.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\DenseBase.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\plugins\BlockMethods.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\MatrixBase.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\plugins\CommonCwiseUnaryOps.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\plugins\CommonCwiseBinaryOps.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\plugins\MatrixCwiseUnaryOps.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\plugins\MatrixCwiseBinaryOps.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\EigenBase.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\Assign.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\util\BlasUtil.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\DenseStorage.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\NestByValue.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\ForceAlignedAccess.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\ReturnByValue.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\NoAlias.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\PlainObjectBase.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\Matrix.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\Array.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\CwiseBinaryOp.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\CwiseUnaryOp.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\CwiseNullaryOp.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\CwiseUnaryView.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\SelfCwiseBinaryOp.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\Dot.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\StableNorm.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\MapBase.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\Stride.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\Map.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\Block.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\VectorBlock.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\Ref.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\Transpose.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\DiagonalMatrix.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\Diagonal.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\DiagonalProduct.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\PermutationMatrix.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\Transpositions.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\Redux.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\Visitor.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\Fuzzy.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\IO.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\Swap.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\CommaInitializer.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\Flagged.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\ProductBase.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\GeneralProduct.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\TriangularMatrix.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\SelfAdjointView.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\products\GeneralBlockPanelKernel.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\products\Parallelizer.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\products\CoeffBasedProduct.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\products\GeneralMatrixVector.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\products\GeneralMatrixMatrix.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\SolveTriangular.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\products\GeneralMatrixMatrixTriangular.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\products\SelfadjointMatrixVector.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\products\SelfadjointMatrixMatrix.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\products\SelfadjointProduct.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\products\SelfadjointRank2Update.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\products\TriangularMatrixVector.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\products\TriangularMatrixMatrix.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\products\TriangularSolverMatrix.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\products\TriangularSolverVector.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\BandMatrix.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\CoreIterators.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\BooleanRedux.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\Select.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\VectorwiseOp.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\Random.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\Replicate.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\Reverse.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\ArrayBase.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\plugins\ArrayCwiseUnaryOps.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\plugins\ArrayCwiseBinaryOps.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\ArrayWrapper.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\products\GeneralMatrixMatrix_MKL.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\products\GeneralMatrixVector_MKL.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\products\GeneralMatrixMatrixTriangular_MKL.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\products\SelfadjointMatrixMatrix_MKL.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\products\SelfadjointMatrixVector_MKL.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\products\TriangularMatrixMatrix_MKL.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\products\TriangularMatrixVector_MKL.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\products\TriangularSolverMatrix_MKL.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\Assign_MKL.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\GlobalFunctions.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Core\util\ReenableStupidWarnings.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\Eigen2Support \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\Macros.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\Memory.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\Meta.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\Lazy.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\Cwise.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\CwiseOperators.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\TriangularSolver.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\Block.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\VectorBlock.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\Minor.h \
-		ThirdLib\eigen-eigen-07105f7124f9\Eigen\src\Eigen2Support\MathFunctions.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\core\eigen.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\opencv.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\opencv_modules.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\photo\photo.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\photo\photo_c.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\video\video.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\video\background_segm.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\ml\ml.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\highgui\highgui_c.h \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\highgui\highgui.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\contrib\contrib.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\contrib\retina.hpp \
-		ThirdLib\OpenCVMSVC2015_x64\include\opencv2\contrib\openfabmap.hpp \
-		C:\Users\user\Desktop\FindCircle\FindCircle\find_circle.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\find_circle.obj ..\..\..\Users\user\Desktop\FindCircle\FindCircle\find_circle.cpp
 
 debug\qrc_resources.obj: debug\qrc_resources.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\qrc_resources.obj debug\qrc_resources.cpp
 
 debug\moc_ACLwidget.obj: debug\moc_ACLwidget.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_ACLwidget.obj debug\moc_ACLwidget.cpp
 
 debug\moc_ImageScene.obj: debug\moc_ImageScene.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_ImageScene.obj debug\moc_ImageScene.cpp
 
 debug\moc_imagescene_femur_lat.obj: debug\moc_imagescene_femur_lat.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_imagescene_femur_lat.obj debug\moc_imagescene_femur_lat.cpp
 
 debug\moc_thread_get_ndi_marker.obj: debug\moc_thread_get_ndi_marker.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_thread_get_ndi_marker.obj debug\moc_thread_get_ndi_marker.cpp
 
 debug\moc_capturevideowidget.obj: debug\moc_capturevideowidget.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_capturevideowidget.obj debug\moc_capturevideowidget.cpp
 
 debug\moc_lassowidget.obj: debug\moc_lassowidget.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_lassowidget.obj debug\moc_lassowidget.cpp
 
 debug\moc_imagescene_femur_ap.obj: debug\moc_imagescene_femur_ap.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_imagescene_femur_ap.obj debug\moc_imagescene_femur_ap.cpp
 
 debug\moc_imagescene_Tibia_ap.obj: debug\moc_imagescene_Tibia_ap.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_imagescene_Tibia_ap.obj debug\moc_imagescene_Tibia_ap.cpp
 
 debug\moc_imagescene_Tibia_lat.obj: debug\moc_imagescene_Tibia_lat.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_imagescene_Tibia_lat.obj debug\moc_imagescene_Tibia_lat.cpp
 
 debug\moc_dialog_setting.obj: debug\moc_dialog_setting.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_dialog_setting.obj debug\moc_dialog_setting.cpp
 
 debug\moc_mythread.obj: debug\moc_mythread.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_mythread.obj debug\moc_mythread.cpp
 
 debug\moc_ur_class_test.obj: debug\moc_ur_class_test.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_ur_class_test.obj debug\moc_ur_class_test.cpp
 
 debug\moc_widget.obj: debug\moc_widget.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_widget.obj debug\moc_widget.cpp
 
 debug\moc_FileSystemWatcher.obj: debug\moc_FileSystemWatcher.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_FileSystemWatcher.obj debug\moc_FileSystemWatcher.cpp
 
 debug\moc_imagescene_camera.obj: debug\moc_imagescene_camera.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_imagescene_camera.obj debug\moc_imagescene_camera.cpp
 
 ####### Install
 

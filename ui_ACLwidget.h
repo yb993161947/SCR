@@ -124,6 +124,8 @@ public:
     QFrame *frame;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
+    QPushButton *pushButton_InitRobot_2;
+    QPushButton *pushButton_InitRobot_3;
     QLabel *label_APdata;
     QLabel *label_Latdata;
     QPushButton *pushButtonSetting;
@@ -509,7 +511,7 @@ public:
         pushButton->setGeometry(QRect(40, 20, 121, 31));
         groupBox_3 = new QGroupBox(tab_simulate);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
-        groupBox_3->setGeometry(QRect(40, 230, 231, 271));
+        groupBox_3->setGeometry(QRect(40, 270, 231, 271));
         pushButton_moveRobotin = new QPushButton(groupBox_3);
         pushButton_moveRobotin->setObjectName(QStringLiteral("pushButton_moveRobotin"));
         pushButton_moveRobotin->setGeometry(QRect(10, 80, 101, 31));
@@ -546,7 +548,7 @@ public:
         pushButton_SetRobot->setGeometry(QRect(50, 180, 101, 31));
         label_Navi = new NaviLabel(tab_simulate);
         label_Navi->setObjectName(QStringLiteral("label_Navi"));
-        label_Navi->setGeometry(QRect(30, 510, 250, 250));
+        label_Navi->setGeometry(QRect(30, 560, 250, 250));
         label_Navi->setStyleSheet(QStringLiteral("border-image: url(:/Resources/rr.png);"));
         label_Navi->setFrameShape(QFrame::StyledPanel);
         tabWidget_manipulate->addTab(tab_simulate, QString());
@@ -764,6 +766,17 @@ public:
         pushButton_3 = new QPushButton(frame);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         pushButton_3->setGeometry(QRect(1620, 990, 101, 51));
+        pushButton_InitRobot_2 = new QPushButton(frame);
+        pushButton_InitRobot_2->setObjectName(QStringLiteral("pushButton_InitRobot_2"));
+        pushButton_InitRobot_2->setGeometry(QRect(1620, 960, 101, 31));
+        pushButton_InitRobot_3 = new QPushButton(frame);
+        pushButton_InitRobot_3->setObjectName(QStringLiteral("pushButton_InitRobot_3"));
+        pushButton_InitRobot_3->setGeometry(QRect(1740, 960, 101, 31));
+        pushButton_2->raise();
+        pushButton_3->raise();
+        tabWidget_manipulate->raise();
+        pushButton_InitRobot_2->raise();
+        pushButton_InitRobot_3->raise();
         label_APdata = new QLabel(Widget);
         label_APdata->setObjectName(QStringLiteral("label_APdata"));
         label_APdata->setGeometry(QRect(470, 760, 300, 100));
@@ -798,7 +811,7 @@ public:
 
         retranslateUi(Widget);
 
-        tabWidget_manipulate->setCurrentIndex(1);
+        tabWidget_manipulate->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(Widget);
@@ -891,6 +904,8 @@ public:
         pushButton_mirror_Lat->setText(QApplication::translate("Widget", "\347\277\273\350\275\254", 0));
         pushButton_2->setText(QApplication::translate("Widget", "\346\255\243\344\276\247\344\275\215\351\207\207\351\233\206", 0));
         pushButton_3->setText(QApplication::translate("Widget", "\345\257\274\345\205\245\346\225\260\346\215\256", 0));
+        pushButton_InitRobot_2->setText(QApplication::translate("Widget", "\346\234\253\347\253\257\346\255\243\344\275\215\345\257\274\350\210\252", 0));
+        pushButton_InitRobot_3->setText(QApplication::translate("Widget", "\346\234\253\347\253\257\344\276\247\344\275\215\345\257\274\350\210\252", 0));
         label_APdata->setText(QApplication::translate("Widget", "\346\225\260\346\215\256\357\274\232", 0));
         label_Latdata->setText(QApplication::translate("Widget", "\346\225\260\346\215\256\357\274\232", 0));
         pushButtonSetting->setText(QApplication::translate("Widget", "\350\256\276\347\275\256", 0));

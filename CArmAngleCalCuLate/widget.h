@@ -15,7 +15,6 @@ using namespace Eigen;
 namespace Ui {
 class  CArmWidget;
 }
-
 class CArmWidget : public QWidget
 {
     Q_OBJECT
@@ -66,6 +65,8 @@ private slots:
     
     void on_radioButton_tibia_clicked();
     
+
+    void on_pushButtonRotatePic_clicked();
 
 private:
     Ui::CArmWidget *ui;

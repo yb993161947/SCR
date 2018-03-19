@@ -26,7 +26,7 @@ CaptureVideoWidget::CaptureVideoWidget(QWidget* parent)
     connect(camTimer, SIGNAL(timeout()), this, SLOT(timerSlot()));
     connect(ui->widget_lasso, SIGNAL(finished()), this, SLOT(lassoHandler()));
     selectedIndex = -1;
-    for(int i = 0 ; i < 9 ;i ++)
+    for(int i = 0 ; i < 11 ;i ++)
     {
         _2DPt[i] = QPointF(0,0);
     }
@@ -253,12 +253,12 @@ void CaptureVideoWidget::readSettingFile()
     QString Value;
     QStringList ValueList;
 
-    XSpotPts3DonMarker1.resize(9,3);
+    XSpotPts3DonMarker1.resize(11,3);
     ValueList.clear();
     Value = configIniRead->value("/Tracker/XSpotPts3DonMarker1").toString();
     ValueList = Value.split(',');
-    if(ValueList.size() >= 27)
-    for(int i = 0; i < 27; i++)
+    if(ValueList.size() >= 33)
+    for(int i = 0; i < 33; i++)
     XSpotPts3DonMarker1(i / 3 ,i % 3) = ValueList[i].toDouble();
 
     ValueList.clear();
@@ -356,7 +356,7 @@ void CaptureVideoWidget::paintPt()
         p.setPen(QPen(Qt::red, 3, Qt::SolidLine));
         QFont font("Arial", 20, QFont::Bold, true);
         p.setFont(font);
-        for (int i = 0; i < 9; i++)
+        for (int i = 0; i < 11; i++)
         {
             if (_2DPt[i].x() == 0)
                 continue;
@@ -501,7 +501,7 @@ void CaptureVideoWidget::on_pushButton_Process_clicked()
 void CaptureVideoWidget::on_pushButtonCalculate_clicked()
 {
     int num_dot = 0;
-    for(int i =0;i < 9;i++)
+    for(int i =0;i < 11;i++)
     {
         if(_2DPt[i] != QPointF(0,0))
             num_dot ++;
@@ -541,32 +541,32 @@ void CaptureVideoWidget::on_pushButtonCalculate_clicked()
 
 	//自己做的Xspot
 	vector<QPointF> ver_2DPt;
-    ver_2DPt.resize(9);
-    for (int i = 0; i <9; i++)
+    ver_2DPt.resize(11);
+    for (int i = 0; i <11; i++)
 	{
 		ver_2DPt[i] = _2DPt[i];
 	}
 	caculateParam(ver_2DPt, XSpotPts3DonMarker1, transparams);
 
-	QString path = QApplication::applicationDirPath();
-	path += "/DataDocument";
-	QDir dir;
-	dir.mkpath(path);
-	path += "/param11.txt";
-	QFile file(path);
-	file.open(QFile::WriteOnly);
-	for (int i = 0; i < transparams.size(); i++)
-	{
-		if (i == transparams.size() - 1)
-		{
-			file.write(QString("%1").arg(transparams[i]).toLocal8Bit());
-		}
-		else
-		{
-			file.write(QString("%1,").arg(transparams[i]).toLocal8Bit());
-		}
-	}
-	file.close();
+//	QString path = QApplication::applicationDirPath();
+//	path += "/DataDocument";
+//	QDir dir;
+//	dir.mkpath(path);
+//	path += "/param11.txt";
+//	QFile file(path);
+//	file.open(QFile::WriteOnly);
+//	for (int i = 0; i < transparams.size(); i++)
+//	{
+//		if (i == transparams.size() - 1)
+//		{
+//			file.write(QString("%1").arg(transparams[i]).toLocal8Bit());
+//		}
+//		else
+//		{
+//			file.write(QString("%1,").arg(transparams[i]).toLocal8Bit());
+//		}
+//	}
+//	file.close();
 	emit processFinished(true);
 }
 
@@ -641,7 +641,6 @@ void CaptureVideoWidget::on_radioButton_6_clicked()
     selectedIndex = 5;
 }
 
-
 void CaptureVideoWidget::on_radioButton_7_clicked()
 {
     selectedIndex = 6;
@@ -655,6 +654,16 @@ void CaptureVideoWidget::on_radioButton_8_clicked()
 void CaptureVideoWidget::on_radioButton_9_clicked()
 {
     selectedIndex = 8;
+}
+
+void CaptureVideoWidget::on_radioButton_10_clicked()
+{
+    selectedIndex = 9;
+}
+
+void CaptureVideoWidget::on_radioButton_11_clicked()
+{
+   selectedIndex = 10;
 }
 
 void CaptureVideoWidget::on_radioButton_source_clicked()
@@ -674,14 +683,14 @@ void CaptureVideoWidget::on_checkBox_removeCircle_clicked()
 
 void CaptureVideoWidget::on_pushButton_clicked()
 {
-    if(selectedIndex >= 0 && selectedIndex < 9)
+    if(selectedIndex >= 0 && selectedIndex < 11)
     _2DPt[selectedIndex] =QPointF(0,0);
    update();
 }
 
 void CaptureVideoWidget::on_pushButton_2_clicked()
 {
-    for(int i = 0;i < 9; i++)
+    for(int i = 0;i < 11; i++)
     {
 //        qDebug() << "imagePoints.push_back(cv::Point2d("<<_2DPt[i].x()<<","<<_2DPt[i].y()<<"));";
           qDebug() << _2DPt[i].x()<<","<<_2DPt[i].y()<<",";
@@ -689,4 +698,5 @@ void CaptureVideoWidget::on_pushButton_2_clicked()
 //        qDebug()<< "imagePoints_ver.push_back(imagePoints);";
 //        qDebug()<< "imagePoints.clear();";
 }
+
 

@@ -27,7 +27,6 @@ class CaptureVideoWidget;
 
 class CaptureVideoWidget : public QWidget
 {
- // 
  Q_OBJECT
 public:
     explicit CaptureVideoWidget(QWidget* parent = 0);
@@ -51,7 +50,7 @@ public:
     QImage getCaputuredImage();
     QImage getRifinedImage(bool removeCircles);
     //鼠标选中点
-    QPointF	 _2DPt[9];
+    QPointF	 _2DPt[11];
 
     vector<cv::Vec3f> XSpotPts2D;//图像上识别出的Xspot点
     //vector<QPoint> XSpotPts2D_sort;
@@ -126,6 +125,10 @@ private slots:
     void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
+
+    void on_radioButton_10_clicked();
+
+    void on_radioButton_11_clicked();
 
 private:
     Ui::CaptureVideoWidget* ui;

@@ -284,5 +284,7 @@
         <file>Resources/rr.png</file>
         <file>images/ACLApp.ico</file>
         <file>images/bkg - 副本.png</file>
+        <file>Resources/resource/xspot_smallball.png</file>
+        <file>Resources/resource/xspot_Robot.png</file>
     </qresource>
 </RCC>
