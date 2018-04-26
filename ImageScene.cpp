@@ -368,7 +368,6 @@ void ImageScene::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
 
       }
       update();
-//	  update();
 
 }
 
@@ -386,8 +385,6 @@ void ImageScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
 
     movingImage = false;
     movingMatchiingImage = false;
-
-
 }
 
 void ImageScene::wheelEvent(QGraphicsSceneWheelEvent *wheelEvent)
@@ -493,7 +490,6 @@ void  ImageScene::selected_show()
 			{
 				Piximage_button_selected[index_selected].show();
 				Piximage_button[index_selected].hide();
-
 			}
 			else
 			{

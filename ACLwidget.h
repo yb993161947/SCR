@@ -102,6 +102,7 @@ public:
 	Matrix4d Femur_matrix4d;//股骨坐标
 	Matrix4d Tibia_matrix4d;//胫骨坐标
     Matrix4d Robot_matrix4d;//胫骨坐标
+    Matrix4d Camera_matrix4d;//关节镜坐标
 
     QList<Matrix4d> Tiptool_matrix4d_ver;//探针坐标
     QList<Matrix4d> Xspot_matrix4d_ver;//Xspot坐标
@@ -287,6 +288,9 @@ public:
     //设置末端模式
     int TCPmodel;
 
+	static int num ;
+
+
 private slots:
 
 
@@ -471,6 +475,8 @@ private slots:
     void on_pushButton_InitRobot_2_clicked();
 
     void on_pushButton_InitRobot_3_clicked();
+
+	void on_pushButton_Video_clicked();
 
 private:
     Ui::Widget *ui;

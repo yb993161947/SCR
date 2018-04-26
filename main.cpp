@@ -6,11 +6,14 @@
 #include "QSettings"
 #include "QProcess"
 #include "QDir"
+#include "qimagereader.h"
 int main(int argc, char *argv[])
 {
 
 
     QApplication a(argc, argv);
+
+	qDebug() << "Supported formats:" << QImageReader::supportedImageFormats();
     QDir dir;
     dir.mkdir("DcmFile");
         FileSystemWatcher::addWatchPath("DcmFile");

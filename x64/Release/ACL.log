@@ -1,4 +1,18 @@
-﻿  Uic'ing ACLwidget.ui...
+﻿  Moc'ing ACLwidget.h...
+  Moc'ing FileSystemWatcher.h...
+  Moc'ing ImageScene.h...
+  Moc'ing capturevideowidget.h...
+  Moc'ing dialog_setting.h...
+  Moc'ing imagescene_Tibia_ap.h...
+  Moc'ing imagescene_Tibia_lat.h...
+  Moc'ing imagescene_camera.h...
+  Moc'ing imagescene_femur_ap.h...
+  Moc'ing imagescene_femur_lat.h...
+  Moc'ing lassowidget.h...
+  Moc'ing mythread.h...
+  Moc'ing thread_get_ndi_marker.h...
+  Moc'ing ur_class_test.h...
+  Moc'ing widget.h...
   ACLwidget.cpp
 ACLwidget.cpp(422): warning C4305: 'argument': truncation from 'double' to 'float'
 ACLwidget.cpp(423): warning C4305: 'argument': truncation from 'double' to 'float'
@@ -53,17 +67,51 @@ ACLwidget.cpp(1062): warning C4305: 'argument': truncation from 'double' to 'flo
 ACLwidget.cpp(1063): warning C4305: 'argument': truncation from 'double' to 'float'
 ACLwidget.cpp(1064): warning C4305: 'argument': truncation from 'double' to 'float'
 ACLwidget.cpp(1065): warning C4305: 'argument': truncation from 'double' to 'float'
-ACLwidget.cpp(1419): warning C4101: 'alpha': unreferenced local variable
-ACLwidget.cpp(1418): warning C4101: 'k0': unreferenced local variable
-ACLwidget.cpp(1466): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+ACLwidget.cpp(1428): warning C4101: 'alpha': unreferenced local variable
+ACLwidget.cpp(1427): warning C4101: 'k0': unreferenced local variable
 ACLwidget.cpp(1475): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-ACLwidget.cpp(1671): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-ACLwidget.cpp(1673): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-ACLwidget.cpp(4687): warning C4305: 'argument': truncation from 'double' to 'float'
-ACLwidget.cpp(4688): warning C4305: 'argument': truncation from 'double' to 'float'
-ACLwidget.cpp(4692): warning C4305: 'argument': truncation from 'double' to 'float'
-ACLwidget.cpp(4693): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(1484): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+ACLwidget.cpp(1680): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+ACLwidget.cpp(1682): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+ACLwidget.cpp(4696): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(4697): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(4701): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(4702): warning C4305: 'argument': truncation from 'double' to 'float'
+  widget.cpp
+CArmAngleCalCuLate\widget.cpp(590): warning C4189: 'temp2': local variable is initialized but not referenced
+CArmAngleCalCuLate\widget.cpp(591): warning C4189: 'temp3': local variable is initialized but not referenced
+CArmAngleCalCuLate\widget.cpp(752): warning C4100: 'arg1': unreferenced formal parameter
+CArmAngleCalCuLate\widget.cpp(757): warning C4100: 'arg1': unreferenced formal parameter
+  ImageScene.cpp
   moc_ACLwidget.cpp
+  moc_FileSystemWatcher.cpp
+  moc_ImageScene.cpp
+  moc_capturevideowidget.cpp
+  moc_dialog_setting.cpp
+  moc_imagescene_Tibia_ap.cpp
+  moc_imagescene_Tibia_lat.cpp
+  moc_imagescene_camera.cpp
+  moc_imagescene_femur_ap.cpp
+  moc_imagescene_femur_lat.cpp
+  moc_lassowidget.cpp
+  moc_mythread.cpp
+  moc_thread_get_ndi_marker.cpp
+  moc_ur_class_test.cpp
+  moc_widget.cpp
+  mythread.cpp
+  ur_class_test.cpp
+  Generating Code...
+  Compiling...
+  capturevideowidget.cpp
+captureVideo\capturevideowidget.cpp(206): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+captureVideo\capturevideowidget.cpp(215): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+captureVideo\capturevideowidget.cpp(275): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+captureVideo\capturevideowidget.cpp(373): warning C4100: 'event': unreferenced formal parameter
+  dialog_setting.cpp
+  imagescene_camera.cpp
+imagescene_camera.cpp(74): warning C4100: 'mouseEvent': unreferenced formal parameter
+imagescene_camera.cpp(131): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+imagescene_camera.cpp(140): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   main.cpp
   Generating Code...
   ACL.vcxproj -> C:\Demo\ACLRecontructQt_Cmake\SCR\release\ACLReconstruction.exe

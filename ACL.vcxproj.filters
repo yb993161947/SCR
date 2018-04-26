@@ -46,12 +46,12 @@
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="Generated Files\Debug">
-      <UniqueIdentifier>{47302d33-a923-4c96-b51e-f71f4f6cb76b}</UniqueIdentifier>
+      <UniqueIdentifier>{77d640e6-c117-49bf-ba4d-5b525c5e38c8}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Release">
-      <UniqueIdentifier>{a2975f69-dade-453f-bf17-ac7f1a76e7e2}</UniqueIdentifier>
+      <UniqueIdentifier>{2dd16131-2ceb-470d-9ec5-bd9c85e96e95}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
@@ -1191,12 +1191,6 @@
     <None Include="images\zhengweiA.png">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="images\exit - Copy.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="images\bkg - 副本.png">
-      <Filter>Resource Files</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ACL.rc" />
@@ -1217,5 +1211,13 @@
     <ClInclude Include="GeneratedFiles\ui_ur_class_test.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\exit - Copy.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\bkg - 副本.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
