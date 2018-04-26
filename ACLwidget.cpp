@@ -41,7 +41,7 @@ using namespace cv;
 using namespace std;
 using namespace Eigen;
 
-int Widget::num = 0;
+
 const QString Path_Planning_Param_init="Path_Planning_Parameters_init.txt";//../ApplicationDocument/Path_Planning_Parameters_init.txt
 
 const QString Path_Planning_Param="../ApplicationDocument/Path_Planning_Parameters.txt";///ApplicationDocument/Path_Planning_Parameters.txt
@@ -1168,16 +1168,7 @@ void Widget::caculateMoveAngle(Vector3d End3DPt, Vector3d Start3DPt, Matrix4d &B
 
 void Widget::guide()
 {
-    if(Camera_matrix4d(3,3) != 0 && Xspot_matrix4d(3,3) != 0)
-    {
-        cameraScene->setcameraPos(Camera_matrix4d);
-        cameraScene->setTipPos(Tiptool_matrix4d.col(3));
-        cameraScene->setCameraSee(true);
-    }
-    else
-    {
-         cameraScene->setCameraSee(false);
-    }
+
     guide_d(IsopenGuide_AP_Femur, imageScene_AP_Femur,
         Xspot_matrix4d_AP_Femur, Femur_matrix4d, transparams_Femur_AP, Marker_Adjust[0]);
 
@@ -1190,7 +1181,7 @@ void Widget::guide()
     guide_d(IsopenGuide_Lat_Tibia, imageScene_Lat_Tibia,
         Xspot_matrix4d_Lat_Tibia, Tibia_matrix4d, transparams_Tibia_Lat, Marker_Adjust[3]);
 
-    update();
+
 }
 
 void Widget::guide_d(bool IsopenGuide, ImageScene *Imagescene, Matrix4d &Xspot_matrix4d, Matrix4d &tone, QList<double> transparams,Matrix4d &Mark_Adjust)
@@ -2133,9 +2124,9 @@ void Widget::rev_NDI(QList<Info_NDI> ListInfo_NDI)
             }
         }
     }
-    Camera_matrix4d = Femur_matrix4d;
-    guide();//导航
 
+    guide();//导航
+    update();
 
 }
 
@@ -4800,14 +4791,4 @@ void Widget::on_pushButton_InitRobot_3_clicked()
     tanzhen2tip = tanzhen2tip_2;
     tanzhen2tipend = tanzhen2tipend_2;
     RobotTCP = RobotTCP2;
-}
-
-void Widget::on_pushButton_Video_clicked()
-{
-	Mat img;
-	QString str = QString("%1.bmp").arg(num);
-	
-	cameraScene->getCameraPic(img);
-	cv::imwrite(str.toStdString().data(), img);
-	num++;
 }

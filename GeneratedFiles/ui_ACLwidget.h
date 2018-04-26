@@ -94,7 +94,6 @@ public:
     QPushButton *pushButton_InitRobot;
     QPushButton *pushButton_SetRobot;
     NaviLabel *label_Navi;
-    QPushButton *pushButton_Video;
     QWidget *tab_robot;
     QGroupBox *groupBox;
     QPushButton *pushButton_AP_OpenPicture;
@@ -552,9 +551,6 @@ public:
         label_Navi->setGeometry(QRect(30, 560, 250, 250));
         label_Navi->setStyleSheet(QStringLiteral("border-image: url(:/Resources/rr.png);"));
         label_Navi->setFrameShape(QFrame::StyledPanel);
-        pushButton_Video = new QPushButton(tab_simulate);
-        pushButton_Video->setObjectName(QStringLiteral("pushButton_Video"));
-        pushButton_Video->setGeometry(QRect(50, 220, 101, 31));
         tabWidget_manipulate->addTab(tab_simulate, QString());
         tab_robot = new QWidget();
         tab_robot->setObjectName(QStringLiteral("tab_robot"));
@@ -776,6 +772,11 @@ public:
         pushButton_InitRobot_3 = new QPushButton(frame);
         pushButton_InitRobot_3->setObjectName(QStringLiteral("pushButton_InitRobot_3"));
         pushButton_InitRobot_3->setGeometry(QRect(1740, 960, 101, 31));
+        pushButton_2->raise();
+        pushButton_3->raise();
+        tabWidget_manipulate->raise();
+        pushButton_InitRobot_2->raise();
+        pushButton_InitRobot_3->raise();
         label_APdata = new QLabel(Widget);
         label_APdata->setObjectName(QStringLiteral("label_APdata"));
         label_APdata->setGeometry(QRect(470, 760, 300, 100));
@@ -879,7 +880,6 @@ public:
         pushButton_InitRobot->setText(QApplication::translate("Widget", "\345\210\235\345\247\213\345\214\226\346\234\272\345\231\250\344\272\272", 0));
         pushButton_SetRobot->setText(QApplication::translate("Widget", "\350\256\276\347\275\256\346\234\272\345\231\250\344\272\272", 0));
         label_Navi->setText(QString());
-        pushButton_Video->setText(QApplication::translate("Widget", "\346\265\213\350\257\225-\346\210\252\345\233\276", 0));
         tabWidget_manipulate->setTabText(tabWidget_manipulate->indexOf(tab_simulate), QApplication::translate("Widget", "\344\273\277\347\234\237", 0));
         tabWidget_manipulate->setTabText(tabWidget_manipulate->indexOf(tab_robot), QApplication::translate("Widget", "\346\234\272\345\231\250\344\272\272", 0));
         groupBox->setTitle(QApplication::translate("Widget", "\346\255\243\344\275\215\346\223\215\344\275\234", 0));
