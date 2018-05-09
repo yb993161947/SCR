@@ -67,6 +67,8 @@ public:
     QGraphicsPixmapItem Piximage_button_selected[6];
 	needle *needle1;//针模型
     needle *Marker_Tip;
+    QGraphicsLineItem *XspotLine1;
+
     virtual void show_otherItem();//响应鼠标事件点改变的虚函数
 protected:
     void mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent) override;

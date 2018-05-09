@@ -32,7 +32,8 @@ CaptureVideoWidget::CaptureVideoWidget(QWidget* parent)
     }
 	ui->label_Picture->raise();
 
-
+//    ui->radioButton_10->hide();
+    ui->radioButton_11->hide();
      readSettingFile();
 //    Marker1ToXspot<<
 //           1.0,0,0,35.1326,
@@ -253,12 +254,14 @@ void CaptureVideoWidget::readSettingFile()
     QString Value;
     QStringList ValueList;
 
-    XSpotPts3DonMarker1.resize(11,3);
+
     ValueList.clear();
     Value = configIniRead->value("/Tracker/XSpotPts3DonMarker1").toString();
     ValueList = Value.split(',');
-    if(ValueList.size() >= 33)
-    for(int i = 0; i < 33; i++)
+
+    XSpotPts3DonMarker1.resize(11,3);
+	XSpotPts3DonMarker1.setZero();
+    for(int i = 0; i < ValueList.size(); i++)
     XSpotPts3DonMarker1(i / 3 ,i % 3) = ValueList[i].toDouble();
 
     ValueList.clear();
@@ -508,6 +511,7 @@ void CaptureVideoWidget::on_pushButtonCalculate_clicked()
     }
     if (num_dot < 6)
 	{
+
 		QMessageBox::warning(this, u8"识别失败", u8"特征点过少");
         emit processFinished(false);
         return;

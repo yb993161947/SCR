@@ -88,7 +88,7 @@ public:
 "position:relative;\n"
 "    top: 100px;\n"
 "}\n"
-"QGroupBox{border-image: url(:/Resources/resource/xspot_Robot.png);}\n"
+"QGroupBox{border-image: url(:/Resources/resource/xspot_yu1.PNG);}\n"
 "\n"
 ""));
         horizontalLayout = new QHBoxLayout(CaptureVideoWidget);
@@ -115,45 +115,45 @@ public:
         widget_lasso->setGeometry(QRect(140, 80, 600, 600));
         groupBox_Xspot = new QGroupBox(frameBase);
         groupBox_Xspot->setObjectName(QStringLiteral("groupBox_Xspot"));
-        groupBox_Xspot->setGeometry(QRect(750, 390, 321, 241));
+        groupBox_Xspot->setGeometry(QRect(750, 400, 321, 241));
         groupBox_Xspot->setStyleSheet(QString::fromUtf8("font: 75 9pt \"\345\256\213\344\275\223\";"));
         radioButton_9 = new QRadioButton(groupBox_Xspot);
         radioButton_9->setObjectName(QStringLiteral("radioButton_9"));
-        radioButton_9->setGeometry(QRect(230, 120, 41, 19));
+        radioButton_9->setGeometry(QRect(240, 140, 41, 19));
         radioButton_1 = new QRadioButton(groupBox_Xspot);
         radioButton_1->setObjectName(QStringLiteral("radioButton_1"));
-        radioButton_1->setGeometry(QRect(200, 60, 41, 19));
+        radioButton_1->setGeometry(QRect(170, 100, 41, 19));
         radioButton_2 = new QRadioButton(groupBox_Xspot);
         radioButton_2->setObjectName(QStringLiteral("radioButton_2"));
-        radioButton_2->setGeometry(QRect(240, 60, 41, 19));
+        radioButton_2->setGeometry(QRect(140, 70, 41, 19));
         radioButton_2->setLayoutDirection(Qt::RightToLeft);
         radioButton_3 = new QRadioButton(groupBox_Xspot);
         radioButton_3->setObjectName(QStringLiteral("radioButton_3"));
-        radioButton_3->setGeometry(QRect(170, 90, 41, 19));
+        radioButton_3->setGeometry(QRect(140, 50, 41, 19));
         radioButton_3->setLayoutDirection(Qt::RightToLeft);
         radioButton_4 = new QRadioButton(groupBox_Xspot);
         radioButton_4->setObjectName(QStringLiteral("radioButton_4"));
-        radioButton_4->setGeometry(QRect(200, 130, 41, 19));
+        radioButton_4->setGeometry(QRect(160, 30, 41, 19));
         radioButton_5 = new QRadioButton(groupBox_Xspot);
         radioButton_5->setObjectName(QStringLiteral("radioButton_5"));
-        radioButton_5->setGeometry(QRect(160, 180, 41, 19));
+        radioButton_5->setGeometry(QRect(100, 70, 41, 19));
         radioButton_6 = new QRadioButton(groupBox_Xspot);
         radioButton_6->setObjectName(QStringLiteral("radioButton_6"));
-        radioButton_6->setGeometry(QRect(200, 180, 41, 19));
+        radioButton_6->setGeometry(QRect(80, 80, 41, 19));
         radioButton_7 = new QRadioButton(groupBox_Xspot);
         radioButton_7->setObjectName(QStringLiteral("radioButton_7"));
-        radioButton_7->setGeometry(QRect(240, 180, 41, 20));
+        radioButton_7->setGeometry(QRect(60, 90, 41, 20));
         radioButton_7->setLayoutDirection(Qt::LeftToRight);
         radioButton_8 = new QRadioButton(groupBox_Xspot);
         radioButton_8->setObjectName(QStringLiteral("radioButton_8"));
-        radioButton_8->setGeometry(QRect(260, 140, 41, 19));
+        radioButton_8->setGeometry(QRect(40, 100, 21, 20));
         radioButton_8->setLayoutDirection(Qt::LeftToRight);
         radioButton_10 = new QRadioButton(groupBox_Xspot);
         radioButton_10->setObjectName(QStringLiteral("radioButton_10"));
-        radioButton_10->setGeometry(QRect(270, 90, 41, 19));
+        radioButton_10->setGeometry(QRect(260, 160, 41, 19));
         radioButton_11 = new QRadioButton(groupBox_Xspot);
         radioButton_11->setObjectName(QStringLiteral("radioButton_11"));
-        radioButton_11->setGeometry(QRect(100, 180, 41, 19));
+        radioButton_11->setGeometry(QRect(280, 220, 41, 19));
         pushButtonCalculate = new QPushButton(frameBase);
         pushButtonCalculate->setObjectName(QStringLiteral("pushButtonCalculate"));
         pushButtonCalculate->setGeometry(QRect(950, 270, 81, 31));

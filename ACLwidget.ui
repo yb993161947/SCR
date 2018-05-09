@@ -114,7 +114,7 @@ QWidget#tab{
     <enum>QTabWidget::Triangular</enum>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="tab_Femur">
     <attribute name="title">
@@ -2505,11 +2505,6 @@ color: rgb(255, 255, 255);</string>
      <string>末端侧位导航</string>
     </property>
    </widget>
-   <zorder>pushButton_2</zorder>
-   <zorder>pushButton_3</zorder>
-   <zorder>tabWidget_manipulate</zorder>
-   <zorder>pushButton_InitRobot_2</zorder>
-   <zorder>pushButton_InitRobot_3</zorder>
   </widget>
   <widget class="QLabel" name="label_APdata">
    <property name="geometry">

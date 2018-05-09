@@ -1721,34 +1721,20 @@ void Widget::readSettingFile()
     QStringList ValueList ;
 
     ValueList.clear();
-    Value = configIniRead->value("/Register/tanzhen2tip_1").toString();
+    Value = configIniRead->value("/Register/tanzhen2tip").toString();
     ValueList = Value.split(',');
     if(ValueList.size() >= 4)
     for(int i = 0; i < 4; i++)
-        tanzhen2tip_1(i) = ValueList[i].toDouble();
+        tanzhen2tip(i) = ValueList[i].toDouble();
 
     ValueList.clear();
-    Value = configIniRead->value("/Register/tanzhen2tipend_1").toString();
+    Value = configIniRead->value("/Register/tanzhen2tipend").toString();
     ValueList = Value.split(',');
     if(ValueList.size() >= 4)
     for(int i = 0; i < 4; i++)
-        tanzhen2tipend_1(i) = ValueList[i].toDouble();
+        tanzhen2tipend(i) = ValueList[i].toDouble();
 
-    ValueList.clear();
-    Value = configIniRead->value("/Register/tanzhen2tip_2").toString();
-    ValueList = Value.split(',');
-    if(ValueList.size() >= 4)
-    for(int i = 0; i < 4; i++)
-        tanzhen2tip_2(i) = ValueList[i].toDouble();
 
-    ValueList.clear();
-    Value = configIniRead->value("/Register/tanzhen2tipend_2").toString();
-    ValueList = Value.split(',');
-    if(ValueList.size() >= 4)
-    for(int i = 0; i < 4; i++)
-        tanzhen2tipend_2(i) = ValueList[i].toDouble();
-        tanzhen2tip =  tanzhen2tip_1;
-        tanzhen2tipend = tanzhen2tipend_1;
 
     ValueList.clear();
     Value = configIniRead->value("/Register/TofMarkerTip1toMarkerTip2").toString();
@@ -1847,10 +1833,44 @@ void Widget::readSettingFile()
     for(int i = 0; i < 16; i++)
         TofMarker1ToTip1(i / 4 ,i % 4) = ValueList[i].toDouble();
 
+
+
+
+
+
+
+
+
     Value = configIniRead->value("/UR/IP").toString();
     Ur->ui.lineEdit_UR_IP->setText(Value);
 
+    ValueList.clear();
+    Value = configIniRead->value("/Tracker/Xspot2tip_1").toString();
+    ValueList = Value.split(',');
+    if(ValueList.size() >= 4)
+    for(int i = 0; i < 4; i++)
+        Xspot2tip_1(i) = ValueList[i].toDouble();
 
+    ValueList.clear();
+    Value = configIniRead->value("/Tracker/Xspot2tipend_1").toString();
+    ValueList = Value.split(',');
+    if(ValueList.size() >= 4)
+    for(int i = 0; i < 4; i++)
+        Xspot2tipend_1(i) = ValueList[i].toDouble();
+
+    ValueList.clear();
+    Value = configIniRead->value("/Tracker/Xspot2tip_2").toString();
+    ValueList = Value.split(',');
+    if(ValueList.size() >= 4)
+    for(int i = 0; i < 4; i++)
+        Xspot2tip_2(i) = ValueList[i].toDouble();
+
+    ValueList.clear();
+    Value = configIniRead->value("/Tracker/Xspot2tipend_2").toString();
+    ValueList = Value.split(',');
+    if(ValueList.size() >= 4)
+    for(int i = 0; i < 4; i++)
+        Xspot2tipend_2(i) = ValueList[i].toDouble();
 
 }
 
@@ -2731,6 +2751,13 @@ void Widget::on_pushButton_ShowTiptool_Lat_clicked()
         imageScene_Lat_Femur->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
         imageScene_Lat_Femur->Marker_Tip->show();
         imageScene_Lat_Femur->update();
+
+        //计算Xspot位置
+        get2DPtfrom3D(Xspot2tip_1.head(3), transparams_Femur_Lat, Pt2D_TipTop);
+        get2DPtfrom3D(Xspot2tipend_1.head(3), transparams_Femur_Lat, Pt2D_TipEnd);
+
+        imageScene_Lat_Femur->XspotLine1->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
+        imageScene_Lat_Femur->XspotLine1->show();
     }
     else if(ui->tabWidget_manipulate->currentIndex() == INDEX_TIBIA)
     {
@@ -2750,6 +2777,13 @@ void Widget::on_pushButton_ShowTiptool_Lat_clicked()
         imageScene_Lat_Tibia->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
         imageScene_Lat_Tibia->Marker_Tip->show();
         imageScene_Lat_Tibia->update();
+
+        //计算Xspot位置
+        get2DPtfrom3D(Xspot2tip_1.head(3), transparams_Tibia_Lat, Pt2D_TipTop);
+        get2DPtfrom3D(Xspot2tipend_1.head(3), transparams_Tibia_Lat, Pt2D_TipEnd);
+
+        imageScene_Lat_Tibia->XspotLine1->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
+        imageScene_Lat_Tibia->XspotLine1->show();
     }
 }
 
@@ -2761,6 +2795,7 @@ void Widget::on_pushButton_ShowTiptool_AP_clicked()
         {
             return;
         }
+        //计算探针位置
         Vector4d Tiptop;
         Tiptop = tiptopatXspot_AP_Femur * tanzhen2tip;
         Vector2d Pt2D_TipTop,Pt2D_TipEnd;
@@ -2773,6 +2808,13 @@ void Widget::on_pushButton_ShowTiptool_AP_clicked()
         imageScene_AP_Femur->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
         imageScene_AP_Femur->Marker_Tip->show();
         imageScene_AP_Femur->update();
+
+        //计算Xspot位置
+        get2DPtfrom3D(Xspot2tip_1.head(3), transparams_Femur_AP, Pt2D_TipTop);
+        get2DPtfrom3D(Xspot2tipend_1.head(3), transparams_Femur_AP, Pt2D_TipEnd);
+
+        imageScene_AP_Femur->XspotLine1->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
+        imageScene_AP_Femur->XspotLine1->show();
     }
     else if(ui->tabWidget_manipulate->currentIndex() == INDEX_TIBIA)
     {
@@ -2780,10 +2822,9 @@ void Widget::on_pushButton_ShowTiptool_AP_clicked()
         {
             return;
         }
+        //计算探针位置
         Vector4d Tiptop;
-
         Tiptop = tiptopatXspot_AP_Tibia * tanzhen2tip;
-
         Vector2d Pt2D_TipTop,Pt2D_TipEnd;
         get2DPtfrom3D(Tiptop.head(3), transparams_Tibia_AP, Pt2D_TipTop);
 
@@ -2793,6 +2834,16 @@ void Widget::on_pushButton_ShowTiptool_AP_clicked()
 
         imageScene_AP_Tibia->Marker_Tip->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
         imageScene_AP_Tibia->Marker_Tip->show();
+
+        //计算Xspot位置
+        get2DPtfrom3D(Xspot2tip_1.head(3), transparams_Tibia_AP, Pt2D_TipTop);
+        get2DPtfrom3D(Xspot2tipend_1.head(3), transparams_Tibia_AP, Pt2D_TipEnd);
+
+        imageScene_AP_Tibia->XspotLine1->setLine(Pt2D_TipTop(0),Pt2D_TipTop(1),Pt2D_TipEnd(0),Pt2D_TipEnd(1));
+        imageScene_AP_Tibia->XspotLine1->show();
+
+
+
         imageScene_AP_Tibia->update();
     }
 }
@@ -3632,6 +3683,8 @@ void Widget::on_pushButton_guide_Tibia_clicked()
         IsopenGuide_AP_Tibia = true;
         IsopenGuide_Lat_Tibia = true;
         ui->pushButton_guide_Tibia->setText(u8"结束导航");
+        imageScene_AP_Tibia->XspotLine1->hide();
+        imageScene_Lat_Tibia->XspotLine1->hide();
     }
     else
     {
@@ -3649,6 +3702,8 @@ void Widget::on_pushButton_guide_Femur_clicked()
         IsopenGuide_AP_Femur = true;
         IsopenGuide_Lat_Femur = true;
         ui->pushButton_guide_Femur->setText(u8"结束导航");
+        imageScene_AP_Femur->XspotLine1->hide();
+        imageScene_Lat_Femur->XspotLine1->hide();
     }
     else
     {
@@ -4777,8 +4832,6 @@ void Widget::on_pushButton_InitRobot_2_clicked()
     TCPmodel = 0;
     TofTCP_2MarkeronRobot1 = TofTCP_Up2MarkeronRobot;
     TofTCP_2MarkeronRobot2 = TofTCP_Down2MarkeronRobot;
-    tanzhen2tip = tanzhen2tip_1;
-    tanzhen2tipend = tanzhen2tipend_1;
     RobotTCP = RobotTCP1;
 
 }
@@ -4788,7 +4841,5 @@ void Widget::on_pushButton_InitRobot_3_clicked()
     TCPmodel = 1;
     TofTCP_2MarkeronRobot1 = TofTCP_Left2MarkeronRobot;
     TofTCP_2MarkeronRobot2 = TofTCP_Right2MarkeronRobot;
-    tanzhen2tip = tanzhen2tip_2;
-    tanzhen2tipend = tanzhen2tipend_2;
     RobotTCP = RobotTCP2;
 }

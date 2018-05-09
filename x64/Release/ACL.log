@@ -1,4 +1,6 @@
 ﻿  Uic'ing ACLwidget.ui...
+  Uic'ing captureVideo\capturevideowidget.ui...
+  Rcc'ing resources.qrc...
   ACLwidget.cpp
 ACLwidget.cpp(422): warning C4305: 'argument': truncation from 'double' to 'float'
 ACLwidget.cpp(423): warning C4305: 'argument': truncation from 'double' to 'float'
@@ -59,11 +61,28 @@ ACLwidget.cpp(1466): warning C4267: 'argument': conversion from 'size_t' to 'int
 ACLwidget.cpp(1475): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
 ACLwidget.cpp(1671): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 ACLwidget.cpp(1673): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-ACLwidget.cpp(4687): warning C4305: 'argument': truncation from 'double' to 'float'
-ACLwidget.cpp(4688): warning C4305: 'argument': truncation from 'double' to 'float'
-ACLwidget.cpp(4692): warning C4305: 'argument': truncation from 'double' to 'float'
-ACLwidget.cpp(4693): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(4742): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(4743): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(4747): warning C4305: 'argument': truncation from 'double' to 'float'
+ACLwidget.cpp(4748): warning C4305: 'argument': truncation from 'double' to 'float'
+  ImageScene.cpp
   moc_ACLwidget.cpp
+  moc_ImageScene.cpp
+  moc_imagescene_Tibia_ap.cpp
+  moc_imagescene_Tibia_lat.cpp
+  moc_imagescene_camera.cpp
+  moc_imagescene_femur_ap.cpp
+  moc_imagescene_femur_lat.cpp
+  capturevideowidget.cpp
+captureVideo\capturevideowidget.cpp(207): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+captureVideo\capturevideowidget.cpp(216): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+captureVideo\capturevideowidget.cpp(277): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+captureVideo\capturevideowidget.cpp(375): warning C4100: 'event': unreferenced formal parameter
+  imagescene_Tibia_ap.cpp
+  imagescene_Tibia_lat.cpp
+  imagescene_femur_ap.cpp
+  imagescene_femur_lat.cpp
   main.cpp
   Generating Code...
+  qrc_resources.cpp
   ACL.vcxproj -> C:\Demo\ACLRecontructQt_Cmake\SCR\release\ACLReconstruction.exe

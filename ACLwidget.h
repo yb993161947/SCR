@@ -139,10 +139,10 @@ public:
 
     Vector4d tanzhen2tip;
     Vector4d tanzhen2tipend;
-    Vector4d tanzhen2tip_1;
-    Vector4d tanzhen2tipend_1;
-    Vector4d tanzhen2tip_2;
-    Vector4d tanzhen2tipend_2;
+    Vector4d Xspot2tip_1;
+    Vector4d Xspot2tipend_1;
+    Vector4d Xspot2tip_2;
+    Vector4d Xspot2tipend_2;
 
 	void caculateMovetoRoute(Vector3d End3DPt, Vector3d Start3DPt, Matrix4d &Bone_Matrix, double pos[]);//单位mm
     void caculateMoveAngle(Vector3d End3DPt,Vector3d Start3DPt,Matrix4d &Bone_Matrix ,double pos[]);//单位mm

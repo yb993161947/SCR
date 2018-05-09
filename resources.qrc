@@ -286,5 +286,6 @@
         <file>images/bkg - 副本.png</file>
         <file>Resources/resource/xspot_smallball.png</file>
         <file>Resources/resource/xspot_Robot.png</file>
+        <file>Resources/resource/xspot_yu1.PNG</file>
     </qresource>
 </RCC>

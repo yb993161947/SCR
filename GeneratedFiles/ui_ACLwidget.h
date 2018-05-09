@@ -772,11 +772,6 @@ public:
         pushButton_InitRobot_3 = new QPushButton(frame);
         pushButton_InitRobot_3->setObjectName(QStringLiteral("pushButton_InitRobot_3"));
         pushButton_InitRobot_3->setGeometry(QRect(1740, 960, 101, 31));
-        pushButton_2->raise();
-        pushButton_3->raise();
-        tabWidget_manipulate->raise();
-        pushButton_InitRobot_2->raise();
-        pushButton_InitRobot_3->raise();
         label_APdata = new QLabel(Widget);
         label_APdata->setObjectName(QStringLiteral("label_APdata"));
         label_APdata->setGeometry(QRect(470, 760, 300, 100));
@@ -811,7 +806,7 @@ public:
 
         retranslateUi(Widget);
 
-        tabWidget_manipulate->setCurrentIndex(2);
+        tabWidget_manipulate->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(Widget);
