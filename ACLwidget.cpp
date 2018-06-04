@@ -221,6 +221,9 @@ Widget::Widget(QWidget *parent) :
     Femur_matrix4d = Matrix4d::Zero();
     Tibia_matrix4d = Matrix4d::Zero();
 
+	//test
+	FemurStartPos << 59.74928016,116.855329,- 5.87518121,1;
+
 
 }
 
@@ -2052,7 +2055,7 @@ void Widget::rev_NDI(QList<Info_NDI> ListInfo_NDI)
 
 
         //均值滤波
-        int size = 100;
+        int size = 5;
         if(Tiptool_matrix4d_temp(3,3) != 0)
         {
             Tiptool_matrix4d_ver.push_back(Tiptool_matrix4d_temp);
@@ -2144,6 +2147,8 @@ void Widget::rev_NDI(QList<Info_NDI> ListInfo_NDI)
             }
         }
     }
+    cameraScene->setcameraPos(Robot_matrix4d);
+    cameraScene->setTipPos(Femur_matrix4d*FemurStartPos);
 
     guide();//导航
     update();
@@ -4842,4 +4847,38 @@ void Widget::on_pushButton_InitRobot_3_clicked()
     TofTCP_2MarkeronRobot1 = TofTCP_Left2MarkeronRobot;
     TofTCP_2MarkeronRobot2 = TofTCP_Right2MarkeronRobot;
     RobotTCP = RobotTCP2;
+}
+
+void Widget::on_pushButton_SaveCameraPhoto_clicked()
+{
+	if (Robot_matrix4d(3, 3) == 0 || Tiptool_matrix4d(3, 3) == 0)
+	{
+		qDebug() << "cannot find camera or qiMarker!";
+		return;
+	}
+    QDateTime current_date_time =QDateTime::currentDateTime();
+    QString current_date =current_date_time.toString("yyyy_MM_dd_hh_mm_ss_zzz");
+    imwrite(QString(current_date+".bmp").toStdString(),cameraScene->getCameraImage());
+
+	QString path_txt ="cameraPos.txt";
+	file.setFileName(path_txt);
+	if (file.open(QIODevice::Append | QIODevice::Text)) //以文本文式写入
+	{
+		out_file.setDevice(&file);
+		out_file << current_date + ".bmp" << endl;
+		out_file << "camPos" << endl;
+		for (int i = 0; i < 4; i++)
+		{
+			for (int j = 0; j < 4; j++)
+				out_file << Robot_matrix4d(i, j) << ' ';
+			out_file << endl;
+		}
+		out_file << "qiPos" << endl;
+		for (int i = 0; i < 4; i++)
+		{
+			for (int j = 0; j < 4; j++)
+				out_file << Tiptool_matrix4d(i, j) << ' ';
+			out_file << endl;
+		}
+	}
 }

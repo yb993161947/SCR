@@ -287,6 +287,8 @@ public:
     //设置末端模式
     int TCPmodel;
 
+	//test
+	Vector4d FemurStartPos;
 private slots:
 
 
@@ -471,6 +473,8 @@ private slots:
     void on_pushButton_InitRobot_2_clicked();
 
     void on_pushButton_InitRobot_3_clicked();
+
+    void on_pushButton_SaveCameraPhoto_clicked();
 
 private:
     Ui::Widget *ui;

@@ -114,7 +114,7 @@ QWidget#tab{
     <enum>QTabWidget::Triangular</enum>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="tab_Femur">
     <attribute name="title">
@@ -1706,7 +1706,7 @@ color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>70</y>
+       <y>120</y>
        <width>231</width>
        <height>91</height>
       </rect>
@@ -1740,6 +1740,9 @@ color: rgb(255, 255, 255);</string>
        <string>   胫骨</string>
       </property>
      </widget>
+     <zorder>radioButton_Femur</zorder>
+     <zorder>radioButton_Tibia</zorder>
+     <zorder>frame</zorder>
     </widget>
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
@@ -1889,7 +1892,7 @@ color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>170</x>
-       <y>180</y>
+       <y>230</y>
        <width>101</width>
        <height>31</height>
       </rect>
@@ -1902,7 +1905,7 @@ color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>180</y>
+       <y>230</y>
        <width>101</width>
        <height>31</height>
       </rect>
@@ -1928,6 +1931,19 @@ color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_SaveCameraPhoto">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>60</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>关节镜截图</string>
      </property>
     </widget>
    </widget>
@@ -2505,6 +2521,11 @@ color: rgb(255, 255, 255);</string>
      <string>末端侧位导航</string>
     </property>
    </widget>
+   <zorder>pushButton_2</zorder>
+   <zorder>pushButton_3</zorder>
+   <zorder>pushButton_InitRobot_2</zorder>
+   <zorder>pushButton_InitRobot_3</zorder>
+   <zorder>tabWidget_manipulate</zorder>
   </widget>
   <widget class="QLabel" name="label_APdata">
    <property name="geometry">
