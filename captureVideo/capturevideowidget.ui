@@ -82,7 +82,7 @@ QGroupBox{border-image: url(:/Resources/resource/xspot_yu1.PNG);}
      <widget class="QPushButton" name="pushButton_Process">
       <property name="geometry">
        <rect>
-        <x>840</x>
+        <x>850</x>
         <y>270</y>
         <width>80</width>
         <height>30</height>
@@ -292,7 +292,7 @@ QGroupBox{border-image: url(:/Resources/resource/xspot_yu1.PNG);}
      <widget class="QPushButton" name="pushButtonCalculate">
       <property name="geometry">
        <rect>
-        <x>950</x>
+        <x>940</x>
         <y>270</y>
         <width>81</width>
         <height>31</height>
@@ -418,7 +418,7 @@ QGroupBox{border-image: url(:/Resources/resource/xspot_yu1.PNG);}
      <widget class="QPushButton" name="pushButton">
       <property name="geometry">
        <rect>
-        <x>950</x>
+        <x>940</x>
         <y>323</y>
         <width>81</width>
         <height>31</height>
@@ -431,14 +431,14 @@ QGroupBox{border-image: url(:/Resources/resource/xspot_yu1.PNG);}
      <widget class="QPushButton" name="pushButton_2">
       <property name="geometry">
        <rect>
-        <x>840</x>
-        <y>350</y>
-        <width>89</width>
-        <height>24</height>
+        <x>850</x>
+        <y>323</y>
+        <width>81</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="text">
-       <string>PushButton</string>
+       <string>保存图片</string>
       </property>
      </widget>
      <zorder>widget_lasso</zorder>

@@ -445,20 +445,7 @@ void CaptureVideoWidget::on_pushButton_OpenImage_clicked()
     // int filename_length=filename.length();//
     prefix = filename + filename_length - 3; //获得后三位字符
 
-    if(strcmp(prefix, "IMA") == 0 || strcmp(prefix, "dcm") == 0) //判断是什么文件
-    {
-        DicomImage img(FilePath.toLocal8Bit().data());
-
-        cv::Mat(int(img.getWidth()), int(img.getHeight()), CV_16U, (uint16_t*)img.getOutputData(16)).copyTo(original_image);
-        double maxVal;
-        cv::minMaxLoc(original_image, nullptr, &maxVal);
-        original_image.convertTo(original_image, CV_8UC1, 256.0 / maxVal);
-        QImage qimg = cvMat2QImage(original_image);
-
-        ui->label_Picture->setPixmap(QPixmap::fromImage(qimg));
-		image_show = original_image;
-    }
-    else if(strcmp(prefix, "BMP") == 0 || strcmp(prefix, "bmp") == 0 ||
+ if(strcmp(prefix, "BMP") == 0 || strcmp(prefix, "bmp") == 0 ||
             strcmp(prefix, "JPG") == 0 || strcmp(prefix, "jpg") == 0)
     {
         original_image = cv::imread(string(FilePath.toLocal8Bit()), CV_LOAD_IMAGE_GRAYSCALE);
@@ -475,9 +462,18 @@ void CaptureVideoWidget::on_pushButton_OpenImage_clicked()
     }
     else
     {
-        // cout<<"unrecognized format";
-        return;
+     DicomImage img(FilePath.toLocal8Bit().data());
+
+     cv::Mat(int(img.getWidth()), int(img.getHeight()), CV_16U, (uint16_t*)img.getOutputData(16)).copyTo(original_image);
+     double maxVal;
+     cv::minMaxLoc(original_image, nullptr, &maxVal);
+     original_image.convertTo(original_image, CV_8UC1, 256.0 / maxVal);
+     QImage qimg = cvMat2QImage(original_image);
+
+     ui->label_Picture->setPixmap(QPixmap::fromImage(qimg));
+     image_show = original_image;
     }
+
 }
 
 void CaptureVideoWidget::on_pushButton_Process_clicked()
@@ -694,6 +690,9 @@ void CaptureVideoWidget::on_pushButton_clicked()
 
 void CaptureVideoWidget::on_pushButton_2_clicked()
 {
+    QString filename = QFileDialog::getSaveFileName(this,tr("Save Image"),"",tr("Images (*.png *.bmp *.jpg)")); //选择路径
+    string fileAsSave = filename.toStdString();
+    imwrite(fileAsSave,image_show);
     for(int i = 0;i < 11; i++)
     {
 //        qDebug() << "imagePoints.push_back(cv::Point2d("<<_2DPt[i].x()<<","<<_2DPt[i].y()<<"));";

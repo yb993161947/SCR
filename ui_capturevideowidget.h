@@ -105,7 +105,7 @@ public:
         pushButton_Exit->setGeometry(QRect(30, 560, 80, 30));
         pushButton_Process = new QPushButton(frameBase);
         pushButton_Process->setObjectName(QStringLiteral("pushButton_Process"));
-        pushButton_Process->setGeometry(QRect(840, 270, 80, 30));
+        pushButton_Process->setGeometry(QRect(850, 270, 80, 30));
         label_Picture = new QLabel(frameBase);
         label_Picture->setObjectName(QStringLiteral("label_Picture"));
         label_Picture->setGeometry(QRect(140, 80, 600, 600));
@@ -156,7 +156,7 @@ public:
         radioButton_11->setGeometry(QRect(280, 220, 41, 19));
         pushButtonCalculate = new QPushButton(frameBase);
         pushButtonCalculate->setObjectName(QStringLiteral("pushButtonCalculate"));
-        pushButtonCalculate->setGeometry(QRect(950, 270, 81, 31));
+        pushButtonCalculate->setGeometry(QRect(940, 270, 81, 31));
         radioButton_findPt = new QRadioButton(frameBase);
         radioButton_findPt->setObjectName(QStringLiteral("radioButton_findPt"));
         radioButton_findPt->setGeometry(QRect(960, 680, 91, 20));
@@ -187,10 +187,10 @@ public:
         pushButton_Capture->setGeometry(QRect(10, 140, 80, 30));
         pushButton = new QPushButton(frameBase);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(950, 323, 81, 31));
+        pushButton->setGeometry(QRect(940, 323, 81, 31));
         pushButton_2 = new QPushButton(frameBase);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(840, 350, 89, 24));
+        pushButton_2->setGeometry(QRect(850, 323, 81, 31));
         widget_lasso->raise();
         pushButton_Exit->raise();
         pushButton_Process->raise();
@@ -237,7 +237,7 @@ public:
         pushButton_OpenVideo->setText(QApplication::translate("CaptureVideoWidget", "\346\211\223\345\274\200\350\247\206\351\242\221", 0));
         pushButton_Capture->setText(QApplication::translate("CaptureVideoWidget", "\346\210\252\345\217\226\345\233\276\347\211\207", 0));
         pushButton->setText(QApplication::translate("CaptureVideoWidget", "\346\222\244\351\224\200\347\202\271", 0));
-        pushButton_2->setText(QApplication::translate("CaptureVideoWidget", "PushButton", 0));
+        pushButton_2->setText(QApplication::translate("CaptureVideoWidget", "\344\277\235\345\255\230\345\233\276\347\211\207", 0));
     } // retranslateUi
 
 };

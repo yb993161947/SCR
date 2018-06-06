@@ -507,8 +507,6 @@ public:
         radioButton_Tibia = new QRadioButton(groupBox_ExchangeShowGuide);
         radioButton_Tibia->setObjectName(QStringLiteral("radioButton_Tibia"));
         radioButton_Tibia->setGeometry(QRect(10, 60, 117, 21));
-        radioButton_Femur->raise();
-        radioButton_Tibia->raise();
         pushButton = new QPushButton(tab_simulate);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(40, 20, 121, 31));
@@ -778,11 +776,6 @@ public:
         pushButton_InitRobot_3 = new QPushButton(frame);
         pushButton_InitRobot_3->setObjectName(QStringLiteral("pushButton_InitRobot_3"));
         pushButton_InitRobot_3->setGeometry(QRect(1740, 960, 101, 31));
-        pushButton_2->raise();
-        pushButton_3->raise();
-        pushButton_InitRobot_2->raise();
-        pushButton_InitRobot_3->raise();
-        tabWidget_manipulate->raise();
         label_APdata = new QLabel(Widget);
         label_APdata->setObjectName(QStringLiteral("label_APdata"));
         label_APdata->setGeometry(QRect(470, 760, 300, 100));
@@ -817,7 +810,7 @@ public:
 
         retranslateUi(Widget);
 
-        tabWidget_manipulate->setCurrentIndex(2);
+        tabWidget_manipulate->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(Widget);

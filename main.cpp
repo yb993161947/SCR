@@ -16,12 +16,13 @@ int main(int argc, char *argv[])
         FileSystemWatcher::addWatchPath("DcmFile");
     QString program = "storescp.exe";
     QStringList arguments;
-	arguments <<"-od"<<"DcmFile"<<"5679";
+    arguments <<"-od"<<"DcmFile"<<"5679";
     //arguments <<"-od"<<"DcmFile"<<"-aet"<<"NAVI_SCP"<<"104";
     QProcess *myProcess = new QProcess();
     myProcess->start(program, arguments);
     Widget w;
     w.show();
+
     int a1 =  a.exec();
     myProcess->close();
     myProcess->deleteLater();

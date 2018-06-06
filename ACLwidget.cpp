@@ -881,23 +881,25 @@ void Widget::on_radioButton_A5_clicked()
 //鼠标释放事件
 void Widget::mouseReleaseEvent(QMouseEvent *event)
 {
-    //    switch (ui->tabWidget_manipulate->currentIndex)
-    //    {
-    //        case INDEX_FEMUR:
 
-    //            break;
-    //        case INDEX_TIBIA:
+//        switch (ui->tabWidget_manipulate->currentIndex)
+//        {
+//            case INDEX_FEMUR:
 
-    //            break;
-    //        case INDEX_SIMULATE:
+//                break;
+//            case INDEX_TIBIA:
 
-    //            break;
-    //        case INDEX_ROBOT:
+//                break;
+//            case INDEX_SIMULATE:
 
-    //            break;
-    //        default:
-    //            break;
-    //    }
+//                break;
+//            case INDEX_ROBOT:
+
+//                break;
+//            default:
+//                break;
+//        }
+
 }
 
 void Widget::mouseDoubleClickEvent(QMouseEvent *e)

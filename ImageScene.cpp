@@ -488,6 +488,7 @@ void  ImageScene::selected_show()
     if (index_selected >= 0)
     {
 		QPointF pressPoint_pixImage = pixImage.mapFromScene(pressPoint);
+        qDebug()<<"Piximage_point["<<index_selected<<"]:"<<pressPoint_pixImage;
 		Piximage_point[index_selected] = pressPoint_pixImage;
 		Piximage_button_selected[index_selected].setPos(pressPoint_pixImage - QPoint(10,10)*Piximage_button->scale());//按钮图片像素/2*倍率
 		Piximage_button[index_selected].setPos(pressPoint_pixImage - QPoint(10, 10)*Piximage_button->scale());
